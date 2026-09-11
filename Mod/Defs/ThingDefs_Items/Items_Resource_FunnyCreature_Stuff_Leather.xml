@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--========== Tough leathers ============-->
+
+  <ThingDef ParentName="LeatherBase">
+    <defName>Leather_Darkfur</defName>
+    <label>dark fur</label>
+    <description>The suprisingly nice feeling pelt of a Meffalo. It's very good at insulating and also acceptable at defense.</description>
+    <graphicData>
+      <color>(33,33,32)</color>
+    </graphicData>
+    <statBases>
+	  <MaxHitPoints>80</MaxHitPoints>
+	  <DeteriorationRate>1</DeteriorationRate>
+      <MarketValue>4.3</MarketValue>
+      <StuffPower_Armor_Sharp>1.15</StuffPower_Armor_Sharp>
+	  <StuffPower_Armor_Blunt>0.40</StuffPower_Armor_Blunt>
+      <StuffPower_Insulation_Cold>30</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>25</StuffPower_Insulation_Heat>
+	  <Mass>0.05</Mass>
+    </statBases>
+    <stuffProps>
+      <color>(33,33,32)</color>
+      <commonality>0.01</commonality>
+	  <statFactors>
+	    <MaxHitPoints>1.6</MaxHitPoints>
+        <Beauty>3</Beauty>
+      </statFactors>
+    </stuffProps>
+  </ThingDef>
+
+</Defs>

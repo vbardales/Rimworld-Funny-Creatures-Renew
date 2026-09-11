@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Funny Creatures Renew</name>
+  <author>PredatorKing - 1.6 port: nelim</author>
+  <packageId>nelim.funnycreaturesrenew</packageId>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <url>https://github.com/vbardales/Rimworld-Funny-Creatures-Renew</url>
+  <description>The meffalo and the boomsloth, brought forward to RimWorld 1.6. Two animals that turn fodder into contraband.
+
+I am not the author of this mod. Both animals are PredatorKing's; all I did was the work needed to make them run on 1.6. Credit goes to them, mistakes in the update are mine. If they come back to it, or ask me to take this down, it comes down.
+
+Original mod: https://steamcommunity.com/sharedfiles/filedetails/?id=2640466629 - last supporting 1.3, last updated in October 2021. Abandoned, not withdrawn.
+
+WHAT IT ADDS
+
+Two animals, both trainable to Advanced, and both milkable in a way no vanilla animal is.
+
+The meffalo is a muffalo in everything but its udder: body size 3.5, fifty-five years of life, wildness 0.6, and it is milked for flake rather than milk. It also shears its own darkfur wool.
+
+The boomsloth is a megasloth that goes off. Body size 4.0, wildness 0.97, fifteen years, and it explodes when it dies - a big explosion, the vanilla worker, so a dead boomsloth takes the room with it. It shears megasloth wool and is milked for chemfuel.
+
+Darkfur leather comes with them.
+
+WHAT CHANGED IN THE 1.6 UPDATE
+
+Two kinds of change, three lines in all.
+
+Wildness stopped being a field of RaceProperties in 1.6 and became a StatDef declared under statBases. The old form is not an error, it is simply never read, and the stat defaults to -1, outside the range the game uses - so both animals tamed for almost nothing instead of sitting at 0.6 and 0.97.
+
+And the boomsloth's death action moved. A flat deathActionWorkerClass inside race became a deathAction block holding a workerClass. The flat form is no longer read at all, which means the explosion had stopped happening: the one thing the animal is named for.
+
+No balance value was changed.
+
+Content mod: removing it mid-save will lose any meffalo or boomsloth, and any darkfur or meffalo wool already in play.
+
+Source, changelog and the full account of the port: https://github.com/vbardales/Rimworld-Funny-Creatures-Renew
+
+The original states no licence anywhere - no file, nothing in its About, no repository, nothing on its Workshop page. This port therefore rests on the Workshop's own custom for abandoned mods: named credit to the author, and a takedown on request.
+
+If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.
+
+The update work was done with the help of an AI assistant (Claude, by Anthropic).</description>
+  <loadAfter>
+    <li>Ludeon.RimWorld</li>
+    <li>Ludeon.RimWorld.Royalty</li>
+    <li>Ludeon.RimWorld.Ideology</li>
+    <li>Ludeon.RimWorld.Biotech</li>
+    <li>Ludeon.RimWorld.Anomaly</li>
+    <li>Ludeon.RimWorld.Odyssey</li>
+  </loadAfter>
+</ModMetaData>

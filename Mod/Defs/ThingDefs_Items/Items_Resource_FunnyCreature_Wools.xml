@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs> 
+ <ThingDef ParentName="WoolBase">
+    <defName>WoolMeffalo</defName>
+    <label>meffalo wool</label>
+    <description>Very Soft, medium weight and provides incredibly good insulation. Meffalo wool clothes rarely fail to keep the wearer warm.</description>
+    <statBases>
+      <MarketValue>4.5</MarketValue>
+      <Mass>0.04</Mass>
+      <DeteriorationRate>2</DeteriorationRate>
+      <StuffPower_Armor_Sharp>0.55</StuffPower_Armor_Sharp>
+      <StuffPower_Armor_Blunt>0.05</StuffPower_Armor_Blunt>
+      <StuffPower_Armor_Heat>1.10</StuffPower_Armor_Heat>
+      <StuffPower_Insulation_Cold>40</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>30</StuffPower_Insulation_Heat>
+    </statBases>
+    <graphicData>
+      <color>(33,33,32)</color>
+    </graphicData>
+    <stuffProps>
+      <color>(33,33,32)</color>
+    </stuffProps>
+ </ThingDef>
+</Defs> 
