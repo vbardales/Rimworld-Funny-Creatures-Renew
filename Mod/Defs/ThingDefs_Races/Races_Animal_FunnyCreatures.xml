@@ -238,6 +238,7 @@
 	  <deathAction>
 	  	<workerClass>DeathActionWorker_BigExplosion</workerClass>
 	  </deathAction>
+      <canBePredatorPrey>false</canBePredatorPrey>
       <baseHungerRate>1</baseHungerRate>
       <baseBodySize>4.0</baseBodySize>
       <baseHealthScale>3.6</baseHealthScale>

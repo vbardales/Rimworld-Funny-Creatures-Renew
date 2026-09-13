@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Meffalo.label>meffalo</Meffalo.label>
+  <Meffalo.description>Une sous-espèce de muffalo plus grande et plus intelligente, capable de porter des charges plus lourdes. Elle est aussi bien plus redoutable au combat et beaucoup plus agressive. Et, contrairement à ce que croient certains colons, elle n'a absolument aucun rapport avec la méthamphétamine...</Meffalo.description>
+  <Meffalo.race.meatLabel>viande de meffalo</Meffalo.race.meatLabel>
+  <Meffalo.tools.head.label>tête</Meffalo.tools.head.label>
+  <Meffalo.tools.left_hoof.label>sabot gauche</Meffalo.tools.left_hoof.label>
+  <Meffalo.tools.right_hoof.label>sabot droit</Meffalo.tools.right_hoof.label>
+  <Boomsloth.label>boomsloth</Boomsloth.label>
+  <Boomsloth.description>Le résultat d'une expérience de génie génétique croisant un boomalope et un mégaparesseux. Il se comporte comme un mégaparesseux ordinaire, à ceci près qu'il souffre en permanence et peut produire de grandes quantités de chimiocarburant. L'explosion provoquée par sa mort est comparable à celle d'une bombe.</Boomsloth.description>
+  <Boomsloth.race.meatLabel>viande de boomsloth</Boomsloth.race.meatLabel>
+  <Boomsloth.tools.left_claw.label>griffe gauche</Boomsloth.tools.left_claw.label>
+  <Boomsloth.tools.right_claw.label>griffe droite</Boomsloth.tools.right_claw.label>
+  <Boomsloth.tools.head.label>tête</Boomsloth.tools.head.label>
+  <WoolMeffalo.label>laine de meffalo</WoolMeffalo.label>
+  <WoolMeffalo.description>Une laine très douce, de poids moyen, qui offre une excellente isolation. Les vêtements en laine de meffalo gardent presque toujours leur porteur bien au chaud.</WoolMeffalo.description>
+  <Leather_Darkfur.label>fourrure sombre</Leather_Darkfur.label>
+  <Leather_Darkfur.description>La fourrure étonnamment agréable au toucher d'un meffalo. Elle offre une très bonne isolation et une protection convenable.</Leather_Darkfur.description>
+</LanguageData>

@@ -1,7 +1,6 @@
 # Funny Creatures — where the content comes from, and what had to be changed
 
-Everything in this mod is **PredatorKing's** work: the meffalo, the boomsloth, their textures and
-their sounds. This repository holds the port to RimWorld 1.6 and nothing else.
+The original animals, definitions and animal textures are **PredatorKing's** work. This repository contains the 1.6 port, predator protection, French translations and new promotional artwork.
 
 ## The source
 
@@ -38,7 +37,7 @@ abandoned mods: named credit, and a takedown on request.
 
 ## What the port changed
 
-Three lines, of two kinds.
+The compatibility port made two kinds of repair:
 
 - **`wildness` moved to `<Wildness>` under `statBases`, on both animals.** It stopped being a field
   of `RaceProperties` in 1.6 and became a StatDef. The old form does not error: nothing reads it, and
@@ -50,7 +49,7 @@ Three lines, of two kinds.
   which means the explosion had simply stopped happening — on the animal whose entire name is the
   explosion.
 
-A diff against the original files shows those three lines and nothing else.
+The port also adds canBePredatorPrey=false to prevent wild predators from hunting boomsloths, including calves and starving-predator cases. This intentional behavior change is separate from the compatibility repairs. French translations, the incompatibility declaration and promotional artwork are additions by this continuation.
 
 ## What was left alone, and why
 
@@ -60,7 +59,7 @@ A diff against the original files shows those three lines and nothing else.
   Deliberate on the author's part and left as found.
 - **Their voices are the muffalo's**, by way of four `SoundDef`s that point at the base game's
   muffalo clips through `AudioGrain_Folder`. The mod ships no audio of its own.
-- **No balance value was touched.**
+- **Numeric balance and production values are unchanged; predator eligibility is deliberately changed.**
 
 ## Where this came from
 

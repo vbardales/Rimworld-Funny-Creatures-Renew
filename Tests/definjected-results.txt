@@ -1,0 +1,4 @@
+Patch operations applied: 29
+Defs indexed: 11594
+
+Keys checked: 20 - errors: 0

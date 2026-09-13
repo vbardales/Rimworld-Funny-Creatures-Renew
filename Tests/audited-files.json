@@ -1,0 +1,94 @@
+[
+  {
+    "path": "Art/check-contrast.py",
+    "sha256": "bef50e3742e3b3577375887edd92158efc4a0b5135c6e6e071ffbeed0d982f8c"
+  },
+  {
+    "path": "Art/preview-palette.json",
+    "sha256": "b742f262cf8b7a05e7c2b50116b49f26ebc3117b9e10c31b927648c4a61cb398"
+  },
+  {
+    "path": "Art/preview.html",
+    "sha256": "ea378c4ab29075867656df8827920cfc3fc2ad350da075892adf41174d7cbab0"
+  },
+  {
+    "path": "Art/render-preview.cjs",
+    "sha256": "10c03ee9e0dab8f791c7ef8eedf87a9600be2f4efec5732281893bfe769702f5"
+  },
+  {
+    "path": "Mod/About/About.xml",
+    "sha256": "2902a6b79d97825ec4ee27a53a4d3564073fdd373de6e8a5872db8d44b3083c6"
+  },
+  {
+    "path": "Mod/About/ModIcon.png",
+    "sha256": "72c0527e1349dc353df83b7eb7fe1f944df0e3ab419285a335653e0e5dd71ed4"
+  },
+  {
+    "path": "Mod/About/Preview.png",
+    "sha256": "9a84c62359d7bbaa94d1ae70413ac48e87629b7969c3bc6c9346221cdb28bc5b"
+  },
+  {
+    "path": "Mod/ATTRIBUTION.md",
+    "sha256": "8b0213cfcbe2869fa0a69aa855e12668f47a7f58ca862e987175bed34cd412d5"
+  },
+  {
+    "path": "Mod/Defs/SoundDefs/Pawn_Animal_FunnyCreatures_Vox.xml",
+    "sha256": "35411df128df5c201dee70c4c7a50709c8a7ecd6b0bd5dd5c19aa074fe044390"
+  },
+  {
+    "path": "Mod/Defs/ThingDefs_Items/Items_Resource_FunnyCreature_Stuff_Leather.xml",
+    "sha256": "2ead6faae2229c54fff25703175c5f7c96344260fdd61b2fbc42ee07ee0b1940"
+  },
+  {
+    "path": "Mod/Defs/ThingDefs_Items/Items_Resource_FunnyCreature_Wools.xml",
+    "sha256": "24fee4f13f6d4e8be1b357e712d2ac7e8021a3f8cc2e5decee1a2d65e7ad5de0"
+  },
+  {
+    "path": "Mod/Defs/ThingDefs_Races/Races_Animal_FunnyCreatures.xml",
+    "sha256": "467f3bb9ac6854df7704b1f3556a96b7b79c24c2590c7d634092c754317f421a"
+  },
+  {
+    "path": "Mod/Languages/French/DefInjected/PawnKindDef/FunnyCreatures.xml",
+    "sha256": "7aa58489735981373be07376ffb1a07c0a82fabbd603a745211287100288f36d"
+  },
+  {
+    "path": "Mod/Languages/French/DefInjected/ThingDef/FunnyCreatures.xml",
+    "sha256": "502ddf547975de9349708892ea91ca1daf4e6daab2b63a5ef4e02086a6d9788f"
+  },
+  {
+    "path": "Mod/Textures/funnycreatures/Boomsloth_east.png",
+    "sha256": "ec61bb596ec2111c537a89632e6702422b45395157e082e0763e65b1ba54b9a4"
+  },
+  {
+    "path": "Mod/Textures/funnycreatures/Boomsloth_north.png",
+    "sha256": "19768b3644b742fa46305a8bfb26de807ffe05a64a968091b2d0d868c7d1c3b3"
+  },
+  {
+    "path": "Mod/Textures/funnycreatures/Boomsloth_south.png",
+    "sha256": "2c75955e5105c93f0433bfdb42222ffb467bc21f5c97f20e98e2d6a1b8d9d419"
+  },
+  {
+    "path": "Mod/Textures/funnycreatures/Dessicated/Dessicated_Boomsloth_east.png",
+    "sha256": "1661306e3fe675de8413a8d3629d5616a8a9474ca1e5a27f64bdab8ee27c97e9"
+  },
+  {
+    "path": "Mod/Textures/funnycreatures/Meffalo_east.png",
+    "sha256": "5b8e44c0c35f853413b5c041e1b57f47ca2b613fe6451bccbed4c401a072491d"
+  },
+  {
+    "path": "Mod/Textures/funnycreatures/Meffalo_north.png",
+    "sha256": "2be2b70089dc75666456716e7604b3b7e6fbfed82085d1977a0ed55b0008a136"
+  },
+  {
+    "path": "Mod/Textures/funnycreatures/Meffalo_south.png",
+    "sha256": "843b3a71a2699c294672e290558df9bf0d7da57e43f5cf13345a88065924cddd"
+  },
+  {
+    "path": "TESTING.md",
+    "sha256": "be6193acbe4d7da9cb69153ae68f9977cb6930dd8df2f697956e3c05f2d35c83"
+  },
+  {
+    "path": "Tests/test_mod.py",
+    "sha256": "ba4bf4a9ddc08e8b555c5be0da07f81bf2025794cd161639c04b290faa84b74d"
+  }
+]

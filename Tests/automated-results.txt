@@ -1,0 +1,14 @@
+test_animal_production_contract (__main__.DistributionTests.test_animal_production_contract) ... ok
+test_core_references_and_inheritance (__main__.DistributionTests.test_core_references_and_inheritance) ... ok
+test_french_covers_actual_source_text (__main__.DistributionTests.test_french_covers_actual_source_text) ... ok
+test_images (__main__.DistributionTests.test_images) ... ok
+test_local_texture_paths (__main__.DistributionTests.test_local_texture_paths) ... ok
+test_metadata_and_distribution (__main__.DistributionTests.test_metadata_and_distribution) ... ok
+test_port_regressions (__main__.DistributionTests.test_port_regressions) ... ok
+test_settings_absence_contract (__main__.DistributionTests.test_settings_absence_contract) ... ok
+test_xml_and_unique_definitions (__main__.DistributionTests.test_xml_and_unique_definitions) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.624s
+
+OK

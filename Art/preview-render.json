@@ -1,0 +1,64 @@
+{
+  "fonts": [
+    {
+      "familyName": "Segoe UI Semibold",
+      "postScriptName": "SegoeUI-Semibold",
+      "isCustomFont": false,
+      "glyphCount": 15
+    },
+    {
+      "familyName": "Segoe UI",
+      "postScriptName": "SegoeUI",
+      "isCustomFont": false,
+      "glyphCount": 69
+    }
+  ],
+  "metrics": {
+    "h1": {
+      "x": 50,
+      "y": 54,
+      "width": 360,
+      "height": 101.1875,
+      "color": "rgb(242, 236, 225)",
+      "fontSize": "46px",
+      "fontFamily": "\"Segoe UI\", system-ui, sans-serif"
+    },
+    ".suffix": {
+      "x": 50,
+      "y": 116.59375,
+      "width": 89.65625,
+      "height": 40,
+      "color": "rgb(255, 216, 155)",
+      "fontSize": "29.9px",
+      "fontFamily": "\"Segoe UI\", system-ui, sans-serif"
+    },
+    ".tag": {
+      "x": 50,
+      "y": 163.1875,
+      "width": 360,
+      "height": 26.390625,
+      "color": "rgb(255, 216, 155)",
+      "fontSize": "24px",
+      "fontFamily": "\"Segoe UI\", system-ui, sans-serif"
+    },
+    "p": {
+      "x": 50,
+      "y": 228.578125,
+      "width": 360,
+      "height": 60.875,
+      "color": "rgb(242, 236, 225)",
+      "fontSize": "21px",
+      "fontFamily": "\"Segoe UI\", system-ui, sans-serif"
+    },
+    ".version": {
+      "x": 846.7371826171875,
+      "y": 4.737185001373291,
+      "width": 44.525634765625,
+      "height": 44.52562713623047,
+      "color": "rgb(23, 18, 14)",
+      "fontSize": "26px",
+      "fontFamily": "\"Segoe UI\", system-ui, sans-serif"
+    }
+  },
+  "bytes": 592045
+}
