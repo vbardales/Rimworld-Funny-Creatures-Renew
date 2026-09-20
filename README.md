@@ -74,6 +74,6 @@ any other of my mods, including publishing a continuation of it. All credit must
 ## Credits
 
 - **PredatorKing** — the mod, both animals, and their textures.
-- 1.6 update by nelim. Written with the help of Claude (Anthropic) and Codex (OpenAI).
+- 1.6 update by Nelim. Written with the help of Claude (Anthropic) and Codex (OpenAI).
 
 See [ATTRIBUTION.md](ATTRIBUTION.md) for the licence check and the port in detail.
