@@ -56,7 +56,7 @@ incompatibility pass, is an open decision recorded in `STATUS.md`.
 | `Failed to find any textures at` | `Graphic_Multi.Init` | The same fault one level up: no rotation found at all. |
 | `Could not find parent node named` | `XmlInheritance.ResolveParents` | One of the four Core templates is gone: `AnimalThingBase`, `AnimalKindBase`, `WoolBase` or `LeatherBase`. This mod declares no abstract def of its own. |
 | `Could not find type named` | `DirectXmlToObject.ClassTypeOf` | The only `Class=` attributes here are `CompProperties_Shearable`, `CompProperties_Milkable` and `AudioGrain_Folder`, plus the `workerClass` in scenario C. A line here names which one Core renamed. |
-| `Adding duplicate` | `DefDatabase.Add` | The original mod is enabled alongside this port. Scenario L. |
+| the original's `<wildness>` and flat `deathActionWorkerClass` errors | the XML loader | The original mod is enabled alongside this port (run 1c89: NO "Adding duplicate" line was logged for the shared defs). Scenario L. |
 | `Could not resolve cross-reference` | `DefDatabase.ResolveAllReferences` | A def this mod points at is missing. All eight were confirmed present in 1.6 on 2026-09-12: `Flake`, `Chemfuel`, `WoolMegasloth`, `Leather_Heavy`, `QuadrupedAnimalWithHooves`, `QuadrupedAnimalWithPawsAndTail`, and the two Core templates. |
 
 Lines naming other mods are not ours to fix, and are worth leaving in whatever gets pasted back.

@@ -116,7 +116,7 @@ Two more facts worth knowing before writing the next scenario:
 
 - **Pickle 4.9.1 has no step that asserts an error was logged.** `AUDIT.md` and the Headless guide list
   `an error matching {string} was logged`; it is not in the build (205 expressions read). Feature 10 reads the log file.
-- **`Adding duplicate Verse.ThingDef name: X` is `Log.Error`**, and the game renames the later def. Hence `@allow-errors`.
+- **Two mods defining the same def do NOT log "Adding duplicate" in 1.6** (assumed from the decompiled code, refuted by run 1c89). The original still logs its own 1.3-form errors. Hence `@allow-errors`.
 
 ## What was left out of Gherkin, and why
 

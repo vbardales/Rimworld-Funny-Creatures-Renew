@@ -407,14 +407,14 @@ namespace FunnyCreaturesRenew.PickleSteps
         // -------------------------------------------------------------------------------------
 
         /// <summary>
-        /// The symptom of two mods defining the same def. The game logs it once, at load, as an error:
-        /// "Adding duplicate Verse.ThingDef name: Meffalo", and renames the later def. Pickle's own log steps
-        /// count what is logged after a scenario starts, so a load-time message is out of their reach, and
-        /// there is no built-in step that asserts an error was logged. The log FILE is read instead, from the
-        /// start of the game, as PickleTools' load audit does.
+        /// Text the game wrote to its log at load. Pickle's log steps count what is logged after a scenario
+        /// starts, so a load-time message is out of their reach, and Pickle 4.9.1 has no step that asserts an
+        /// error was logged. The log FILE is read instead, from the start of the game, as PickleTools' load
+        /// audit does. First run (2026-09-28): with the original mod loaded together with this one the game
+        /// wrote NO "Adding duplicate" line, so the symptom asserted is the original's own load errors.
         /// </summary>
-        [Then("Funny Creatures Renew: the game log holds a duplicate definition error for the {word} {string}")]
-        public void LogHoldsDuplicate(PickleContext ctx, string defTypeName, string defName)
+        [Then("Funny Creatures Renew: the game log holds the text {string}")]
+        public void LogHoldsText(PickleContext ctx, string fragment)
         {
             string path = UnityEngine.Application.consoleLogPath;
             ctx.Require(!string.IsNullOrEmpty(path) && File.Exists(path), "the game log is not readable at '" + path + "'");
@@ -424,11 +424,8 @@ namespace FunnyCreaturesRenew.PickleSteps
             {
                 text = reader.ReadToEnd();
             }
-            Regex pattern = new Regex(@"Adding duplicate Verse\." + Regex.Escape(defTypeName) + @" name: " + Regex.Escape(defName) + @"\b");
-            int count = pattern.Matches(text).Count;
-            ctx.Assert(count > 0,
-                $"the game log ({text.Length} characters, read from the start) holds no 'Adding duplicate Verse.{defTypeName} name: {defName}'. "
-                + "either the two mods no longer define the same def, or the message changed");
+            ctx.Assert(text.Contains(fragment),
+                $"the game log ({text.Length} characters, read from the start) does not contain '{fragment}'");
         }
     }
 }

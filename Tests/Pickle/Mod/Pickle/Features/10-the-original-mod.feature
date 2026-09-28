@@ -7,10 +7,9 @@
 # (_mods-sources/FunnyCreatures, package id predatorking.funnycreatures) next to this mod. The game loads a 1.3 mod in
 # 1.6 as an outdated one.
 #
-# GREEN MEANS THE INCOMPATIBILITY BEHAVES AS DECLARED. This asserts the symptom the declaration is about instead of
-# expecting a red run: a red run cannot be told from an accidental one. The symptom is the game's own load error,
-# "Adding duplicate Verse.ThingDef name: Meffalo", logged once for each def defined twice, after which it renames
-# the later def. Nothing but the game notices it, and nothing but the game's log records it.
+# GREEN MEANS THE ORIGINAL IS STILL READ NEXT TO THIS MOD. The first run showed the game does NOT log a duplicate-def error
+# for a def two mods share (an assumption drawn from the decompiled code, refuted by the log). The scenario asserts what
+# the log does hold instead of expecting a red run, which cannot be told from an accidental one.
 #
 # WHY THE LOG FILE. Pickle's log steps count what is logged after a scenario starts, so a message written at load is
 # out of their reach, and Pickle 4.9.1 has no step that asserts an ERROR was logged (`an error matching ...` appears in
@@ -28,10 +27,11 @@ Feature: the original mod still conflicts with this one
     Then mod "predatorking.funnycreatures" is loaded
     And mod "nelim.funnycreatures" is loaded
 
-  Scenario: the game logged a duplicate for each def both mods define
-    Then Funny Creatures Renew: the game log holds a duplicate definition error for the ThingDef "Meffalo"
-    And Funny Creatures Renew: the game log holds a duplicate definition error for the PawnKindDef "Meffalo"
-    And Funny Creatures Renew: the game log holds a duplicate definition error for the ThingDef "Boomsloth"
-    And Funny Creatures Renew: the game log holds a duplicate definition error for the PawnKindDef "Boomsloth"
-    And Funny Creatures Renew: the game log holds a duplicate definition error for the ThingDef "WoolMeffalo"
-    And Funny Creatures Renew: the game log holds a duplicate definition error for the ThingDef "Leather_Darkfur"
+  Scenario: the original's own defs are read and fail on 1.6, next to this mod's
+    # Observed 2026-09-28 (run 1c89): with both mods loaded the game wrote no "Adding duplicate" line for any def, so
+    # the conflict is silent. What the log does hold is the original's 1.3 form, refused by 1.6: the wildness
+    # written as a field of <race>, and the flat death action. They prove the original's Meffalo and Boomsloth were
+    # read alongside this mod's, which is the coexistence the declaration forbids.
+    Then Funny Creatures Renew: the game log holds the text "<wildness>0.6</wildness> doesn't correspond to any field in type RaceProperties"
+    And Funny Creatures Renew: the game log holds the text "<wildness>0.97</wildness> doesn't correspond to any field in type RaceProperties"
+    And Funny Creatures Renew: the game log holds the text "<deathActionWorkerClass>DeathActionWorker_BigExplosion</deathActionWorkerClass> doesn't correspond to any field in type RaceProperties"
