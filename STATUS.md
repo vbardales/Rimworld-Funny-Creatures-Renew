@@ -4,13 +4,13 @@ translation_en: complete
 translation_fr: complete
 settings_audit: not_applicable
 mod:          Funny Creatures Renew (unofficial)
-packageId:    nelim.funnycreaturesrenew
+packageId:    nelim.funnycreatures
 repo:         Rimworld-Funny-Creatures-Renew
 visibility:   public
 detached:     yes
-stage:        preTest
-previous_stage: done
-audit_revision: ed32e2b51ab5fe9e47bb3bad83705dad386bdaff
+stage: done
+previous_stage: preTest
+audit_revision: 0b29ed309339f78ebbe200d39182b709e86528e5
 licence:      silent
 licence_at:   "Four places searched for a refusal rather than a permission (ATTRIBUTION.md). The Workshop page was re-read on 2026-09-28: description unchanged, no repository or licence wording, 1.3 only, last updated 30 October 2021. Its comments load by script and could not be read. No permission is inferred."
 dependencies: none
@@ -18,21 +18,67 @@ showcase:     complete
 build:        not_applicable
 xml_audit:    complete
 automated_tests: complete
-pickle_scenarios: "none written: Tests/Pickle/ does not exist. The plan (four passes, what goes in Gherkin and what does not) is in TESTING.md, 'Plan: passes, automation and gates'"
+pickle_scenarios: "written 2026-09-28: 12 features in Tests/Pickle/, checked offline by Tests/test_pickle_suite.py (every feature line matches exactly one step of Pickle 4.9.1). Five requests filed on 0b29ed3, none played yet. Plan and passes: TESTING.md and Tests/Pickle/README.md"
 functional_tests: unverified
 tested_on:
 workshop:     "none. Not prepublished: Mod/About/PublishedFileId.txt is absent (checked 2026-09-28; RimWorld/Mods/FunnyCreaturesRenew is a link to Mod/, so the file would have landed there). The only PublishedFileId.txt found near this mod belongs to the archived original, in _mods-sources/FunnyCreatures. CHANGELOG.md therefore has no [0.1.0] section, by design"
-evidence:     "Static checks, on disk only: evidence/static/2026-09-28-ed32e2b/. No game run exists. What to keep and what to delete: TESTING.md, 'Evidence to keep'. One line per run: docs/runs/README.md"
+evidence: "Static checks, on disk only: evidence/static/. Pickle reports, when they come: Tests/Pickle/Evidence/<pass>-<sha>/ (git-ignored). What to keep and what to delete: TESTING.md, Evidence to keep. One line per run: docs/runs/README.md"
 remaining:
-  - unverified: "(preTest -> done) the Pickle (Gherkin) suite is not written. AUDIT.md asks for it, with its scope justified, before done. The plan is in TESTING.md and needs the owner's word on the lines marked proposed: passes 1 to 4 and the scenarios proposed as not applicable"
-  - unverified: "(done -> tested) every scenario A-Q in a running game, in English and French with developer mode on, logs checked; no @wip, every conditional scenario played, no manual test left (each is Pickle and green, or listed not applicable with its reason)"
+  - unverified: "(done -> tested) the five Pickle requests filed on 0b29ed3 have not been played: tools EN and FR, avec-facultatifs, incompat-original, core-only. State of each in the Pickle runs section below"
+  - unverified: "(done -> tested) no scenario has been seen running: every step of the step assembly is compiled and matched to a feature line, none has executed. The first run is likely to find a cell, a timing or an API assumption that is wrong; the cells are chosen from the fixture's things, not from a run"
+  - unverified: "(done -> tested) the lines of TESTING.md marked proposed await the owner: scenarios D, E to K, M and O as not applicable, and pass 5 (core-only)"
   - unverified: "(done -> tested) existing-save migration: loading a save made with the original mod. No such save exists; stays listed as unverified, not a gate"
+  - unverified: "owner decision: the Better Crossbreeding recipe, a megasloth and a boomalope producing a boomsloth. It changes what a colony can obtain when that mod is loaded; one block of Compat_BetterCrossbreeding.xml removes it, and scenario 08 loses two scenarios"
+  - unverified: "owner decision: the same patch adds the meffalo/muffalo and boomsloth pairs to VANILLA animals (Muffalo, Megasloth, Boomalope) when Better Crossbreeding is loaded. Ebbbs Renew, the only other mod with such a patch, touches no vanilla animal"
+  - unverified: "owner decision: Storytime Rides Again (TSP.Isengriff.Storytime) defines the same defNames and is not declared incompatible. Recommended: declare it. Its package needs many hard dependencies, so a pass that mounts it is not practical"
   - unverified: "ModIcon readability at 32 px: the mascot head reads, the five animals around it merge into colour. The owner kept the icon on 2026-09-12; whether that covers this reading is to be confirmed"
-  - unverified: "owner decision: the packageId nelim.funnycreaturesrenew carries 'renew', which PUBLISHING.md (2026-09-27) tells new packageIds not to. Free to change until the first publication, frozen after"
-  - unverified: "owner decision: Storytime Rides Again (TSP.Isengriff.Storytime) defines the same defNames and is not declared incompatible; declaring it would add a second incompatibility pass"
-  - unverified: "(prepublished) PUBLICATION.md is not written; the description has no IF I GO QUIET, AI-GENERATED, THANKS and licence-pointer blocks in the order the step asks for; thanks comments and the WORKSHOP_COMMENTS.md rows are not prepared"
+  - unverified: "(prepublished) PUBLICATION.md is drafted (2026-09-28) but nothing in it is final: the gallery is not produced, the mature-content answer waits for it, the description is not yet the single Markdown source that About.xml is generated from, and the rollback target is chosen only once a good run exists. About.xml has no IF I GO QUIET, AI-GENERATED or THANKS block yet"
 session:      local_2bc4ddc6-2f19-485e-8404-c7f03c070278
-updated:      "2026-09-28, audit against the current AUDIT.md: done -> preTest (the Pickle suite the workflow now asks for is not written). Nothing committed or pushed"
+updated: "2026-09-28, later: packageId renamed, three optional patches, Pickle suite written, five runs filed. preTest -> done. Committed locally as 0b29ed3, not pushed"
+---
+
+# Update — 2026-09-28, later in the day
+
+**`preTest` -> `done`.** The one missing criterion is met: the Pickle (Gherkin) suite is written and its scope is justified.
+It is **not played**: `done` means ready for the final functional validation in a game, not tested (`AUDIT.md`, step 8).
+
+## What changed since the audit below
+
+- **packageId** `nelim.funnycreaturesrenew` became `nelim.funnycreatures`, at the owner's word. The name, the folder and the
+  repository keep `Renew`. Written in `About.xml`, `Tests/test_mod.py` and `TESTING.md`. Her mod list still activates the old id:
+  the mod shows as a new package there and has to be enabled again by hand.
+- **Three optional patches** in `Mod/Patches/`: A Dog Said... Animal Prosthetics 2 (both animals in its three surgery categories,
+  `loadBefore` declared), Nocturnal Animals Continued (the boomsloth is nocturnal, like the megasloth), Better Crossbreeding
+  (meffalo with muffalo; boomsloth with megasloth and boomalope; a megasloth with a boomalope produce a boomsloth). Each applies only
+  when the other mod is loaded. The reasoning is in the header of each file, and the credit in `ATTRIBUTION.md`.
+- **Tests**: 23 in `Tests/test_mod.py` (the patches are applied to the real Core definitions with lxml, with and without each mod, on
+  lists that already exist; the always-true predicate was put back once to show the test fails on it) and 12 in
+  `Tests/test_pickle_suite.py`. All green on `0b29ed3`.
+- **Pickle suite** in `Tests/Pickle/`: twelve features, a step assembly, four pass maps. Two limits of Pickle 4.9.1 forced the
+  assembly: its pawn steps resolve colonists only, and its def steps throw on a defName that is both a ThingDef and a PawnKindDef,
+  which both animals are.
+- **The rule for animal mods** was written in `PUBLISHING.md` (protocols repository, uncommitted there): three integrations to treat
+  before `preTest`. Ebbbs Renew had already done Better Crossbreeding for its own animals; the two stances differ and are recorded.
+
+## Pickle runs, and what is filed
+
+Five requests filed on 2026-09-28 at 14:00 by this session, commit `0b29ed3`, behind 55 others. The tree of `Mod/` and
+`Tests/Pickle/Mod/` is not to change until each `RUN_DONE`. Nothing has been played.
+
+| Pass | Language | Filter | Request id | State |
+|---|---|---|---|---|
+| tools | English | whole suite except `@core-only` | `20260928-140049-077-87fb` | filed |
+| tools | French | the same | `20260928-140049-685-c0cf` | filed |
+| avec-facultatifs | English | whole suite except `@sans-facultatifs` and `@core-only` | `20260928-140050-161-28b4` | filed |
+| incompat-original | English | `10-the-original-mod` | `20260928-140050-652-1c89` | filed |
+| core-only, *proposed* | English | `11-core-only,12-load-is-clean` | `20260928-140051-287-ce95` | filed |
+
+## Next transition only: done -> tested
+
+Play the five passes and read them: `exitReason` first, scenarios played against features discovered, the `@review` captures opened.
+Correct what the first run finds and replay only the scenarios concerned. `tested` also asks that no scenario is `@wip` (none is),
+that every `@requires` scenario has had its pass (06, 07, 08 and 10 only run in passes 3 and 4), and that no manual test is left.
+
 ---
 
 # Audit — 2026-09-28
@@ -63,7 +109,7 @@ revision.
 
 | Transition | Result | Evidence |
 | --- | --- | --- |
-| dansMonoRepo -> horsMonoRepo | Validated; one owner decision open | Standalone root, public GitHub repository, remote configured, pushed HEAD. STATUS.md, English README, ATTRIBUTION.md, CHANGELOG.md. The two ATTRIBUTION copies are byte-identical (compared, not assumed). Licence `silent`, public, name suffixed ` (unofficial)` after `Renew`, takedown paragraph present. Folder, repository, name and packageId agree with each other. **Open:** the packageId contains `renew` (see below) |
+| dansMonoRepo -> horsMonoRepo | Validated | Standalone root, public GitHub repository, remote configured, pushed HEAD. STATUS.md, English README, ATTRIBUTION.md, CHANGELOG.md. The two ATTRIBUTION copies are byte-identical (compared, not assumed). Licence `silent`, public, name suffixed ` (unofficial)` after `Renew`, takedown paragraph present. Folder, repository, name and packageId agree with each other. The packageId lost its `renew` on 2026-09-28, at the owner's word (see below) |
 | -> ModIcon générée | Validated, with a reserve | No code, so no build. `Mod/About/ModIcon.png` is 128 x 128, 12,519 bytes. Resized from the owner's 1254 x 1254 file **at her request** on 2026-09-12; the full-size original is kept as `Art/ModIcon-source.png`. This session generated and changed nothing. Reserve at 32 px, below |
 | -> Preview générée | Validated | `Mod/About/Preview.png` is 896 x 504, 592,045 bytes, under 1 MB; opened directly |
 | -> preOptions | Validated | Overlay measured, five contrasts at 4.936:1 or better (threshold 4.5:1); the rule and badge colour is distinct from the secondary ink; the English description opens with the UNOFFICIAL paragraph and ends with `[url=https://github.com/vbardales/Rimworld-Funny-Creatures-Renew]Source code on GitHub[/url]`, the same target as the remote and `<url>` |
@@ -99,10 +145,13 @@ concerned its **subject** (another mod's cast); this reading was not put to the 
 corrects nothing and generates nothing. The 2026-09-12 acceptance is taken as the override the rule
 allows, and the confirmation is requested.
 
-**packageId.** `PUBLISHING.md` (2026-09-27) says not to add `renew` to a packageId, and that the rule holds
-for what is not yet published. This mod is not. Renaming is free today and impossible after the first
-publication; it would touch `About.xml`, `Tests/test_mod.py`, `TESTING.md`, the docs and the title of the
-session. Nothing was renamed.
+**packageId.** Decided by the owner on 2026-09-28: `renew` leaves the packageId and stays in the
+displayed name. It is now `nelim.funnycreatures` (was `nelim.funnycreaturesrenew`), which follows the rule
+of `PUBLISHING.md` (2026-09-27) for what is not yet published. Nothing was published, no dependency or
+`loadAfter` elsewhere names the old id, and the new one is used by no other repository of the collection.
+The folder, the repository and the name `Funny Creatures Renew (unofficial)` are unchanged. Written in
+`About.xml`, `Tests/test_mod.py`, `TESTING.md` and this file. **Her own mod list still activates the old
+id**: the mod shows as a new package there and has to be enabled again by hand.
 
 **A third-party pack defines the same defNames.** Storytime Rides Again: a New Chapter
 (`TSP.Isengriff.Storytime`, [TurtleShroom/TSP_STORYTIME_RIDES_AGAIN](https://github.com/TurtleShroom/TSP_STORYTIME_RIDES_AGAIN))

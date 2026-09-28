@@ -24,7 +24,7 @@ Where the versions come from:
 |---|---|---|---|---|
 | `AGENTS.md` | `3a1d2cb` 2026-09-24 | yes | the ordered gates (settings, then translations, then `preTest`); the evidence rules (latest report per scenario for the current revision, one text line per run in `docs/runs/`, never a folder, list before deleting); CI-only publishing | its hash `36631e73` moves; it is 46 lines |
 | `AUDIT.md` | `c5ca0c0` 2026-09-26, **modified**, sha `449431a0`, mtime 2026-09-28 11:14 | **essential** | the chain and every gate; the absolute rules on RimWorld (never launch it, one deposit per pass); Pickle rules (passes, one pass per declared incompatibility asserting the symptom, `@requires`, `exitReason` first, evidence copies); `tested` needs no `@wip`, every conditional scenario played, no manual test left; "On ne teste pas le jeu"; the session title | its hash moves. It is long: read the Pickle bullets, steps 8 to 11 and the interpretation rules |
-| `PUBLISHING.md` | `95c6dfd` 2026-09-28 | yes, in parts | "Départ depuis le projet d'origine" (used, see below); the `(unofficial)` opening and suffix; the description order (`prepublished`); the packageId rule of 2026-09-27 (no `renew` in a new packageId); `Mod/` is uploaded unfiltered; the gallery folder; thanks comments; CI publishing | its hash `e16589ee` moves, or before `PUBLICATION.md` or a change note is written |
+| `PUBLISHING.md` | `95c6dfd` 2026-09-28, then **modified by this mod's session**: a section on animal mods | yes, in parts | "Départ depuis le projet d'origine" (used, see below); the `(unofficial)` opening and suffix; the description order (`prepublished`); the packageId rule of 2026-09-27 (no `renew` in a new packageId); `Mod/` is uploaded unfiltered; the gallery folder; thanks comments; CI publishing | its hash `e16589ee` moves, or before `PUBLICATION.md` or a change note is written |
 | `TRANSLATIONS.md` | `f5c2d9d` 2026-09-25 | little now | the gate is passed (`localization`, `translation_en`, `translation_fr` complete). Counts and plurals do not apply: no counted text | a player-facing text, a Def or a language file changes |
 | `STYLE_RIMWORLD.md` | `7311308` 2026-09-25, **modified**, sha `2c6db323`, mtime 2026-09-27 21:24 | **little** | "ModIcon: control, not generation" and the file limits are applied. Image generation and the overlay palette do not apply: the images are done. Its convention names the un-lettered illustration `Art/Preview.png`; this repository calls it `Art/Preview-source.png` and its render scripts read that name | `Preview.png` or `ModIcon.png` is touched |
 | `MOD_SETTINGS.md` | `b83933b` 2026-09-23 | yes, once | the `settings_audit` values and the `not_applicable` proof (no page, no shortcut); already recorded | options, persistence, UI or a shortcut are added |
@@ -43,6 +43,23 @@ Where the versions come from:
 | `TESTING.md` | `954e247`, then this session | mine | scenario L rewritten; the passes, the automation plan, the gates for `tested` and the evidence rules added | a scenario or a pass changes |
 | `Mod/About/About.xml` | `ed32e2b` | mine | the description ends with the GitHub link; `incompatibleWith` lists the original | a description change |
 | `docs/runs/` | this session | mine | one line so far, a static run | after each run |
+
+**Read after the first pass, on 2026-09-28, to write the Pickle suite and the patches:**
+
+| Document | Version read | Useful? | What matters for this mod | Re-read when |
+|---|---|---|---|---|
+| `PickleTools/Authoring/README.md` | `8d3ca6d` 2026-09-26 | **essential** | the layout of a suite, the pass matrix, the waits and their three timeouts, `ctx.Get` throwing, restart rules, "Read evidence before changing STATUS.md" | its hash `e620df7e` moves |
+| `PickleTools/LoadAudit/README.md` | read 2026-09-28 | yes | the two load-audit steps, what they attribute to a mod and what they do not, that a warning about the test companion is blamed on the mod under test | the tool changes |
+| `PickleTools/Headless/README.md` | `ed4e73a` 2026-09-26, read in full this time | yes | `path:` maps, `!` lines, the map that must end with a newline, `-Then`, the exit codes | the launcher changes |
+| Pickle 4.9.1 itself | `RimWorks.Pickle.dll` sha256 `183e0d9e4885…` | **essential** | its 205 step expressions, read from the decompiled assemblies (there is no `Docs/` in the Workshop copy): kept in `Tests/Pickle/pickle-steps.txt` | Pickle changes; the offline check names the hash |
+
+**Two things the documents say and the installed Pickle contradicts:** `an error matching {string} was logged` is named in `AUDIT.md`
+and `Headless/README.md` and does not exist in 4.9.1 (another mod found the same on 2026-09-25); and the pawn and def steps have
+limits that the guides do not state, written in `Tests/Pickle/README.md`.
+
+**A trap of this machine, not of a document:** files written with the editor's write tool have CRLF line endings, and the WSL staging
+reads the pass maps with a bash `read`, which keeps the `` in the Workshop id. The maps and features are converted to LF and
+`.gitattributes` forces LF for them. Checked with `tr -cd '' | wc -c`: `grep -c $''` silently matches every line here.
 
 **Named by the owner and not present in this repository:** `LICENSE`, `PUBLICATION.md`, `BACKLOG.md`,
 `NOTES.md`, `BUGS.md`, `Tests/Pickle/`. Not created to fill a list. `LICENSE` is not expected: the
