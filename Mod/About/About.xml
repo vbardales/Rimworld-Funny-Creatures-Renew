@@ -43,7 +43,9 @@ A Dog Said... Animal Prosthetics 2: both animals get its medieval, simple prosth
 
 [XND] Nocturnal Animals (Continued): the boomsloth is nocturnal, like the megasloth it comes from. The meffalo stays diurnal, like the muffalo.
 
-Better Crossbreeding: the meffalo and the muffalo interbreed, and so do the boomsloth, the megasloth and the boomalope. A megasloth and a boomalope that mate produce a boomsloth, which is how the boomsloth is described.
+Better Crossbreeding: the meffalo and the muffalo interbreed, and so do the boomsloth, the megasloth and the boomalope. Pairings between two vanilla animals are left to Animal Naturally.
+
+INCOMPATIBLE: the original mod, and Storytime Rides Again: a New Chapter, which carries its own copy of both animals under the same names.
 
 Content mod: removing it mid-save will lose any meffalo or boomsloth, and any darkfur or meffalo wool already in play.
 
@@ -53,12 +55,13 @@ The original states no licence anywhere - no file, nothing in its About, no repo
 
 If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.
 
-The update work was done with the help of AI assistants (Claude, by Anthropic, and Codex, by OpenAI).
+The update work was done with the help of AI assistants (Claude, by Anthropic, and Codex, by OpenAI). The preview image and the mod icon were generated with DALL-E (OpenAI).
 
 [url=https://github.com/vbardales/Rimworld-Funny-Creatures-Renew]Source code on GitHub[/url]</description>
   <!-- The source mod defines the same defNames as this port; the combination is unsupported. -->
   <incompatibleWith>
     <li>predatorking.funnycreatures</li>
+    <li>TSP.Isengriff.Storytime</li>
   </incompatibleWith>
   <loadAfter>
     <li>Ludeon.RimWorld</li>

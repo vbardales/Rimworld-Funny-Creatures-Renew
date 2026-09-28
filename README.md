@@ -66,9 +66,8 @@ otherwise. Each is guarded, and none makes a hard dependency.
 - **[XND] Nocturnal Animals (Continued)**: the boomsloth is nocturnal, like the megasloth it is made
   from. The meffalo stays diurnal, like the muffalo, which that mod does not list.
 - **Better Crossbreeding**: the meffalo and the muffalo interbreed, and so do the boomsloth, the
-  megasloth and the boomalope. **A megasloth and a boomalope that mate produce a boomsloth**, which is
-  how the boomsloth is described; with that mod loaded the animal no longer only comes from traders
-  and the wild. Every other pairing gives either parent's kind at random.
+  megasloth and the boomalope. Every pairing gives either parent's kind at random. No pairing joins two
+  vanilla animals (a megasloth with a boomalope, say): those are left to Animal Naturally.
 
 These follow how each of those mods actually reads an animal, checked against their files; the
 reasoning is in the header of each file under `Mod/Patches/`.

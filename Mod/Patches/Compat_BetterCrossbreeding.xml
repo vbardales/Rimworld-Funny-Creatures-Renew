@@ -24,12 +24,10 @@
     mixing a boomalope with a megasloth". A boomsloth mates with either, and its calf is either parent's
     kind (Random).
 
-    THE RECIPE, kept in one block at the end of the file. A megasloth and a boomalope mating with each
-    other produce a boomsloth (Other), which is the description's own recipe. It is the one part that
-    changes what a colony can obtain: with this mod present, boomsloths no longer only come from traders
-    and the wild. It is a design choice, listed in STATUS.md for the owner to keep or strike. To drop it,
-    delete the last <li Class="PatchOperationSequence"> (the block marked RECIPE): the pairs above stay,
-    and the megasloth and the boomalope go back to not mating with each other.
+    NO PAIR BETWEEN TWO VANILLA ANIMALS. The description's recipe (megasloth x boomalope gives a
+    boomsloth) is deliberately not patched: the owner's rule of 2026-09-28 is that a pairing where both
+    animals are vanilla belongs to Animal Naturally, not to this mod. Every pair here has one animal of
+    this mod.
 
   A vanilla animal is patched only to add its new partner. Each list is created if the race has none, and
   appended to if another mod already made one: a plain Add on <race> would write a second
@@ -256,44 +254,6 @@
 							<Random />
 						</Boomsloth>
 					</value>
-				</li>
-
-				<!-- ===== RECIPE: a megasloth and a boomalope produce a boomsloth. Delete this whole block to drop it ===== -->
-				<li Class="PatchOperationSequence">
-					<operations>
-						<li Class="PatchOperationAdd">
-							<xpath>Defs/ThingDef[defName="Megasloth"]/race/canCrossBreedWith</xpath>
-							<value>
-								<li>Boomalope</li>
-							</value>
-						</li>
-						<li Class="PatchOperationAdd">
-							<xpath>Defs/ThingDef[defName="Boomalope"]/race/canCrossBreedWith</xpath>
-							<value>
-								<li>Megasloth</li>
-							</value>
-						</li>
-						<li Class="PatchOperationAdd">
-							<xpath>Defs/PawnKindDef[defName="Megasloth"]/modExtensions/li[@Class="DZY.CrossBreeding.Extension"]/outcomes</xpath>
-							<value>
-								<Boomalope>
-									<Other>
-										<Boomsloth />
-									</Other>
-								</Boomalope>
-							</value>
-						</li>
-						<li Class="PatchOperationAdd">
-							<xpath>Defs/PawnKindDef[defName="Boomalope"]/modExtensions/li[@Class="DZY.CrossBreeding.Extension"]/outcomes</xpath>
-							<value>
-								<Megasloth>
-									<Other>
-										<Boomsloth />
-									</Other>
-								</Megasloth>
-							</value>
-						</li>
-					</operations>
 				</li>
 
 			</operations>

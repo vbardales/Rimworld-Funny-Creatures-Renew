@@ -146,7 +146,7 @@ Thanks for Better Crossbreeding, DizzyEevee. I wanted my meffalo and boomsloth t
 | A Dog Said... Animal Prosthetics 2 | Optional, `loadBefore` | It copies its category lists once, at its own last patch, so this mod has to load first |
 | Nocturnal Animals (Continued), Better Crossbreeding | Optional, no order | They read what is loaded at run time |
 | The original Funny Creatures | `incompatibleWith` | Both define `Meffalo`, `Boomsloth`, `WoolMeffalo` and `Leather_Darkfur`. Pass 4 looks at whether that is still true |
-| Storytime Rides Again (`TSP.Isengriff.Storytime`) | **Undecided** | Same defNames. Recommended: declare it incompatible |
+| Storytime Rides Again (`TSP.Isengriff.Storytime`) | **Declared incompatible** (owner, 2026-09-28) | Same defNames |
 
 ## Content questions
 
@@ -167,10 +167,8 @@ explosion in the game's own cartoon style, with no gore. It stands on the images
 
 ## Open, and the owner's
 
-1. **The tool that generated the Preview and the icon** is not recorded anywhere in this repository, and the description must name
-   the real tool rather than "an AI tool" (`PUBLISHING.md`).
-2. **The three decisions in `STATUS.md`** that change the description if they go the other way: the Better Crossbreeding recipe, the
-   patch touching vanilla animals, and declaring the Storytime pack incompatible.
+1. **Decided by the owner, 2026-09-28**: the tool is DALL-E (named in the description); the icon stays at 32 px; the Storytime
+   pack is declared incompatible; no pairing joins two vanilla animals (the recipe is dropped); the vanilla side is Animal Naturally's.
 3. **The rollback target**, chosen before publishing and not after a red: the last commit whose runs are all green.
 4. **The gallery**, and with it the answer to the content questions.
 5. **The prepublication `0.1.0`**, an act of the owner's: the in-game upload button on the folder `Mod/`.

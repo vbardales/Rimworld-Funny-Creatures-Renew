@@ -349,8 +349,8 @@ Added 2026-09-28. Needs pass 3. `Patches/Compat_BetterCrossbreeding.xml`.
 - A birth is not asked of a run: a gestation is days of game time, and which kind is drawn is the other
   mod's own code. The pairs and outcomes being present and loaded is what this mod answers for.
 - **Without** the mod (pass 1): the five animals keep their vanilla lists, and nothing is logged.
-- **The recipe is a design choice awaiting the owner** (`STATUS.md`): dropping its block changes the
-  expected lists of the megasloth and the boomalope back to the boomsloth alone.
+- **Owner rule of 2026-09-28**: a pairing where both animals are vanilla is not patched (Animal Naturally's
+  job), so the megasloth x boomalope recipe is gone. Scenario 08 asserts the two stay apart.
 
 ## Automated checks (outside the game)
 

@@ -219,15 +219,6 @@ namespace FunnyCreaturesRenew.PickleSteps
             OutcomeOf(ctx, motherKind, fatherKind, behavior, out _);
         }
 
-        [Then("Funny Creatures Renew: a {string} mother answers a {string} father with {word} giving {string}")]
-        public void MotherAnswersGiving(PickleContext ctx, string motherKind, string fatherKind, string behavior, string child)
-        {
-            List<string> children;
-            OutcomeOf(ctx, motherKind, fatherKind, behavior, out children);
-            ctx.Assert(children.Contains(child),
-                $"a {motherKind} mother with a {fatherKind} father answers {behavior} giving [{string.Join(", ", children)}], not {child}");
-        }
-
         [Then("Funny Creatures Renew: the kind {string} has no crossbreeding outcome")]
         public void KindHasNoOutcome(PickleContext ctx, string kindDefName)
         {

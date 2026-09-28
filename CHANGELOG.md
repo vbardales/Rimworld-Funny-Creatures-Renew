@@ -50,7 +50,7 @@ First release of the 1.6 update of **Funny Creatures**, by PredatorKing.
     now declares `loadBefore` for it, since it copies its lists once at its own last patch.
   - *[XND] Nocturnal Animals (Continued)*: the boomsloth is nocturnal, as the megasloth is in that mod.
   - *Better Crossbreeding*: the meffalo and muffalo interbreed, the boomsloth, megasloth and boomalope
-    interbreed, and a megasloth with a boomalope produces a boomsloth. Its class is spelled
+    interbreed; no pair joins two vanilla animals. Its class is spelled
     `DZY.CrossBreeding.Extension`, as compiled; the mod's own example spells it differently.
 
 ### Notes

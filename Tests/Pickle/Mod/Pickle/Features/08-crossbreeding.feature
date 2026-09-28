@@ -1,6 +1,6 @@
 # Better Crossbreeding (DizzyEevee.BetterCrossbreeding, Workshop 3520675842).
 # Patches/Compat_BetterCrossbreeding.xml pairs the meffalo with the muffalo, and the boomsloth with the
-# megasloth and the boomalope; a megasloth with a boomalope produce a boomsloth.
+# megasloth and the boomalope. No pair joins two vanilla animals.
 #
 # HOW A CROSSBREED IS DECIDED, in two halves that must both exist (the header of the patch has the sources):
 #   - who MATES: vanilla decides it from the MALE's race, <canCrossBreedWith>, read by JobGiver_Mate;
@@ -17,8 +17,8 @@
 # A BIRTH IS NOT ASKED OF A RUN. A gestation is days of game time, and which kind is drawn belongs to that mod's
 # own code. That the pairs and outcomes are present and were loaded is what this mod answers for.
 #
-# The megasloth x boomalope recipe is a design choice awaiting the owner (STATUS.md). If its block is removed
-# from the patch, the two "recipe" scenarios below are the ones to delete with it.
+# The megasloth x boomalope recipe is NOT patched (owner rule of 2026-09-28: a pairing between two vanilla
+# animals belongs to Animal Naturally); the scenario below asserts they stay apart.
 #
 # No save is loaded: everything below reads definitions.
 @requires:DizzyEevee.BetterCrossbreeding
@@ -40,11 +40,9 @@ Feature: Better Crossbreeding sees the pairs of this mod
     And Funny Creatures Renew: a "Megasloth" mother answers a "Boomsloth" father with Random
     And Funny Creatures Renew: a "Boomalope" mother answers a "Boomsloth" father with Random
 
-  Scenario: recipe, a megasloth and a boomalope produce a boomsloth, whichever is the mother
-    Then Funny Creatures Renew: the race "Megasloth" lists "Boomalope" as a crossbreeding partner
-    And Funny Creatures Renew: the race "Boomalope" lists "Megasloth" as a crossbreeding partner
-    And Funny Creatures Renew: a "Megasloth" mother answers a "Boomalope" father with Other giving "Boomsloth"
-    And Funny Creatures Renew: a "Boomalope" mother answers a "Megasloth" father with Other giving "Boomsloth"
+  Scenario: two vanilla animals are not paired by this mod, the megasloth and the boomalope stay apart
+    Then Funny Creatures Renew: the race "Megasloth" does not list "Boomalope" as a crossbreeding partner
+    And Funny Creatures Renew: the race "Boomalope" does not list "Megasloth" as a crossbreeding partner
 
   Scenario: the meffalo does not become a partner of anything beyond the muffalo
     Then Funny Creatures Renew: the race "Meffalo" does not list "Megasloth" as a crossbreeding partner

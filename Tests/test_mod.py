@@ -104,6 +104,7 @@ class DistributionTests(unittest.TestCase):
         self.assertTrue(about.findtext('description').strip().endswith(f'[url={url}]Source code on GitHub[/url]'))
         self.assertTrue(about.findtext('description').startswith('UNOFFICIAL.'))
         self.assertIn('predatorking.funnycreatures', [e.text for e in about.findall('incompatibleWith/li')])
+        self.assertIn('TSP.Isengriff.Storytime', [e.text for e in about.findall('incompatibleWith/li')])
         self.assertFalse(about.findall('modDependencies/li'))
         self.assertEqual((ROOT / 'ATTRIBUTION.md').read_bytes(), (MOD / 'ATTRIBUTION.md').read_bytes())
         self.assertFalse(list(MOD.rglob('*.cs')) + list(MOD.rglob('*.csproj')))
@@ -345,34 +346,23 @@ class CompatibilityPatchTests(unittest.TestCase):
         self.assertEqual(self.races(doc, 'Meffalo'), ['Muffalo'])
         self.assertEqual(self.races(doc, 'Muffalo'), ['Meffalo'])
         self.assertEqual(self.races(doc, 'Boomsloth'), ['Megasloth', 'Boomalope'])
-        self.assertEqual(self.races(doc, 'Megasloth'), ['Boomsloth', 'Boomalope'])
-        self.assertEqual(self.races(doc, 'Boomalope'), ['Boomsloth', 'Megasloth'])
+        self.assertEqual(self.races(doc, 'Megasloth'), ['Boomsloth'])
+        self.assertEqual(self.races(doc, 'Boomalope'), ['Boomsloth'])
         self.assertEqual(self.outcomes(doc, 'Meffalo'), {'Muffalo': ('Random', [])})
         self.assertEqual(self.outcomes(doc, 'Muffalo'), {'Meffalo': ('Random', [])})
         self.assertEqual(self.outcomes(doc, 'Boomsloth'),
                          {'Megasloth': ('Random', []), 'Boomalope': ('Random', [])})
-        self.assertEqual(self.outcomes(doc, 'Megasloth'),
-                         {'Boomsloth': ('Random', []), 'Boomalope': ('Other', ['Boomsloth'])})
-        self.assertEqual(self.outcomes(doc, 'Boomalope'),
-                         {'Boomsloth': ('Random', []), 'Megasloth': ('Other', ['Boomsloth'])})
-
-    def test_crossbreeding_recipe_can_be_dropped_on_its_own(self):
-        # The header promises that deleting the last block removes the megasloth x boomalope recipe and
-        # nothing else. Prove it by deleting that block and applying what is left.
-        root = LX.parse(str(MOD / 'Patches/Compat_BetterCrossbreeding.xml')).getroot()
-        operations = root.find('Operation/match/operations')
-        recipe = [op for op in operations if isinstance(op.tag, str)][-1]
-        self.assertEqual(recipe.get('Class'), 'PatchOperationSequence')
-        operations.remove(recipe)
-        doc = self.fresh_doc()
-        for op in root.findall('Operation'):
-            apply_operation(op, doc, {BC_NAME})
-        self.assertEqual(self.races(doc, 'Megasloth'), ['Boomsloth'])
-        self.assertEqual(self.races(doc, 'Boomalope'), ['Boomsloth'])
         self.assertEqual(self.outcomes(doc, 'Megasloth'), {'Boomsloth': ('Random', [])})
         self.assertEqual(self.outcomes(doc, 'Boomalope'), {'Boomsloth': ('Random', [])})
-        self.assertEqual(self.races(doc, 'Boomsloth'), ['Megasloth', 'Boomalope'], 'the pairs stay')
-        self.assertEqual(self.races(doc, 'Meffalo'), ['Muffalo'])
+
+    def test_crossbreeding_never_pairs_two_vanilla_animals(self):
+        # Owner rule of 2026-09-28: a pairing where both animals are vanilla belongs to Animal Naturally.
+        doc = self.fresh_doc()
+        apply_patch_file('Compat_BetterCrossbreeding.xml', doc, {BC_NAME})
+        vanilla = {'Muffalo', 'Megasloth', 'Boomalope'}
+        for male in vanilla:
+            self.assertFalse(vanilla & set(self.races(doc, male)), f'{male} was paired with a vanilla animal')
+            self.assertFalse(vanilla & set(self.outcomes(doc, male)), f'{male} mother got a vanilla father')
 
     def test_crossbreeding_pairs_are_usable_in_both_directions(self):
         # The male's race decides who mates; the mother's kind decides what is born. A pair that has one
