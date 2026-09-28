@@ -193,6 +193,14 @@ namespace FunnyCreaturesRenew.PickleSteps
                 $"{raceDefName} lists [{string.Join(", ", partners)}] as crossbreeding partners, including {partnerDefName}");
         }
 
+        [Then("Funny Creatures Renew: the race {string} has wildness {float}")]
+        public void RaceHasWildness(PickleContext ctx, string raceDefName, float expected)
+        {
+            ThingDef race = RequireRace(ctx, raceDefName);
+            float actual = race.GetStatValueAbstract(StatDefOf.Wildness);
+            ctx.Assert(Math.Abs(actual - expected) < 0.001f, $"{raceDefName} wildness is {actual}, expected {expected}");
+        }
+
         [Then("Funny Creatures Renew: the race {string} lists no crossbreeding partner")]
         public void RaceListsNoPartner(PickleContext ctx, string raceDefName)
         {

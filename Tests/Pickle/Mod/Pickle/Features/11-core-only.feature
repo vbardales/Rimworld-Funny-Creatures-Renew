@@ -26,5 +26,5 @@ Feature: with no expansion active, both animals load and are read the same
     And def "Boomsloth" of type "PawnKindDef" exists
     And def "WoolMeffalo" of type "ThingDef" exists
     And def "Leather_Darkfur" of type "ThingDef" exists
-    And def "Meffalo" stat "Wildness" is 0.6
-    And def "Boomsloth" stat "Wildness" is 0.97
+    And Funny Creatures Renew: the race "Meffalo" has wildness 0.6
+    And Funny Creatures Renew: the race "Boomsloth" has wildness 0.97

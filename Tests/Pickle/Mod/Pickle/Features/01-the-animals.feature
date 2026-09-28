@@ -32,8 +32,8 @@ Feature: both animals exist, are read correctly, and are drawn
   Scenario: the engine reads the wildness stat, and does not fall back to its default
     # 0.6 and 0.97, from <statBases>. The stat's own default is -1, clamped to 0 by its minimum: an
     # animal whose wildness was never read would answer 0 here, and taming would cost almost nothing.
-    Then def "Meffalo" stat "Wildness" is 0.6
-    And def "Boomsloth" stat "Wildness" is 0.97
+    Then Funny Creatures Renew: the race "Meffalo" has wildness 0.6
+    And Funny Creatures Renew: the race "Boomsloth" has wildness 0.97
 
   @review
   Scenario: an adult meffalo and an adult boomsloth stand side by side and are drawn

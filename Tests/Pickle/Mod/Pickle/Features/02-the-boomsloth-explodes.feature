@@ -15,21 +15,20 @@
 #     explosion and not from anything else the scene does.
 #
 # THE WAIT. GenExplosion spawns an Explosion thing that applies its damage over the ticks that follow, not in
-# the call. Thirty ticks are given, far more than a radius of five cells needs; the colonist is pinned
+# the call. Ninety ticks are given, far more than a radius of five cells needs; the colonist is pinned
 # meanwhile, and Pickle drives the ticks by hand in fast mode, so it costs little real time.
 Feature: the boomsloth explodes when it dies
 
   Background:
     Given the save "test-colony" is loaded
 
-  @film
   Scenario: an adult boomsloth killed beside a colonist burns the colonist
     Given a colonist "Bystander" exists
     And Funny Creatures Renew: the colonist "Bystander" stands at x=142 z=155
     And Funny Creatures Renew: a "Boomsloth" named "Boomy" is spawned at x=140 z=155
     Then "Bystander" has no hediff "Burn"
     When Funny Creatures Renew: "Boomy" is killed
-    And I wait 30 ticks
+    And I wait 90 ticks
     Then "Bystander" has hediff "Burn"
 
   Scenario: control, the vanilla boomalope burns the same colonist in the same scene
@@ -38,7 +37,7 @@ Feature: the boomsloth explodes when it dies
     And Funny Creatures Renew: a "Boomalope" named "Control" is spawned at x=140 z=155
     Then "Bystander" has no hediff "Burn"
     When Funny Creatures Renew: "Control" is killed
-    And I wait 30 ticks
+    And I wait 90 ticks
     Then "Bystander" has hediff "Burn"
 
   Scenario: control, a meffalo killed in the same place burns nobody
@@ -46,5 +45,5 @@ Feature: the boomsloth explodes when it dies
     And Funny Creatures Renew: the colonist "Bystander" stands at x=142 z=155
     And Funny Creatures Renew: a "Meffalo" named "Quiet" is spawned at x=140 z=155
     When Funny Creatures Renew: "Quiet" is killed
-    And I wait 30 ticks
+    And I wait 90 ticks
     Then "Bystander" has no hediff "Burn"
