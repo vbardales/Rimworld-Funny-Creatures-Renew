@@ -1,0 +1,9 @@
+# Pass 4: the original mod mounted next to this one, to look at whether the declared incompatibility is still true.
+# Select it with `-DepMap wsl-deps.incompat-original.map`; the report carries the pass name `incompat-original`.
+#
+# The original (predatorking.funnycreatures, Workshop 2640466629, 1.3 only) is not in the Windows Workshop folder or
+# in the WSL cache on this machine, and the staging would stop with "is in none of" for its Workshop id. Its own files
+# are archived in the collection, and `path:` stages a folder that holds About/About.xml, so that archive is used.
+# The folder's About.xml declares the id written below, which is what the staging checks.
+nelim.pickletools.loadaudit        path:PickleTools/LoadAudit/Mod
+predatorking.funnycreatures        path:_mods-sources/FunnyCreatures

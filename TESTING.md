@@ -1,6 +1,6 @@
 # Test scenarios
 
-Four Def files, two French translation files, seven animal textures, no assembly, no patch operation. There is very little here to
+Four Def files, two French translation files, seven animal textures, three optional patch files, no assembly. There is very little here to
 break, and both things that *were* broken broke **silently**. That is the whole reason this mod
 needs the game rather than a file checker.
 
@@ -18,12 +18,14 @@ which tests the single change this port makes on purpose rather than to restore 
 ## Load order
 
 ```
-nelim.funnycreaturesrenew    this mod    after Core and all official expansions
+nelim.funnycreatures    this mod    after Core and all official expansions
 ```
 
 `<loadAfter>` names Core and the five expansions, which is all this mod needs: both animals inherit
 `AnimalThingBase` and `AnimalKindBase` from Core, the wools inherit `WoolBase` and the leather
 `LeatherBase`. The definitions and their French translations need Core only: no Harmony, framework or DLC.
+The three files under `Patches/` name other mods and apply only when they are loaded. About.xml also declares
+`<loadBefore>SamBucher.ADogSaidAnimalProsthetics2</loadBefore>`: ADS 2 copies its lists once, so this mod loads first.
 
 **The original must stay off.** `predatorking.funnycreatures`
 ([2640466629](https://steamcommunity.com/sharedfiles/filedetails/?id=2640466629)) defines the same
@@ -313,6 +315,43 @@ animals/resources if available. Use copies only. Record the exact mod list and g
   migration pass from a new-game pass. Removing this content mod mid-save is unsupported and
   loses its entities; that documented limitation is not a promised migration feature.
 
+## R — A Dog Said... Animal Prosthetics 2
+
+Added 2026-09-28. Needs pass 3 (the optional mods). `Patches/Compat_ADogSaidAnimalProsthetics2.xml`.
+
+- With ADS 2 loaded, the **real** surgery recipes it builds list both animals among their users. This
+  is the check that only a running game gives: ADS 2 copies its category lists onto the recipes once,
+  at its own last patch, so the result depends on this mod loading before it (`loadBefore` in
+  `About.xml`). A patch that works on paper and loads in the wrong order leaves the recipes without them.
+- A meffalo and a boomsloth offer the medieval, simple prosthetic and bionic surgeries on the health tab
+  (all three categories, as their counterparts the muffalo and the megasloth do).
+- **Without** ADS 2 (pass 1): no error and no warning from the patch, and nothing changed.
+
+## S — Nocturnal Animals (Continued)
+
+Added 2026-09-28. Needs pass 3. `Patches/Compat_NocturnalAnimals.xml`.
+
+- With that mod loaded, the boomsloth carries its body-clock extension set to nocturnal, and the game
+  accepted the class: no "could not find type" line naming `NocturnalAnimals.ExtendedRaceProperties`.
+- The meffalo carries none: the mod does not list the muffalo, so a meffalo stays diurnal.
+- **Without** the mod (pass 1): no error, nothing added.
+
+## T — Better Crossbreeding
+
+Added 2026-09-28. Needs pass 3. `Patches/Compat_BetterCrossbreeding.xml`.
+
+- With that mod loaded, the races and kinds carry the designed pairs: meffalo and muffalo; boomsloth with
+  megasloth and with boomalope; and a megasloth with a boomalope giving a boomsloth. The game accepted
+  `DZY.CrossBreeding.Extension` and the `outcomes` on each mother's kind (no unresolved cross-reference,
+  no "could not find type").
+- Both halves exist for every pair: the male's race lists the female, the mother's kind has an outcome
+  for that father. The XML tests prove it on paper; the run shows the game loaded it.
+- A birth is not asked of a run: a gestation is days of game time, and which kind is drawn is the other
+  mod's own code. The pairs and outcomes being present and loaded is what this mod answers for.
+- **Without** the mod (pass 1): the five animals keep their vanilla lists, and nothing is logged.
+- **The recipe is a design choice awaiting the owner** (`STATUS.md`): dropping its block changes the
+  expected lists of the megasloth and the boomalope back to the boomsloth alone.
+
 ## Automated checks (outside the game)
 
 Run from the repository root with Python 3 and PowerShell 7. Core-reference checks require a
@@ -348,27 +387,31 @@ in `evidence/static/<date>-<short sha>/` (git-ignored); see "Evidence to keep" b
 
 # Plan: passes, automation and gates
 
-Written 2026-09-28 after re-reading `AUDIT.md`. **Nothing below has been run in a game.** It says what
-the Pickle suite (not yet written) must cover, what stays out of it and why, and what `tested` needs.
-The owner's decision is needed on the lines marked *proposed*.
+Written 2026-09-28 after re-reading `AUDIT.md`. **The Pickle suite is written** (`Tests/Pickle/`, twelve features, a step
+assembly, four pass maps) and checked offline by `Tests/test_pickle_suite.py`, which shows that every feature line matches
+exactly one known step. **Nothing has been played in a game.** `Tests/Pickle/README.md` has the layout, the request that plays each
+pass and what the two limits of Pickle's built-in steps forced. The lines marked *proposed* still await the owner's word.
 
 ## The passes
 
 A mod is validated by named passes, and a mod whose `TESTING.md` does not say how many is tried, not
-tested. This mod needs four requests, none with `-IncludeWip`:
+tested. This mod needs five requests, none with `-IncludeWip`:
 
 | # | Pass | Language | Game set | What it covers |
 |---|---|---|---|---|
-| 1 | `sans-facultatifs` | English | Core, the five DLC, Harmony, RimLogging, Pickle, this mod | The whole suite: the animals and their defs, the two repairs, the predator protection, persistence. The only pass where a capture is clean |
-| 2 | `sans-facultatifs` | French | the same | The same suite in French: labels, descriptions, plurals, attack labels, no accented fallback (dev mode shows a missing key as accented text) |
-| 3 | `incompat-original` | English | pass 1 plus `predatorking.funnycreatures` (2640466629) via `wsl-deps.incompat-original.map` | Scenario L only: the documented symptom of the incompatibility is asserted, so green means it still behaves as declared |
-| 4 | `core-only`, *proposed* | English | pass 1 with the five DLC left out (`!` lines in `wsl-deps.core-only.map`) | The claim in "Load order" that the definitions need Core only, shown at run time and not only by the reference check |
+| 1 | `tools`, the bare set | English | Core, the five DLC, Harmony, RimLogging, Pickle, this mod, plus PickleTools' load audit (a step package, not an optional mod; `wsl-deps.tools.map`) | The whole suite: the animals and their defs, the two repairs, the predator protection, persistence. The only pass where a capture is clean |
+| 2 | `tools` | French | the same | The same suite in French: labels, descriptions, plurals, attack labels, no accented fallback (dev mode shows a missing key as accented text) |
+| 3 | `avec-facultatifs` | English | pass 1 plus ADS 2 (`SamBucher.ADogSaidAnimalProsthetics2`, 3238353862), Nocturnal Animals (Continued) (`Mlie.XNDNocturnalAnimals`, 2269731409) and Better Crossbreeding (`DizzyEevee.BetterCrossbreeding`, 3520675842), via `wsl-deps.avec-facultatifs.map`. The map names **this mod first**, then ADS 2: ADS 2 has to load after it | Scenarios R, S and T. The three optional mods are compatible with each other, so one pass covers them all |
+| 4 | `incompat-original` | English | pass 1 plus `predatorking.funnycreatures` (2640466629) via `wsl-deps.incompat-original.map` | Scenario L only: the documented symptom of the incompatibility is asserted, so green means it still behaves as declared |
+| 5 | `core-only`, *proposed* | English | pass 1 with the five DLC left out (`!` lines in `wsl-deps.core-only.map`) | The claim in "Load order" that the definitions need Core only, shown at run time and not only by the reference check |
 
-**Why there is no "with optional mods" pass.** `loadAfter` names only Ludeon's own packages, which every
-pass already carries, and nothing else is optional: no mod, no integration, no companion tool. A second
-pass over the same game set would prove nothing new. If a mod is ever declared optional, or the
-`TSP.Isengriff.Storytime` pack is declared incompatible (open decision in `STATUS.md`), the pass for it
-is added here first.
+**Why one "with optional mods" pass and not several.** `loadAfter` names Ludeon's packages only, but the
+three patches of 2026-09-28 name three optional mods, so a pass that mounts them is needed. They do not
+exclude each other (each touches different fields: recipe lists, a body clock, crossbreeding), so one pass
+covers all three; a combination that could not coexist would need one pass each. If the
+`TSP.Isengriff.Storytime` pack is declared incompatible (open decision in `STATUS.md`), a pass for it is
+added here first. Pass 1, which mounts none of them, is also the proof that the patches are silent
+without their mod.
 
 ## What stays out of the game suite, and what goes in
 
@@ -379,21 +422,24 @@ trade tags, biomes, references to Core). What is left for the game is what those
 
 | Scenario | Disposition | Reason |
 |---|---|---|
-| A both animals exist and draw | **Pickle** | Spawn each, see it drawn: a `@review` capture, opened |
-| B wildness on the information card | **Pickle**, *proposed* | The stat is proven by XML; that the game reads it (a listed row, not a missing one) is the repair, and only the game shows it |
-| C the boomsloth explodes when it dies | **Pickle** | The whole point of the port, and a fault that logs nothing. Needs a way to kill a spawned animal and to see the blast; a small companion step is probably required |
+| A both animals exist and draw | **Pickle**, `01` | Spawn each, see it drawn: a `@review` capture, opened |
+| B wildness on the information card | **Pickle**, `01` | The stat is proven by XML; that the game reads it (a listed row, not a missing one) is the repair, and only the game shows it |
+| C the boomsloth explodes when it dies | **Pickle**, `02` | The whole point of the port, and a fault that logs nothing. A colonist two cells from the animal is the sensor: a Flame explosion leaves a Burn on it. The boomalope is a positive control, a meffalo a negative one |
 | D taming is hard again | **Not applicable**, *proposed* | The taming chance is the engine's formula over the `Wildness` stat, which B covers. The mod supplies a number, not a mechanic |
-| E, F milking; G shearing | **Pickle**, *proposed* | That the comps exist and yield the declared defs on a spawned tame animal. Waiting out 6 or 15 game days is not asked of a run |
+| E, F milking; G shearing | **Not applicable**, *proposed* | The comps and the products are proved by XML, and an unresolved field would be logged at load and caught by the load audit (`12`). A milking is days of game time, and what the engine does with a comp is its own |
 | H butchering | **Not applicable**, *proposed* | `leatherDef` and `meatLabel` are proven by XML; the butchering is the engine's |
 | I training, pack, herd | **Not applicable**, *proposed* | Flags proven by XML; the behaviours are the engine's |
 | J wild spawning | **Not applicable**, *proposed* | Biome commonalities are proven by XML; the draw is random and the engine's |
 | K traders | **Not applicable** | Trade tags proven by XML and against Core's trader defs; buying is the engine's |
-| L incompatibility | **Pickle**, pass 3 | Rewritten above |
-| M dessicated corpse | **Pickle capture**, *proposed*, or not applicable | A known upstream cosmetic defect; a capture would only record it |
-| N predator protection, calves included | **Pickle** | Deterministic if the step asks the game's own `IsAcceptablePreyFor` about a calf and a bear, with the flag as the control; waiting for a real hunt would be probabilistic |
+| L incompatibility | **Pickle**, pass 4, `10` | Rewritten above |
+| M dessicated corpse | **Not applicable**, *proposed* | A known upstream cosmetic defect, an absent texture the engine covers by rotating another; a capture would only record it |
+| N predator protection, calves included | **Pickle**, `03` | Deterministic if the step asks the game's own `IsAcceptablePreyFor` about a calf and a bear, with the flag as the control; waiting for a real hunt would be probabilistic |
 | O sounds | **Not applicable**, *proposed* | Four defs pointing at vanilla clip folders, checked by XML; the mod ships no audio. A clean load is covered by the load audit of P |
-| P English and French UI | **Pickle**, passes 1 and 2 | Labels and descriptions rendered in each language, captures opened, log clean |
-| Q new game and existing saves | **Pickle** for save and reload; the migration case *unverified* | A save, restart and reload chain can be automated. Loading a save made with the original mod needs one that does not exist yet: it stays listed as unverified and is not a gate (the owner's rule for such cases, 2026-09-24) |
+| P English and French UI | **Pickle**, passes 1 and 2, `05` | Labels and descriptions rendered in each language, captures opened, log clean |
+| Q new game and existing saves | **Pickle**, `04`, for save and reload; the migration case *unverified* | A save, restart and reload chain can be automated. Loading a save made with the original mod needs one that does not exist yet: it stays listed as unverified and is not a gate (the owner's rule for such cases, 2026-09-24) |
+| R ADS 2 | **Pickle**, pass 3, `06` | The real recipes listing both animals is the load-order result, and only a run shows it |
+| S Nocturnal Animals | **Pickle**, pass 3, `07` | That the game accepted the extension class and that the meffalo carries none; what the mod does with a body clock is its own |
+| T Better Crossbreeding | **Pickle**, pass 3, `08`, def level | The pairs and outcomes are loaded and complete in both directions. A birth is not asked of a run, see scenario T |
 
 ## Gates for `done -> tested`
 

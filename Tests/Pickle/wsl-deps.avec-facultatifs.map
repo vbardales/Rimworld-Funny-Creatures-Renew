@@ -1,0 +1,16 @@
+# Pass 3: the mod set that mounts the three optional mods the compatibility patches name. Select it with
+# `-DepMap wsl-deps.avec-facultatifs.map`; the report carries the pass name `avec-facultatifs`.
+#
+# The three mods do not exclude each other: they touch different fields (recipe lists, a body clock, crossbreeding),
+# so one pass covers all three. Each needs only Harmony as a hard dependency, which every pass already stages.
+#
+# THE ORDER IS NOT A DETAIL. The staging loads the mods of a map BEFORE the mod under test, and A Dog Said... Animal
+# Prosthetics 2 has to load AFTER it: this mod declares <loadBefore> for it, because ADS 2 copies its category lists
+# once, at its own last patch. A mod of the map that must load after the mod under test obliges the map to NAME the
+# mod under test, before it (the staging does not add it twice). So this mod comes first, then ADS 2. The other two
+# read what is loaded at run time and need no order.
+nelim.pickletools.loadaudit             path:PickleTools/LoadAudit/Mod
+nelim.funnycreatures                    path:FunnyCreaturesRenew/Mod
+SamBucher.ADogSaidAnimalProsthetics2    3238353862
+Mlie.XNDNocturnalAnimals                2269731409
+DizzyEevee.BetterCrossbreeding          3520675842

@@ -11,3 +11,8 @@
 *.png binary
 *.jpg binary
 *.dll binary
+
+# The pass maps are read by a bash `read` in the WSL staging: a carriage return at the end of a line becomes part of the
+# Workshop id and the mod is not found. Keep them, and the features, LF in every checkout.
+*.map      text eol=lf
+*.feature  text eol=lf

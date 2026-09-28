@@ -1,0 +1,9 @@
+# The bare pass plus one test tool. Select it with `-DepMap wsl-deps.tools.map`; its report carries the pass name
+# `tools`, this file's name without `wsl-deps.` and `.map`. A run that names no map reads none at all: the runner
+# sets PICKLE_DEPMAP=none, so this file is not read by itself.
+#
+# Passes 1 and 2 of the matrix (English and French) use it. The line below is not an optional mod: it is a step package,
+# PickleTools' load audit, which feature 12 uses to read the game's log from the start and attribute each message
+# to a mod. This mod declares nothing optional in loadAfter beyond Ludeon's own packages, and the mod under test is
+# still loaded exactly as it is with nothing else.
+nelim.pickletools.loadaudit   path:PickleTools/LoadAudit/Mod

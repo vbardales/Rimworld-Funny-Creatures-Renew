@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  [XND] Nocturnal Animals (Continued) (Mlie.XNDNocturnalAnimals, Workshop 2269731409, itself a continuation of
+  XeoNovaDan.NocturnalAnimals).
+
+  That mod gives an animal a body clock through a mod extension on its race's ThingDef: bodyClock is Diurnal
+  (the vanilla behaviour, and what an animal without the extension gets), Nocturnal, Crepuscular or
+  Cathemeral. It does not infer anything from a vanilla field: it hand-lists defNames in its own
+  1.6/Patches/Core/*.xml, so an animal it does not name is silently unaffected.
+
+  The boomsloth is Nocturnal. The mod lists Megasloth as Nocturnal (1.6/Patches/Core/Races_Animal_Giant.xml,
+  read 2026-09-28) and the boomsloth is a megasloth crossed with a boomalope, with a megasloth's body,
+  size and food; the boomalope is not listed, so the sloth side decides.
+
+  The meffalo gets nothing. The mod does not list Muffalo anywhere, so a muffalo is diurnal, and a meffalo
+  that is "a muffalo in everything but its udder" follows it. No balance value changes: this only lets the
+  boomsloth keep its megasloth's daily cycle when this specific mod is present.
+
+  Only applied when that mod is active; without it this file changes nothing and logs nothing.
+  PatchOperationFindMod matches the mod's display name. No load order is asked: the extension is an XML
+  node that the game parses after every assembly is loaded, so this mod may load before or after it.
+-->
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>[XND] Nocturnal Animals (Continued)</li>
+		</mods>
+		<match Class="PatchOperationAddModExtension">
+			<xpath>/Defs/ThingDef[defName="Boomsloth"]</xpath>
+			<value>
+				<li Class="NocturnalAnimals.ExtendedRaceProperties">
+					<bodyClock>Nocturnal</bodyClock>
+				</li>
+			</value>
+		</match>
+	</Operation>
+
+</Patch>

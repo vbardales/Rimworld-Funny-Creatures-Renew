@@ -2,7 +2,7 @@
 <ModMetaData>
   <name>Funny Creatures Renew (unofficial)</name>
   <author>PredatorKing - 1.6 adapted by Nelim</author>
-  <packageId>nelim.funnycreaturesrenew</packageId>
+  <packageId>nelim.funnycreatures</packageId>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
@@ -35,6 +35,16 @@ And the boomsloth's death action moved. A flat deathActionWorkerClass inside rac
 
 Production quantities and other numeric balance values are unchanged. A separate behavior change prevents wild predators from hunting boomsloths, including calves and starving-predator cases. Colonists can still hunt them.
 
+COMPATIBILITY
+
+Nothing is required. Three patches apply only when the other mod is loaded, and change nothing otherwise.
+
+A Dog Said... Animal Prosthetics 2: both animals get its medieval, simple prosthetic and bionic surgeries.
+
+[XND] Nocturnal Animals (Continued): the boomsloth is nocturnal, like the megasloth it comes from. The meffalo stays diurnal, like the muffalo.
+
+Better Crossbreeding: the meffalo and the muffalo interbreed, and so do the boomsloth, the megasloth and the boomalope. A megasloth and a boomalope that mate produce a boomsloth, which is how the boomsloth is described.
+
 Content mod: removing it mid-save will lose any meffalo or boomsloth, and any darkfur or meffalo wool already in play.
 
 Source, changelog and the full account of the port: https://github.com/vbardales/Rimworld-Funny-Creatures-Renew
@@ -58,4 +68,9 @@ The update work was done with the help of AI assistants (Claude, by Anthropic, a
     <li>Ludeon.RimWorld.Anomaly</li>
     <li>Ludeon.RimWorld.Odyssey</li>
   </loadAfter>
+  <!-- Optional: A Dog Said... Animal Prosthetics 2 copies its category lists once, at its own last patch.
+       Patches/Compat_ADogSaidAnimalProsthetics2.xml has to run before it, so this mod loads first. -->
+  <loadBefore>
+    <li>SamBucher.ADogSaidAnimalProsthetics2</li>
+  </loadBefore>
 </ModMetaData>

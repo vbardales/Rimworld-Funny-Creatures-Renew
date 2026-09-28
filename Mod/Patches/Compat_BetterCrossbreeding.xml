@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Better Crossbreeding (DizzyEevee.BetterCrossbreeding, Workshop 3520675842).
+
+  HOW THE TWO HALVES WORK. Which animals may mate is decided by vanilla, and by the MALE only:
+  JobGiver_Mate looks for a fertile female of the male's own def, then of each def in the male's own
+  <race><canCrossBreedWith> (read from the 1.6 assembly, 2026-09-28). What is born is decided by the mod:
+  it reads a DZY.CrossBreeding.Extension on the MOTHER's PawnKindDef, whose <outcomes> are keyed by the
+  father's kind and say Maternal, Paternal, Random, or Other with weighted children. A mother without the
+  extension keeps the vanilla result, the mother's own kind. So a pair needs the list on the male's race
+  AND the extension on the mother's kind, in both directions, for both parents to be able to sire.
+
+  THE CLASS NAME. The mod's own Example/Patches/Example.xml writes Class="DZY.Crossbreeding.Extension",
+  with a lower-case b. The compiled assembly (1.6/Assemblies/BetterCrossbreeding.dll) declares
+  DZY.CrossBreeding.Extension, capital B, and so does its Source/. This file uses the assembly's spelling;
+  a patch copied from the Example would name a type that does not exist.
+
+  WHAT THIS FILE DECIDES. Two families, from the two animals' own descriptions:
+
+    Meffalo <-> Muffalo. "A larger and smarter subspecies of the Muffalo". The two interbreed, and the
+    calf is either parent's kind on a coin flip (Random).
+
+    Boomsloth <-> Megasloth, Boomsloth <-> Boomalope. "The outcome of a genetical engineering project of
+    mixing a boomalope with a megasloth". A boomsloth mates with either, and its calf is either parent's
+    kind (Random).
+
+    THE RECIPE, kept in one block at the end of the file. A megasloth and a boomalope mating with each
+    other produce a boomsloth (Other), which is the description's own recipe. It is the one part that
+    changes what a colony can obtain: with this mod present, boomsloths no longer only come from traders
+    and the wild. It is a design choice, listed in STATUS.md for the owner to keep or strike. To drop it,
+    delete the last <li Class="PatchOperationSequence"> (the block marked RECIPE): the pairs above stay,
+    and the megasloth and the boomalope go back to not mating with each other.
+
+  A vanilla animal is patched only to add its new partner. Each list is created if the race has none, and
+  appended to if another mod already made one: a plain Add on <race> would write a second
+  <canCrossBreedWith> element and silently replace the first. The extension is created only when the
+  kind does not carry one already, as the mod's Example does, for the same reason.
+
+  Everything is inside one PatchOperationFindMod on the mod's display name, so without Better
+  Crossbreeding this file changes nothing and logs nothing. No load order is asked: the extension is an
+  XML node that the game parses after every assembly is loaded.
+-->
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Better Crossbreeding</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<!-- ===== Who may mate: the male's race lists the females it will seek ===== -->
+
+				<!-- Meffalo: seeks muffalo -->
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="Meffalo"]/race/canCrossBreedWith</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Meffalo"]/race/canCrossBreedWith</xpath>
+						<value>
+							<li>Muffalo</li>
+						</value>
+					</match>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Meffalo"]/race</xpath>
+						<value>
+							<canCrossBreedWith>
+								<li>Muffalo</li>
+							</canCrossBreedWith>
+						</value>
+					</nomatch>
+				</li>
+
+				<!-- Muffalo: seeks meffalo -->
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="Muffalo"]/race/canCrossBreedWith</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Muffalo"]/race/canCrossBreedWith</xpath>
+						<value>
+							<li>Meffalo</li>
+						</value>
+					</match>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Muffalo"]/race</xpath>
+						<value>
+							<canCrossBreedWith>
+								<li>Meffalo</li>
+							</canCrossBreedWith>
+						</value>
+					</nomatch>
+				</li>
+
+				<!-- Boomsloth: seeks megasloth and boomalope -->
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="Boomsloth"]/race/canCrossBreedWith</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Boomsloth"]/race/canCrossBreedWith</xpath>
+						<value>
+							<li>Megasloth</li>
+							<li>Boomalope</li>
+						</value>
+					</match>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Boomsloth"]/race</xpath>
+						<value>
+							<canCrossBreedWith>
+								<li>Megasloth</li>
+								<li>Boomalope</li>
+							</canCrossBreedWith>
+						</value>
+					</nomatch>
+				</li>
+
+				<!-- Megasloth: seeks boomsloth -->
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="Megasloth"]/race/canCrossBreedWith</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Megasloth"]/race/canCrossBreedWith</xpath>
+						<value>
+							<li>Boomsloth</li>
+						</value>
+					</match>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Megasloth"]/race</xpath>
+						<value>
+							<canCrossBreedWith>
+								<li>Boomsloth</li>
+							</canCrossBreedWith>
+						</value>
+					</nomatch>
+				</li>
+
+				<!-- Boomalope: seeks boomsloth -->
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="Boomalope"]/race/canCrossBreedWith</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Boomalope"]/race/canCrossBreedWith</xpath>
+						<value>
+							<li>Boomsloth</li>
+						</value>
+					</match>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="Boomalope"]/race</xpath>
+						<value>
+							<canCrossBreedWith>
+								<li>Boomsloth</li>
+							</canCrossBreedWith>
+						</value>
+					</nomatch>
+				</li>
+
+				<!-- ===== What is born: the extension on the MOTHER's kind, keyed by the father ===== -->
+
+				<!-- Meffalo mother -->
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/PawnKindDef[defName="Meffalo"]/modExtensions/li[@Class="DZY.CrossBreeding.Extension"]</xpath>
+					<nomatch Class="PatchOperationAddModExtension">
+						<xpath>Defs/PawnKindDef[defName="Meffalo"]</xpath>
+						<value>
+							<li Class="DZY.CrossBreeding.Extension">
+								<outcomes></outcomes>
+							</li>
+						</value>
+					</nomatch>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/PawnKindDef[defName="Meffalo"]/modExtensions/li[@Class="DZY.CrossBreeding.Extension"]/outcomes</xpath>
+					<value>
+						<Muffalo>
+							<Random />
+						</Muffalo>
+					</value>
+				</li>
+
+				<!-- Muffalo mother -->
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/PawnKindDef[defName="Muffalo"]/modExtensions/li[@Class="DZY.CrossBreeding.Extension"]</xpath>
+					<nomatch Class="PatchOperationAddModExtension">
+						<xpath>Defs/PawnKindDef[defName="Muffalo"]</xpath>
+						<value>
+							<li Class="DZY.CrossBreeding.Extension">
+								<outcomes></outcomes>
+							</li>
+						</value>
+					</nomatch>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/PawnKindDef[defName="Muffalo"]/modExtensions/li[@Class="DZY.CrossBreeding.Extension"]/outcomes</xpath>
+					<value>
+						<Meffalo>
+							<Random />
+						</Meffalo>
+					</value>
+				</li>
+
+				<!-- Boomsloth mother -->
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/PawnKindDef[defName="Boomsloth"]/modExtensions/li[@Class="DZY.CrossBreeding.Extension"]</xpath>
+					<nomatch Class="PatchOperationAddModExtension">
+						<xpath>Defs/PawnKindDef[defName="Boomsloth"]</xpath>
+						<value>
+							<li Class="DZY.CrossBreeding.Extension">
+								<outcomes></outcomes>
+							</li>
+						</value>
+					</nomatch>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/PawnKindDef[defName="Boomsloth"]/modExtensions/li[@Class="DZY.CrossBreeding.Extension"]/outcomes</xpath>
+					<value>
+						<Megasloth>
+							<Random />
+						</Megasloth>
+						<Boomalope>
+							<Random />
+						</Boomalope>
+					</value>
+				</li>
+
+				<!-- Megasloth mother -->
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/PawnKindDef[defName="Megasloth"]/modExtensions/li[@Class="DZY.CrossBreeding.Extension"]</xpath>
+					<nomatch Class="PatchOperationAddModExtension">
+						<xpath>Defs/PawnKindDef[defName="Megasloth"]</xpath>
+						<value>
+							<li Class="DZY.CrossBreeding.Extension">
+								<outcomes></outcomes>
+							</li>
+						</value>
+					</nomatch>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/PawnKindDef[defName="Megasloth"]/modExtensions/li[@Class="DZY.CrossBreeding.Extension"]/outcomes</xpath>
+					<value>
+						<Boomsloth>
+							<Random />
+						</Boomsloth>
+					</value>
+				</li>
+
+				<!-- Boomalope mother -->
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/PawnKindDef[defName="Boomalope"]/modExtensions/li[@Class="DZY.CrossBreeding.Extension"]</xpath>
+					<nomatch Class="PatchOperationAddModExtension">
+						<xpath>Defs/PawnKindDef[defName="Boomalope"]</xpath>
+						<value>
+							<li Class="DZY.CrossBreeding.Extension">
+								<outcomes></outcomes>
+							</li>
+						</value>
+					</nomatch>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/PawnKindDef[defName="Boomalope"]/modExtensions/li[@Class="DZY.CrossBreeding.Extension"]/outcomes</xpath>
+					<value>
+						<Boomsloth>
+							<Random />
+						</Boomsloth>
+					</value>
+				</li>
+
+				<!-- ===== RECIPE: a megasloth and a boomalope produce a boomsloth. Delete this whole block to drop it ===== -->
+				<li Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/ThingDef[defName="Megasloth"]/race/canCrossBreedWith</xpath>
+							<value>
+								<li>Boomalope</li>
+							</value>
+						</li>
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/ThingDef[defName="Boomalope"]/race/canCrossBreedWith</xpath>
+							<value>
+								<li>Megasloth</li>
+							</value>
+						</li>
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/PawnKindDef[defName="Megasloth"]/modExtensions/li[@Class="DZY.CrossBreeding.Extension"]/outcomes</xpath>
+							<value>
+								<Boomalope>
+									<Other>
+										<Boomsloth />
+									</Other>
+								</Boomalope>
+							</value>
+						</li>
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/PawnKindDef[defName="Boomalope"]/modExtensions/li[@Class="DZY.CrossBreeding.Extension"]/outcomes</xpath>
+							<value>
+								<Megasloth>
+									<Other>
+										<Boomsloth />
+									</Other>
+								</Megasloth>
+							</value>
+						</li>
+					</operations>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>

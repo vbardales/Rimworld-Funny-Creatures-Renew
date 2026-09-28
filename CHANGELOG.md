@@ -45,6 +45,14 @@ First release of the 1.6 update of **Funny Creatures**, by PredatorKing.
   every expansion, which is the bear's 3. **Calves were not.** A baby boomsloth is drawn at a fifth
   of that, 0.8, and a grizzly or a warg passes every other check the game makes before hunting.
 
+- **Optional patches for three animal mods**, each applied only when that mod is loaded:
+  - *A Dog Said... Animal Prosthetics 2*: both animals join its three surgery categories. This mod
+    now declares `loadBefore` for it, since it copies its lists once at its own last patch.
+  - *[XND] Nocturnal Animals (Continued)*: the boomsloth is nocturnal, as the megasloth is in that mod.
+  - *Better Crossbreeding*: the meffalo and muffalo interbreed, the boomsloth, megasloth and boomalope
+    interbreed, and a megasloth with a boomalope produces a boomsloth. Its class is spelled
+    `DZY.CrossBreeding.Extension`, as compiled; the mod's own example spells it differently.
+
 ### Notes
 
 The original compatibility repairs preserve production and numeric balance values, including

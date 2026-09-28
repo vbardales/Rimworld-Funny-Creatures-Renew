@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Funny Creatures Renew - Pickle tests</name>
+  <author>Nelim</author>
+  <packageId>nelim.funnycreatures.pickletests</packageId>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <description>In-game functional tests for Funny Creatures Renew, run by Pickle. Development only: never published.
+
+The scenarios spawn their own animals and colonists in Pickle's test colony, and leave nothing behind but them. Most read what the game loaded, and the optional mods this suite looks at are read by name, so a rename in one of them fails one scenario with a message instead of stopping the suite from loading.
+
+Some features only mean something in a pass that mounts a particular mod, and say so with a requirement tag; the pass matrix is in Tests/Pickle/README.md of the repository.</description>
+  <modDependencies>
+    <li>
+      <packageId>nelim.funnycreatures</packageId>
+      <displayName>Funny Creatures Renew (unofficial)</displayName>
+    </li>
+    <li>
+      <packageId>rimworks.pickle</packageId>
+      <displayName>Pickle</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3791648678</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>nelim.funnycreatures</li>
+    <li>rimworks.pickle</li>
+  </loadAfter>
+</ModMetaData>

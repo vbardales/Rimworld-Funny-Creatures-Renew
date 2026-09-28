@@ -55,6 +55,24 @@ and a bear or a warg would take one.
 French translations cover the animals, their meat, tools, calf labels, wool and leather.
 English uses the native source text. Neither language requires an extra dependency.
 
+## Compatibility
+
+Nothing is required. Three patches apply only when the other mod is loaded, and change nothing
+otherwise. Each is guarded, and none makes a hard dependency.
+
+- **A Dog Said... Animal Prosthetics 2**: both animals join all three of its surgery categories, the
+  medieval replacements, the simple prosthetics and the bionics, as their counterparts the muffalo and
+  the megasloth do. This mod loads before it, because that mod copies its lists once.
+- **[XND] Nocturnal Animals (Continued)**: the boomsloth is nocturnal, like the megasloth it is made
+  from. The meffalo stays diurnal, like the muffalo, which that mod does not list.
+- **Better Crossbreeding**: the meffalo and the muffalo interbreed, and so do the boomsloth, the
+  megasloth and the boomalope. **A megasloth and a boomalope that mate produce a boomsloth**, which is
+  how the boomsloth is described; with that mod loaded the animal no longer only comes from traders
+  and the wild. Every other pairing gives either parent's kind at random.
+
+These follow how each of those mods actually reads an animal, checked against their files; the
+reasoning is in the header of each file under `Mod/Patches/`.
+
 ## Verification
 
 See [TESTING.md](TESTING.md) for automated checks and the pending in-game scenarios.

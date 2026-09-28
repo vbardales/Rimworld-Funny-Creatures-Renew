@@ -1,0 +1,9 @@
+# Pass 5 (proposed): the five expansions left out of the game's list. Select it with `-DepMap wsl-deps.core-only.map`;
+# the report carries the pass name `core-only`. `!<packageId>` removes one of the five expansions from ModsConfig for
+# that pass; only an expansion can be named, and Core cannot be left out.
+nelim.pickletools.loadaudit   path:PickleTools/LoadAudit/Mod
+!ludeon.rimworld.royalty
+!ludeon.rimworld.ideology
+!ludeon.rimworld.biotech
+!ludeon.rimworld.anomaly
+!ludeon.rimworld.odyssey

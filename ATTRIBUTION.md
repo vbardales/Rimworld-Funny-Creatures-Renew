@@ -82,6 +82,25 @@ The compatibility port made two kinds of repair:
 
 The port also adds canBePredatorPrey=false to prevent wild predators from hunting boomsloths, including calves and starving-predator cases. This intentional behavior change is separate from the compatibility repairs. French translations, the incompatibility declaration and promotional artwork are additions by this continuation.
 
+## Mods this one is patched for
+
+Three optional patches in `Mod/Patches/` apply only when the other mod is loaded. Their files were read
+to learn how each mod expects an animal to be declared; **nothing of theirs was copied**: no definition,
+no code, no asset. What is used is a public format: a mod extension name, a list of def names, an abstract
+recipe's `recipeUsers`.
+
+| Mod | Author | Workshop | What was read | What the patch does |
+|---|---|---|---|---|
+| A Dog Said... Animal Prosthetics 2 | SamBucher | [3238353862](https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862) | `Animal_Categories.xml` (which animals sit in which surgery category) | Adds both animals to the three categories, as their vanilla counterparts are |
+| [XND] Nocturnal Animals (Continued) | Mlie, continuing XeoNovaDan's mod | [2269731409](https://steamcommunity.com/sharedfiles/filedetails/?id=2269731409) | its `Patches/Core/*.xml` and its assembly's class name | Makes the boomsloth nocturnal, as the megasloth is |
+| Better Crossbreeding | DizzyEevee | [3520675842](https://steamcommunity.com/sharedfiles/filedetails/?id=3520675842) | its README, `Example/Patches/Example.xml`, `Source/BetterCrossbreeding.cs` and the compiled assembly | Lets the meffalo and muffalo interbreed, and the boomsloth, megasloth and boomalope |
+
+Two facts came out of reading the last one and are worth keeping. The example that mod ships writes its
+extension class as `DZY.Crossbreeding.Extension`; the compiled assembly declares `DZY.CrossBreeding.Extension`
+(capital B), and the patch here uses the assembly's spelling. And which animals may mate is decided by
+vanilla from the **male's** race, while what is born is decided by that mod from the **mother's** kind, so
+each pair needs both halves.
+
 ## What was left alone, and why
 
 - **The meffalo is milked for flake and the boomsloth for chemfuel.** Both are the author's jokes,

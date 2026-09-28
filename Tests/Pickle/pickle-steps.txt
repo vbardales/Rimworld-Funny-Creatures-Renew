@@ -1,0 +1,211 @@
+# The step expressions of the Pickle build installed on 2026-09-28: 4.9.1, RimWorks.Pickle.dll sha256 183e0d9e4885b3cc...
+# Read from the decompiled assemblies (RimWorks.Pickle.Vanilla.dll and RimWorks.Pickle.dll: every [Given], [When] and
+# [Then] attribute) plus the four engine steps registered in code (the save and reload steps). 205 expressions.
+# One per line: keyword, a tab, then the Cucumber expression as Pickle compiles it. Used by Tests/test_pickle_suite.py
+# to check offline that a feature line matches exactly one step: an undefined or ambiguous step costs a whole run.
+# Regenerate when the installed Pickle changes; the count and the hash above say which build this was.
+When	I add bill {string} to the {string}
+When	I add bill {string} to the {string} at \({int}, {int}\)
+Then	the {string} has {int} bills
+When	I set {string} priority {string} to {int}
+Then	{string} priority {string} is {int}
+When	I wait for bill {string} to finish
+When	I move the camera to \({int}, {int}\)
+When	I move the camera to {string}
+When	I pan the camera to \({int}, {int}\)
+When	I follow {string}
+When	I stop following
+When	I zoom in
+When	I zoom out
+When	I zoom all the way in
+When	I zoom all the way out
+Then	the camera is looking at \({int}, {int}\)
+Then	the camera can see {string}
+Given	{string} has backstory {string}
+Given	{string} has childhood {string}
+Given	I give {string} the trait {string}
+Given	I give {string} the trait {string} at degree {int}
+Given	I take the trait {string} from {string}
+Given	{string} is {int} years old
+Given	{string} gender is {word}
+Given	{string} has {word} passion for {string}
+Then	{string} can do {string}
+Then	{string} cannot do {string}
+When	I designate a {string} from \({int}, {int}\) to \({int}, {int}\)
+When	I use the build designator for {string} at \({int}, {int}\)
+Then	a blueprint for {string} is at \({int}, {int}\)
+When	I create a stockpile from \({int}, {int}\) to \({int}, {int}\)
+Then	a stockpile covers \({int}, {int}\)
+When	I wait for the {string} at \({int}, {int}\) to be built
+Then	def {string} exists
+Then	no def {string} exists
+Then	def {string} of type {string} exists
+Then	def {string} is defined by mod {string}
+Then	def {string} field {string} is {string}
+Then	def {string} costs {int} {string}
+Then	def {string} stat {string} is {float}
+Then	def {string} raw stat {string} is {float}
+Then	def {string} was patched by mod {string}
+Then	def {string} was patched
+Then	no def {string} was patched
+Given	dev mode is enabled
+Given	god mode is enabled
+Given	god mode is disabled
+When	I trigger debug action {string}
+When	I trigger debug action {string} in category {string}
+Then	the debug actions menu builds
+Then	the ideo has precept {string}
+Then	the ideo has no precept {string}
+When	I start ritual {string}
+Then	a ritual {string} is running
+When	I contain {string} on the platform at \({int}, {int}\)
+Then	the platform at \({int}, {int}\) holds {string}
+Then	the platform at \({int}, {int}\) is empty
+When	I give {string} the title {string}
+Then	{string} has title {string}
+Then	{string} psylink level is {int}
+Then	the {string} at \({int}, {int}\) is studiable
+Then	the {string} at \({int}, {int}\) study knowledge is above {float}
+When	I equip {string} with {string}
+When	I equip {string} with {string} made of {string}
+When	I dress {string} in {string}
+When	I dress {string} in {string} made of {string}
+When	I strip {string}
+When	I destroy the gear of {string}
+Then	{string} is wielding {string}
+Then	{string} is wielding nothing
+Then	{string} is wearing {string}
+Then	{string} apparel covers {string}
+Then	a {string} exists
+Then	no {string} exists
+Then	{int} {string} exist
+Then	a {string} is at \({int}, {int}\)
+Then	no {string} is at \({int}, {int}\)
+Then	cell \({int}, {int}\) is empty
+When	I spawn a {string} at \({int}, {int}\)
+When	I destroy the {string} at \({int}, {int}\)
+Then	the stockpile holds {int} {string}
+Then	mod {string} is loaded
+Then	mod {string} is not loaded
+Then	mod {string} loads before {string}
+Then	mod {string} loads after {string}
+Then	alert {string} is active
+Then	alert {string} is not active
+Then	a message {string} was shown
+When	I dismiss letter {string}
+Then	no letters are pending
+Then	{string} is downed
+Then	{string} is healthy
+Then	{string} has hediff {string}
+Then	{string} health is above {int} percent
+Then	{string} has no hediffs
+Then	{string} has no hediff {string}
+When	I heal {string}
+When	{string} is cured of hediff {string}
+When	{string} is given hediff {string}
+When	{string} attacks {string}
+When	I order {string} to \({int}, {int}\)
+When	I order {string} to the stockpile
+When	I order {string} to the far side of the map
+Then	{string} needs {string} is below {int} percent
+When	{string} needs {string} is set to {int} percent
+Then	{string} mood is above {int} percent
+Then	{string} has skill {string} at level {int}
+When	{string} skill {string} is set to level {int}
+Then	{string} has trait {string}
+Then	{string} is carrying {int} {string}
+Then	{string} is carrying nothing
+Then	the last {int} ticks average under {float} ms
+Then	no tick in the last {int} took more than {float} ms
+When	incident {string} fires
+When	incident {string} fires with {int} points
+When	I wait {int} ticks
+When	I draft {string}
+When	I undraft {string}
+When	I kill {string}
+Then	{string} is drafted
+Then	{string} has job {string}
+Then	{string} is dead
+Then	a letter {string} has arrived
+Then	{string} stat {string} is {float}
+Then	{string} stat {string} is above {float}
+Then	{string} stat {string} is below {float}
+Then	the {string} at \({int}, {int}\) stat {string} is {float}
+Then	the storyteller is {string}
+When	I set the storyteller to {string}
+Then	the difficulty is {string}
+Then	colony wealth is above {float}
+Then	colony wealth is below {float}
+Then	colony wealth in {word} is above {float}
+Then	{string} is missing {string}
+Then	{string} is not missing {string}
+Then	{string} has hediff {string} on {string}
+Then	{string} has no hediff {string} on {string}
+Then	{string} has {int} surgeries queued
+When	{string} is given hediff {string} on {string}
+When	I amputate {string} from {string}
+When	I install {string} on {string} of {string}
+When	I queue surgery {string} on {string} of {string}
+When	I wait for surgery {string} on {string} to finish
+Then	{string} has thought {string}
+Then	{string} has no thought {string}
+Then	{string} thought {string} mood offset is {float}
+When	{string} is given thought {string}
+When	{string} is given thought {string} about {string}
+Then	{string} opinion of {string} is {int}
+Given	I remember {string} opinion of {string}
+Then	{string} opinion of {string} rose
+Then	{string} opinion of {string} is above {int}
+Then	{string} opinion of {string} is below {int}
+Then	{string} and {string} are {string}
+When	I make {string} and {string} {string}
+Given	the main menu is open
+When	I click {string}
+When	I click button {string}
+When	I press key {string}
+When	I hover {string}
+When	I open the {string} tab
+Then	window {string} is open
+Then	window {string} is closed
+When	I select {string}
+When	I click gizmo {string}
+When	I close all dialogs
+Then	the inspect pane shows {string}
+Then	no errors were logged
+Then	a warning matching {string} was logged
+Then	no warning matching {string} was logged
+Then	{int} warnings matching {string} were logged
+Then	no warnings from mod {string}
+When	I take a screenshot {string}
+When	I wait for letter {string}
+When	I wait for {string} to have job {string}
+When	I wait for a {string} to exist
+When	I wait for research {string} to finish
+When	I wait until {string} reaches the stockpile
+When	I wait until {string} stops moving
+When	I wait until {string} is drafted
+Then	the weather is {string}
+When	I set the weather to {string}
+Then	the season is {word}
+When	I set the season to {word}
+Then	the hour is {int}
+When	I set the hour to {int}
+Then	it is {word}
+Then	the temperature at \({int}, {int}\) is above {int}
+Then	the temperature at \({int}, {int}\) is below {int}
+Then	the outdoor temperature is above {int}
+Then	the outdoor temperature is below {int}
+Given	a colonist {string} exists
+Given	{int} {string} is spawned at the stockpile
+Given	a {string} is built at \({int}, {int}\)
+When	I spawn a {string} pawn at \({int}, {int}\)
+Given	research {string} is finished
+Given	game speed is {word}
+Then	the engine is alive
+Given	evidence step fails
+Given	smoke step passes
+Given	smoke step fails
+Given	the save {string} is loaded
+When	I save and reload
+When	I save and reload as {string}
+Then	the save round trips
