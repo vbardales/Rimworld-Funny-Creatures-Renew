@@ -14,9 +14,40 @@ The original animals, definitions and animal textures are **PredatorKing's** wor
 | Licence | none stated |
 
 **Abandoned, not withdrawn.** The item is still on the Workshop and still downloadable; it stopped
-at 1.3, missing 1.4, 1.5 and 1.6. Nobody else has picked it up: Mlie has no continuation of it, a
-Workshop search filtered on the 1.6 tag returns nothing related, and no installed mod declares
-`Meffalo` or `Boomsloth`.
+at 1.3, missing 1.4, 1.5 and 1.6. No standalone continuation exists: Mlie has no continuation of it,
+a Workshop search filtered on the 1.6 tag returns nothing related, and no locally installed mod
+declares `Meffalo` or `Boomsloth`. The one other copy of this content that was found sits inside a
+larger pack, described under "Other copies of this content" below.
+
+## The source has no repository to start from
+
+The publishing rules ask to start from the original project's Git repository when it has one, and
+to send corrections back as pull requests. Looked for on 2026-09-28; none was found, so this port
+starts from the original's 1.3 files as the Workshop distributes them, and no pull request is possible.
+
+- **The Workshop page**, read on 2026-09-28: the description is the one quoted in the original
+  `About.xml` ("My first Mod..."), with no link to any repository or profile; created 29 October 2021,
+  last updated 30 October 2021; only 1.3 is mentioned. Its comments are loaded by the page's own
+  script and could not be read from the page, so they are not part of this check.
+- **The original files** (`About.xml` and the 1.3 defs, as archived): no repository reference.
+- **GitHub**: a code search for the package id `predatorking.funnycreatures` and for the def names
+  finds only the pack below. Five accounts whose name resembles the author's (PredatorKing,
+  PredatorKing1357, predatorking9, PredatorKingVe, predatorkingpin) were looked at: none holds a
+  public RimWorld repository, and nothing ties any of them to the Workshop author, so none is treated
+  as the author.
+
+If a repository of the author turns up, the port should be rebased on it and its fixes offered there.
+
+## Other copies of this content
+
+**Storytime Rides Again: a New Chapter** (package id `TSP.Isengriff.Storytime`, repository
+[TurtleShroom/TSP_STORYTIME_RIDES_AGAIN](https://github.com/TurtleShroom/TSP_STORYTIME_RIDES_AGAIN),
+no licence asserted) bundles the two animals in its `1.5/` and `1.6/` folders, keeps the original
+`About.xml` under `About/Credits/Funny Creatures/`, and declares `predatorking.funnycreatures`
+incompatible. Its copy is retuned: the production and biome numbers differ, for example a meffalo
+milked for 6 flake every 3 days where the original gives 20 every 6. Nothing of it was used here: this
+port starts from the original 1.3 files. It defines the same def names as this mod, so the two cannot
+be loaded together. That pairing is not declared in this mod's `About.xml`; see `STATUS.md`.
 
 ## The licence, looked for in four places
 

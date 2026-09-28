@@ -1,3 +1,8 @@
+# Steam does not read .gitignore at all. SteamUGC.SetItemContent takes the mod folder as it stands
+# on disk, with no filtering, so anything sitting in Mod/ is published if the in-game button is
+# used. Publishing goes through the CI, which ships the tracked files of Mod/ only; ignoring a file
+# here keeps it out of that payload and out of git, not out of a folder uploaded straight from disk.
+
 # Development environments
 .vs/
 .vscode/
@@ -5,7 +10,35 @@
 *.user
 *.suo
 
+# Claude Code session worktrees and local settings.
+.claude/
+
 # System
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Windows folder icons. Local derivatives of Mod/About/ModIcon.png and Mod/About/Preview.png for the
+# Explorer (desktop.ini points at them); regenerable, never content, and never to be placed in Mod/.
+*.ico
+
+# RimWorld converts every PNG to a .dds next to it the first time the game loads the mod. They are
+# a per-machine cache, regenerated on demand, and are not read again in a diff. None has ever been
+# committed here; the pattern keeps it that way.
+*.dds
+*.DDS
+
+# Test evidence: kept ON DISK for the session that reads it, not carried by the repository. Reports,
+# captures and Player.log grow without bound (PickleTools saw 10 GB in a day). What is worth keeping
+# in git is one short text line per run in docs/runs/, cited by STATUS.md. What to keep on disk, and
+# what to delete, is written in TESTING.md ("Evidence to keep").
+Tests/Pickle/Evidence/
+evidence/
+
+# Outputs of the preview scripts (Art/render-preview.cjs, Art/check-contrast.py). They prove the
+# Preview at the moment it was rendered and are rewritten by the next render; the scripts and their
+# inputs (preview.html, preview-palette.json, Preview-source.png) are what is versioned.
+Art/preview-background.png
+Art/preview-thumbnail.png
+Art/preview-contrast.json
+Art/preview-render.json

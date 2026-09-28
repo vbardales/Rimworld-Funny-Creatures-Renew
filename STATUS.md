@@ -8,24 +8,158 @@ packageId:    nelim.funnycreaturesrenew
 repo:         Rimworld-Funny-Creatures-Renew
 visibility:   public
 detached:     yes
-stage:        done
+stage:        preTest
+previous_stage: done
+audit_revision: ed32e2b51ab5fe9e47bb3bad83705dad386bdaff
 licence:      silent
-licence_at:   Historical four-place investigation in ATTRIBUTION.md retained; no permission inferred; live Steam refresh unavailable during this audit.
+licence_at:   "Four places searched for a refusal rather than a permission (ATTRIBUTION.md). The Workshop page was re-read on 2026-09-28: description unchanged, no repository or licence wording, 1.3 only, last updated 30 October 2021. Its comments load by script and could not be read. No permission is inferred."
 dependencies: none
 showcase:     complete
 build:        not_applicable
 xml_audit:    complete
 automated_tests: complete
+pickle_scenarios: "none written: Tests/Pickle/ does not exist. The plan (four passes, what goes in Gherkin and what does not) is in TESTING.md, 'Plan: passes, automation and gates'"
 functional_tests: unverified
 tested_on:
-workshop:
+workshop:     "none. Not prepublished: Mod/About/PublishedFileId.txt is absent (checked 2026-09-28; RimWorld/Mods/FunnyCreaturesRenew is a link to Mod/, so the file would have landed there). The only PublishedFileId.txt found near this mod belongs to the archived original, in _mods-sources/FunnyCreatures. CHANGELOG.md therefore has no [0.1.0] section, by design"
+evidence:     "Static checks, on disk only: evidence/static/2026-09-28-ed32e2b/. No game run exists. What to keep and what to delete: TESTING.md, 'Evidence to keep'. One line per run: docs/runs/README.md"
 remaining:
-  - unverified: Execute functional scenarios A-Q in RimWorld 1.6, including English/French UI, logs, new game and existing saves.
-  - unverified: Confirm explosions, production, calf predator protection, original-mod incompatibility warning, sound and corpse rendering in game.
-  - unverified: Previous-version save migration needs a suitable saved game; no migration success is claimed.
-session:      local_e811cc9c-3b8c-4228-8ac0-7763601dfc17
-updated:      2026-09-13, corrections and static validation
+  - unverified: "(preTest -> done) the Pickle (Gherkin) suite is not written. AUDIT.md asks for it, with its scope justified, before done. The plan is in TESTING.md and needs the owner's word on the lines marked proposed: passes 1 to 4 and the scenarios proposed as not applicable"
+  - unverified: "(done -> tested) every scenario A-Q in a running game, in English and French with developer mode on, logs checked; no @wip, every conditional scenario played, no manual test left (each is Pickle and green, or listed not applicable with its reason)"
+  - unverified: "(done -> tested) existing-save migration: loading a save made with the original mod. No such save exists; stays listed as unverified, not a gate"
+  - unverified: "ModIcon readability at 32 px: the mascot head reads, the five animals around it merge into colour. The owner kept the icon on 2026-09-12; whether that covers this reading is to be confirmed"
+  - unverified: "owner decision: the packageId nelim.funnycreaturesrenew carries 'renew', which PUBLISHING.md (2026-09-27) tells new packageIds not to. Free to change until the first publication, frozen after"
+  - unverified: "owner decision: Storytime Rides Again (TSP.Isengriff.Storytime) defines the same defNames and is not declared incompatible; declaring it would add a second incompatibility pass"
+  - unverified: "(prepublished) PUBLICATION.md is not written; the description has no IF I GO QUIET, AI-GENERATED, THANKS and licence-pointer blocks in the order the step asks for; thanks comments and the WORKSHOP_COMMENTS.md rows are not prepared"
+session:      local_2bc4ddc6-2f19-485e-8404-c7f03c070278
+updated:      "2026-09-28, audit against the current AUDIT.md: done -> preTest (the Pickle suite the workflow now asks for is not written). Nothing committed or pushed"
 ---
+
+# Audit — 2026-09-28
+
+**`done` -> `preTest`.** The stage names are the workflow's own literal states (`dansMonoRepo`,
+`horsMonoRepo`, `ModIcon générée`, `Preview générée`, `preOptions`, `options`, `l10n`, `preTest`,
+`done`, `tested`, `prepublished`, `published`); the field carries no codes to translate.
+
+The regression is the criterion, not the mod. `done` was set on 2026-09-13, before `AUDIT.md` (edited
+2026-09-27) asked for the Pickle tests to be **written**, with their scope justified, in the `preTest ->
+done` step. This mod has none. Everything before that step holds and was re-checked on the current
+revision.
+
+## Scope and revision
+
+- Standalone Git root `C:/Users/nelim/Documents/rimworld/FunnyCreaturesRenew`; distribution root `Mod/`.
+- Audited HEAD `ed32e2b51ab5fe9e47bb3bad83705dad386bdaff` (2026-09-20), equal to `origin/main`
+  (`git ls-remote origin HEAD`). `gh repo view` confirmed the repository PUBLIC, with the topics
+  `rimworld`, `rimworld-mod` and `mod`; its share image is a custom one.
+- Local changes made by this session, **not committed, not pushed**: `.gitignore`, `ATTRIBUTION.md` and
+  `Mod/ATTRIBUTION.md`, `TESTING.md`, `Tests/RESULTS.md`, `STATUS.md`, new `docs/`, and eight evidence
+  files removed from the index (`git rm --cached`). `Art/ModIcon.ico` and `Art/Preview.ico` were untracked
+  and are now ignored. No file under `Mod/Defs`, `Mod/Languages`, `Mod/Textures` or `Mod/About` changed.
+- Protocols read and their versions: `docs/PROTOCOLS-READ.md`. RimWorld was **not** launched, by this
+  session or through the dispatcher: no deposit was made.
+
+## Ordered gates
+
+| Transition | Result | Evidence |
+| --- | --- | --- |
+| dansMonoRepo -> horsMonoRepo | Validated; one owner decision open | Standalone root, public GitHub repository, remote configured, pushed HEAD. STATUS.md, English README, ATTRIBUTION.md, CHANGELOG.md. The two ATTRIBUTION copies are byte-identical (compared, not assumed). Licence `silent`, public, name suffixed ` (unofficial)` after `Renew`, takedown paragraph present. Folder, repository, name and packageId agree with each other. **Open:** the packageId contains `renew` (see below) |
+| -> ModIcon générée | Validated, with a reserve | No code, so no build. `Mod/About/ModIcon.png` is 128 x 128, 12,519 bytes. Resized from the owner's 1254 x 1254 file **at her request** on 2026-09-12; the full-size original is kept as `Art/ModIcon-source.png`. This session generated and changed nothing. Reserve at 32 px, below |
+| -> Preview générée | Validated | `Mod/About/Preview.png` is 896 x 504, 592,045 bytes, under 1 MB; opened directly |
+| -> preOptions | Validated | Overlay measured, five contrasts at 4.936:1 or better (threshold 4.5:1); the rule and badge colour is distinct from the secondary ink; the English description opens with the UNOFFICIAL paragraph and ends with `[url=https://github.com/vbardales/Rimworld-Funny-Creatures-Renew]Source code on GitHub[/url]`, the same target as the remote and `<url>` |
+| -> options | `not_applicable` confirmed | Source search: no `MainButtonDef`, no settings class, no C#. `test_settings_absence_contract` green. Fixed species design, nothing a player needs to configure |
+| -> l10n | Validated | French `DefInjected` covers the 20 owned fields; the shared checker: **20 keys, 0 errors**. English is the native source text. No Keyed text, no parameters, no plurals |
+| -> preTest | Validated | Nothing beyond Core is used: no dependency, no assembly, no `LoadFolders`, no patch. `loadAfter` names Ludeon's packages only; `incompatibleWith` names the original |
+| preTest -> done | **Not established** | Written scenarios A-Q: yes. Automated tests: 9 green. XML tests: green (7 files, 10 typed definitions, no duplicate). **Pickle (Gherkin) tests written and their scope justified: no, `Tests/Pickle/` does not exist.** A justified scope is drafted in `TESTING.md`; it is a plan, not a suite |
+| done -> tested | Not verified | No scenario played in a game. Nothing to claim |
+| tested -> prepublished, published | Not reached | See "Publication state" |
+
+## Checks executed
+
+- `python Tests/test_mod.py -v`: **9 tests passed**, on `ed32e2b`, with the game data read from disk
+  (RimWorld 1.6.4871 rev590).
+- `Check-DefInjected.ps1 -TransMod Mod` (checker sha256 `6242fc37f0b4…`): 11,594 definitions indexed, 29
+  patch operations applied while indexing (the mod ships none), **20 keys, 0 errors**.
+- `Art/check-contrast.py`: title 5.894, suffix 7.210, tag 4.936, summary 5.035, badge 9.562. The Preview is
+  unchanged since it was rendered on 2026-09-13, so that measurement still applies.
+- Hash inventory of 23 delivered and test files: 22 matched, **`Mod/About/About.xml` did not** (changed by
+  commit `ed32e2b`). The inventory recorded on 2026-09-13 was stale and was regenerated.
+- Both images opened. The Preview is sound. The ModIcon at 32 px, scaled up eightfold to look at it: the
+  orange mascot head, its wink and its smile read clearly; the five animals around it (alpaca, dodo, spined
+  lizard, calico cat, mammoth) fade into a ring of colour, and only the cream alpaca is still guessable.
+- Distribution payload of `Mod/` listed in full: About (3 files), four Defs, two French files, seven
+  textures, `ATTRIBUTION.md`. The untracked `Mod/desktop.ini` is ignored by git, so the CI payload, which
+  ships tracked files, does not carry it; the in-game upload button would.
+
+## What is settled, and what is asked
+
+**ModIcon at 32 px.** `STYLE_RIMWORLD.md` asks that the head and the object beside it still read, and that
+one or two objects accompany the mascot. Five animals do not. The 2026-09-12 decision to keep the icon
+concerned its **subject** (another mod's cast); this reading was not put to the owner then. The audit
+corrects nothing and generates nothing. The 2026-09-12 acceptance is taken as the override the rule
+allows, and the confirmation is requested.
+
+**packageId.** `PUBLISHING.md` (2026-09-27) says not to add `renew` to a packageId, and that the rule holds
+for what is not yet published. This mod is not. Renaming is free today and impossible after the first
+publication; it would touch `About.xml`, `Tests/test_mod.py`, `TESTING.md`, the docs and the title of the
+session. Nothing was renamed.
+
+**A third-party pack defines the same defNames.** Storytime Rides Again: a New Chapter
+(`TSP.Isengriff.Storytime`, [TurtleShroom/TSP_STORYTIME_RIDES_AGAIN](https://github.com/TurtleShroom/TSP_STORYTIME_RIDES_AGAIN))
+carries a retuned copy of both animals in its `1.5/` and `1.6/` folders and itself declares
+`predatorking.funnycreatures` incompatible. It does not declare this mod, and this mod does not declare
+it. Not installed locally. Recorded in `ATTRIBUTION.md` and `TESTING.md`.
+
+**Upstream repository.** The original has none that could be found (page, archived files, GitHub code and
+account searches; details in `ATTRIBUTION.md`). The port therefore starts from the Workshop's 1.3 files,
+and no pull request is possible. If one appears, the port should be rebased on it.
+
+## Publication state
+
+Not prepublished. `About/PublishedFileId.txt` does not exist, so `CHANGELOG.md` keeps `## [1.0.0] —
+unreleased` alone and gets no `[0.1.0]` section; that entry is written when the file appears, with the
+commit that adds it. No Workshop item, no tag, no release. `PUBLICATION.md` does not exist and is a
+`prepublished` requirement.
+
+## Hygiene done in this audit
+
+- **`.dds`**: none tracked, none on disk, never committed (checked in the history). `*.dds` and `*.DDS` are
+  now ignored so it stays so.
+- **`.ico`**: the two Explorer icons are local derivatives and are now ignored, as `WELCOME.md` asks.
+- **Evidence**: eight generated files were tracked (`Tests/*-results.txt`, `Tests/audited-files.json`,
+  `Art/preview-background.png`, `-thumbnail.png`, `-contrast.json`, `-render.json`). They are removed from
+  git, ignored, and the superseded ones deleted from disk (the 2026-09-13 results, a 570 KB intermediate
+  image). Fresh outputs for `ed32e2b` are in `evidence/static/2026-09-28-ed32e2b/`. Nothing a field points
+  to was deleted: `Tests/RESULTS.md` and this file were repointed first.
+- **Which proofs to keep during tests** is written in `TESTING.md`, "Evidence to keep".
+- **The new gates for `tested`** (no `@wip`; every conditional scenario played; no manual test left) are
+  written in `TESTING.md`, "Gates for done -> tested".
+
+## Next transition only: preTest -> done
+
+Write the Pickle suite in `Tests/Pickle/`, on the plan in `TESTING.md`: what only a running game can show
+(the animals drawn, the explosion, the calf and the predator, the two languages, save and reload, the
+incompatibility symptom), and the passes it needs. Then justify in the suite's README what was left out and
+why. Reading `PickleTools/Authoring/README.md` and Pickle's step catalogue comes first. Running it is not
+part of this step; `done -> tested` does that, by deposit only.
+
+## Reserves, apart from the blockers
+
+- The Preview and the icon show animals that are not this mod's (a white and a blue-grey beast; an
+  alpaca, a dodo, a cat). Decided and kept by the owner on 2026-09-12; not re-opened.
+- `STYLE_RIMWORLD.md` names the un-lettered illustration `Art/Preview.png`; this repository calls it
+  `Art/Preview-source.png`, which its scripts read. Cosmetic.
+- The 32 px reading of the icon above is a judgement, made by an assistant looking at enlarged pixels.
+
+---
+
+# Earlier sections, kept as they were
+
+> **Read with the 2026-09-28 audit above.** The stage below (`done`) is superseded; the reasons are stated
+> there. Evidence paths quoted below (`Tests/audited-files.json`, `Art/preview-contrast.json`,
+> `Art/preview-render.json`, `Tests/*-results.txt`) were moved on 2026-09-28: the fresh outputs are in
+> `evidence/static/2026-09-28-ed32e2b/`, and the preview ones stay in `Art/`, git-ignored.
+
 # Corrections and current validation — 2026-09-13
 
 **Current stage: done** — all gates through readiness for final functional validation are

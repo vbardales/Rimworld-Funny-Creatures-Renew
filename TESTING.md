@@ -28,12 +28,19 @@ nelim.funnycreaturesrenew    this mod    after Core and all official expansions
 **The original must stay off.** `predatorking.funnycreatures`
 ([2640466629](https://steamcommunity.com/sharedfiles/filedetails/?id=2640466629)) defines the same
 four defs under the same `defName`s: `Meffalo`, `Boomsloth`, `WoolMeffalo`, `Leather_Darkfur`.
-About.xml declares the original package in incompatibleWith. The mod list must warn about this pairing. Keep the original disabled for normal play; scenario L verifies the warning.
+About.xml declares the original package in incompatibleWith. Keep the original disabled for normal
+play; scenario L looks at whether that incompatibility is still true.
 
 Nothing else in the local collection defines either animal. Funny Creatures was once merged into
 Nelim's Animal Ark, but `AnimalArk/` no longer contains a `Meffalo` or a `Boomsloth`, checked on
 2026-09-12. Vanilla's **megasloth** and **muffalo** are different defs and different animals, and
 are only a nuisance in the debug search box.
+
+**One thing outside the local collection does define them**, found 2026-09-28: the pack Storytime
+Rides Again: a New Chapter (`TSP.Isengriff.Storytime`) carries a retuned copy of both animals, under
+the same def names (see `ATTRIBUTION.md`). It is not installed here and is **not declared
+incompatible** by this mod, so no pass covers it. Whether to declare it, and then to add a second
+incompatibility pass, is an open decision recorded in `STATUS.md`.
 
 ## What to search the log for
 
@@ -190,19 +197,25 @@ could never be bought. That is not the case here, and this scenario records the 
 - Call a bulk goods or exotic animal trader with dev mode until one carries either animal. The
   point is only to see it happen once.
 
-## L — original-mod incompatibility warning
+## L — is the original-mod incompatibility still true?
 
-Preconditions: RimWorld 1.6, this distribution installed, and the original Funny Creatures
-available but disabled. Use a disposable configuration; do not load a valued save with both enabled.
+Rewritten 2026-09-28 to follow `AUDIT.md` ("On ne teste pas le jeu", and the pass for each declared
+incompatibility). The warning the mod list shows for an `incompatibleWith` is the game's own reaction
+to a declaration, so it is not tested here. What the mod answers for is **the declaration**, and
+whether the reason behind it still holds.
 
-- Open the mod list and enable both packages in the pending selection.
-- Expect a visible incompatibility warning for `predatorking.funnycreatures` and this port.
-  The declaration warns about the combination; it does not merge or rename duplicate definitions.
-- Disable the original again and retain only this continuation. The incompatibility warning clears.
-- Restart with Core and this continuation and execute A-C. There must be only one of each animal,
-  no duplicate-definition messages for this mod, and the ported wildness and explosion behavior.
-- Record the game version and observed warning. Do not add or remove XML as part of this scenario:
-  the declaration is already shipped, and a source mutation would invalidate the tested artifact.
+- **The declaration** is checked in the sources, and already is: `About.xml` lists
+  `predatorking.funnycreatures` in `incompatibleWith` (`test_metadata_and_distribution`).
+- **The reason** is that both mods define `Meffalo`, `Boomsloth`, `WoolMeffalo` and `Leather_Darkfur`.
+  It ages: the original could be updated, or withdrawn. One pass mounts the original (Workshop
+  2640466629) next to this mod, in a named game (`wsl-deps.incompat-original.map`), and plays the
+  suite's incompatibility feature there.
+- **In that pass green means the incompatibility behaves as declared.** The feature asserts the
+  documented symptom (duplicate-definition messages naming those four defs) instead of expecting a
+  red run. Whether the two mods are still in conflict is the finding; a change in either direction
+  is a signal to go and look.
+- Do not add or remove XML as part of this scenario: the declaration is already shipped, and a
+  source mutation would invalidate the tested artifact.
 
 ## M — the dessicated corpse
 
@@ -300,13 +313,13 @@ animals/resources if available. Use copies only. Record the exact mod list and g
   migration pass from a new-game pass. Removing this content mod mid-save is unsupported and
   loses its entities; that documented limitation is not a promised migration feature.
 
-## Automated checks and result recording
+## Automated checks (outside the game)
 
 Run from the repository root with Python 3 and PowerShell 7. Core-reference checks require a
 local RimWorld 1.6 installation (`RIMWORLD_DIR` can override the default Steam location).
 
 ```powershell
-python Tests/test_mod.py
+python Tests/test_mod.py -v
 & ../scripts/Check-DefInjected.ps1 -TransMod (Join-Path (Get-Location) 'Mod')
 ```
 
@@ -324,10 +337,111 @@ python Art/check-contrast.py
 ```
 
 The renderer requires Chrome, waits for fonts and the source image, and writes the final Preview,
-a thumbnail, a background measurement image and font/layout evidence in Art/. Palette values come
-only from Art/preview-palette.json. Inspect both final and thumbnail images after each render.
+a thumbnail, a background measurement image and font/layout evidence in `Art/`. Palette values come
+only from `Art/preview-palette.json`. Inspect both final and thumbnail images after each render.
+Those outputs are git-ignored: they prove the Preview at the moment it was rendered.
 
-Tests/RESULTS.md records the latest static results and distribution hashes. For each in-game
-scenario A-Q, record date, game version, mod list, language, save/new-game context, actions,
-observed outcome, PASS/FAIL and log/screenshot paths. All are currently UNVERIFIED; written
-expectations are not execution results. Keep prior results and rerun affected regressions after fixes.
+The latest static results are summarised in `Tests/RESULTS.md`. The raw outputs live **on disk only**,
+in `evidence/static/<date>-<short sha>/` (git-ignored); see "Evidence to keep" below.
+
+---
+
+# Plan: passes, automation and gates
+
+Written 2026-09-28 after re-reading `AUDIT.md`. **Nothing below has been run in a game.** It says what
+the Pickle suite (not yet written) must cover, what stays out of it and why, and what `tested` needs.
+The owner's decision is needed on the lines marked *proposed*.
+
+## The passes
+
+A mod is validated by named passes, and a mod whose `TESTING.md` does not say how many is tried, not
+tested. This mod needs four requests, none with `-IncludeWip`:
+
+| # | Pass | Language | Game set | What it covers |
+|---|---|---|---|---|
+| 1 | `sans-facultatifs` | English | Core, the five DLC, Harmony, RimLogging, Pickle, this mod | The whole suite: the animals and their defs, the two repairs, the predator protection, persistence. The only pass where a capture is clean |
+| 2 | `sans-facultatifs` | French | the same | The same suite in French: labels, descriptions, plurals, attack labels, no accented fallback (dev mode shows a missing key as accented text) |
+| 3 | `incompat-original` | English | pass 1 plus `predatorking.funnycreatures` (2640466629) via `wsl-deps.incompat-original.map` | Scenario L only: the documented symptom of the incompatibility is asserted, so green means it still behaves as declared |
+| 4 | `core-only`, *proposed* | English | pass 1 with the five DLC left out (`!` lines in `wsl-deps.core-only.map`) | The claim in "Load order" that the definitions need Core only, shown at run time and not only by the reference check |
+
+**Why there is no "with optional mods" pass.** `loadAfter` names only Ludeon's own packages, which every
+pass already carries, and nothing else is optional: no mod, no integration, no companion tool. A second
+pass over the same game set would prove nothing new. If a mod is ever declared optional, or the
+`TSP.Isengriff.Storytime` pack is declared incompatible (open decision in `STATUS.md`), the pass for it
+is added here first.
+
+## What stays out of the game suite, and what goes in
+
+`AUDIT.md`: only what a running game can show belongs in Gherkin, and a scenario that repeats what an
+XML test already proves is deleted, not kept in case. `Tests/test_mod.py` already proves every def
+value below (production, wildness under `statBases`, the `deathAction` block, `canBePredatorPrey`,
+trade tags, biomes, references to Core). What is left for the game is what those values *do*.
+
+| Scenario | Disposition | Reason |
+|---|---|---|
+| A both animals exist and draw | **Pickle** | Spawn each, see it drawn: a `@review` capture, opened |
+| B wildness on the information card | **Pickle**, *proposed* | The stat is proven by XML; that the game reads it (a listed row, not a missing one) is the repair, and only the game shows it |
+| C the boomsloth explodes when it dies | **Pickle** | The whole point of the port, and a fault that logs nothing. Needs a way to kill a spawned animal and to see the blast; a small companion step is probably required |
+| D taming is hard again | **Not applicable**, *proposed* | The taming chance is the engine's formula over the `Wildness` stat, which B covers. The mod supplies a number, not a mechanic |
+| E, F milking; G shearing | **Pickle**, *proposed* | That the comps exist and yield the declared defs on a spawned tame animal. Waiting out 6 or 15 game days is not asked of a run |
+| H butchering | **Not applicable**, *proposed* | `leatherDef` and `meatLabel` are proven by XML; the butchering is the engine's |
+| I training, pack, herd | **Not applicable**, *proposed* | Flags proven by XML; the behaviours are the engine's |
+| J wild spawning | **Not applicable**, *proposed* | Biome commonalities are proven by XML; the draw is random and the engine's |
+| K traders | **Not applicable** | Trade tags proven by XML and against Core's trader defs; buying is the engine's |
+| L incompatibility | **Pickle**, pass 3 | Rewritten above |
+| M dessicated corpse | **Pickle capture**, *proposed*, or not applicable | A known upstream cosmetic defect; a capture would only record it |
+| N predator protection, calves included | **Pickle** | Deterministic if the step asks the game's own `IsAcceptablePreyFor` about a calf and a bear, with the flag as the control; waiting for a real hunt would be probabilistic |
+| O sounds | **Not applicable**, *proposed* | Four defs pointing at vanilla clip folders, checked by XML; the mod ships no audio. A clean load is covered by the load audit of P |
+| P English and French UI | **Pickle**, passes 1 and 2 | Labels and descriptions rendered in each language, captures opened, log clean |
+| Q new game and existing saves | **Pickle** for save and reload; the migration case *unverified* | A save, restart and reload chain can be automated. Loading a save made with the original mod needs one that does not exist yet: it stays listed as unverified and is not a gate (the owner's rule for such cases, 2026-09-24) |
+
+## Gates for `done -> tested`
+
+All of these, read from `AUDIT.md`, step 9, and stated by the owner on 2026-09-28:
+
+- **No scenario tagged `@wip`.** A scenario put aside is either repaired and replayed, or deleted with
+  its reason written here. A remaining `@wip` is pending, not passed.
+- **Every conditional scenario has run.** Each `@requires:<packageId>` (an optional mod, a DLC, a
+  companion tool) has had its pass, on a map that mounts it, and its report was read (`setName`, the
+  suite and scenario names checked before quoting it: the report folder is shared by the whole
+  machine). A scenario skipped for want of its condition is not a scenario passed.
+- **No manual test left to validate.** What used to be ticked by hand is automated and green, or
+  listed above as not applicable with its reason. The `@review` captures are still to be looked at,
+  but that is reading an image a scenario has already shown to be in the intended state.
+- The suite green in every pass of the table, `exitReason` read **before** the counts, and the number of
+  scenarios played checked against the number of features discovered.
+- Logs checked, and the interface checked in French and English **with developer mode on**: a
+  fallback shows as accented text, and a clean English word among French is a hard-coded string.
+- Corrections followed by the regression runs that concern them.
+
+## Evidence to keep
+
+A Pickle report is tens of megabytes: `report.html`, `messages.ndjson`, and screenshots of about 3 MB
+each, in a folder shared by the whole machine. `Tests/Pickle/Evidence/` and `evidence/` are git-ignored.
+The history is **one text line per run in `docs/runs/`**, never a folder.
+
+Per pass and per scenario, keep on disk **only the latest report for the revision now in the
+repository**, plus an older one only if it is the sole proof of a check the latest run did not repeat.
+A report about a superseded build proves nothing about the current one: delete it as soon as a newer
+one replaces it. What a kept report is made of:
+
+| Keep | Delete |
+|---|---|
+| `summary.json` and `junit.xml`: `exitReason`, counts, verdicts | `report.html` and `messages.ndjson`, tens of MB and unread |
+| `Player.log` of the last run of the pass, trimmed to the lines that concern this mod if it is large | logs of earlier runs, and the lines of the machine's other mods |
+| The `@review` captures **that were opened**, as reduced JPEGs | full-resolution PNGs, screenshots of scenarios without a `@review`, raw film frames |
+| The explosion film of scenario C, if the run has one, as a short MP4 (a green C proves the path, the film shows the blast) | films of anything else |
+
+Rules for the runs themselves: give `-EvidenceDir FunnyCreaturesRenew/Tests/Pickle/Evidence/<new name>`
+every time, so that an older report is never read as the result; **write the commit SHA in `-Label`**,
+since a request carries none and the tree is staged when the ticket plays. After each run, read
+`exitReason` and the played-against-discovered count in the copy, write the line in `docs/runs/`,
+then delete what the table says. Before deleting anything, **list what goes and what stays**, and
+never delete a report that a `STATUS.md` field still points to: repoint the field first. On Windows,
+`Remove-Item` stalls on capture names longer than `MAX_PATH`; empty the folder with
+`robocopy <empty folder> <target> /MIR`, then remove the shell that is left.
+
+Static results (outside the game) are kept the same way: the latest outputs only, in
+`evidence/static/<date>-<short sha>/`, regenerated when a file they cover changes. Their hash
+inventory goes stale the moment a delivered file changes: on 2026-09-28 the one recorded on 2026-09-13
+disagreed with `Mod/About/About.xml`, and it was regenerated rather than trusted.

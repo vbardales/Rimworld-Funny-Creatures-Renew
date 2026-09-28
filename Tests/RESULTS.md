@@ -1,44 +1,44 @@
-# Verification results — 2026-09-13
+# Verification results — 2026-09-28
 
-Revision: `3ee276100def7a82a3569c14762c6798559339be` plus the local corrections and
-pre-existing working-tree changes documented in STATUS.md. No commit or publication was made.
-Exact tested distribution and test/render sources: [audited-files.json](audited-files.json), SHA-256.
-Game data and reflection target: local RimWorld **1.6.4871 rev590**.
+Revision: `ed32e2b51ab5fe9e47bb3bad83705dad386bdaff`, working tree clean for tracked files before this
+audit's documentation edits (none of them touches `Mod/Defs`, `Mod/Languages`, `Mod/Textures` or the
+images). Game data and reflection target: local RimWorld **1.6.4871 rev590**, read from disk.
+**No game process was launched or controlled, and no game-log pass is claimed.**
 
-| Check | Observed result | Evidence |
+The raw outputs are kept **on disk only**, in `evidence/static/2026-09-28-ed32e2b/` (git-ignored, see
+`TESTING.md`, "Evidence to keep"). This file is the short record that stays in git.
+
+| Check | Observed result | Evidence file (on disk) |
 | --- | --- | --- |
-| Automated static/regression suite | PASS, 9 tests | automated-results.txt; test_mod.py |
-| XML syntax and typed defName uniqueness | PASS, 7 XML files, 10 distinct typed definitions | Included in automated suite |
-| Native EN and FR coverage | PASS, all 20 source-owned fields covered, no empty/duplicate/obsolete French entries | Coverage derived independently from source XML |
-| Engine DefInjected paths | PASS, 20 keys, 0 errors, no unverified targets | definjected-results.txt |
-| Preview decode/dimensions/size | PASS, 896 x 504, 592,045 bytes | Automated image checks and browser render |
-| Text/background contrast | PASS, minimum 4.936:1; badge 9.562:1 | contrast-results.txt; ../Art/preview-contrast.json |
-| Visual inspection | PASS, 896 x 504 and 268 px thumbnail opened directly; title, suffix, tag and version readable; no cropping/overlap | ../Art/preview-thumbnail.png |
-| Actual browser fonts | Segoe UI Semibold and Segoe UI, no fallback | ../Art/preview-render.json |
-| Functional scenarios A-Q | UNVERIFIED, not executed in game | ../TESTING.md |
-| Custom C# build/unit tests | NOT APPLICABLE, no custom compiled code | Source/distribution inventory |
-| Settings and RIMMSQOL integration | NOT APPLICABLE, no settings requirement, empty page or shortcut | STATUS.md settings audit and absence regression check |
+| Automated static/regression suite | PASS, 9 tests, `python Tests/test_mod.py -v` | `automated-results.txt` |
+| XML syntax and typed defName uniqueness | PASS, 7 XML files, 10 distinct typed definitions | inside the suite above |
+| Native EN and FR coverage | PASS, all 20 source-owned fields covered, no empty, duplicate or obsolete French entry | inside the suite above |
+| Engine DefInjected paths | PASS, 20 keys, 0 errors; 11,594 definitions indexed, 29 patch operations applied while indexing (the mod ships none). Checker sha256 `6242fc37f0b4…` | `definjected-results.txt` |
+| Preview decode, dimensions, size | PASS, 896 x 504, 592,045 bytes, sha256 `9a84c62359d7…` | suite above |
+| Preview text/background contrast | PASS, minimum 4.936:1 (tag), title 5.894, suffix 7.210, summary 5.035, badge 9.562; threshold 4.5:1. The Preview is unchanged since its 2026-09-13 render, so the render-time measurement still applies | `contrast-results.txt` |
+| Preview inspection | PASS, the 896 x 504 file opened directly on 2026-09-28: title, suffix, tag and version readable, no clipping or overlap | not kept |
+| ModIcon inspection | Format PASS (128 x 128, 12,519 bytes). Readability at 32 px: **head reads, the accompanying animals merge**; see `STATUS.md`, owner question | not kept |
+| Hash inventory of the delivered files | 23 files hashed. The inventory recorded on 2026-09-13 disagreed on `Mod/About/About.xml` (changed by commit `ed32e2b`, the maintainer's name) and was regenerated | `audited-files.json` |
+| Functional scenarios A-Q | UNVERIFIED, not executed in a game | `../TESTING.md` |
+| Pickle (Gherkin) suite | NOT WRITTEN, see `STATUS.md` | none |
+| Custom C# build / unit tests | NOT APPLICABLE, no custom compiled code | source inventory |
+| Settings and RIMMSQOL integration | NOT APPLICABLE, no settings requirement, no page, no shortcut; absence re-checked by source search and `test_settings_absence_contract` | inside the suite above |
 
 Execution used the bundled Python at
-`C:/Users/nelim/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe`
-for `Tests/test_mod.py` and `Art/check-contrast.py`. The renderer used Node.js, bundled Playwright
-through NODE_PATH, and installed Chrome. See TESTING.md for portable commands.
+`C:/Users/nelim/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe` for
+`Tests/test_mod.py` and `Art/check-contrast.py`. The shared `../scripts/Check-DefInjected.ps1` was run
+with `-TransMod <repository>/Mod` against the installed assemblies; it is a workflow dependency, not
+shipped game content.
 
-The shared `../scripts/Check-DefInjected.ps1` was run with `-TransMod <repository>/Mod` against
-the installed assemblies. Checker SHA-256:
-`6242fc37f0b43c61967979f7837db65d80e12bf8a019a4822d58c6532f6a2c6f`.
-It indexed 11,594 Core/DLC/mod definitions and applied 29 game-data patch operations during
-indexing; the mod itself ships no patches. The checker is a shared workflow dependency, not
-shipped game content. The repository Python suite can run independently of that script.
+## What these checks do not establish
 
-During correction, the first injection check rejected two numeric life-stage paths; these were
-changed to the native `meffalo_calf` handle and the full check rerun successfully. Conservative
-contrast checks initially found the secondary text below 4.5:1 over its full layout rectangle;
-the veil and secondary ink were adjusted, rerendered and remeasured to the final passing result.
-The measured background includes the actual rendered image and veil and excludes text shadows,
-so shadow effects are not being used to inflate the contrast figures.
+They validate source and packaging contracts and injection paths. They do not show live animal
+behaviour, packed audio loading, corpse fallback rendering, translation layout in RimWorld, or save
+migration. `done` is not reached on their strength: the Pickle suite the workflow asks to have written
+does not exist yet.
 
-These checks validate source/packaging contracts and injection paths, not live animal behavior,
-packed audio loading, corpse fallback rendering, translation layout in RimWorld or save migration.
-No game process was launched or controlled, and no game-log pass is claimed. `done` is therefore
-the highest justified workflow stage; `tested` awaits the recorded functional scenarios.
+## History kept out of this file
+
+The 2026-09-13 results (same suite, 9 tests, 20 keys) described revision `3ee2761` plus uncommitted
+work. They were replaced, not appended: a report about a superseded revision proves nothing about the
+current one. One line per run is in `../docs/runs/README.md`.
