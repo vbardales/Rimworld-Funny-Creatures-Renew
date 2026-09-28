@@ -13,6 +13,7 @@ previous_stage: preTest
 audit_revision: 0b29ed309339f78ebbe200d39182b709e86528e5
 licence:      silent
 licence_at:   "Four places searched for a refusal rather than a permission (ATTRIBUTION.md). The Workshop page was re-read on 2026-09-28: description unchanged, no repository or licence wording, 1.3 only, last updated 30 October 2021. Its comments load by script and could not be read. No permission is inferred."
+upstream_mod_remotes: N/A
 dependencies: none
 showcase:     complete
 build:        not_applicable
