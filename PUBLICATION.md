@@ -94,14 +94,16 @@ First release of the 1.6 update of Funny Creatures, by PredatorKing.
 ## Gallery
 
 **Not produced.** The gallery is a manual step on the Steam page (SteamCMD sends the header image only), from a folder that holds
-the images to upload numbered `01-`, `02-`, `03-` in page order and nothing else. The captures come from the Pickle scenarios tagged
+the images to upload numbered `00-`, `01-`, `02-`, `03-` in page order and nothing else. `00-` is a byte-identical copy of
+`About/Preview.png` (owner rule of 2026-09-29); the captures follow it starting at `01-`. They come from the Pickle scenarios tagged
 `@review`, which makes them reproducible; a green scenario proves the path ran, not that the image shows anything, so **every image is
 opened and read before it goes in the folder.**
 
-Steam shows the first image large, so the most demonstrative one goes first, not the prettiest:
+Steam shows the first image large, so `00-` (the Preview, icon and all) leads and the most demonstrative capture follows:
 
 | # | Image | Source | Why here |
 |---|---|---|---|
+| 00 | `About/Preview.png`, byte-identical copy | the About/Preview.png of this same build | Owner rule 2026-09-29: the vitrine's first image is the Preview |
 | 01 | The boomsloth's explosion, one frame taken from the film of `02-the-boomsloth-explodes` | the `@film` scenario | It is the one thing the animal is named for, and the one thing a screenshot of a livestock pen cannot say |
 | 02 | The two animals side by side, zoomed | `01-the-animals`, capture `the-two-animals` | Shows what is being installed |
 
