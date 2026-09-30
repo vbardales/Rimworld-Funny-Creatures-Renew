@@ -1,7 +1,7 @@
 ---
 localization: complete
 translation_en: complete
-translation_fr: complete
+translation_fr: partial
 settings_audit: not_applicable
 mod:          Funny Creatures Renew (unofficial)
 packageId:    nelim.funnycreatures
@@ -30,6 +30,8 @@ remaining:
   - unverified: "(done -> tested) the lines of TESTING.md marked proposed await the owner: scenarios D, E to K, M and O as not applicable, and pass 5 (core-only)"
   - unverified: "(done -> tested) existing-save migration: loading a save made with the original mod. No such save exists; stays listed as unverified, not a gate"
   - unverified: "(prepublished) PUBLICATION.md is drafted (2026-09-28) but nothing in it is final: the gallery is not produced, the mature-content answer waits for it, the description is not yet the single Markdown source that About.xml is generated from, and the rollback target is chosen only once a good run exists. About.xml has no IF I GO QUIET, AI-GENERATED or THANKS block yet"
+  - unverified: "French review by Virginie (TRANSLATIONS.md 2026-09-30). FRENCH_REVIEW.md generated at the mod root from the working tree, all 20 keys resolved; translation_fr stays partial until she has read it"
+  - unverified: "FR/EN in-game rendering of the translated text: raw keys, fallback, clipping or wrapping on the affected inspect strings, descriptions and tool/lifeStage labels, in both languages"
 session:      local_2bc4ddc6-2f19-485e-8404-c7f03c070278
 updated: "2026-09-28, later: packageId renamed, three optional patches, Pickle suite written, five runs filed. preTest -> done. Committed locally as 0b29ed3, not pushed"
 ---
@@ -367,11 +369,28 @@ UI strings or conditional text patches exist. Technical devNote, identifiers, re
 About metadata and repository prose are excluded appropriately. English duplication in a
 Languages/English folder is unnecessary. Source prose has spelling/editorial issues but is English.
 `localization: complete` records native mechanisms; `translation_en: complete` records source
-coverage, neither claiming in-game validation. `translation_fr: partial` records audited missing
-coverage. No French entries exist to validate for paths, placeholders, tags or parameters.
-Check-DefInjected.ps1 was inspected but not run: with zero injection files, an empty report
-would not verify coverage. It becomes applicable when French DefInjected resources are supplied;
-verify nested tool handles and lifeStages paths then. FR/EN game rendering remains unverified.
+coverage, neither claiming in-game validation.
+
+**French, 2026-09-30.** Both DefInjected files (`ThingDef/FunnyCreatures.xml`,
+`PawnKindDef/FunnyCreatures.xml`) now exist and were read whole, not pattern-searched: all 20
+keys from the English inventory resolve to nonempty French text, matched against the shipped Def
+field by dotted path, including the six tool labels and the two lifeStages fields (addressed by
+an underscore slug of their own English label, not by list position). None of the owned French
+text agrees with a pawn's gender (animal descriptions and item labels only), so the 2026-09-30
+three-segment gender-switch rule (TRANSLATIONS.md §3) does not apply here; this was confirmed by
+reading every French string, not by a pattern search for `{PAWN_gender`. `FRENCH_REVIEW.md` was
+generated from this revision by `_tools/Generate-FrenchReview.ps1` for Virginie's own reading;
+Original and English are identical throughout (PredatorKing's original is itself English, no
+separate source-language text survives anywhere in this repository) and said once at that file's
+top rather than per row. Check-DefInjected.ps1 was not run: it checks injection paths against a
+def-only fixture, which does not distinguish position from slug addressing; the mismatch already
+found here (PawnKindDef and ThingDef sharing a defName, which pointed the naive lookup at the
+wrong def) was caught by the generator script's own def-type match, not by that script.
+
+`translation_fr` stays `partial`: the audit above is the session's own coverage check, not
+Virginie's review. Per TRANSLATIONS.md, no session marks its own French reviewed or `complete`.
+FR/EN in-game rendering (raw keys, clipping, wrapping on the affected inspect/description panels)
+remains unverified in `remaining`.
 
 ## Visual and documentation review
 
