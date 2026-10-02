@@ -59,3 +59,11 @@ The original compatibility repairs preserve production and numeric balance value
 flake from meffalos and chemfuel from boomsloths. Predator protection is an intentional additional
 behavior change. This continuation also includes incompatibility metadata, translations,
 documentation, tests and promotional artwork; it is no longer a three-line-only port.
+
+## [0.1.0] — 2026-10-01
+
+Creation of the Workshop item (`About/PublishedFileId.txt`). The item is private, as Steam creates
+every item; this entry says neither that the mod is public nor that it is tested.
+
+Contents: `Mod/` as it stood at commit `820f64e`, the last commit that touched it being `d86af81`
+(Preview with the ModIcon in the corner). Nothing else changed since the file appeared.
