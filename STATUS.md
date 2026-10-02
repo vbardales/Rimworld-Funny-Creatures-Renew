@@ -9,8 +9,9 @@ repo:         Rimworld-Funny-Creatures-Renew
 visibility:   public
 detached:     yes
 stage: done
+workflow_stage: done
 previous_stage: preTest
-audit_revision: 0b29ed309339f78ebbe200d39182b709e86528e5
+audit_revision: 820f64e
 licence:      silent
 licence_at:   "Four places searched for a refusal rather than a permission (ATTRIBUTION.md). The Workshop page was re-read on 2026-09-28: description unchanged, no repository or licence wording, 1.3 only, last updated 30 October 2021. Its comments load by script and could not be read. No permission is inferred."
 upstream_mod_remotes: N/A
@@ -19,22 +20,52 @@ showcase:     complete
 build:        not_applicable
 xml_audit:    complete
 automated_tests: complete
-pickle_scenarios: "written 2026-09-28: 12 features in Tests/Pickle/, checked offline by Tests/test_pickle_suite.py (every feature line matches exactly one step of Pickle 4.9.1). Five requests filed on 0b29ed3, none played yet. Plan and passes: TESTING.md and Tests/Pickle/README.md"
+pickle_scenarios: "written 2026-09-28: 12 features in Tests/Pickle/. Played 2026-09-28/29 (lines in docs/runs/README.md): tools EN and FR 16 passed / 13 skipped, core-only 3 of 3, avec-facultatifs EN 23 passed / 2 skipped (older tree), incompat-original never green (1 of 2 on 0b29ed3, then could not stage). No @wip. 13 scenarios still skipped in the tools passes (they need optional mods), 10-the-original-mod not green, no @review capture opened. Plan and passes: TESTING.md and Tests/Pickle/README.md"
 functional_tests: unverified
 tested_on:
-workshop:     "none. Not prepublished: Mod/About/PublishedFileId.txt is absent (checked 2026-09-28; RimWorld/Mods/FunnyCreaturesRenew is a link to Mod/, so the file would have landed there). The only PublishedFileId.txt found near this mod belongs to the archived original, in _mods-sources/FunnyCreatures. CHANGELOG.md therefore has no [0.1.0] section, by design"
-evidence: "Static checks, on disk only: evidence/static/. Pickle reports, when they come: Tests/Pickle/Evidence/<pass>-<sha>/ (git-ignored). What to keep and what to delete: TESTING.md, Evidence to keep. One line per run: docs/runs/README.md"
+workshop:     "prepublished 0.1.0, private (Steam creates every item private). About/PublishedFileId.txt = 3811290892, found untracked on 2026-10-02 (dated 2026-10-01 14:40) and committed that day with CHANGELOG [0.1.0]. Not tested, not public: stage stays done. The original is Workshop 2640466629"
+evidence: "Static checks, on disk only: evidence/static/. Pickle reports kept after the 2026-10-02 cleanup (14 MB, summary/junit/Player.log/captures only): Tests/Pickle/Evidence/{tools-en,tools-fr,core-only-en}-69a9e1a, avec-facultatifs-en-0b29ed3 and incompat-original-en-0b29ed3 (git-ignored). What to keep and what to delete: TESTING.md, Evidence to keep. One line per run: docs/runs/README.md"
 remaining:
-  - unverified: "(done -> tested) the five Pickle requests filed on 0b29ed3 have not been played: tools EN and FR, avec-facultatifs, incompat-original, core-only. State of each in the Pickle runs section below"
-  - unverified: "(done -> tested) no scenario has been seen running: every step of the step assembly is compiled and matched to a feature line, none has executed. The first run is likely to find a cell, a timing or an API assumption that is wrong; the cells are chosen from the fixture's things, not from a run"
+  - unverified: "(done -> tested) pass 3 (avec-facultatifs) must be replayed on the final tree: its only report (28b4) predates 69a9e1a. Pass 4 (incompat-original, scenario 10) has never been green: 0b29ed3 failed on a wrong assumption (rewritten, not replayed), 6af5 could not stage because _mods-sources/FunnyCreatures is gone. Pass 1/2 FR for the optional-mod scenarios: not played"
+  - unverified: "(done -> tested) the @review captures of every pass have not been opened; no green run proves what an image shows"
+  - unverified: "(done -> tested) Tests/test_mod.py and Tests/test_pickle_suite.py were not fully replayed on 2026-10-02: Windows has no Python, WSL has none of lxml or a game folder. Last full green: 0b29ed3 (23 and 12)"
+  - feature: "(Dogs mate (Continued), Mlie.DogsMate 2441132298, PUBLISHING.md rule of 2026-10-01) not treated. The muffalo is in its group Bison (pawnKinds Bison, Muffalo): the meffalo probably belongs there. Boomsloth: group to read from the megasloth's entry. Either patch it (guarded, optional) or write in this file why not. Not done by the audit, which creates nothing"
   - unverified: "(done -> tested) the lines of TESTING.md marked proposed await the owner: scenarios D, E to K, M and O as not applicable, and pass 5 (core-only)"
   - unverified: "(done -> tested) existing-save migration: loading a save made with the original mod. No such save exists; stays listed as unverified, not a gate"
   - unverified: "(prepublished) PUBLICATION.md is drafted (2026-09-28) but nothing in it is final: the gallery is not produced, the mature-content answer waits for it, the description is not yet the single Markdown source that About.xml is generated from, and the rollback target is chosen only once a good run exists. About.xml has no IF I GO QUIET, AI-GENERATED or THANKS block yet"
-  - unverified: "French review by Virginie (TRANSLATIONS.md 2026-09-30). FRENCH_REVIEW.md generated at the mod root from the working tree, all 20 keys resolved; translation_fr stays partial until she has read it"
+  - unverified: "French review by Virginie (TRANSLATIONS.md 2026-09-30). FRENCH_REVIEW.md regenerated 2026-10-02 (heading now names the mod, revision 954e247), all 20 keys resolved; translation_fr stays partial until she has read it"
   - unverified: "FR/EN in-game rendering of the translated text: raw keys, fallback, clipping or wrapping on the affected inspect strings, descriptions and tool/lifeStage labels, in both languages"
-session:      local_2bc4ddc6-2f19-485e-8404-c7f03c070278
-updated: "2026-09-28, later: packageId renamed, three optional patches, Pickle suite written, five runs filed. preTest -> done. Committed locally as 0b29ed3, not pushed"
+session:      local_96e1d794-9399-4fde-8c65-1a89fe7bfc18
+updated: "2026-10-02: audit; prepublication 0.1.0 recorded; evidence trimmed; Dogs mate found untreated. Earlier, 2026-09-28, later: packageId renamed, three optional patches, Pickle suite written, five runs filed. preTest -> done. Committed locally as 0b29ed3, not pushed"
 ---
+
+# Audit — 2026-10-02
+
+**`done` holds** (`workflow_stage: done`, no change). Audited `820f64e`; tree clean except `Mod/About/PublishedFileId.txt`
+(untracked until this audit), then the commits of this audit. RimWorld was **not** launched, and nothing was deposited.
+
+- **Prepublished 0.1.0** (an act, not a state): `PublishedFileId.txt` = `3811290892`, dated 2026-10-01 14:40. Committed with
+  `CHANGELOG.md` `## [0.1.0]`. The item is private. `stage` stays `done`: nothing was tested in a game to a green end.
+- **Gates for `tested`** (AUDIT.md step 9, written in `TESTING.md`), checked on disk: no `@wip` in `Tests/Pickle/` (met);
+  every `@requires` scenario played (**not met**: 10-the-original-mod never green, the original's archive is gone; pass 3 to
+  replay on the final tree); no manual test left (**not met**: the `proposed` lines of `TESTING.md` await the owner).
+- **Steps 8 and 12 replayed**: the Python suites could not be replayed in full (see `remaining`); the rest holds from the
+  2026-09-28 audit. Plurals: no counted text, so no `.One`/`.Many`. French stays `partial` until Virginie reads `FRENCH_REVIEW.md`.
+- **New rule found, not a regression of the chain**: PUBLISHING.md (2026-10-01) adds Dogs mate to the animal-mod integrations,
+  "before `preTest`". It is not a criterion of AUDIT.md's transitions, so `stage` does not move; it is a `feature` in `remaining`.
+- **Upstream repository**: searched again with `gh` (repos and code): nothing for PredatorKing's mod; the only hit is Storytime
+  Rides Again, already recorded. No fork and no pull request is possible.
+- **Hygiene**: no `.dds` on disk, none ever tracked, `*.dds` already ignored. No evidence tracked in git. On disk,
+  `Tests/Pickle/Evidence/` went from 121 MB to 14 MB: deleted `tools-en-0b29ed3`, `tools-fr-0b29ed3`, `core-only-en-0b29ed3`
+  (superseded by the `69a9e1a` reports), `incompat-original-en-69a9e1a` (`no-report.txt` only), and every `report.html` and
+  `messages.ndjson`. Kept: `tools-en`/`tools-fr`/`core-only-en` at `69a9e1a`, `avec-facultatifs-en-0b29ed3` (sole proof of
+  the optional-mod scenarios) and `incompat-original-en-0b29ed3` (sole proof of pass 4). No `STATUS.md` field pointed at a deleted
+  report; `docs/runs/README.md` was repointed. No archive of this mod in `pickle-reports-archive/`.
+- **WSL cleanup**: not applicable, the mod is not published.
+- **Protocols**: versions read are in `docs/PROTOCOLS-READ.md`.
+
+
+> **Replaced on 2026-10-02**: "Publication state" below says the mod is not prepublished; it is (0.1.0).
 
 # Update — 2026-09-28, later in the day
 

@@ -86,3 +86,25 @@ catalogue. Both are the way in for writing the Pickle suite, which has not start
    `STATUS.md` as an open decision.
 5. **The `renew` rule for a new packageId (2026-09-27)** applies to a mod that is not yet published, and
    this one is not. Recorded in `STATUS.md` as an owner decision; nothing was renamed.
+
+## Second pass — 2026-10-02
+
+Read again because their versions moved. Protocol versions from `git --git-dir=../rimworld-protocols.git --work-tree=. log -1`;
+tool repositories from `git -C <folder> log -1`.
+
+| Document | Version | Read | Useful? | What matters, or why not |
+|---|---|---|---|---|
+| `AUDIT.md` | `d1fdbe1` 2026-10-02, sha `7c00eb1f` | in full | **essential** | the chain; step 9 gates (no `@wip`, every `@requires` played, no manual test); step 11 `0.1.0` rule (PublishedFileId commit = the 0.1.0 commit); step 12; session title = `<packageId without nelim.> / <workflow_stage>` |
+| `AGENTS.md` | `7fd7475` 2026-09-29, sha `7a236f03` | in full | yes | evidence rule: latest report per scenario for the current revision; trim `docs/runs/history.md` after publication; CI publishing |
+| `TRANSLATIONS.md` | `af8427f` 2026-10-02, sha `e381086a` | in full | yes | `FRENCH_REVIEW.md` heading must name the mod (done in `_tools/Generate-FrenchReview.ps1`); the shared `scripts/Make-FrenchReview.ps1` was tried and **not used**: it leaves Original and English empty for the `lifeStages` rows addressed by slug |
+| `PUBLISHING.md` | `4e8f11a` 2026-10-02, sha `c765bb3c` | parts: "Départ depuis le projet d'origine", animal-mod integrations, "Juste après", "À chaque mise à jour" | yes | PR-first rule (no upstream repo here); **Dogs mate** is a fourth integration (untreated, in `remaining`); `PublishedFileId.txt` committed at once |
+| `STYLE_RIMWORLD.md` | `c105a43` 2026-10-01, **modified**, sha `5a054cf3` | no | not needed | images are done; re-read if `Preview.png` or `ModIcon.png` is touched |
+| `WORKSHOP_COMMENTS.md` | `7fd7475` 2026-09-29, sha `3fb37586` | no | not yet | thanks comments belong to `prepublished` publication |
+| `MOD_SETTINGS.md` | `b83933b` 2026-09-23 | no, unchanged | | `not_applicable` stands |
+| `scripts/SEARCHING.md` | `50de695` 2026-09-28 | no, unchanged | no | one bounded `gh` search was enough |
+| `PickleTools/README.md`, `Headless/README.md`, `docs/steps.md`, `Authoring/README.md` | `ff20d89`, `ed4e73a`, `da7c3b0`, `a47799f` | not re-read | no | nothing in this audit writes or runs a suite; `Authoring` moved on 2026-09-29, re-read before the next suite edit |
+| `Release-Admin/docs/OPERATIONS.md` | `3c03f51` 2026-09-26 | no | from `prepublished` publication | read before any workflow, tag or release |
+| `Ticket-Dispatcher/docs/WELCOME.md`, `SUBMIT.md` | `77ca9d7` (sha `08b440a0`), `d07b2b8` | no, unchanged | | no deposit made |
+
+**Not present in this repository, by choice:** `LICENSE` (source states none), `BACKLOG.md`, `NOTES.md`, `BUGS.md` (no content to hold).
+The monorepo `BACKLOG.md` was not read.
