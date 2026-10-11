@@ -1,14 +1,14 @@
 ---
 localization: complete
 translation_en: complete
-translation_fr: partial
+translation_fr: complete
 settings_audit: not_applicable
 mod:          Funny Creatures Renew (unofficial)
 packageId:    nelim.funnycreatures
 repo:         Rimworld-Funny-Creatures-Renew
 visibility:   public
 detached:     yes
-workflow_stage: writeTests[1.0.0]
+workflow_stage: playTests[1.0.0]
 audit_revision: 1f60dac
 licence:      silent
 licence_at:   "Four places searched for a refusal rather than a permission (ATTRIBUTION.md). The Workshop page was re-read on 2026-09-28: description unchanged, no repository or licence wording, 1.3 only, last updated 30 October 2021. Its comments load by script and could not be read. No permission is inferred."
@@ -30,28 +30,26 @@ remaining:
   - unverified: "(done -> tested) the lines of TESTING.md marked proposed await the owner: scenarios D, E to K, M and O as not applicable, and pass 5 (core-only)"
   - unverified: "(done -> tested) existing-save migration: loading a save made with the original mod. No such save exists; stays listed as unverified, not a gate"
   - unverified: "(prepublished) PUBLICATION.md is drafted (2026-09-28) but nothing in it is final: the gallery is not produced, the mature-content answer waits for it, the description is not yet the single Markdown source that About.xml is generated from, and the rollback target is chosen only once a good run exists. About.xml has no IF I GO QUIET, AI-GENERATED or THANKS block yet"
-  - unverified: "French review by Virginie (TRANSLATIONS.md 2026-09-30). FRENCH_REVIEW.md regenerated 2026-10-02 (heading now names the mod, revision 954e247), all 20 keys resolved; translation_fr stays partial until she has read it"
   - unverified: "FR/EN in-game rendering of the translated text: raw keys, fallback, clipping or wrapping on the affected inspect strings, descriptions and tool/lifeStage labels, in both languages"
-  - defect: "(writeTests) 7.a asks for TEST_SCENARIOS.md; the scenarios A to Q live in TESTING.md. Rename or point, to be settled with the Audit session"
+  - unverified: "(playTests) AUDIT.md 7.a names TEST_SCENARIOS.md; this mod keeps its scenarios A to U in TESTING.md, as the sibling mods do (AUDIT.md 'Les passes se declarent dans le TESTING.md'). Wording to confirm with the Audit session, no rename done"
   - unverified: "(playTests 8.m) code review: code_review_sha absent. Review from 0.1.0 once the code is stable and played, then store the 40-character sha"
   - unverified: "(playTests) Tests/test_mod.py and Tests/test_pickle_suite.py are listed in scripts/LOCAL_SCRIPTS.md with a justification; Virginie validates the table at the end"
 session:      local_15177fcc-4975-4f84-abde-09c0335fcf1a
-updated: "2026-10-11: reaudit on the 2026-10-09 vocabulary. Stage writeTests[1.0.0] (Dogs mate was untreated, now patched). Journal folded into docs/runs/status-journal-2026-09-to-10.md. _tools and .build cleaned"
-protocols_read_sha: e520c40709f1a348a71e4409673c97e5f6baee93
+updated: "2026-10-11: reaudit on the 2026-10-09 vocabulary. Dogs mate patched, French review validated by Virginie, stage playTests[1.0.0]. Journal folded into docs/runs/status-journal-2026-09-to-10.md. _tools and .build cleaned"
+protocols_read_sha: 5dd27148e2bce1a728b6607c369ad31308c6ca53
 ---
 
 # Funny Creatures Renew (unofficial): status
 
 Current state only. Run lines: `docs/runs/README.md`. Older dated sections: `docs/runs/status-journal-2026-09-to-10.md`.
 
+## Translation audit
+
+French lives in `Mod/Languages/French/DefInjected` (20 owned fields, no Keyed, no plurals, no gender agreement: the texts do not follow a pawn). Reviewed by Virginie on 2026-10-11, revision `7ef4deb`, `FRENCH_REVIEW.md` generated from `8794640`: validated, corrections applied before (mégathérium for the megasloth, wool sentence). `translation_fr` is `complete`. In-game rendering (raw keys, clipping) stays `unverified` until `playTests`.
+
 ## Reaudit 2026-10-11
 
-- **Stage: `writeTests[1.0.0]`**, not `playTests`. The old `done` maps to `playTests` only by the indicative table; the gates
-  decide. Gates 3.a and 4.f failed: Dogs mate, one of the four animal integrations (ANIMALS.md), was untreated. Treated
-  today, so `code`, `declareDependencies`, `auditSettings` and `localize` are met. `writeTests` stays open for two reasons:
-  Virginie has not read `FRENCH_REVIEW.md` (6.g, 7.g: `translation_fr` is `partial`), and the scenario file is
-  `TESTING.md`, not `TEST_SCENARIOS.md` (7.a). Target version `1.0.0`: `CHANGELOG.md` keeps `[1.0.0] unreleased` above
-  `[0.1.0]` (prepublication, item 3811290892, private). The `stage` field is removed.
+- **Stage: `playTests[1.0.0]`** since Virginie validated the French review (2026-10-11). The old `done` mapped to `playTests` by the indicative table, but gates 3.a and 4.f failed until Dogs mate (one of the four animal integrations, ANIMALS.md) was treated the same day. Target version `1.0.0`: `CHANGELOG.md` keeps `[1.0.0] unreleased` above `[0.1.0]` (prepublication, item 3811290892, private). The `stage` field is removed.
 - **Gates re-read on disk.** 1: repository public, remote set, README, ATTRIBUTION, CHANGELOG, licence `silent` with the
   unofficial wording. 2: `Art/ModIcon-source.png`, `Mod/About/ModIcon.png` 128 x 128 (12 KB, below the 20 to 30 KB
   window: the owner's own resize, kept), `Art/Preview-source.png`, Preview 896 x 504. Not rechecked today: the palette
