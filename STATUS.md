@@ -22,9 +22,9 @@ pickle_scenarios: "written 2026-09-28: 12 features in Tests/Pickle/. Played 2026
 functional_tests: unverified
 tested_on:
 workshop:     "prepublished 0.1.0, private (Steam creates every item private). About/PublishedFileId.txt = 3811290892, found untracked on 2026-10-02 (dated 2026-10-01 14:40) and committed that day with CHANGELOG [0.1.0]. Not tested, not public: stage stays done. The original is Workshop 2640466629"
-evidence: "Static checks, on disk only: evidence/static/. Pickle reports kept after the 2026-10-02 cleanup (14 MB, summary/junit/Player.log/captures only): Tests/Pickle/Evidence/{tools-en,tools-fr,core-only-en}-69a9e1a, avec-facultatifs-en-0b29ed3 and incompat-original-en-0b29ed3 (git-ignored). What to keep and what to delete: TESTING.md, Evidence to keep. One line per run: docs/runs/README.md"
+evidence: "Static checks, on disk only: evidence/static/. Pickle reports kept after the 2026-10-02 cleanup (14 MB, summary/junit/Player.log/captures only): Tests/Pickle/Evidence/{tools-en,tools-fr,core-only-en}-69a9e1a, avec-facultatifs-en-75a8a29 and incompat-original-en-0b29ed3 (git-ignored). What to keep and what to delete: TESTING.md, Evidence to keep. One line per run: docs/runs/README.md"
 remaining:
-  - unverified: "(done -> tested) pass 3 (avec-facultatifs) must be replayed on the final tree: its only report (28b4) predates 69a9e1a. Pass 4 (incompat-original, scenario 10) has never been green: 0b29ed3 failed on a wrong assumption (rewritten, not replayed), 6af5 could not stage because _mods-sources/FunnyCreatures is gone. Pass 1/2 FR for the optional-mod scenarios: not played"
+  - unverified: "(playTests) pass 4 (incompat-original, scenario 10) has never been green: 0b29ed3 failed on a wrong assumption, 6af5 could not stage because _mods-sources/FunnyCreatures is gone. Pass 1/2 FR for the optional-mod scenarios: not played"
   - unverified: "(done -> tested) the @review captures of every pass have not been opened; no green run proves what an image shows"
   - unverified: "(done -> tested) Tests/test_mod.py and Tests/test_pickle_suite.py were not fully replayed on 2026-10-02: Windows has no Python, WSL has none of lxml or a game folder. Last full green: 0b29ed3 (23 and 12)"
   - unverified: "(done -> tested) the lines of TESTING.md marked proposed await the owner: scenarios D, E to K, M and O as not applicable, and pass 5 (core-only)"
@@ -36,7 +36,7 @@ remaining:
   - unverified: "(playTests) Tests/test_mod.py and Tests/test_pickle_suite.py are listed in scripts/LOCAL_SCRIPTS.md with a justification; Virginie validates the table at the end"
 session:      local_15177fcc-4975-4f84-abde-09c0335fcf1a
 updated: "2026-10-11: reaudit on the 2026-10-09 vocabulary. Dogs mate patched, French review validated by Virginie, stage playTests[1.0.0]. Journal folded into docs/runs/status-journal-2026-09-to-10.md. _tools and .build cleaned"
-protocols_read_sha: 5dd27148e2bce1a728b6607c369ad31308c6ca53
+protocols_read_sha: ac587c23f2481ac64ab621b92d75aac0742dce9e
 ---
 
 # Funny Creatures Renew (unofficial): status
@@ -61,9 +61,8 @@ French lives in `Mod/Languages/French/DefInjected` (20 owned fields, no Keyed, n
   (Continued), Better Crossbreeding, and **Dogs mate (Continued)** (new: the meffalo joins its group Bison with the
   muffalo, the boomsloth joins its group Boomalope; that mod has no megasloth group, so no megasloth pairing there).
 - **Not run today:** `Tests/test_mod.py` and `Tests/test_pickle_suite.py` (Windows has no Python, WSL has no lxml). The new
-  Dogs mate test and the pass 3 map change were written, not played. Pass 3 now mounts Dogs mate
-  (`Mlie.DogsMate 2441132298`): to replay.
-- **`playTests` still to do** (8.a to 8.m): pass 3 on the final tree, pass 4 (never green: `_mods-sources/FunnyCreatures`
+  Dogs mate test was written, not played; pass 3 now mounts Dogs mate and loads clean.
+- **Pass 3 played 2026-10-11** on `75a8a29` (request 9995): 23 passed, 0 failed, 2 skipped (need the original), `exitReason` passed; the `@review` capture opened. **`playTests` still to do** (8.a to 8.m): pass 4 (never green: `_mods-sources/FunnyCreatures`
   is gone), the `@review` captures, the code review (8.m). No ticket is queued.
 - **Closing pass.** `_tools/` deleted, `.build/` renamed `build/` (ignored; `Directory.Build.props` repointed).
   `FRENCH_REVIEW.md` regenerated with the shared script. `Art/`: the old render files removed; `Art/Gallery/0-preview.png`
