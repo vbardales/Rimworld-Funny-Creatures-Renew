@@ -4,7 +4,7 @@ What the Workshop page asks for and the repository holds nowhere else: the descr
 captures, the messages to the mods this one is built on, the dependencies, and the answer to the content questions. It serves
 twice: for the first upload, and for whoever takes the mod over.
 
-**Current state, 2026-10-11:** the item exists, private (`Mod/About/PublishedFileId.txt` = 3811290892, prepublication 0.1.0 of 2026-10-01). The stage is `writeTests[1.0.0]`; In-game tests have been run, but full validation on the final revision remains pending. The text below is still a draft. The open items are at the end, and they are the owner's. The rules this follows are in `PUBLISHING.md` and `AUDIT.md` (`publish`, `followUp`).
+**Current state, 2026-10-11:** the item exists, private (`Mod/About/PublishedFileId.txt` = 3811290892, prepublication 0.1.0 of 2026-10-01). The stage is `writeTests[1.0.0]`. In-game tests have been run, but full validation on the final revision remains pending. The text below is still a draft. The open items are at the end, and they are the owner's. The rules this follows are in `PUBLISHING.md` and `AUDIT.md` (`publish`, `followUp`).
 
 *Historical, 2026-09-28:* nothing had been uploaded and no item existed.
 
