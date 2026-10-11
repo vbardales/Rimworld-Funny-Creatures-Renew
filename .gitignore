@@ -51,3 +51,4 @@ Art/preview-render.json
 # `dotnet build Tests/Pickle/Source/FunnyCreatures.PickleSteps.csproj -c Release` before a run and read from this folder by
 # the WSL staging. It stays on disk, never in git. Mod/ is the Workshop payload and holds no assembly.
 Tests/Pickle/Mod/Pickle/Assemblies/
+Art/.render/

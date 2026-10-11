@@ -96,7 +96,7 @@ tool repositories from `git -C <folder> log -1`.
 |---|---|---|---|---|
 | `AUDIT.md` | `d1fdbe1` 2026-10-02, sha `7c00eb1f` | in full | **essential** | the chain; step 9 gates (no `@wip`, every `@requires` played, no manual test); step 11 `0.1.0` rule (PublishedFileId commit = the 0.1.0 commit); step 12; session title = `<packageId without nelim.> / <workflow_stage>` |
 | `AGENTS.md` | `7fd7475` 2026-09-29, sha `7a236f03` | in full | yes | evidence rule: latest report per scenario for the current revision; trim `docs/runs/history.md` after publication; CI publishing |
-| `TRANSLATIONS.md` | `af8427f` 2026-10-02, sha `e381086a` | in full | yes | `FRENCH_REVIEW.md` heading must name the mod (done in `_tools/Generate-FrenchReview.ps1`); the shared `scripts/Make-FrenchReview.ps1` was tried and **not used**: it leaves Original and English empty for the `lifeStages` rows addressed by slug |
+| `TRANSLATIONS.md` | `af8427f` 2026-10-02, sha `e381086a` | in full | yes | `FRENCH_REVIEW.md` heading must name the mod (the shared `scripts/Make-FrenchReview.ps1` now fills the lifeStages rows, so the local copy was deleted on 2026-10-11) |
 | `PUBLISHING.md` | `4e8f11a` 2026-10-02, sha `c765bb3c` | parts: "Départ depuis le projet d'origine", animal-mod integrations, "Juste après", "À chaque mise à jour" | yes | PR-first rule (no upstream repo here); **Dogs mate** is a fourth integration (untreated, in `remaining`); `PublishedFileId.txt` committed at once |
 | `STYLE_RIMWORLD.md` | `c105a43` 2026-10-01, **modified**, sha `5a054cf3` | no | not needed | images are done; re-read if `Preview.png` or `ModIcon.png` is touched |
 | `WORKSHOP_COMMENTS.md` | `7fd7475` 2026-09-29, sha `3fb37586` | no | not yet | thanks comments belong to `prepublished` publication |

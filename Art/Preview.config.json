@@ -1,0 +1,31 @@
+{
+  "title": "Funny Creatures Renew",
+  "titleSize": 46,
+  "titleParts": [
+    {
+      "text": "Funny Creatures"
+    },
+    {
+      "text": "Renew",
+      "breakBefore": true,
+      "scale": 0.65,
+      "font": "ui",
+      "color": "secondary"
+    }
+  ],
+  "suffix": "",
+  "tag": "(unofficial)",
+  "copyLines": [
+    "Two animals, brought forward to 1.6. One of them explodes."
+  ],
+  "backgroundPosition": "50% 60%",
+  "backgroundFile": "Preview-source.png",
+  "backgroundSize": "cover",
+  "palette": {
+    "veil": "#4A4035",
+    "inkPrimary": "#F2ECE1",
+    "inkSecondary": "#FFD89B",
+    "accent": "#28CBE8",
+    "badgeInk": "#17120E"
+  }
+}
