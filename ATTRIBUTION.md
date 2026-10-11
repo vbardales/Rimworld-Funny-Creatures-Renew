@@ -94,6 +94,7 @@ recipe's `recipeUsers`.
 | A Dog Said... Animal Prosthetics 2 | SamBucher | [3238353862](https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862) | `Animal_Categories.xml` (which animals sit in which surgery category) | Adds both animals to the three categories, as their vanilla counterparts are |
 | [XND] Nocturnal Animals (Continued) | Mlie, continuing XeoNovaDan's mod | [2269731409](https://steamcommunity.com/sharedfiles/filedetails/?id=2269731409) | its `Patches/Core/*.xml` and its assembly's class name | Makes the boomsloth nocturnal, as the megasloth is |
 | Better Crossbreeding | DizzyEevee | [3520675842](https://steamcommunity.com/sharedfiles/filedetails/?id=3520675842) | its README, `Example/Patches/Example.xml`, `Source/BetterCrossbreeding.cs` and the compiled assembly | Lets the meffalo and muffalo interbreed, and the boomsloth, megasloth and boomalope |
+| Dogs mate (Continued) | Mlie, continuing Revolus' mod | [2441132298](https://steamcommunity.com/sharedfiles/filedetails/?id=2441132298) | its `1.6/Defs/CompatibleSpecies/Mammalia.xml` and its compatibility patches | Adds the meffalo to the group Bison (with the muffalo) and the boomsloth to the group Boomalope |
 
 Two facts came out of reading the last one and are worth keeping. The example that mod ships writes its
 extension class as `DZY.Crossbreeding.Extension`; the compiled assembly declares `DZY.CrossBreeding.Extension`

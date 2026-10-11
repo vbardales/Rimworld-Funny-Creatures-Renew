@@ -44,11 +44,12 @@ Production quantities and other numeric balance values are unchanged. One behavi
 
 **COMPATIBILITY**
 
-Nothing is required. Three patches apply only when the other mod is loaded, and change nothing otherwise.
+Nothing is required. Four patches apply only when the other mod is loaded, and change nothing otherwise.
 
 - [A Dog Said... Animal Prosthetics 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862): both animals get its medieval, simple prosthetic and bionic surgeries.
 - [Nocturnal Animals (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2269731409): the boomsloth is nocturnal, like the megasloth it comes from. The meffalo stays diurnal, like the muffalo.
 - [Better Crossbreeding](https://steamcommunity.com/sharedfiles/filedetails/?id=3520675842): the meffalo and the muffalo interbreed, and so do the boomsloth, the megasloth and the boomalope. A megasloth and a boomalope that mate produce a boomsloth, which is how the boomsloth is described.
+- [Dogs mate (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2441132298): the meffalo can mate with the muffalo, and the boomsloth with the boomalope.
 
 The original Funny Creatures defines the same defs and is declared incompatible.
 
@@ -65,7 +66,7 @@ The update work, code, tests and documentation, was done with the help of AI ass
 **THANKS**
 
 - PredatorKing, for the meffalo, the boomsloth and their textures.
-- SamBucher, for A Dog Said... Animal Prosthetics 2; Mlie and XeoNovaDan, for Nocturnal Animals; DizzyEevee, for Better Crossbreeding. Their files were read to write the patches, and nothing of theirs was copied.
+- SamBucher, for A Dog Said... Animal Prosthetics 2; Mlie and XeoNovaDan, for Nocturnal Animals; Mlie and Revolus, for Dogs mate; DizzyEevee, for Better Crossbreeding. Their files were read to write the patches, and nothing of theirs was copied.
 - The tools this was tested with, for development only and never a dependency: [Pickle](https://steamcommunity.com/sharedfiles/filedetails/?id=3791648678), [RimLogging](https://steamcommunity.com/sharedfiles/filedetails/?id=3733484696) and PickleTools.
 
 Licence and sources: the original states no licence anywhere, and this port rests on the Workshop's own custom for abandoned mods, named credit and a takedown on request. `ATTRIBUTION.md`, in the mod folder and on GitHub, has the licence check and the port in detail.
@@ -86,7 +87,7 @@ First release of the 1.6 update of Funny Creatures, by PredatorKing.
 [*] The boomsloth explodes again: its death action moved in 1.6 and the old form was silently ignored.
 [*] Wildness is read again on both animals, so they are as hard to tame as they were meant to be.
 [*] Wild predators no longer hunt boomsloths, calves included.
-[*] Optional patches for A Dog Said... Animal Prosthetics 2, Nocturnal Animals (Continued) and Better Crossbreeding.
+[*] Optional patches for A Dog Said... Animal Prosthetics 2, Nocturnal Animals (Continued), Better Crossbreeding and Dogs mate (Continued).
 [*] French translation.
 [/list]
 ```

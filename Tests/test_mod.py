@@ -261,6 +261,7 @@ class CompatibilityPatchTests(unittest.TestCase):
         files = sorted((MOD / 'Patches').glob('*.xml'))
         self.assertEqual([f.name for f in files], ['Compat_ADogSaidAnimalProsthetics2.xml',
                                                    'Compat_BetterCrossbreeding.xml',
+                                                   'Compat_DogsMate.xml',
                                                    'Compat_NocturnalAnimals.xml'])
         for file in files:
             root = ET.parse(file).getroot()
@@ -325,6 +326,25 @@ class CompatibilityPatchTests(unittest.TestCase):
         clock = doc.xpath(f'/Defs/ThingDef[defName="Boomsloth"]/modExtensions/li[@Class="{NA_CLASS}"]/bodyClock')
         self.assertEqual([c.text for c in clock], ['Nocturnal'])
         self.assertFalse(doc.xpath('/Defs/ThingDef[defName="Meffalo"]/modExtensions'))
+
+    def test_dogs_mate_joins_the_two_groups_and_only_with_the_mod(self):
+        doc = self.fresh_doc()
+        root = doc.getroot()
+        for group, kinds in (('Bison', ['Bison', 'Muffalo']), ('Boomalope', ['Boomalope']), ('Cow', ['Cow'])):
+            node = LX.SubElement(root, 'Revolus.DogsMate.AnimalGroupDef')
+            LX.SubElement(node, 'defName').text = group
+            holder = LX.SubElement(node, 'pawnKinds')
+            for kind in kinds:
+                LX.SubElement(holder, 'li').text = kind
+        before = snapshot(doc)
+        apply_patch_file('Compat_DogsMate.xml', doc, set())
+        self.assertEqual(snapshot(doc), before, 'without the mod the file must change nothing')
+        apply_patch_file('Compat_DogsMate.xml', doc, {'Dogs mate (Continued)'})
+        def kinds(group):
+            return [li.text for li in doc.xpath(f'/Defs/Revolus.DogsMate.AnimalGroupDef[defName="{group}"]/pawnKinds/li')]
+        self.assertEqual(kinds('Bison'), ['Bison', 'Muffalo', 'Meffalo'])
+        self.assertEqual(kinds('Boomalope'), ['Boomalope', 'Boomsloth'])
+        self.assertEqual(kinds('Cow'), ['Cow'])
 
     def test_nocturnal_rationale_holds_in_the_installed_mod(self):
         core = WORKSHOP / '2269731409/1.6/Patches/Core'

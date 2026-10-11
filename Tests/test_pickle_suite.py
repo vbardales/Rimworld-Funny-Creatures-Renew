@@ -207,7 +207,7 @@ class PickleSuiteTests(unittest.TestCase):
                         'ADS 2 copies its lists once: this mod has to load first (About.xml loadBefore)')
         self.assertEqual(sorted(order), sorted(['nelim.pickletools.loadaudit', 'nelim.funnycreatures',
                                                 'SamBucher.ADogSaidAnimalProsthetics2', 'Mlie.XNDNocturnalAnimals',
-                                                'DizzyEevee.BetterCrossbreeding']))
+                                                'DizzyEevee.BetterCrossbreeding', 'Mlie.DogsMate']))
         self.assertEqual({p[0] for _, p in read_map(PICKLE / 'wsl-deps.incompat-original.map')},
                          {'nelim.pickletools.loadaudit', 'predatorking.funnycreatures'})
         self.assertEqual({p[0] for _, p in read_map(PICKLE / 'wsl-deps.core-only.map')} - {'nelim.pickletools.loadaudit'},
@@ -218,6 +218,7 @@ class PickleSuiteTests(unittest.TestCase):
             'SamBucher.ADogSaidAnimalProsthetics2': 'wsl-deps.avec-facultatifs.map',
             'Mlie.XNDNocturnalAnimals': 'wsl-deps.avec-facultatifs.map',
             'DizzyEevee.BetterCrossbreeding': 'wsl-deps.avec-facultatifs.map',
+            'Mlie.DogsMate': 'wsl-deps.avec-facultatifs.map',
             'predatorking.funnycreatures': 'wsl-deps.incompat-original.map',
             'nelim.pickletools.loadaudit': 'wsl-deps.tools.map',
         }

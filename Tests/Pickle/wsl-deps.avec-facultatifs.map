@@ -1,7 +1,7 @@
-# Pass 3: the mod set that mounts the three optional mods the compatibility patches name. Select it with
+# Pass 3: the mod set that mounts the four optional mods the compatibility patches name. Select it with
 # `-DepMap wsl-deps.avec-facultatifs.map`; the report carries the pass name `avec-facultatifs`.
 #
-# The three mods do not exclude each other: they touch different fields (recipe lists, a body clock, crossbreeding),
+# The four mods do not exclude each other: they touch different fields (recipe lists, a body clock, crossbreeding, mating groups),
 # so one pass covers all three. Each needs only Harmony as a hard dependency, which every pass already stages.
 #
 # THE ORDER IS NOT A DETAIL. The staging loads the mods of a map BEFORE the mod under test, and A Dog Said... Animal
@@ -14,3 +14,4 @@ nelim.funnycreatures                    path:FunnyCreaturesRenew/Mod
 SamBucher.ADogSaidAnimalProsthetics2    3238353862
 Mlie.XNDNocturnalAnimals                2269731409
 DizzyEevee.BetterCrossbreeding          3520675842
+Mlie.DogsMate                        2441132298

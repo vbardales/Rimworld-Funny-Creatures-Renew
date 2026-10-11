@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Dogs mate (Continued) (Mlie.DogsMate, Workshop 2441132298, after Revolus' original).
+
+  That mod lets animals of one group mate with each other. A group is a Revolus.DogsMate.AnimalGroupDef whose
+  pawnKinds list names the PawnKindDefs that may cross. It deduces nothing: an animal no group names cannot cross.
+
+  The meffalo joins the group Bison, where the mod already puts the muffalo (1.6/Defs/CompatibleSpecies/Mammalia.xml,
+  read 2026-10-11): the meffalo is a muffalo subspecies, so it follows its analogue.
+
+  The boomsloth joins the group Boomalope, which holds only the boomalope. There is no group for the megasloth
+  or any sloth in the mod, so no megasloth pairing can be declared here; the boomalope is the one parent that has
+  a group. This agrees with the Better Crossbreeding patch, which pairs the boomsloth with the boomalope too.
+
+  Only applied when that mod is active; without it this file changes nothing and logs nothing.
+  PatchOperationFindMod matches the mod's display name. No load order is asked: the patch adds list items to
+  defs that the mod ships, and the game applies patches after every def is loaded.
+-->
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Dogs mate (Continued)</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/Revolus.DogsMate.AnimalGroupDef[defName="Bison"]/pawnKinds</xpath>
+					<value>
+						<li>Meffalo</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/Revolus.DogsMate.AnimalGroupDef[defName="Boomalope"]/pawnKinds</xpath>
+					<value>
+						<li>Boomsloth</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>

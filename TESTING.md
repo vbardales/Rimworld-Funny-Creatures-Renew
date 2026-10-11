@@ -352,6 +352,18 @@ Added 2026-09-28. Needs pass 3. `Patches/Compat_BetterCrossbreeding.xml`.
 - **Owner rule of 2026-09-28**: a pairing where both animals are vanilla is not patched (Animal Naturally's
   job), so the megasloth x boomalope recipe is gone. Scenario 08 asserts the two stay apart.
 
+## U — Dogs mate (Continued)
+
+Added 2026-10-11. Needs pass 3. `Patches/Compat_DogsMate.xml`.
+
+- With that mod loaded, the meffalo sits in its group Bison (with the muffalo) and the boomsloth in its group
+  Boomalope, and the game accepted both: no unresolved `pawnKinds` reference naming Meffalo or Boomsloth. The mod
+  has no megasloth group, so no pairing with it is declared.
+- **Without** the mod (pass 1): nothing added, nothing logged.
+- Proof on paper: `test_dogs_mate_joins_the_two_groups_and_only_with_the_mod` (lxml, with and without the mod). A
+  birth is not asked of a run, for the reason given in T. No Pickle step reads the mating groups: pass 3 adds that
+  the game loads the mod set without error.
+
 ## Automated checks (outside the game)
 
 Run from the repository root with Python 3 and PowerShell 7. Core-reference checks require a
@@ -401,7 +413,7 @@ tested. This mod needs five requests, none with `-IncludeWip`:
 |---|---|---|---|---|
 | 1 | `tools`, the bare set | English | Core, the five DLC, Harmony, RimLogging, Pickle, this mod, plus PickleTools' load audit (a step package, not an optional mod; `wsl-deps.tools.map`) | The whole suite: the animals and their defs, the two repairs, the predator protection, persistence. The only pass where a capture is clean |
 | 2 | `tools` | French | the same | The same suite in French: labels, descriptions, plurals, attack labels, no accented fallback (dev mode shows a missing key as accented text) |
-| 3 | `avec-facultatifs` | English | pass 1 plus ADS 2 (`SamBucher.ADogSaidAnimalProsthetics2`, 3238353862), Nocturnal Animals (Continued) (`Mlie.XNDNocturnalAnimals`, 2269731409) and Better Crossbreeding (`DizzyEevee.BetterCrossbreeding`, 3520675842), via `wsl-deps.avec-facultatifs.map`. The map names **this mod first**, then ADS 2: ADS 2 has to load after it | Scenarios R, S and T. The three optional mods are compatible with each other, so one pass covers them all |
+| 3 | `avec-facultatifs` | English | pass 1 plus ADS 2 (`SamBucher.ADogSaidAnimalProsthetics2`, 3238353862), Nocturnal Animals (Continued) (`Mlie.XNDNocturnalAnimals`, 2269731409), Better Crossbreeding (`DizzyEevee.BetterCrossbreeding`, 3520675842) and Dogs mate (Continued) (`Mlie.DogsMate`, 2441132298), via `wsl-deps.avec-facultatifs.map`. The map names **this mod first**, then ADS 2: ADS 2 has to load after it | Scenarios R, S, T and U. The three optional mods are compatible with each other, so one pass covers them all |
 | 4 | `incompat-original` | English | pass 1 plus `predatorking.funnycreatures` (2640466629) via `wsl-deps.incompat-original.map` | Scenario L only: the documented symptom of the incompatibility is asserted, so green means it still behaves as declared |
 | 5 | `core-only`, *proposed* | English | pass 1 with the five DLC left out (`!` lines in `wsl-deps.core-only.map`) | The claim in "Load order" that the definitions need Core only, shown at run time and not only by the reference check |
 
