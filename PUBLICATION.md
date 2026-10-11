@@ -4,10 +4,9 @@ What the Workshop page asks for and the repository holds nowhere else: the descr
 captures, the messages to the mods this one is built on, the dependencies, and the answer to the content questions. It serves
 twice: for the first upload, and for whoever takes the mod over.
 
-**State, 2026-09-28: a draft, not final.** Nothing has been uploaded and no item exists (`Mod/About/PublishedFileId.txt` is
-absent). The stage is `done`; `prepublished` needs `tested` first, and no scenario has been played yet. The open items are at the
-end, and they are the owner's. The rules this follows are in `PUBLISHING.md` and `AUDIT.md`, steps `tested -> prepublished` and
-`prepublished -> published`.
+**Current state, 2026-10-11:** the item exists, private (`Mod/About/PublishedFileId.txt` = 3811290892, prepublication 0.1.0 of 2026-10-01). The stage is `writeTests[1.0.0]`; nothing is played in a game yet and the text below is still a draft. The open items are at the end, and they are the owner's. The rules this follows are in `PUBLISHING.md` and `AUDIT.md` (`publish`, `followUp`).
+
+*Historical, 2026-09-28:* nothing had been uploaded and no item existed.
 
 ## Steam description
 
@@ -34,7 +33,7 @@ Two animals, both trainable to Advanced, and both milkable in a way no vanilla a
 
 The meffalo is a muffalo in everything but its udder: body size 3.5, fifty-five years of life, wildness 0.6, and it is milked for flake rather than milk. It is shorn for meffalo wool; butchering yields dark fur leather.
 
-The boomsloth is a megasloth that goes off. Body size 4.0, wildness 0.97, fifteen years, and it explodes when it dies, with the vanilla big explosion, so a dead boomsloth takes the room with it. It shears megasloth wool and is milked for chemfuel.
+The boomsloth is a megasloth that goes off. Body size 4.0, wildness 0.97, fifteen years, and it explodes when it dies, with the vanilla big explosion, so a dead boomsloth takes the room with it. It yields megasloth wool when shorn and is milked for chemfuel.
 
 **WHAT CHANGED IN THE 1.6 UPDATE**
 
@@ -48,7 +47,7 @@ Nothing is required. Four patches apply only when the other mod is loaded, and c
 
 - [A Dog Said... Animal Prosthetics 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862): both animals get its medieval, simple prosthetic and bionic surgeries.
 - [Nocturnal Animals (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2269731409): the boomsloth is nocturnal, like the megasloth it comes from. The meffalo stays diurnal, like the muffalo.
-- [Better Crossbreeding](https://steamcommunity.com/sharedfiles/filedetails/?id=3520675842): the meffalo and the muffalo interbreed, and so do the boomsloth, the megasloth and the boomalope. A megasloth and a boomalope that mate produce a boomsloth, which is how the boomsloth is described.
+- [Better Crossbreeding](https://steamcommunity.com/sharedfiles/filedetails/?id=3520675842): The meffalo and the muffalo can interbreed. The boomsloth can interbreed with either the megasloth or the boomalope; offspring may be either parent's species. This patch does not enable breeding between megasloths and boomalopes.
 - [Dogs mate (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2441132298): the meffalo can mate with the muffalo, and the boomsloth with the boomalope.
 
 The original Funny Creatures defines the same defs and is declared incompatible.

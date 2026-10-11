@@ -6,7 +6,7 @@ in game.
 
 ## [1.0.0] — unreleased
 
-On release: create the `v1.0.0` tag and the matching GitHub release, then publish to the Workshop.
+On release: upload to the Workshop first, and once the upload succeeds create the `v1.0.0` tag and the matching GitHub release.
 Both `Mod/About/ModIcon.png` and `Mod/About/Preview.png` are in place.
 
 First release of the 1.6 update of **Funny Creatures**, by PredatorKing.
@@ -49,8 +49,7 @@ First release of the 1.6 update of **Funny Creatures**, by PredatorKing.
   - *A Dog Said... Animal Prosthetics 2*: both animals join its three surgery categories. This mod
     now declares `loadBefore` for it, since it copies its lists once at its own last patch.
   - *[XND] Nocturnal Animals (Continued)*: the boomsloth is nocturnal, as the megasloth is in that mod.
-  - *Better Crossbreeding*: the meffalo and muffalo interbreed, the boomsloth, megasloth and boomalope
-    interbreed; no pair joins two vanilla animals. Its class is spelled
+  - *Better Crossbreeding*: the meffalo and muffalo interbreed, the boomsloth interbreeds with the megasloth and with the boomalope; no pair joins two vanilla animals. Its class is spelled
     `DZY.CrossBreeding.Extension`, as compiled; the mod's own example spells it differently.
   - *Dogs mate (Continued)*: the meffalo joins its group Bison (with the muffalo), the boomsloth joins its
     group Boomalope. The mod has no group for the megasloth.
