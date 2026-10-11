@@ -57,7 +57,7 @@ Current state only. Run lines: `docs/runs/README.md`. Older dated sections: `doc
   never green), open the `@review` captures, deploy, then the code review (8.m). Pickle tickets: one per not-yet-green scenario,
   small, none for the green ones (AUDIT.md, "Ordre des passes"). No ticket is queued yet.
 - **Dogs mate** (PUBLISHING.md, animals): not treated, kept in `remaining`.
-- **Closing pass.** `_tools/Generate-FrenchReview.ps1` deleted, `FRENCH_REVIEW.md` regenerated with the shared script
+- **Closing pass.** Mod root: `_tools/` deleted, `.build/` renamed `build/` (ignored; `Directory.Build.props` repointed). `_tools/Generate-FrenchReview.ps1` deleted, `FRENCH_REVIEW.md` regenerated with the shared script
   (it now fills the lifeStages rows and adds the "Review line (Virginie only)" table). `Art/`: the three old render files
   removed (the shared renderer reads `Art/Preview.config.json`), `Art/Gallery/0-preview.png` is the byte copy of
   `Mod/About/Preview.png`.

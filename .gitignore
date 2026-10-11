@@ -45,7 +45,7 @@ Art/preview-render.json
 
 # Build intermediates of the Pickle step assembly (Tests/Pickle/Source/Directory.Build.props sends them here, outside
 # the test mod folder: the staging copies that folder as it is).
-.build/
+build/
 
 # The Pickle step assembly is a build artefact of the test companion mod, rebuilt with
 # `dotnet build Tests/Pickle/Source/FunnyCreatures.PickleSteps.csproj -c Release` before a run and read from this folder by
