@@ -34,6 +34,7 @@ remaining:
   - unverified: "(playTests) AUDIT.md 7.a names TEST_SCENARIOS.md; this mod keeps its scenarios A to U in TESTING.md, as the sibling mods do (AUDIT.md 'Les passes se declarent dans le TESTING.md'). Wording to confirm with the Audit session, no rename done"
   - unverified: "(playTests 8.m) code review: code_review_sha absent. Review from 0.1.0 once the code is stable and played, then store the 40-character sha"
   - unverified: "(playTests) Tests/test_mod.py and Tests/test_pickle_suite.py are listed in scripts/LOCAL_SCRIPTS.md with a justification; Virginie validates the table at the end"
+social_preview_sha256: cea77506187882ce5ffa9a96d3c09cbe6b3acd5cf6e663d51232b4de56c00827
 session:      local_15177fcc-4975-4f84-abde-09c0335fcf1a
 updated: "2026-10-11: reaudit on the 2026-10-09 vocabulary. Dogs mate patched, French review validated by Virginie, stage playTests[1.0.0]. Journal folded into docs/runs/status-journal-2026-09-to-10.md. _tools and .build cleaned"
 protocols_read_sha: ac587c23f2481ac64ab621b92d75aac0742dce9e
@@ -66,4 +67,5 @@ French lives in `Mod/Languages/French/DefInjected` (20 owned fields, no Keyed, n
 - **Closing pass.** `_tools/` deleted, `.build/` renamed `build/` (ignored; `Directory.Build.props` repointed).
   `FRENCH_REVIEW.md` regenerated with the shared script. `Art/`: the old render files removed; `Art/Gallery/0-preview.png`
   is the byte copy of `Mod/About/Preview.png`.
+- **Social preview (10.f), 2026-10-12:** uploaded through Chrome on Virginie's word ("fais le social preview"); `og:image` downloaded: 634,643 bytes, sha256 equal to `Mod/About/Preview.png`, recorded in `social_preview_sha256`. Preview approved by Virginie (render by the Audit workflow session).
 - RimWorld was not launched, nothing was deposited.
