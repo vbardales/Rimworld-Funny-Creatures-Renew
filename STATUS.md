@@ -26,7 +26,7 @@ evidence: "Static checks, on disk only: evidence/static/. Pickle reports kept af
 remaining:
   - unverified: "(playTests) pass 4 (incompat-original, scenario 10) has never been green: 0b29ed3 failed on a wrong assumption, 6af5 could not stage because _mods-sources/FunnyCreatures is gone. Pass 1/2 FR for the optional-mod scenarios: not played"
   - unverified: "(done -> tested) the @review captures of every pass have not been opened; no green run proves what an image shows"
-  - unverified: "(done -> tested) Tests/test_mod.py and Tests/test_pickle_suite.py were not fully replayed on 2026-10-02: Windows has no Python, WSL has none of lxml or a game folder. Last full green: 0b29ed3 (23 and 12)"
+  - unverified: "(done -> tested) Python tests replayed 2026-10-12 under WSL (python3 + lxml 5.2.1, RIMWORLD_DIR set to the Steam folder): 36 run, 32 passed, 3 skipped, 1 failed. The failure is the map check of wsl-deps.incompat-original.map: _mods-sources/FunnyCreatures is gone (same cause as pass 4)"
   - unverified: "(done -> tested) the lines of TESTING.md marked proposed await the owner: scenarios D, E to K, M and O as not applicable, and pass 5 (core-only)"
   - unverified: "(done -> tested) existing-save migration: loading a save made with the original mod. No such save exists; stays listed as unverified, not a gate"
   - unverified: "(prepublished) PUBLICATION.md is drafted (2026-09-28) but nothing in it is final: the gallery is not produced, the mature-content answer waits for it, the description is not yet the single Markdown source that About.xml is generated from, and the rollback target is chosen only once a good run exists. About.xml has no IF I GO QUIET, AI-GENERATED or THANKS block yet"
@@ -60,8 +60,7 @@ French lives in `Mod/Languages/French/DefInjected` (20 owned fields, no Keyed, n
   mods, each a guarded optional patch in `Mod/Patches/`: A Dog Said... Animal Prosthetics 2, [XND] Nocturnal Animals
   (Continued), Better Crossbreeding, and **Dogs mate (Continued)** (new: the meffalo joins its group Bison with the
   muffalo, the boomsloth joins its group Boomalope; that mod has no megasloth group, so no megasloth pairing there).
-- **Not run today:** `Tests/test_mod.py` and `Tests/test_pickle_suite.py` (Windows has no Python, WSL has no lxml). The new
-  Dogs mate test was written, not played; pass 3 now mounts Dogs mate and loads clean.
+- **Python tests replayed 2026-10-12** under WSL (36 run, 32 passed, 3 skipped, 1 failed: missing original archive, see remaining). Dogs mate test green.
 - **Pass 3 played 2026-10-11** on `75a8a29` (request 9995): 23 passed, 0 failed, 2 skipped (need the original), `exitReason` passed; the `@review` capture opened. **`playTests` still to do** (8.a to 8.m): pass 4 (never green: `_mods-sources/FunnyCreatures`
   is gone), the `@review` captures, the code review (8.m). No ticket is queued.
 - **Closing pass.** `_tools/` deleted, `.build/` renamed `build/` (ignored; `Directory.Build.props` repointed).
