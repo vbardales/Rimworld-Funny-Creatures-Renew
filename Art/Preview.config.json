@@ -18,6 +18,10 @@
   "copyLines": [
     "Two animals, brought forward to 1.6. One of them explodes."
   ],
+  "layout": "panel",
+  "panelAnchor": "top-left",
+  "echo": { "file": "echo-preview.png", "mode": "alpha", "preSized": true, "veil": false, "color": "var(--accent)", "opacity": 1, "panelTop": 8, "panelRight": 2, "panelWidth": 50, "flipX": true },
+  "modIconSource": "ModIcon-source.png",
   "backgroundPosition": "50% 60%",
   "backgroundFile": "Preview-source.png",
   "backgroundSize": "cover",
@@ -29,11 +33,12 @@
     "badgeInk": "#17120E"
   },
   "iconBadge": {
-    "file": "ModIcon-badge.png",
-    "corner": "bottom-right",
-    "width": 200,
-    "outline": false,
-    "veil": "radial",
-    "veilSize": 250
+    "file": "ModIcon-source.png",
+    "corner": "bottom-left",
+    "width": 180,
+    "translate": "-12.5%, 12.5%",
+    "rotate": 15,
+    "radius": 48,
+    "outline": false
   }
 }
