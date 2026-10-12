@@ -27,5 +27,13 @@
     "inkSecondary": "#FFD89B",
     "accent": "#28CBE8",
     "badgeInk": "#17120E"
+  },
+  "iconBadge": {
+    "file": "ModIcon-badge.png",
+    "corner": "bottom-right",
+    "width": 200,
+    "outline": false,
+    "veil": "radial",
+    "veilSize": 250
   }
 }
