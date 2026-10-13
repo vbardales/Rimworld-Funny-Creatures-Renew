@@ -399,10 +399,7 @@ in `evidence/static/<date>-<short sha>/` (git-ignored); see "Evidence to keep" b
 
 # Plan: passes, automation and gates
 
-Written 2026-09-28 after re-reading `AUDIT.md`. **The Pickle suite is written** (`Tests/Pickle/`, twelve features, a step
-assembly, four pass maps) and checked offline by `Tests/test_pickle_suite.py`, which shows that every feature line matches
-exactly one known step. **Nothing has been played in a game.** `Tests/Pickle/README.md` has the layout, the request that plays each
-pass and what the two limits of Pickle's built-in steps forced. The lines marked *proposed* still await the owner's word.
+Written 2026-09-28 after re-reading `AUDIT.md`, extended 2026-10-13. **The Pickle suite is written** (`Tests/Pickle/`, seventeen features, a step assembly in two files, four pass maps) and checked offline by `Tests/test_pickle_suite.py`, which shows that every feature line matches exactly one known step. Features 01 to 12 have played (lines in `docs/runs/README.md`); features 13 to 17 (scenarios D to K, M and O) are filed as a small ticket and have not. `Tests/Pickle/README.md` has the layout, the request that plays each pass and what the two limits of Pickle's built-in steps forced. The lines marked *proposed* still await the owner's word.
 
 ## The passes
 
@@ -439,7 +436,7 @@ trade tags, biomes, references to Core). What is left for the game is what those
 | C the boomsloth explodes when it dies | **Pickle**, `02` | The whole point of the port, and a fault that logs nothing. A colonist two cells from the animal is the sensor: a Flame explosion leaves a Burn on it. The boomalope is a positive control, a meffalo a negative one |
 | D taming is hard again | **Pickle**, `13` | The engine's handling-skill stat and taming curve over the wildness it read, and the manhunter fail chance: no die is rolled, a wildness read as 0 would show |
 | E, F milking; G shearing | **Pickle**, `14` | The comps the game instantiated (product, amount, interval), a tamed male made ready: `milkFemaleOnly` false is silent when lost. No milking is waited for |
-| H butchering | **Pickle**, `15` | The butcher products of the live animal (nothing dies, no blast), the declared leather and meat label |
+| H butchering | **Pickle**, `15` | The butcher products of the live animal (nothing dies, no blast), the declared leather and meat |
 | I training, pack, herd | **Pickle**, `15` | The game's training gate, the pack and herd flags, the carrying capacity against a muffalo |
 | J wild spawning | **Pickle**, `16` | The commonality table of every biome the game loaded (nothing else but the six declared), the group size |
 | K traders | **Pickle**, `16` | Some trader kind of the game has an animal stock that handles each race |

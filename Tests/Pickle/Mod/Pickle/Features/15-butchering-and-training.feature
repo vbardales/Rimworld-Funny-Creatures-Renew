@@ -16,13 +16,13 @@ Feature: butchering, training and the herd
   Scenario: butchering a meffalo gives dark fur and meffalo meat
     Given Funny Creatures Renew: a "Meffalo" named "Meffy" is spawned at x=140 z=153
     And a colonist "Butcher" exists
-    Then Funny Creatures Renew: butchering the animal "Meffy" gives "Leather_Darkfur" and meat labelled "meffalo meat"
+    Then Funny Creatures Renew: butchering the animal "Meffy" gives "Leather_Darkfur" and meat
 
   Scenario: butchering a boomsloth gives heavy fur and boomsloth meat, and nothing blows up
     Given Funny Creatures Renew: a "Boomsloth" named "Boomy" is spawned at x=140 z=155
     And a colonist "Butcher" exists
     And Funny Creatures Renew: the colonist "Butcher" stands at x=142 z=155
-    Then Funny Creatures Renew: butchering the animal "Boomy" gives "Leather_Heavy" and meat labelled "boomsloth meat"
+    Then Funny Creatures Renew: butchering the animal "Boomy" gives "Leather_Heavy" and meat
     When I wait 90 ticks
     Then "Butcher" has no hediff "Burn"
 

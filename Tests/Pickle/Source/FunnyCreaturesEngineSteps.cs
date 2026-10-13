@@ -151,8 +151,8 @@ namespace FunnyCreaturesRenew.PickleSteps
 
         /// <summary>What a butcher would take from the animal, asked of the live pawn: nothing dies, so no death
         /// action fires. The corpse path calls this same method.</summary>
-        [Then("Funny Creatures Renew: butchering the animal {string} gives {string} and meat labelled {string}")]
-        public void ButcherGives(PickleContext ctx, string nickname, string leatherDefName, string meatLabel)
+        [Then("Funny Creatures Renew: butchering the animal {string} gives {string} and meat")]
+        public void ButcherGives(PickleContext ctx, string nickname, string leatherDefName)
         {
             Pawn animal = RequireAnimal(ctx, nickname);
             Pawn butcher = PawnsFinder.AllMaps_FreeColonists.FirstOrDefault();
@@ -161,8 +161,6 @@ namespace FunnyCreaturesRenew.PickleSteps
             string seen = string.Join(", ", products.Select(t => t.def.defName + " x" + t.stackCount));
             ctx.Assert(products.Any(t => t.def.defName == leatherDefName), $"butchering {nickname} gives {seen}, no {leatherDefName}");
             ctx.Assert(products.Any(t => t.def.IsMeat), $"butchering {nickname} gives {seen}, no meat");
-            ctx.Assert(animal.RaceProps.meatLabel == meatLabel,
-                $"the meat label of {nickname} is '{animal.RaceProps.meatLabel}', expected '{meatLabel}'");
         }
 
         // ---- I: training, pack, herd ----

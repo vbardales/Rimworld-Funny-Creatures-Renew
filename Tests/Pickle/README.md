@@ -1,7 +1,7 @@
 # Pickle suite: Funny Creatures Renew
 
 In-game functional tests, written 2026-09-28, run by [Pickle](https://github.com/RimWorks/Rimworld-Pickle) in the headless
-WSL install. **Nothing here has been played.** A run is filed by request, never launched by hand; see "Running it".
+WSL install. Features 01 to 12 have played (`../../docs/runs/README.md`); 13 to 17 are filed and not yet played. A run is filed by request, never launched by hand; see "Running it".
 
 What belongs in Gherkin, and what does not, is decided in [`../../TESTING.md`](../../TESTING.md) ("Plan: passes,
 automation and gates"). In one line: the XML contract, the def values and the French coverage are proved offline by
