@@ -444,12 +444,15 @@ trade tags, biomes, references to Core). What is left for the game is what those
 | M dessicated corpse | **Pickle**, `17` | The dessicated graphic loads and draws from the four sides with no missing-texture material |
 | N predator protection, calves included | **Pickle**, `03` | Deterministic if the step asks the game's own `IsAcceptablePreyFor` about a calf and a bear, with the flag as the control; waiting for a real hunt would be probabilistic |
 | O sounds | **Pickle**, `17` | Each sound resolves a clip through the game's own call, the pitch lowered on the meffalo, the thrumbo's sounds on the boomsloth |
-Owner decision, 2026-10-13: features 13 to 17 are kept whole, although some lines repeat what `Tests/test_mod.py` proves (biomes, group size, pack and herd flags, yields, sound identity, pitch) or exercise an engine mechanic (taming curve, training gate, trader stock). `AUDIT.md` ("Ne garder en Gherkin que ce que seul un jeu qui tourne peut montrer") would prune them; she chose to keep them.
 | P English and French UI | **Pickle**, passes 1 and 2, `05` | Labels and descriptions rendered in each language, captures opened, log clean |
 | Q new game and existing saves | **Pickle**, `04`, for save and reload; the migration case *unverified* | A save, restart and reload chain can be automated. Loading a save made with the original mod needs one that does not exist yet: it stays listed as unverified and is not a gate (the owner's rule for such cases, 2026-09-24) |
 | R ADS 2 | **Pickle**, pass 3, `06` | The real recipes listing both animals is the load-order result, and only a run shows it |
 | S Nocturnal Animals | **Pickle**, pass 3, `07` | That the game accepted the extension class and that the meffalo carries none; what the mod does with a body clock is its own |
 | T Better Crossbreeding | **Pickle**, pass 3, `08`, def level | The pairs and outcomes are loaded and complete in both directions. A birth is not asked of a run, see scenario T |
+
+Owner decision, 2026-10-13: features 13 to 17 are kept whole, although some lines repeat what `Tests/test_mod.py` proves (biomes,
+group size, pack and herd flags, yields, sound identity, pitch) or exercise an engine mechanic (taming curve, training gate, trader
+stock). `AUDIT.md` ("Ne garder en Gherkin que ce que seul un jeu qui tourne peut montrer") would prune them; she chose to keep them.
 
 ## Gates for `done -> tested`
 
