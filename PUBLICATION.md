@@ -21,9 +21,9 @@ the body, then the pointer to `ATTRIBUTION.md` and the licence, and ends with th
 ```markdown
 UNOFFICIAL. This mod is published without the original author's explicit consent. If the original author contacts me to request its removal, I undertake to take it down promptly.
 
-The meffalo and the boomsloth, brought forward to RimWorld 1.6. Two animals that turn fodder into contraband.
+The meffalo and the boomsloth, brought forward to the latest RimWorld version. Two animals that turn fodder into contraband.
 
-I am not the author of this mod. Both animals are PredatorKing's; this update ports them to 1.6 and adds the predator protection described below. Credit goes to them, mistakes in the update are mine. If they come back to it, or ask me to take this down, it comes down.
+I am not the author of this mod. Both animals are PredatorKing's; this update ports them to the latest RimWorld version and adds the predator protection described below. Credit goes to them, mistakes in the update are mine. If they come back to it, or ask me to take this down, it comes down.
 
 Original mod: [Funny Creatures](https://steamcommunity.com/sharedfiles/filedetails/?id=2640466629), last supporting 1.3, last updated in October 2021. Abandoned, not withdrawn.
 
@@ -35,9 +35,9 @@ The meffalo is a muffalo in everything but its udder: body size 3.5, fifty-five 
 
 The boomsloth is a megasloth that goes off. Body size 4.0, wildness 0.97, fifteen years, and it explodes when it dies, with the vanilla big explosion, so a dead boomsloth takes the room with it. It yields megasloth wool when shorn and is milked for chemfuel.
 
-**WHAT CHANGED IN THE 1.6 UPDATE**
+**WHAT CHANGED IN THIS UPDATE**
 
-Two compatibility repairs restore the original behaviour. Wildness stopped being a field of RaceProperties in 1.6 and became a stat declared under statBases: the old form is not an error, it is simply never read, and the stat defaults to -1, outside the range the game uses, so both animals tamed for almost nothing instead of sitting at 0.6 and 0.97. And the boomsloth's death action moved: a flat deathActionWorkerClass inside race became a deathAction block holding a workerClass, and the flat form is no longer read at all, which means the explosion had stopped happening, on the animal named for it.
+Two compatibility repairs restore the original behaviour. Wildness stopped being a field of RaceProperties in the latest RimWorld version and became a stat declared under statBases: the old form is not an error, it is simply never read, and the stat defaults to -1, outside the range the game uses, so both animals tamed for almost nothing instead of sitting at 0.6 and 0.97. And the boomsloth's death action moved: a flat deathActionWorkerClass inside race became a deathAction block holding a workerClass, and the flat form is no longer read at all, which means the explosion had stopped happening, on the animal named for it.
 
 Production quantities and other numeric balance values are unchanged. One behaviour is added: wild predators no longer hunt boomsloths, calves included, since a predator that kills one sets off the explosion. Colonists can still hunt them.
 
@@ -81,9 +81,9 @@ previous tag.
 ```
 ### 1.0.0
 [b]1.0.0[/b]
-First release of the 1.6 update of Funny Creatures, by PredatorKing.
+First release of the update of Funny Creatures, by PredatorKing.
 [list]
-[*] The boomsloth explodes again: its death action moved in 1.6 and the old form was silently ignored.
+[*] The boomsloth explodes again: its death action moved in the latest RimWorld version and the old form was silently ignored.
 [*] Wildness is read again on both animals, so they are as hard to tame as they were meant to be.
 [*] Wild predators no longer hunt boomsloths, calves included.
 [*] Optional patches for A Dog Said... Animal Prosthetics 2, Nocturnal Animals (Continued), Better Crossbreeding and Dogs mate (Continued).

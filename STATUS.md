@@ -18,14 +18,14 @@ showcase:     complete
 build:        not_applicable
 xml_audit:    complete
 automated_tests: complete
-pickle_scenarios: "written 2026-09-28: 12 features in Tests/Pickle/. Played 2026-09-28/29 (lines in docs/runs/README.md): tools EN and FR 16 passed / 13 skipped, core-only 3 of 3, avec-facultatifs EN 23 passed / 2 skipped (older tree), incompat-original EN 2 of 2 on 0034ce2 (first green pass 4, 2026-10-12). No @wip. 13 scenarios still skipped in the tools passes (they need optional mods), no @review capture opened. Plan and passes: TESTING.md and Tests/Pickle/README.md"
+pickle_scenarios: "written 2026-09-28: 12 features in Tests/Pickle/. Played 2026-09-28/29 (lines in docs/runs/README.md): tools EN and FR 16 passed / 13 skipped, core-only 3 of 3, avec-facultatifs EN 23 passed / 2 skipped (older tree), incompat-original EN 2 of 2 on 0034ce2 (first green pass 4, 2026-10-12). No @wip. 13 scenarios still skipped in the tools passes (they need optional mods). Plan and passes: TESTING.md and Tests/Pickle/README.md"
 functional_tests: unverified
 tested_on:
 workshop:     "prepublished 0.1.0, private (Steam creates every item private). About/PublishedFileId.txt = 3811290892, found untracked on 2026-10-02 (dated 2026-10-01 14:40) and committed that day with CHANGELOG [0.1.0]. Not tested, not public: stage stays done. The original is Workshop 2640466629"
 evidence: "Static checks, on disk only: evidence/static/. Pickle reports kept after the 2026-10-02 cleanup (14 MB, summary/junit/Player.log/captures only): Tests/Pickle/Evidence/{tools-en,tools-fr,core-only-en}-69a9e1a, avec-facultatifs-en-75a8a29 and incompat-original-en-0034ce2 (git-ignored). What to keep and what to delete: TESTING.md, Evidence to keep. One line per run: docs/runs/README.md"
 remaining:
-  - unverified: "(playTests) pass 4 (incompat-original) is green since 0034ce2 (2 of 2, 2026-10-12, line 0034 of docs/runs/README.md); no pass 4 @review capture opened. Pass 1/2 FR for the optional-mod scenarios: not played"
-  - unverified: "(done -> tested) the @review captures of every pass have not been opened; no green run proves what an image shows"
+  - unverified: "(playTests) pass 4 (incompat-original) is green since 0034ce2 (2 of 2, 2026-10-12, line 0034 of docs/runs/README.md); pass 4 has no @review capture. Pass 1/2 FR for the optional-mod scenarios: not played"
+  - verified: "@review captures: the only one is manual--the-two-animals--step0, kept in three reports (tools-en, tools-fr, avec-facultatifs-en). All three opened 2026-10-13: both animals drawn and told apart, no raw key, no missing texture; FR UI labels render (Toxicomanie, Animaux, Faune)"
   - unverified: "(done -> tested) Python tests replayed 2026-10-12 under WSL (python3 + lxml 5.2.1, RIMWORLD_DIR set to the Steam folder): 36 run, 32 passed, 3 skipped, 1 failed. The failure is the map check of wsl-deps.incompat-original.map: _mods-sources/FunnyCreatures is gone (same cause as pass 4)"
   - unverified: "(done -> tested) the lines of TESTING.md marked proposed await the owner: scenarios D, E to K, M and O as not applicable, and pass 5 (core-only)"
   - unverified: "(done -> tested) existing-save migration: loading a save made with the original mod. No such save exists; stays listed as unverified, not a gate"
@@ -62,8 +62,8 @@ French lives in `Mod/Languages/French/DefInjected` (20 owned fields, no Keyed, n
   (Continued), Better Crossbreeding, and **Dogs mate (Continued)** (new: the meffalo joins its group Bison with the
   muffalo, the boomsloth joins its group Boomalope; that mod has no megasloth group, so no megasloth pairing there).
 - **Python tests replayed 2026-10-12** under WSL (36 run, 32 passed, 3 skipped, 1 failed: missing original archive, see remaining). Dogs mate test green.
-- **Pass 3 played 2026-10-11** on `75a8a29` (request 9995): 23 passed, 0 failed, 2 skipped (need the original), `exitReason` passed; the `@review` capture opened. **`playTests` still to do** (8.a to 8.m): pass 4 is now green (0034ce2, 2 of 2, 2026-10-12: found on disk 2026-10-13, line 0034 of docs/runs/README.md), but its `@review` capture is not opened;
-  still to do: the other `@review` captures, the code review (8.m). No ticket is queued.
+- **Pass 3 played 2026-10-11** on `75a8a29` (request 9995): 23 passed, 0 failed, 2 skipped (need the original), `exitReason` passed; the `@review` capture opened. **`playTests` still to do** (8.a to 8.m): pass 4 is now green (0034ce2, 2 of 2, 2026-10-12: found on disk 2026-10-13, line 0034 of docs/runs/README.md),
+  still to do: the code review (8.m). No ticket is queued.
 - **Closing pass.** `_tools/` deleted, `.build/` renamed `build/` (ignored; `Directory.Build.props` repointed).
   `FRENCH_REVIEW.md` regenerated with the shared script. `Art/`: the old render files removed; `Art/Gallery/0-preview.png`
   is the byte copy of `Mod/About/Preview.png`.
