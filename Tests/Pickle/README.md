@@ -58,6 +58,11 @@ what the run is for.
 | `10-the-original-mod` | L | The declared incompatibility is still true: the game logs the duplicate definitions |
 | `11-core-only` | (Load order) | With the five expansions out, both animals load and are read the same |
 | `12-load-is-clean` | (Logs) | Nothing in the game's log, from the start, is attributed to this mod |
+| `13-taming-is-hard-again` | D | The handling skill and the taming curve the engine reads from the wildness, for each animal and for a muffalo as control |
+| `14-milk-and-wool` | E, F, G | The milk and wool comps the game instantiated (product, amount, interval), a male animal ready to be milked |
+| `15-butchering-and-training` | H, I | What a butcher takes from each animal, no blast beside a colonist, the four advanced skills, pack and herd flags, carrying capacity |
+| `16-wild-spawning-and-trade` | J, K | The biomes each animal lives in, according to the biomes the game loaded, the group size, and a trader that can stock each |
+| `17-corpse-and-sounds` | M, O | The dessicated graphic draws from every side with no missing texture; the sounds resolve clips, the meffalo pitched low, the boomsloth on the thrumbo's sounds |
 
 ## Tags
 
@@ -88,9 +93,9 @@ powershell.exe -ExecutionPolicy Bypass -File C:\Users\nelim\Documents\rimworld\R
 
 | # | Pass | `-DepMap` | `-Language` | `-Filter` | Plays |
 |---|---|---|---|---|---|
-| 1 | `tools` (the bare set) | `wsl-deps.tools.map` | English | `'Funny Creatures Renew - Pickle tests,!@core-only'` | 01 to 05, 09, 12; **06, 07, 08 and 10 are skipped by requirement** |
+| 1 | `tools` (the bare set) | `wsl-deps.tools.map` | English | `'Funny Creatures Renew - Pickle tests,!@core-only'` | 01 to 05, 09, 12 to 17; **06, 07, 08 and 10 are skipped by requirement** |
 | 2 | `tools` | `wsl-deps.tools.map` | French | the same | the same, in French: the point is 05 |
-| 3 | `avec-facultatifs` | `wsl-deps.avec-facultatifs.map` | English | `'Funny Creatures Renew - Pickle tests,!@sans-facultatifs,!@core-only'` | 01 to 08 and 12; 09 excluded; 10 skipped by requirement |
+| 3 | `avec-facultatifs` | `wsl-deps.avec-facultatifs.map` | English | `'Funny Creatures Renew - Pickle tests,!@sans-facultatifs,!@core-only'` | 01 to 08 and 12 to 17; 09 excluded; 10 skipped by requirement |
 | 4 | `incompat-original` | `wsl-deps.incompat-original.map` | English | `'10-the-original-mod'` | 10 |
 | 5 | `core-only`, *proposed* | `wsl-deps.core-only.map` | English | `'11-core-only,12-load-is-clean'` | 11 and 12 |
 
@@ -120,11 +125,12 @@ Two more facts worth knowing before writing the next scenario:
 
 ## What was left out of Gherkin, and why
 
-`TESTING.md`, "What stays out of the game suite", has the table. In short: milking, shearing, butchering, taming difficulty,
-training, herding, wild spawning, trade and the sounds are proved by XML tests, or are the engine's own mechanics; a scenario
-would test the engine. The migration of a save made with the original mod needs a save that does not exist, and stays
-unverified. That the mod list shows a warning for `incompatibleWith` is the game's reaction to a declaration: not tested here,
-and scenario L was rewritten for that reason.
+`TESTING.md`, "What stays out of the game suite", has the table. Scenarios D to K, M and O (taming, milk and wool,
+butchering, training, herding, wild spawning, trade, the dessicated corpse, the sounds) are automated in features 13 to 17
+(owner decision, 2026-10-13): each reads a figure the engine computes (a stat, a curve, a comp, a biome table, a trader's
+stock, a graphic, a clip folder) instead of waiting for game days or a die roll. What stays out: the migration of a save
+made with the original mod, which needs a save that does not exist, and the mod list's warning for `incompatibleWith`,
+which is the game's reaction to a declaration.
 
 ## Cells and timing
 

@@ -34,7 +34,7 @@ namespace FunnyCreaturesRenew.PickleSteps
     /// with a message that says what was not found, instead of making the whole suite fail to load.
     /// </summary>
     [PickleSteps]
-    public class FunnyCreaturesSteps
+    public partial class FunnyCreaturesSteps
     {
         private const string CrossbreedingExtension = "DZY.CrossBreeding.Extension";
         private const string NocturnalExtension = "NocturnalAnimals.ExtendedRaceProperties";

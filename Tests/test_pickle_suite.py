@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 COLLECTION = ROOT.parent
 PICKLE = ROOT / 'Tests' / 'Pickle'
 FEATURES = PICKLE / 'Mod' / 'Pickle' / 'Features'
-STEPS_CS = PICKLE / 'Source' / 'FunnyCreaturesSteps.cs'
+STEPS_DIR = PICKLE / 'Source'
 GAME = Path(os.environ.get('RIMWORLD_DIR', r'C:\Program Files (x86)\Steam\steamapps\common\RimWorld'))
 WORKSHOP = Path(os.environ.get('RIMWORLD_WORKSHOP',
                                r'C:\Program Files (x86)\Steam\steamapps\workshop\content\294100'))
@@ -64,7 +64,7 @@ def builtin_steps():
 
 
 def custom_steps():
-    text = STEPS_CS.read_text(encoding='utf-8')
+    text = ''.join(f.read_text(encoding='utf-8') for f in sorted(STEPS_DIR.glob('*.cs')))
     return re.findall(r'\[(?:Given|When|Then)\("((?:[^"\\]|\\.)*)"', text)
 
 

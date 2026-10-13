@@ -437,16 +437,16 @@ trade tags, biomes, references to Core). What is left for the game is what those
 | A both animals exist and draw | **Pickle**, `01` | Spawn each, see it drawn: a `@review` capture, opened |
 | B wildness on the information card | **Pickle**, `01` | The stat is proven by XML; that the game reads it (a listed row, not a missing one) is the repair, and only the game shows it |
 | C the boomsloth explodes when it dies | **Pickle**, `02` | The whole point of the port, and a fault that logs nothing. A colonist two cells from the animal is the sensor: a Flame explosion leaves a Burn on it. The boomalope is a positive control, a meffalo a negative one |
-| D taming is hard again | **Not applicable**, *proposed* | The taming chance is the engine's formula over the `Wildness` stat, which B covers. The mod supplies a number, not a mechanic |
-| E, F milking; G shearing | **Not applicable**, *proposed* | The comps and the products are proved by XML, and an unresolved field would be logged at load and caught by the load audit (`12`). A milking is days of game time, and what the engine does with a comp is its own |
-| H butchering | **Not applicable**, *proposed* | `leatherDef` and `meatLabel` are proven by XML; the butchering is the engine's |
-| I training, pack, herd | **Not applicable**, *proposed* | Flags proven by XML; the behaviours are the engine's |
-| J wild spawning | **Not applicable**, *proposed* | Biome commonalities are proven by XML; the draw is random and the engine's |
-| K traders | **Not applicable** | Trade tags proven by XML and against Core's trader defs; buying is the engine's |
+| D taming is hard again | **Pickle**, `13` | The engine's handling-skill stat and taming curve over the wildness it read, and the manhunter fail chance: no die is rolled, a wildness read as 0 would show |
+| E, F milking; G shearing | **Pickle**, `14` | The comps the game instantiated (product, amount, interval), a tamed male made ready: `milkFemaleOnly` false is silent when lost. No milking is waited for |
+| H butchering | **Pickle**, `15` | The butcher products of the live animal (nothing dies, no blast), the declared leather and meat label |
+| I training, pack, herd | **Pickle**, `15` | The game's training gate, the pack and herd flags, the carrying capacity against a muffalo |
+| J wild spawning | **Pickle**, `16` | The commonality table of every biome the game loaded (nothing else but the six declared), the group size |
+| K traders | **Pickle**, `16` | Some trader kind of the game has an animal stock that handles each race |
 | L incompatibility | **Pickle**, pass 4, `10` | Rewritten above |
-| M dessicated corpse | **Not applicable**, *proposed* | A known upstream cosmetic defect, an absent texture the engine covers by rotating another; a capture would only record it |
+| M dessicated corpse | **Pickle**, `17` | The dessicated graphic loads and draws from the four sides with no missing-texture material |
 | N predator protection, calves included | **Pickle**, `03` | Deterministic if the step asks the game's own `IsAcceptablePreyFor` about a calf and a bear, with the flag as the control; waiting for a real hunt would be probabilistic |
-| O sounds | **Not applicable**, *proposed* | Four defs pointing at vanilla clip folders, checked by XML; the mod ships no audio. A clean load is covered by the load audit of P |
+| O sounds | **Pickle**, `17` | Each sound resolves a clip through the game's own call, the pitch lowered on the meffalo, the thrumbo's sounds on the boomsloth |
 | P English and French UI | **Pickle**, passes 1 and 2, `05` | Labels and descriptions rendered in each language, captures opened, log clean |
 | Q new game and existing saves | **Pickle**, `04`, for save and reload; the migration case *unverified* | A save, restart and reload chain can be automated. Loading a save made with the original mod needs one that does not exist yet: it stays listed as unverified and is not a gate (the owner's rule for such cases, 2026-09-24) |
 | R ADS 2 | **Pickle**, pass 3, `06` | The real recipes listing both animals is the load-order result, and only a run shows it |
