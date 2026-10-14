@@ -32,9 +32,10 @@ remaining:
   - unverified: "(prepublished) PUBLICATION.md is drafted (2026-09-28) but nothing in it is final: the gallery is not produced, the mature-content answer waits for it, the description is not yet the single Markdown source that About.xml is generated from, and the rollback target is chosen only once a good run exists. About.xml has no IF I GO QUIET, AI-GENERATED or THANKS block yet"
   - unverified: "FR/EN in-game rendering of the translated text: raw keys, fallback, clipping or wrapping on the affected inspect strings, descriptions and tool/lifeStage labels, in both languages"
   - unverified: "(playTests) AUDIT.md 7.a names TEST_SCENARIOS.md; this mod keeps its scenarios A to U in TESTING.md, as the sibling mods do (AUDIT.md 'Les passes se declarent dans le TESTING.md'). Wording to confirm with the Audit session, no rename done"
-  - unverified: "(playTests 8.m) code review: code_review_sha absent. Review from 0.1.0 once the code is stable and played, then store the 40-character sha"
+  - unverified: "(test hardening, from the 8.m review 2026-10-15, none blocks) test_mod.py:123 skips the N/S/E check for Dessicated paths (Pickle 17 covers it); test_mod.py:330 tests Dogs mate against fabricated groups, not the installed mod; test_mod.py:441 name check omits Dogs mate (Continued); FunnyCreaturesSteps.cs:215 negative crossbreeding steps pass on an absent list"
   - unverified: "(playTests) Tests/test_mod.py and Tests/test_pickle_suite.py are listed in scripts/LOCAL_SCRIPTS.md with a justification; Virginie validates the table at the end"
 social_preview_sha256: cea77506187882ce5ffa9a96d3c09cbe6b3acd5cf6e663d51232b4de56c00827
+code_review_sha: 8bd4080280d246aaca6f1aecf01db2df42574c99
 session:      local_15177fcc-4975-4f84-abde-09c0335fcf1a
 updated: "2026-10-11: reaudit on the 2026-10-09 vocabulary. Dogs mate patched, French review validated by Virginie, stage playTests[1.0.0]. Journal folded into docs/runs/status-journal-2026-09-to-10.md. _tools and .build cleaned"
 protocols_read_sha: e8f5738ee2228246ab626d3fd9ba5f9e1faf7cbf
@@ -69,3 +70,4 @@ French lives in `Mod/Languages/French/DefInjected` (20 owned fields, no Keyed, n
   is the byte copy of `Mod/About/Preview.png`.
 - **Social preview (10.f), 2026-10-12:** uploaded through Chrome on Virginie's word ("fais le social preview"); `og:image` downloaded: 634,643 bytes, sha256 equal to `Mod/About/Preview.png`, recorded in `social_preview_sha256`. Preview approved by Virginie (render by the Audit workflow session).
 - RimWorld was not launched, nothing was deposited.
+- **Code review (8.m), 2026-10-15,** `Mod/`, `Tests/Pickle/Source/` and `Tests/*.py` from the first commit (no tag): no defect. XML, About fields, the four patch guards, 1.6 race forms and French DefInjected keys (20 of 20 resolve, `Check-DefInjected.ps1`) are clean. One text defect fixed: About.xml said three optional patches, now four with the Dogs mate line (description text only, the 8.m exception). Four test-hardening points are listed in `remaining`. `code_review_sha` is the commit of that fix.
