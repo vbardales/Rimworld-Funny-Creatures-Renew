@@ -93,7 +93,7 @@ First release of the update of Funny Creatures, by PredatorKing.
 
 ## Gallery
 
-**Not produced.** The gallery is a manual step on the Steam page (SteamCMD sends the header image only), from a folder that holds
+**Not produced; story and subtitles are planned below.** The gallery is a manual step on the Steam page (SteamCMD sends the header image only), from a folder that holds
 the images to upload numbered `00-`, `01-`, `02-`, `03-` in page order and nothing else. `00-` is a byte-identical copy of
 `About/Preview.png` (owner rule of 2026-09-29); the captures follow it starting at `01-`. They come from the Pickle scenarios tagged
 `@review`, which makes them reproducible; a green scenario proves the path ran, not that the image shows anything, so **every image is
@@ -110,6 +110,27 @@ Steam shows the first image large, so `00-` (the Preview, icon and all) leads an
 A third image, of the health tab offering a prosthetic on a meffalo (ADS 2), is possible from the pass with the optional mods but
 would need a scenario that opens it; not planned. The zoom must be close enough that the animals are seen, on the default scale a
 small animal is lost in the map (owner, 2026-09-26).
+
+### Gallery story and subtitles (PLAN, 2026-10-15: no capture exists yet)
+
+Nothing below is played. `Art/Gallery/` holds only `0-preview.png`. This is the shot plan the scenarios will follow at `shootGallery`. Each line is rewritten after its image is opened and judged. A scene whose image is refused loses its line. This plan replaces the three-row table above, which predates the one-story rule and the numbering `0-`, `1-`, `2-`.
+
+**Story, one day at the Sanctuary: "The herd that was not on the map".** Nelim is the protagonist and the only colonist of the save. A guest rancher is optional. Places: `emerald-clearing` for the herd, `enclosure-south` for the pen. Time: from 08:00 to dusk, about one game hour between images (to be stated in the feature header).
+
+**Wardrobe and faces (to check in game, nothing is placed yet).** Nelim keeps the fixture pants, the eyes `Eyes_DarkBrown` and her own face (`Nelim has her own face`: two brows, `MouthSmirkSmile`, `blink`). Plan: a work jacket and a wide hat in a colour that stands out against dark fur (the meffalo is dark, the boomsloth heavy brown); hair kept in the fixture style unless it hides the face. Expressions: relaxed smirk at dawn, wide-eyed on the boomsloth shot, content at dusk. Guest rancher: leather, a plain hairstyle, an expression that matches each shot. Mods: none imported yet. Any clothing or hair mod would join the `-DepMap` of the gallery pass only; the ADS 2 line needs the pass with the optional mods.
+
+| index | file | line |
+|---|---|---|
+| 0 | `0-preview.png` | none (the Preview, byte copy) |
+| 1 | `1-dawn-at-the-gate.jpg` | Nelim opens the gate at dawn. Something big is waiting. |
+| 2 | `2-two-new-faces.jpg` | A meffalo and a boomsloth, face to face at last. |
+| 3 | `3-heavy-fur.jpg` | The meffalo's dark coat, up close. |
+| 4 | `4-calves-play.jpg` | The calves are safe from the wolves now. |
+| 5 | `5-do-not-startle-it.jpg` | Nelim keeps her distance. The boomsloth knows why. |
+| 6 | `6-boom.jpg` | Boom. |
+| 7 | `7-dusk-roll-call.jpg` | At dusk, the count is one animal short. |
+
+Rules kept: the two animals are seen from the front on image 2. A capture of a game window (the health tab with a prosthetic, the info card) gets no subtitle and is cropped. Each clean original goes to `Art/Gallery-clean/` under the same name; `scripts/Add-Subtitle.ps1` writes the subtitled file to `Art/Gallery/`. Line 7 contradicts nothing only if the scenario really leaves one animal missing after image 6; if it does not, the line is rewritten.
 
 ## Thanks to post
 
