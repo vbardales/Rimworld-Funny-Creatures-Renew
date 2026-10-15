@@ -38,7 +38,7 @@ social_preview_sha256: cea77506187882ce5ffa9a96d3c09cbe6b3acd5cf6e663d51232b4de5
 code_review_sha: 8bd4080280d246aaca6f1aecf01db2df42574c99
 session:      local_15177fcc-4975-4f84-abde-09c0335fcf1a
 updated: "2026-10-11: reaudit on the 2026-10-09 vocabulary. Dogs mate patched, French review validated by Virginie, stage playTests[1.0.0]. Journal folded into docs/runs/status-journal-2026-09-to-10.md. _tools and .build cleaned"
-protocols_read_sha: 583ce1259235b54ebacca29e1116689d1d24e589
+protocols_read_sha: e733386f133716f60efbad53c37602935eda7050
 ---
 
 # Funny Creatures Renew (unofficial): status
