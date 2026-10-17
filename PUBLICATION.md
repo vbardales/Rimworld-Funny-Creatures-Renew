@@ -60,13 +60,13 @@ If I do not answer within a reasonable time after being contacted, anyone may fr
 
 **AI-GENERATED**
 
-The update work, code, tests and documentation, was done with the help of AI assistants: Claude, by Anthropic, and Codex, by OpenAI. The Preview and the icon are AI-generated images.
+The update work, code, tests and documentation was done with the help of AI assistants: Claude, by Anthropic, and Codex, by OpenAI. The Preview and the icon are AI-generated images.
 
 **THANKS**
 
 - PredatorKing, for the meffalo, the boomsloth and their textures.
 - SamBucher, for A Dog Said... Animal Prosthetics 2; Mlie and XeoNovaDan, for Nocturnal Animals; Mlie and Revolus, for Dogs mate; DizzyEevee, for Better Crossbreeding. Their files were read to write the patches, and nothing of theirs was copied.
-- The tools this was tested with, for development only and never a dependency: [Pickle](https://steamcommunity.com/sharedfiles/filedetails/?id=3791648678), [RimLogging](https://steamcommunity.com/sharedfiles/filedetails/?id=3733484696) and PickleTools.
+- The tools used to test this mod, for development only and never dependencies: [Pickle](https://steamcommunity.com/sharedfiles/filedetails/?id=3791648678), [RimLogging](https://steamcommunity.com/sharedfiles/filedetails/?id=3733484696) and PickleTools.
 
 Licence and sources: the original states no licence anywhere, and this port rests on the Workshop's own custom for abandoned mods, named credit and a takedown on request. `ATTRIBUTION.md`, in the mod folder and on GitHub, has the licence check and the port in detail.
 
@@ -132,7 +132,7 @@ Nothing below is played. `Art/Gallery/` holds only `0-preview.png`. This is the 
 
 Rules kept: the two animals are seen from the front on image 2. A capture of a game window (the health tab with a prosthetic, the info card) gets no subtitle and is cropped. Each clean original goes to `Art/Gallery-clean/` under the same name; `scripts/Add-Subtitle.ps1` writes the subtitled file to `Art/Gallery/`. Line 7 contradicts nothing only if the scenario really leaves one animal missing after image 6; if it does not, the line is rewritten.
 
-## Thanks to post
+## Thank-you posts
 
 Only after the item is visible to its readers, and only what is true and played. One comment per page, ever, and the registry
 `WORKSHOP_COMMENTS.md` decides whether one is still needed.
@@ -192,6 +192,6 @@ explosion in the game's own cartoon style, with no gore. It stands on the images
 
 1. **Decided by the owner, 2026-09-28**: the tool is DALL-E (named in the description); the icon stays at 32 px; the Storytime
    pack is declared incompatible; no pairing joins two vanilla animals (the recipe is dropped); the vanilla side is Animal Naturally's.
-3. **The rollback target**, chosen before publishing and not after a red: the last commit whose runs are all green.
-4. **The gallery**, and with it the answer to the content questions.
-5. **The prepublication `0.1.0`**, an act of the owner's: the in-game upload button on the folder `Mod/`.
+2. **The rollback target**, chosen before publishing and not after a red: the last commit whose runs are all green.
+3. **The gallery**, and with it the answer to the content questions.
+4. **The prepublication `0.1.0`**, an act of the owner's: the in-game upload button on the folder `Mod/`.
