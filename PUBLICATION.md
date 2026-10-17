@@ -60,7 +60,7 @@ If I do not answer within a reasonable time after being contacted, anyone may fr
 
 **AI-GENERATED**
 
-The update work, code, tests and documentation was done with the help of AI assistants: Claude, by Anthropic, and Codex, by OpenAI. The Preview and the icon are AI-generated images.
+The update work, code, tests and documentation were done with the help of AI assistants: Claude, by Anthropic, and Codex, by OpenAI. The Preview and the icon are AI-generated images.
 
 **THANKS**
 

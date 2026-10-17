@@ -6,7 +6,7 @@
   <ThingDef ParentName="LeatherBase">
     <defName>Leather_Darkfur</defName>
     <label>dark fur</label>
-    <description>The suprisingly nice feeling pelt of a Meffalo. It's very good at insulating and also acceptable at defense.</description>
+    <description>The surprisingly nice feeling pelt of a Meffalo. It's very good at insulating and also acceptable at defense.</description>
     <graphicData>
       <color>(33,33,32)</color>
     </graphicData>

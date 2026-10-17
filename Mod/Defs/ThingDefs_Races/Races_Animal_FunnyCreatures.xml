@@ -5,7 +5,7 @@
     <defName>Meffalo</defName>
     <label>meffalo</label>
     <devNote>cow-2</devNote>
-    <description>A larger and smarter subspecies of the Muffalo, able to carry more weight. It also has alot more combat prowess and is much more agressive. Also; despite popular colonist belief, it is not, in any way, shape or form related to meth...</description>
+    <description>A larger and smarter subspecies of the Muffalo, able to carry more weight. It also has a lot more combat prowess and is much more aggressive. Also; despite popular colonist belief, it is not, in any way, shape or form related to meth...</description>
     <statBases>
       <Wildness>0.6</Wildness>
       <MoveSpeed>5</MoveSpeed>
@@ -183,7 +183,7 @@
     <defName>Boomsloth</defName>
     <label>boomsloth</label>
     <devNote>boomsheep-1</devNote>
-    <description>The outcome of a genetical engineering project of mixing a boomalope with a megasloth. It acts and works like a normal Megasloth except for the small fact that it's in constant agony, and can produce mass amounts of chemfuel. The explosion that occurs when the boomsloth dies is comparable to a bomb.</description>
+    <description>The outcome of a genetic engineering project of mixing a boomalope with a megasloth. It acts and works like a normal Megasloth except for the small fact that it's in constant agony, and can produce mass amounts of chemfuel. The explosion that occurs when the boomsloth dies is comparable to a bomb.</description>
     <statBases>
       <Wildness>0.97</Wildness>
 	  <Mass>1005</Mass>
