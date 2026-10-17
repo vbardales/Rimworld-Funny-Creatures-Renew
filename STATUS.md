@@ -46,7 +46,7 @@ Current state only. Run lines: `docs/runs/README.md`. Older dated sections: `doc
 
 ## Translation audit
 
-French in `Mod/Languages/French/DefInjected` (20 owned fields, no Keyed, no plurals, no gender agreement: texts do not follow pawn). Virginie reviewed 2026-10-11, revision `7ef4deb`, `FRENCH_REVIEW.md` generated from `8794640`: validated, corrections applied before (mégathérium for megasloth, wool sentence). `translation_fr` `complete`. In-game rendering (raw keys, clipping) stays `unverified` until `playTests`.
+French in `Mod/Languages/French/DefInjected` (20 owned fields, no Keyed, no plurals, no gender agreement: texts do not follow pawn). Virginie reviewed 2026-10-11, revision `7ef4deb`, `FRENCH_REVIEW.md` generated from `8794640`: validated, corrections applied before (mégathérium for megasloth, wool sentence). Re-read and validated by Virginie 2026-10-18, `FRENCH_REVIEW.md` from `c3cade8` (ChatGPT review applied: Meffalo.description wording, English def typos). `translation_fr` `complete`. In-game rendering (raw keys, clipping) stays `unverified` until `playTests`.
 
 ## Reaudit 2026-10-11
 
