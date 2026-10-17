@@ -40,34 +40,22 @@ session:      local_15177fcc-4975-4f84-abde-09c0335fcf1a
 updated: "2026-10-11: reaudit on the 2026-10-09 vocabulary. Dogs mate patched, French review validated by Virginie, stage playTests[1.0.0]. Journal folded into docs/runs/status-journal-2026-09-to-10.md. _tools and .build cleaned"
 protocols_read_sha: 117fb9642df7e57bece2318904c644a9c39296df
 ---
-
 # Funny Creatures Renew (unofficial): status
 
 Current state only. Run lines: `docs/runs/README.md`. Older dated sections: `docs/runs/status-journal-2026-09-to-10.md`.
 
 ## Translation audit
 
-French lives in `Mod/Languages/French/DefInjected` (20 owned fields, no Keyed, no plurals, no gender agreement: the texts do not follow a pawn). Reviewed by Virginie on 2026-10-11, revision `7ef4deb`, `FRENCH_REVIEW.md` generated from `8794640`: validated, corrections applied before (mégathérium for the megasloth, wool sentence). `translation_fr` is `complete`. In-game rendering (raw keys, clipping) stays `unverified` until `playTests`.
+French in `Mod/Languages/French/DefInjected` (20 owned fields, no Keyed, no plurals, no gender agreement: texts do not follow pawn). Virginie reviewed 2026-10-11, revision `7ef4deb`, `FRENCH_REVIEW.md` generated from `8794640`: validated, corrections applied before (mégathérium for megasloth, wool sentence). `translation_fr` `complete`. In-game rendering (raw keys, clipping) stays `unverified` until `playTests`.
 
 ## Reaudit 2026-10-11
 
-- **Stage: `playTests[1.0.0]`** since Virginie validated the French review (2026-10-11). The old `done` mapped to `playTests` by the indicative table, but gates 3.a and 4.f failed until Dogs mate (one of the four animal integrations, ANIMALS.md) was treated the same day. Target version `1.0.0`: `CHANGELOG.md` keeps `[1.0.0] unreleased` above `[0.1.0]` (prepublication, item 3811290892, private). The `stage` field is removed.
-- **Gates re-read on disk.** 1: repository public, remote set, README, ATTRIBUTION, CHANGELOG, licence `silent` with the
-  unofficial wording. 2: `Art/ModIcon-source.png`, `Mod/About/ModIcon.png` 128 x 128 (12 KB, below the 20 to 30 KB
-  window: the owner's own resize, kept), `Art/Preview-source.png`, Preview 896 x 504. Not rechecked today: the palette
-  and 268 px tests of 2.e (`scripts/Measure-Palette.sh`). 3: no build, no C#. 5: `settings_audit: not_applicable` holds
-  (no page, no shortcut, no C#).
-- **Dependencies and integrations (4.g), 2026-10-11.** No hard dependency (`modDependencies` empty, `loadAfter` Ludeon
-  packages only, `loadBefore` ADS 2, `incompatibleWith` the original and the Storytime pack). No DLC used. The four animal
-  mods, each a guarded optional patch in `Mod/Patches/`: A Dog Said... Animal Prosthetics 2, [XND] Nocturnal Animals
-  (Continued), Better Crossbreeding, and **Dogs mate (Continued)** (new: the meffalo joins its group Bison with the
-  muffalo, the boomsloth joins its group Boomalope; that mod has no megasloth group, so no megasloth pairing there).
+- **Stage: `playTests[1.0.0]`** since Virginie validated French review (2026-10-11). Old `done` mapped to `playTests` by indicative table, but gates 3.a and 4.f failed until Dogs mate (one of four animal integrations, ANIMALS.md) treated same day. Target version `1.0.0`: `CHANGELOG.md` keeps `[1.0.0] unreleased` above `[0.1.0]` (prepublication, item 3811290892, private). `stage` field removed.
+- **Gates re-read on disk.** 1: repository public, remote set, README, ATTRIBUTION, CHANGELOG, licence `silent` with unofficial wording. 2: `Art/ModIcon-source.png`, `Mod/About/ModIcon.png` 128 x 128 (12 KB, below 20 to 30 KB window: owner's own resize, kept), `Art/Preview-source.png`, Preview 896 x 504. Not rechecked today: palette and 268 px tests of 2.e (`scripts/Measure-Palette.sh`). 3: no build, no C#. 5: `settings_audit: not_applicable` holds (no page, no shortcut, no C#).
+- **Dependencies and integrations (4.g), 2026-10-11.** No hard dependency (`modDependencies` empty, `loadAfter` Ludeon packages only, `loadBefore` ADS 2, `incompatibleWith` original and Storytime pack). No DLC used. Four animal mods, each guarded optional patch in `Mod/Patches/`: A Dog Said... Animal Prosthetics 2, [XND] Nocturnal Animals (Continued), Better Crossbreeding, **Dogs mate (Continued)** (new: meffalo joins its group Bison with muffalo, boomsloth joins its group Boomalope; mod has no megasloth group, so no megasloth pairing there).
 - **Python tests replayed 2026-10-12** under WSL (36 run, 32 passed, 3 skipped, 1 failed: missing original archive, see remaining). Dogs mate test green.
-- **Pass 3 played 2026-10-11** on `75a8a29` (request 9995): 23 passed, 0 failed, 2 skipped (need the original), `exitReason` passed; the `@review` capture opened. **`playTests` still to do** (8.a to 8.m): pass 4 is now green (0034ce2, 2 of 2, 2026-10-12: found on disk 2026-10-13, line 0034 of docs/runs/README.md),
-  still to do: the code review (8.m). No ticket is queued.
-- **Closing pass.** `_tools/` deleted, `.build/` renamed `build/` (ignored; `Directory.Build.props` repointed).
-  `FRENCH_REVIEW.md` regenerated with the shared script. `Art/`: the old render files removed; `Art/Gallery/0-preview.png`
-  is the byte copy of `Mod/About/Preview.png`.
-- **Social preview (10.f), 2026-10-12:** uploaded through Chrome on Virginie's word ("fais le social preview"); `og:image` downloaded: 634,643 bytes, sha256 equal to `Mod/About/Preview.png`, recorded in `social_preview_sha256`. Preview approved by Virginie (render by the Audit workflow session).
-- RimWorld was not launched, nothing was deposited.
-- **Code review (8.m), 2026-10-15,** `Mod/`, `Tests/Pickle/Source/` and `Tests/*.py` from the first commit (no tag): no defect. XML, About fields, the four patch guards, 1.6 race forms and French DefInjected keys (20 of 20 resolve, `Check-DefInjected.ps1`) are clean. One text defect fixed: About.xml said three optional patches, now four with the Dogs mate line (description text only, the 8.m exception). Four test-hardening points are listed in `remaining`. `code_review_sha` is the commit of that fix.
+- **Pass 3 played 2026-10-11** on `75a8a29` (request 9995): 23 passed, 0 failed, 2 skipped (need original), `exitReason` passed; `@review` capture opened. **`playTests` still to do** (8.a to 8.m): pass 4 now green (0034ce2, 2 of 2, 2026-10-12: found on disk 2026-10-13, line 0034 of docs/runs/README.md), still to do: code review (8.m). No ticket queued.
+- **Closing pass.** `_tools/` deleted, `.build/` renamed `build/` (ignored; `Directory.Build.props` repointed). `FRENCH_REVIEW.md` regenerated with shared script. `Art/`: old render files removed; `Art/Gallery/0-preview.png` is byte copy of `Mod/About/Preview.png`.
+- **Social preview (10.f), 2026-10-12:** uploaded through Chrome on Virginie's word ("fais le social preview"); `og:image` downloaded: 634,643 bytes, sha256 equal to `Mod/About/Preview.png`, recorded in `social_preview_sha256`. Virginie approved preview (render by Audit workflow session).
+- RimWorld not launched, nothing deposited.
+- **Code review (8.m), 2026-10-15,** `Mod/`, `Tests/Pickle/Source/`, `Tests/*.py` from first commit (no tag): no defect. XML, About fields, four patch guards, 1.6 race forms, French DefInjected keys (20 of 20 resolve, `Check-DefInjected.ps1`) clean. One text defect fixed: About.xml said three optional patches, now four with Dogs mate line (description text only, 8.m exception). Four test-hardening points listed in `remaining`. `code_review_sha` is commit of that fix.
