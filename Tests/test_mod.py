@@ -346,6 +346,21 @@ class CompatibilityPatchTests(unittest.TestCase):
         self.assertEqual(kinds('Boomalope'), ['Boomalope', 'Boomsloth'])
         self.assertEqual(kinds('Cow'), ['Cow'])
 
+    def test_dogs_mate_groups_hold_in_the_installed_mod(self):
+        # The fabricated groups above must match what the mod ships: Bison holds the muffalo,
+        # Boomalope holds only the boomalope, and no group names the megasloth.
+        defs = WORKSHOP / '2441132298/1.6/Defs'
+        if not defs.is_dir():
+            self.skipTest('Dogs mate (Continued) is not installed')
+        groups = {}
+        for file in defs.rglob('*.xml'):
+            for node in ET.parse(file).getroot():
+                if node.tag.endswith('AnimalGroupDef'):
+                    groups[node.findtext('defName')] = [li.text for li in node.findall('pawnKinds/li')]
+        self.assertIn('Muffalo', groups['Bison'])
+        self.assertEqual(groups['Boomalope'], ['Boomalope'])
+        self.assertFalse([g for g, kinds in groups.items() if 'Megasloth' in kinds])
+
     def test_nocturnal_rationale_holds_in_the_installed_mod(self):
         core = WORKSHOP / '2269731409/1.6/Patches/Core'
         if not core.is_dir():
@@ -439,7 +454,8 @@ class CompatibilityPatchTests(unittest.TestCase):
         self.assertNotIn(b'DZY.Crossbreeding', data)
 
     def test_every_patch_names_the_mod_the_way_the_game_does(self):
-        for name, folder in [(ADS_NAME, '3238353862'), (NA_NAME, '2269731409'), (BC_NAME, '3520675842')]:
+        for name, folder in [(ADS_NAME, '3238353862'), (NA_NAME, '2269731409'), (BC_NAME, '3520675842'),
+                              ('Dogs mate (Continued)', '2441132298')]:
             about = WORKSHOP / folder / 'About/About.xml'
             if not about.exists():
                 continue
