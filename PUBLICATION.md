@@ -93,44 +93,58 @@ First release of the update of Funny Creatures, by PredatorKing.
 
 ## Gallery
 
-**Not produced; story and subtitles are planned below.** The gallery is a manual step on the Steam page (SteamCMD sends the header image only), from a folder that holds
+**Not produced; the shot plan below is settled on paper (2026-10-18) and nothing in it is played.** The gallery is a manual step on the Steam page (SteamCMD sends the header image only), from a folder that holds
 the images to upload numbered `00-`, `01-`, `02-`, `03-` in page order and nothing else. `00-` is a byte-identical copy of
 `Mod/About/Preview.png` (owner rule of 2026-09-29); the captures follow it starting at `01-`. They come from the Pickle scenarios tagged
 `@review`, which makes them reproducible; a green scenario proves the path ran, not that the image shows anything, so **every image is
-opened and read before it goes in the folder.**
+opened and read before it goes in the folder.** In the repository the files are `0-`, `1-`, `2-` (contiguous, `0-` the Preview copy).
 
-Steam shows the first image large, so `00-` (the Preview, icon and all) leads and the most demonstrative capture follows:
+### Gallery story and subtitles (PLAN, reworked 2026-10-18; no capture exists yet)
 
-| # | Image | Source | Why here |
-|---|---|---|---|
-| 00 | `Mod/About/Preview.png`, byte-identical copy | the About/Preview.png of this same build | Owner rule 2026-09-29: the vitrine's first image is the Preview |
-| 01 | The boomsloth's explosion, one frame taken from the film of `02-the-boomsloth-explodes` | the `@film` scenario | It is the one thing the animal is named for, and the one thing a screenshot of a livestock pen cannot say |
-| 02 | The two animals side by side, zoomed | `01-the-animals`, capture `the-two-animals` | Shows what is being installed |
+`Art/Gallery/` holds only `0-preview.png`. This is the shot plan the scenarios follow at `shootGallery`. Each line is rewritten after its image is opened and judged. A scene whose image is refused loses its line.
 
-A third image, of the health tab offering a prosthetic on a meffalo (ADS 2), is possible from the pass with the optional mods but
-would need a scenario that opens it; not planned. The zoom must be close enough that the animals are seen, on the default scale a
-small animal is lost in the map (owner, 2026-09-26).
+**Story, one day at the Sanctuary: "The herd that was not on the map".** Nelim (Virginie) is the protagonist and the only colonist of the save. **No guest rancher** (decided 2026-10-18): a second body, outfit and face would cost seven more setups and say nothing the two animals do not. Two places only: `emerald-clearing` (herd, shots 2, 3, 5, 6) and `enclosure-south` (pen, shots 1, 4, 7). Time runs from 06:00 to dusk. The feature header states the hours.
 
-### Gallery story and subtitles (PLAN, 2026-10-15: no capture exists yet)
+**Common recipe of every shot** (each scenario starts from the saved fixture, so nothing carries over; the story is carried by what each scenario sets): save `Nelims-tribe` loaded; presentation mode on; colonist bar, alerts, resource readout, learning helper, tooltips, selection brackets and item and name labels hidden; `I set the hour to N` and `I set the weather to "Clear"`; map temperature set to 20 degrees (no sweat or blush on Nelim); animals kept out of the place, then ours spawned; Nelim placed, dressed, face set **last** and in one call (`Nelim has her own face`, then at most one part step, then the expression); a few frames before the capture; decor removed at the end.
 
-Nothing below is played. `Art/Gallery/` holds only `0-preview.png`. This is the shot plan the scenarios will follow at `shootGallery`. Each line is rewritten after its image is opened and judged. A scene whose image is refused loses its line. This plan replaces the three-row table above, which predates the one-story rule and the numbering `0-`, `1-`, `2-`.
+#### Shots, with the transition into each
 
-**Story, one day at the Sanctuary: "The herd that was not on the map".** Nelim is the protagonist and the only colonist of the save. A guest rancher is optional. Places: `emerald-clearing` for the herd, `enclosure-south` for the pen. Time: from 08:00 to dusk, about one game hour between images (to be stated in the feature header).
+| # | file | hour, weather | place and frame | animals (kinds are `Meffalo`, `Boomsloth`) | Nelim | line |
+|---|---|---|---|---|---|---|
+| 0 | `0-preview.png` | | | | | none (the Preview, byte copy) |
+| 1 | `1-dawn-at-the-gate.jpg` | 06, Clear | `enclosure-south`, `I frame the rectangle` around the south gate (159, 207), Nelim and the animal both in frame | one adult meffalo just outside the gate, nose to the bars | inside the pen at the gate, work outfit, relaxed smirk (her own face untouched) | Nelim opens the gate at dawn. Something big is waiting. |
+| 2 | `2-two-new-faces.jpg` | 08, Clear | `emerald-clearing`, floor bared, vanometric cell hidden, zoom about 5 | an adult meffalo and an adult boomsloth, three cells apart, **both facing the camera** | not in frame | A meffalo and a boomsloth, face to face at last. |
+| 3 | `3-heavy-fur.jpg` | 09, Clear | same clearing, `I frame the animal` on the meffalo at zoom about 3 | the meffalo alone in frame, its dark coat lit from the side | not in frame | The meffalo's dark coat, up close. |
+| 4 | `4-calves-play.jpg` | 11, Clear | `enclosure-south`, frame on the middle of the pen | a meffalo calf and a boomsloth calf (life stage step), one adult behind them | not in frame | The calves are safe from the wolves now. |
+| 5 | `5-do-not-startle-it.jpg` | 15, Clear | `emerald-clearing`, same frame as 2, wider | the adult boomsloth in the middle | seven cells from it, hat on, brows raised | Nelim keeps her distance. The boomsloth knows why. |
+| 6 | `6-boom.jpg` | 15, Clear | exactly the frame of 5 | the boomsloth is killed (`Funny Creatures Renew: "<name>" is killed`) | still seven cells away, unhurt | Boom. |
+| 7 | `7-dusk-roll-call.jpg` | 19, Clear | `enclosure-south`, same frame as 1 | the adult meffalo and the calf of 4, resting; **no boomsloth** | at the gate, hat off, small smile | At dusk, the pen is quieter. |
 
-**Wardrobe and faces (to check in game, nothing is placed yet).** Nelim keeps the fixture pants, the eyes `Eyes_DarkBrown` and her own face (`Nelim has her own face`: two brows, `MouthSmirkSmile`, `blink`). Plan: a work jacket and a wide hat in a colour that stands out against dark fur (the meffalo is dark, the boomsloth heavy brown); hair kept in the fixture style unless it hides the face. Expressions: relaxed smirk at dawn, wide-eyed on the boomsloth shot, content at dusk. Guest rancher: leather, a plain hairstyle, an expression that matches each shot. Mods: none imported yet. Any clothing or hair mod would join the `-DepMap` of the gallery pass only; the ADS 2 line needs the pass with the optional mods.
+**Transitions, one by one** (what changes between two images, so the series reads as one day and not as seven set-ups):
+- **1 to 2** (06 to 08): pen to clearing, camera from the gate to the open ground; the meffalo of 1 is the one of 2 (same name), the boomsloth is new. Light goes from low and warm to flat morning light.
+- **2 to 3** (08 to 09): same place, same animal, the camera moves in from the pair to one face. Nelim leaves the frame.
+- **3 to 4** (09 to 11): back to the pen; the animals are young. Shadows shorten. The adult behind the calves is the meffalo of 1 and 3.
+- **4 to 5** (11 to 15): back to the clearing; Nelim comes back in the frame, now with the hat the story needs for the afternoon sun; the boomsloth is alone. The camera pulls back to take her and the animal in one frame.
+- **5 to 6** (same minute): **no change at all but one kill**; frame, hour and Nelim's position stay identical. The two images are a before and an after.
+- **6 to 7** (15 to 19): the boomsloth of 5 and 6 is not in the pen; the meffalo and the calf are. A lantern is lit. Nelim has taken off her hat.
 
-| index | file | line |
-|---|---|---|
-| 0 | `0-preview.png` | none (the Preview, byte copy) |
-| 1 | `1-dawn-at-the-gate.jpg` | Nelim opens the gate at dawn. Something big is waiting. |
-| 2 | `2-two-new-faces.jpg` | A meffalo and a boomsloth, face to face at last. |
-| 3 | `3-heavy-fur.jpg` | The meffalo's dark coat, up close. |
-| 4 | `4-calves-play.jpg` | The calves are safe from the wolves now. |
-| 5 | `5-do-not-startle-it.jpg` | Nelim keeps her distance. The boomsloth knows why. |
-| 6 | `6-boom.jpg` | Boom. |
-| 7 | `7-dusk-roll-call.jpg` | At dusk, the count is one animal short. |
+**Wardrobe, hair, face, marks** (decided 2026-10-18 from the catalogues of NPT, `PickleTools/ColonistRace/docs/`; nothing is yet seen in a capture):
+- **Nelim's outfit**: she keeps the fixture trousers `Apparel_Pants` and corset `Apparel_Corset`; the work layer is **`Apparel_Jacket`** (Shell, covers torso, neck, shoulders and arms, leaves the legs bare so the trousers and the Waistlines cut stay visible) dyed ochre, and **`Apparel_CowboyHat`** (Overhead, UpperHead) dyed cream, both vanilla. The ochre and the cream stand against dark fur and against the earth of a bared clearing. A duster is refused: it covers the legs and hides the trousers. Shots 1, 5 and 6 wear the hat; 2, 3 and 4 have no pawn; 7 wears the jacket only.
+- **The first `wears` step undresses everything**, so the scenario re-dresses in order: trousers, corset, jacket, then hat. Re-dressing drops the fixture's own dyes: pick the trousers and corset colours on the first capture and write them into the scenario.
+- **Hair**: the fixture's bun stays in every shot; no hairstyle step. The hat sits over it in 1, 5, 6; at dusk the bun is seen. A let-down hairstyle was considered and refused: it adds a step and a hat clash for no story gain.
+- **Face** (`FACE-PARTS`, `Generate-FaceGallery`): own face as the fixture default (two brows, `MouthSmirkSmile`, `blink`) on 1. On 5 and 6: `BrowRaised` after the own-face step, then the expression `normal+blink` once, last. On 7: `MouthSmile` with `LidCheerful`. Lids and smiles of VTE need VEFA in the map (GALERIE.md); the sanctuary map has it.
+- **Tattoos: none.** Nelim's face is the anchor of the series and her own-face step is validated bare; a tattoo (the catalogue has `Face_Line` and `Face_Stars` among 29) would change the face between shots for nothing the story says. No body tattoo either: the jacket hides the arms.
+- **Weapons and held items: none.** A weapon in a shot named "do not startle it" contradicts it, and the animals are the subject. The catalogue of weapons and crafts is read and nothing in it earns a place.
 
-Rules kept: the two animals are seen from the front on image 2. A capture of a game window (the health tab with a prosthetic, the info card) gets no subtitle and is cropped. Each clean original goes to `Art/Gallery-clean/` under the same name; `scripts/Add-Subtitle.ps1` writes the subtitled file to `Art/Gallery/`. Line 7 contradicts nothing only if the scenario really leaves one animal missing after image 6; if it does not, the line is rewritten.
+**Other mods' objects, plants, buildings, animals** (props are credited in the Steam description and the thanks; nothing staged ships with this mod; every mod below joins the `-DepMap` of the **gallery pass only**, which is not written yet):
+- **Plants (vanilla)**: `Plant_Daylily` placed fully grown along the pen fence in 1 and 7 (colour against dark bars, as played in other galleries); `Plant_YellowTallGrass` in the middle of the pen in 4 as straw for the calves.
+- **Objects and buildings**: the pen already holds its laying boxes (`EggBox`, vanilla): leave them, they say "farm". **`DR_StickLantern`** (Stick Lantern Continued, `Mlie.StickLantern`, 2024351846, played in CreaturesOfKiRenew) lit at the gate in 7: the only third-party prop of the plan. A big animal bed (`GSAnimalBedBigPrestige`, `Animal.BedsNew`, 3107972819) under the resting calf in 7 is **optional**: the `LayDown` job must be run until the posture is not standing; dropped if the capture does not show the calf on it.
+- **Animals**: ours, only. The fixture's own fauna (bison, horses, huskies, boomalopes) is kept out of both frames with `the animals are kept out of the sanctuary`. **A wolf** beyond the fence in 4 is optional and only if it reads; without it, the line of 4 becomes "The calves play in the straw." Nothing from the four optional animal mods (ADS 2, Nocturnal, Crossbreeding, Dogs mate) is shown: they have no look to photograph.
+- **Traps taken from NPT's notes**: `the floor is bared` only in `emerald-clearing` (in `enclosure-south` it paints a dark patch); hide the vanometric cell before framing the clearing; light a dark place with torches, never by removing a roof; spawn nothing within five cells of Nelim in 5 and 6 (the adult blast radius is 4.9, `02-the-boomsloth-explodes`), and nothing of ours within five cells of the boomsloth in 6.
+
+**What the first run must settle** (listed, not assumed): the animals' facing (no step known sets it; if it cannot be set, shot 2 is taken from several spawn positions until one pair faces the camera, or NPT is asked for a step); the exact cells of Nelim, the gate and the animals; the tick count after the kill that catches the flame (three candidates at 2, 6 and 12 ticks, or one frame of the `@film`); the colours of the jacket, hat, trousers and corset against the fur; whether `Plant_YellowTallGrass` reads as straw; whether a calf stage step exists for both of our kinds (otherwise NPT).
+
+Rules kept: the two animals are seen from the front on image 2. A capture of a game window (the health tab with a prosthetic, the info card) gets no subtitle and is cropped. Each clean original goes to `Art/Gallery-clean/` under the same name; `scripts/Add-Subtitle.ps1` writes the subtitled file to `Art/Gallery/`. The line of 7 is true only if the capture shows the pen without the boomsloth; if it does not, the line is rewritten. A third image of the health tab offering a prosthetic on a meffalo (ADS 2) stays out of the story: it needs a scenario that opens it and the pass with the optional mods.
 
 ## Thank-you posts
 

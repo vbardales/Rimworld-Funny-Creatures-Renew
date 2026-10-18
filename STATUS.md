@@ -26,6 +26,7 @@ evidence: "Static checks, on disk only: evidence/static/. Pickle reports kept af
 remaining:
   - unverified: "(playTests) pass 4 (incompat-original) is green since 0034ce2 (2 of 2, 2026-10-12, line 0034 of docs/runs/README.md); pass 4 has no @review capture. Pass 1/2 FR for the optional-mod scenarios: not played"
   - unverified: "(playTests) ticket 20261018-010219-515-dd33 queued 2026-10-18: avec-facultatifs, French, tree 9dd423d, evidence Tests/Pickle/Evidence/avec-facultatifs-fr-9dd423d. Decides pass 1/2 FR of the optional-mod scenarios and FR in-game rendering. Read summary.json and junit.xml at RUN_DONE"
+  - unverified: "(shootGallery) gallery plan reworked 2026-10-18 in PUBLICATION.md (Gallery story): 7 shots, transitions, wardrobe (Apparel_Jacket, Apparel_CowboyHat), no guest, no tattoo, no weapon, Stick Lantern as only third-party prop; row added to GALLERY-PROPS.md (9b); 9a met by features 13 to 17. Nothing played; first run must settle animal facing, cells, blast frame (listed in the plan)"
   - verified: "@review captures: the only one is manual--the-two-animals--step0, kept in three reports (tools-en, tools-fr, avec-facultatifs-en). All three opened 2026-10-13: both animals drawn and told apart, no raw key, no missing texture; FR UI labels render (Toxicomanie, Animaux, Faune)"
   - unverified: "(done -> tested) Python tests replayed 2026-10-12 under WSL (python3 + lxml 5.2.1, RIMWORLD_DIR set to the Steam folder): 36 run, 32 passed, 3 skipped, 1 failed. The failure is the map check of wsl-deps.incompat-original.map: _mods-sources/FunnyCreatures is gone (same cause as pass 4)"
   - unverified: "(done -> tested) the lines of TESTING.md marked proposed await the owner: scenarios D, E to K, M and O as not applicable, and pass 5 (core-only)"
@@ -39,7 +40,7 @@ social_preview_sha256: cea77506187882ce5ffa9a96d3c09cbe6b3acd5cf6e663d51232b4de5
 code_review_sha: 8bd4080280d246aaca6f1aecf01db2df42574c99
 session:      local_15177fcc-4975-4f84-abde-09c0335fcf1a
 updated: "2026-10-11: reaudit on the 2026-10-09 vocabulary. Dogs mate patched, French review validated by Virginie, stage playTests[1.0.0]. Journal folded into docs/runs/status-journal-2026-09-to-10.md. _tools and .build cleaned"
-protocols_read_sha: 117fb9642df7e57bece2318904c644a9c39296df
+protocols_read_sha: 508b3ff82ae4356413586586fa4c824042fe6519
 ---
 # Funny Creatures Renew (unofficial): status
 
