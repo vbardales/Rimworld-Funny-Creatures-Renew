@@ -52,3 +52,7 @@ build/
 # the WSL staging. It stays on disk, never in git. Mod/ is the Workshop payload and holds no assembly.
 Tests/Pickle/Mod/Pickle/Assemblies/
 Art/.render/
+
+# Pickle run reception and parking (owner rule 2026-10-19): on disk only.
+Tests/Pickle/Inbox/
+Tests/Pickle/Parked/
