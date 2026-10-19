@@ -386,8 +386,8 @@ thumbnail, background measurement image, font/layout evidence in `Art/`. Palette
 only from `Art/preview-palette.json`. Inspect both final and thumbnail images after each render.
 Outputs git-ignored: prove Preview at moment rendered.
 
-Latest static results summarised in `Tests/RESULTS.md`. Raw outputs live **on disk only**,
-in `evidence/static/<date>-<short sha>/` (git-ignored); see "Evidence to keep" below.
+Static results are not kept (2026-10-19): the checks above run in seconds and are rerun on demand;
+`Tests/RESULTS.md` was deleted with them (it recorded revision 0b29ed3). See "Evidence to keep" below.
 
 ---
 
@@ -467,7 +467,7 @@ All of these, read from `AUDIT.md`, step 9, stated by owner 2026-09-28:
 ## Evidence to keep
 
 Pickle report tens of megabytes: `report.html`, `messages.ndjson`, screenshots about 3 MB
-each, in folder shared by whole machine. `Tests/Pickle/Evidence/` and `evidence/` git-ignored.
+each, in folder shared by whole machine. `Tests/Pickle/Inbox/`, `Evidence/` and `Parked/` git-ignored (AGENTS.md, "Test evidence"): runs arrive in `Inbox/`, only minified proofs with a `RELEASE.md` (deletion condition) stay in `Evidence/`, failures are deleted or parked with a `RELEASE.md` naming the scenario whose green releases them. Triage: `scripts/Prune-Evidence.ps1 -Mod FunnyCreaturesRenew` (dry run, then `-Apply`).
 History is **one text line per run in `docs/runs/`**, never folder.
 
 Per pass and per scenario, keep on disk **only latest report for revision now in
@@ -482,7 +482,7 @@ replaces it. What kept report is made of:
 | `@review` captures **that were opened**, as reduced JPEGs | full-resolution PNGs, screenshots of scenarios without `@review`, raw film frames |
 | Explosion film of scenario C, if run has one, as short MP4 (green C proves path, film shows blast) | films of anything else |
 
-Rules for runs: give `-EvidenceDir FunnyCreaturesRenew/Tests/Pickle/Evidence/<new name>`
+Rules for runs: give `-EvidenceDir FunnyCreaturesRenew/Tests/Pickle/Inbox/<new name>`
 every time, so older report never read as result; **write commit SHA in `-Label`**,
 since request carries none and tree staged when ticket plays. After each run, read
 `exitReason` and played-against-discovered count in copy, write line in `docs/runs/`,
@@ -491,7 +491,4 @@ never delete report a `STATUS.md` field still points to: repoint field first. On
 `Remove-Item` stalls on capture names longer than `MAX_PATH`; empty folder with
 `robocopy <empty folder> <target> /MIR`, then remove shell left.
 
-Static results (outside game) kept same way: latest outputs only, in
-`evidence/static/<date>-<short sha>/`, regenerated when file they cover changes. Their hash
-inventory goes stale the moment delivered file changes: on 2026-09-28 the one recorded 2026-09-13
-disagreed with `Mod/About/About.xml`, regenerated rather than trusted.
+Static results (outside game) are not kept: rerun the scripts when a covered file changes; a stale hash inventory proves nothing (on 2026-09-28 the one recorded 2026-09-13 disagreed with `Mod/About/About.xml`).
