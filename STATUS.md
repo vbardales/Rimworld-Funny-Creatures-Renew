@@ -25,7 +25,7 @@ workshop:     "prepublished 0.1.0, private (Steam creates every item private). A
 evidence: "Pickle proofs, on disk only, minified (278 KB, git-ignored): Tests/Pickle/Evidence/{tools-fr-69a9e1a,avec-facultatifs-en-75a8a29,incompat-original-en-0034ce2,engine-en-65d4e31,core-only-en-b832dfe}, each with RELEASE.md (deletion condition). Inbox/ and Parked/ empty. Static checks regenerated on demand, not kept. One line per run: docs/runs/README.md"
 remaining:
   - unverified: "(playTests) pass 4 (incompat-original) is green since 0034ce2 (2 of 2, 2026-10-12, line 0034 of docs/runs/README.md); pass 4 has no @review capture. Pass 1/2 FR for the optional-mod scenarios: not played"
-  - unverified: "(playTests) ticket 20261019-231502-235-5334 queued 2026-10-19: avec-facultatifs, French, tree ddca0f1, evidence Tests/Pickle/Inbox/avec-facultatifs-fr-ddca0f1 (replay of dd33, which died at WSL staging: Directory not empty, cleared by the TM 2026-10-19). Decides pass 1/2 FR of the optional-mod scenarios and FR in-game rendering. Read summary.json and junit.xml at RUN_DONE"
+  - unverified: "(playTests) ticket 20261019-231502-235-5334 done 2026-10-23 (avec-facultatifs, French, tree ddca0f1, Tests/Pickle/Inbox/avec-facultatifs-fr-ddca0f1): 47 total, 40 passed, 5 failed, 2 skipped, exitReason failed. The 5 failures are the scenarios of 'without the three optional mods' (4) and 'no expansion active' (1): they ran with every optional mod and DLC loaded, so they assert an absent state the set cannot give (set scope, not a mod defect). The 40 passes include the FR rendering check 'named in the active language'. To do: confirm scenario scoping (these 5 belong to core-only passes), keep minified proof with RELEASE.md, delete the Inbox folder"
   - unverified: "(shootGallery) gallery plan reworked 2026-10-18 in PUBLICATION.md (Gallery story): 7 shots, transitions, wardrobe (Apparel_Jacket, Apparel_CowboyHat), no guest, no tattoo, no weapon, Stick Lantern as only third-party prop; row added to GALLERY-PROPS.md (9b); 9a met by features 13 to 17. Nothing played; first run must settle animal facing, cells, blast frame (listed in the plan)"
   - verified: "@review captures: the only one is manual--the-two-animals--step0, kept in three reports (tools-en, tools-fr, avec-facultatifs-en). All three opened 2026-10-13: both animals drawn and told apart, no raw key, no missing texture; FR UI labels render (Toxicomanie, Animaux, Faune)"
   - unverified: "(done -> tested) Python tests replayed 2026-10-12 under WSL (python3 + lxml 5.2.1, RIMWORLD_DIR set to the Steam folder): 36 run, 32 passed, 3 skipped, 1 failed. The failure is the map check of wsl-deps.incompat-original.map: _mods-sources/FunnyCreatures is gone (same cause as pass 4)"
@@ -40,7 +40,7 @@ social_preview_sha256: cea77506187882ce5ffa9a96d3c09cbe6b3acd5cf6e663d51232b4de5
 code_review_sha: 8bd4080280d246aaca6f1aecf01db2df42574c99
 session:      local_15177fcc-4975-4f84-abde-09c0335fcf1a
 updated: "2026-10-11: reaudit on the 2026-10-09 vocabulary. Dogs mate patched, French review validated by Virginie, stage playTests[1.0.0]. Journal folded into docs/runs/status-journal-2026-09-to-10.md. _tools and .build cleaned"
-protocols_read_sha: c17f68bb3aa06d7c07fffc8dfabd612460bafb8f
+protocols_read_sha: 65f1477c389ca6e741af05b7745aa30f6b26b595
 ---
 # Funny Creatures Renew (unofficial): status
 

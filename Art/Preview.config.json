@@ -1,30 +1,26 @@
 {
-  "title": "Funny Creatures Renew",
-  "titleSize": 46,
-  "titleParts": [
-    {
-      "text": "Funny Creatures"
-    },
-    {
-      "text": "Renew",
-      "breakBefore": true,
-      "scale": 0.65,
-      "font": "ui",
-      "color": "secondary"
-    }
-  ],
-  "suffix": "",
-  "tag": "(unofficial)",
-  "copyLines": [
-    "Two animals, brought forward to 1.6. One of them explodes."
-  ],
-  "layout": "panel",
-  "panelAnchor": "top-left",
-  "echo": { "file": "echo-preview.png", "mode": "alpha", "preSized": true, "veil": false, "color": "var(--accent)", "opacity": 1, "panelTop": 8, "panelRight": 2, "panelWidth": 50, "flipX": true },
-  "modIconSource": "ModIcon-source.png",
-  "backgroundPosition": "50% 60%",
+  "panel": {
+    "title": "Funny Creatures Renew",
+    "titleSize": 46,
+    "titleParts": [
+      {
+        "text": "Funny Creatures"
+      },
+      {
+        "text": "Renew",
+        "breakBefore": true,
+        "scale": 0.65,
+        "font": "ui",
+        "color": "secondary"
+      }
+    ],
+    "tag": "(unofficial)",
+    "copyLines": [
+      "Two animals, brought forward to 1.6. One of them explodes."
+    ]
+  },
+  "echo": { "file": "echo-preview.png", "color": "var(--accent)" },
   "backgroundFile": "Preview-source.png",
-  "backgroundSize": "cover",
   "palette": {
     "veil": "#4A4035",
     "inkPrimary": "#F2ECE1",
@@ -32,13 +28,7 @@
     "accent": "#28CBE8",
     "badgeInk": "#17120E"
   },
-  "iconBadge": {
-    "file": "ModIcon-source.png",
-    "corner": "bottom-left",
-    "width": 180,
-    "translate": "-12.5%, 12.5%",
-    "rotate": 15,
-    "radius": 48,
-    "outline": false
+  "icon": {
+    "file": "ModIcon-source.png"
   }
 }
