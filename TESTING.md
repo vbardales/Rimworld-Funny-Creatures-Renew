@@ -377,8 +377,7 @@ Neither command executes game. No build/custom-C# unit suite applicable to XML-o
 For Preview changes, install/use Playwright and Pillow, then run:
 
 ```powershell
-node Art/render-preview.cjs
-python Art/check-contrast.py
+node ../scripts/Render-Preview.cjs
 ```
 
 Renderer requires Chrome, waits for fonts and source image, writes final Preview,
@@ -393,12 +392,12 @@ Static results are not kept (2026-10-19): the checks above run in seconds and ar
 
 # Plan: passes, automation and gates
 
-Written 2026-09-28 after re-reading `AUDIT.md`, extended 2026-10-13. **Pickle suite written** (`Tests/Pickle/`, seventeen features, step assembly in two files, four pass maps), checked offline by `Tests/test_pickle_suite.py`, showing every feature line matches exactly one known step. Features 01 to 12 have played (lines in `docs/runs/README.md`); features 13 to 17 (scenarios D to K, M, O) filed as small ticket, not played. `Tests/Pickle/README.md` has layout, request playing each pass, what two limits of Pickle built-in steps forced. Lines marked *proposed* still await owner's word.
+Written 2026-09-28 after re-reading `AUDIT.md`, extended 2026-10-13. **Pickle suite written** (`Tests/Pickle/`, seventeen features, step assembly in two files, four pass maps), checked offline by `Tests/test_pickle_suite.py`, showing every feature line matches exactly one known step. Features 01 to 12 have played (lines in `docs/runs/README.md`); features 13 to 17 (scenarios D to K, M, O) filed as small ticket, not played. `Tests/Pickle/README.md` has layout, request playing each pass, what two limits of Pickle built-in steps forced.
 
 ## The passes
 
 Mod validated by named passes; mod whose `TESTING.md` does not say how many is tried, not
-tested. This mod needs five requests, none with `-IncludeWip`:
+tested. This mod needs four required requests (passes 1 to 4) and one optional one (pass 5), none with `-IncludeWip`:
 
 | # | Pass | Language | Game set | What it covers |
 |---|---|---|---|---|
@@ -406,7 +405,7 @@ tested. This mod needs five requests, none with `-IncludeWip`:
 | 2 | `tools` | French | the same | Same suite in French: labels, descriptions, plurals, attack labels, no accented fallback (dev mode shows missing key as accented text) |
 | 3 | `avec-facultatifs` | English | pass 1 plus ADS 2 (`SamBucher.ADogSaidAnimalProsthetics2`, 3238353862), Nocturnal Animals (Continued) (`Mlie.XNDNocturnalAnimals`, 2269731409), Better Crossbreeding (`DizzyEevee.BetterCrossbreeding`, 3520675842), Dogs mate (Continued) (`Mlie.DogsMate`, 2441132298), via `wsl-deps.avec-facultatifs.map`. Map names **this mod first**, then ADS 2: ADS 2 must load after it | Scenarios R, S, T, U. Three optional mods compatible with each other, one pass covers all |
 | 4 | `incompat-original` | English | pass 1 plus `predatorking.funnycreatures` (2640466629) via `wsl-deps.incompat-original.map` | Scenario L only: documented symptom of incompatibility asserted, green means still behaves as declared |
-| 5 | `core-only`, *proposed* | English | pass 1 with five DLC left out (`!` lines in `wsl-deps.core-only.map`) | Claim in "Load order" that definitions need Core only, shown at run time, not only by reference check |
+| 5 | `core-only`, optional (owner, 2026-10-25: not a required pass) | English | pass 1 with five DLC left out (`!` lines in `wsl-deps.core-only.map`) | Claim in "Load order" that definitions need Core only, shown at run time, not only by reference check |
 
 **Why one "with optional mods" pass, not several.** `loadAfter` names Ludeon packages only, but
 three patches of 2026-09-28 name three optional mods, so pass mounting them needed. They do not
