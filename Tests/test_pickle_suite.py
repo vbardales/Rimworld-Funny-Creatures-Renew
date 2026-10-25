@@ -21,7 +21,8 @@ WORKSHOP = Path(os.environ.get('RIMWORLD_WORKSHOP',
                                r'C:\Program Files (x86)\Steam\steamapps\workshop\content\294100'))
 
 PREFIX = 'Funny Creatures Renew:'
-ALLOWED_TAGS = {'review', 'film', 'allow-errors', 'sans-facultatifs', 'core-only', 'clean-load'}
+ALLOWED_TAGS = {'review', 'film', 'allow-errors', 'sans-facultatifs', 'core-only', 'clean-load', 'gallery'}
+TIMEOUT = re.compile(r'^timeout:\d+$')
 REQUIRES = re.compile(r'^requires:[A-Za-z0-9_.]+$')
 EXPANSIONS = {'ludeon.rimworld.royalty', 'ludeon.rimworld.ideology', 'ludeon.rimworld.biotech',
               'ludeon.rimworld.anomaly', 'ludeon.rimworld.odyssey'}
@@ -53,6 +54,15 @@ def to_regex(expression):
             out.append(re.escape(expression[i]))
             i += 1
     return re.compile('^' + ''.join(out) + '$')
+
+
+def gallery_steps():
+    """The steps of the gallery scenarios, read from the catalogues of PickleTools and of the Sanctuary (generated files)."""
+    steps = []
+    for doc in (COLLECTION / 'PickleTools' / 'docs' / 'steps.md', COLLECTION / 'SanctuaryBacklot' / 'docs' / 'steps.md'):
+        if doc.exists():
+            steps += re.findall(r'^\| `([^`]+)` \((?:Given|When|Then)\)', doc.read_text(encoding='utf-8'), re.M)
+    return steps
 
 
 def builtin_steps():
@@ -113,7 +123,7 @@ class PickleSuiteTests(unittest.TestCase):
     def setUpClass(cls):
         cls.steps, cls.features = parse_features()
         cls.custom = custom_steps()
-        cls.known = builtin_steps() + LOAD_AUDIT + cls.custom
+        cls.known = list(dict.fromkeys(builtin_steps() + LOAD_AUDIT + gallery_steps())) + cls.custom
         cls.compiled = [(e, to_regex(e)) for e in cls.known]
 
     def test_there_are_features_and_steps(self):
@@ -155,11 +165,11 @@ class PickleSuiteTests(unittest.TestCase):
             for tag in tags:
                 with self.subTest(file=file, tag=tag):
                     self.assertNotEqual(tag, 'wip', 'a scenario set aside is not a scenario passed')
-                    self.assertTrue(tag in ALLOWED_TAGS or REQUIRES.match(tag), 'unknown tag @' + tag)
+                    self.assertTrue(tag in ALLOWED_TAGS or REQUIRES.match(tag) or TIMEOUT.match(tag), 'unknown tag @' + tag)
         for file, tags, scenario, _, _ in self.steps:
             for tag in tags:
                 self.assertNotEqual(tag, 'wip', file)
-                self.assertTrue(tag in ALLOWED_TAGS or REQUIRES.match(tag), f'{file}: unknown tag @{tag}')
+                self.assertTrue(tag in ALLOWED_TAGS or REQUIRES.match(tag) or TIMEOUT.match(tag), f'{file}: unknown tag @{tag}')
 
     def test_features_are_numbered_and_named_after_what_they_show(self):
         names = [f.name for f in sorted(FEATURES.glob('*.feature'))]
@@ -182,7 +192,8 @@ class PickleSuiteTests(unittest.TestCase):
     def test_every_map_is_well_formed_and_ends_with_a_newline(self):
         maps = sorted(PICKLE.glob('wsl-deps.*.map'))
         self.assertEqual([m.name for m in maps], ['wsl-deps.avec-facultatifs.map', 'wsl-deps.core-only.map',
-                                                  'wsl-deps.incompat-original.map', 'wsl-deps.tools.map'])
+                                                  'wsl-deps.gallery.map', 'wsl-deps.incompat-original.map',
+                                                  'wsl-deps.tools.map'])
         for path in maps:
             with self.subTest(map=path.name):
                 # `read` drops a last line with no newline, without a word, and the mod on it is never staged.

@@ -58,3 +58,76 @@
 # `lies down`, `lies at ... facing`, game paused for the capture, life-stage spawn, kill step of this suite, bare floor,
 # hide the vanometric cell, keep animals out, own face, frame rectangle and animal, StageDecor and `is lit`, hour and weather.
 # To settle on the first run: the cells of Nelim, the gate and the animals; the tick after the kill; ochre and trouser colours.
+#
+# WRITTEN SO FAR (2026-10-25): scenarios 1 and 4, filed as one small ticket to settle the cells, the facing held on a paused
+# game, the forced walks and the outfit colours. NOT PLAYED. The others follow the verdict. Outfit colours chosen here:
+# trousers earth brown (86, 64, 48), corset cream (222, 208, 178), jacket ochre (204, 142, 48).
+@gallery @review @timeout:900
+Feature: the gallery of Funny Creatures Renew
+
+  Background:
+    Given the save "Nelims-tribe" is loaded
+    And game speed is paused
+    And Nelim's Pickle Tools: the temperature of the map is 20 degrees
+    And Nelim's Pickle Tools: the eclipse of the map is ended
+    And Nelim's Pickle Tools: all filth is cleaned
+    And Nelim's Pickle Tools: all humans but "Nelim" are removed
+    And I set the weather to "Clear"
+
+  Scenario: 1-dawn-at-the-gate
+    Given I set the hour to 7
+    And Nelim's Sanctuary: I am at the sanctuary "enclosure-south"
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "enclosure-south"
+    And Nelim's Pickle Tools: studio presentation mode is enabled
+    And Nelim's Pickle Tools: the colonist bar is hidden
+    And Nelim's Pickle Tools: the learning helper is hidden
+    And Nelim's Pickle Tools: the tooltips are hidden
+    And Nelim's Pickle Tools: the resource readout is hidden
+    And Nelim's Pickle Tools: the alerts are hidden
+    And Nelim's Pickle Tools: the selection brackets are hidden
+    And Nelim's Pickle Tools: the item and name labels are hidden
+    And Nelim's Pickle Tools: I move the mouse to (10, 10)
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (148, 205) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (150, 205) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (152, 205) fully grown
+    And Nelim's Pickle Tools: an adult animal of kind "Meffalo" named "Moss" is spawned at (162, 210)
+    And Nelim's Pickle Tools: the animal "Moss" stands at (162, 210) facing West
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (86, 64, 48)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Corset" dyed rgb (222, 208, 178)
+    And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (204, 142, 48)
+    And Nelim's Pickle Tools: "Nelim" stands at (154, 214) facing East
+    And Nelim's Pickle Tools: I frame the rectangle from (138, 204) to (168, 223)
+    And Nelim's Pickle Tools: "Nelim" is forced to walk to (158, 209)
+    When Nelim's Pickle Tools: I let 40 ticks pass
+    And Nelim's Pickle Tools: time is paused for the capture
+    And Nelim's Sanctuary: Nelim has her own face
+    And Nelim's Pickle Tools: I let 5 frames pass
+    Then I take a screenshot "1 dawn at the gate"
+    And Nelim's Pickle Tools: the decor is removed
+
+  Scenario: 4-two-new-faces
+    Given I set the hour to 11
+    And Nelim's Sanctuary: the vanometric cell of the sanctuary is hidden
+    And Nelim's Sanctuary: the floor of the sanctuary "bare-clearing" is bared
+    And Nelim's Sanctuary: I am at the sanctuary "bare-clearing"
+    And Nelim's Sanctuary: the animals are removed from the sanctuary "bare-clearing"
+    And Nelim's Pickle Tools: studio presentation mode is enabled
+    And Nelim's Pickle Tools: the colonist bar is hidden
+    And Nelim's Pickle Tools: the learning helper is hidden
+    And Nelim's Pickle Tools: the tooltips are hidden
+    And Nelim's Pickle Tools: the resource readout is hidden
+    And Nelim's Pickle Tools: the alerts are hidden
+    And Nelim's Pickle Tools: the selection brackets are hidden
+    And Nelim's Pickle Tools: the item and name labels are hidden
+    And Nelim's Pickle Tools: I move the mouse to (10, 10)
+    And Nelim's Pickle Tools: "Nelim" stands at (180, 121) facing South
+    And Nelim's Pickle Tools: an adult animal of kind "Meffalo" named "Moss" is spawned at (189, 155)
+    And Nelim's Pickle Tools: the animal "Moss" stands at (189, 155) facing South
+    And Nelim's Pickle Tools: an adult animal of kind "Boomsloth" named "Boomy" is spawned at (194, 156)
+    And Nelim's Pickle Tools: the animal "Boomy" stands at (194, 156) facing South
+    And Nelim's Pickle Tools: "Boomy" is forced to walk to (194, 150)
+    When Nelim's Pickle Tools: I let 35 ticks pass
+    And Nelim's Pickle Tools: time is paused for the capture
+    And Nelim's Pickle Tools: "Moss" faces South
+    And Nelim's Pickle Tools: I let 5 frames pass
+    Then I take a screenshot "4 two new faces"

@@ -18,6 +18,7 @@ Tests/Pickle/
   wsl-deps.avec-facultatifs.map           pass 3: ADS 2, Nocturnal Animals, Better Crossbreeding
   wsl-deps.incompat-original.map          pass 4: the original mod next to this one
   wsl-deps.core-only.map                  pass 5: the five expansions left out
+  wsl-deps.gallery.map                    the gallery (feature 18): the Sanctuary map of SanctuaryBacklot plus Stick Lantern
   Source/                                 the C# of the step assembly (FunnyCreatures.PickleSteps.csproj)
   Mod/                                    the test companion, nelim.funnycreatures.pickletests
     About/About.xml
@@ -63,6 +64,7 @@ what the run is for.
 | `15-butchering-and-training` | H, I | What a butcher takes from each animal, no blast beside a colonist, the four advanced skills, pack and herd flags, carrying capacity |
 | `16-wild-spawning-and-trade` | J, K | The biomes each animal lives in, according to the biomes the game loaded, the group size, and a trader that can stock each |
 | `17-corpse-and-sounds` | M, O | The dessicated graphic draws from every side with no missing texture; the sounds resolve clips, the meffalo pitched low, the boomsloth on the thrumbo's sounds |
+| `18-the-gallery` | (Gallery) | The Workshop gallery scenes, one scenario one image, in the Sanctuary; plan in the feature header, played by its own request (see below), never by passes 1 to 3 |
 
 ## Tags
 
@@ -75,12 +77,13 @@ what the run is for.
 | `@allow-errors` | The errors are the point of the scenario (feature 10) |
 | `@review` | Attaches a capture that a person must open. Its green says the path ran, not that the image shows the animals |
 | `@film` | Films the scenario; the explosion film is what shows the blast |
+| `@gallery` | A gallery scene of feature 18: needs the Sanctuary map (`wsl-deps.gallery.map`), excluded from passes 1 to 3 |
 
 There is no `@wip`, and `test_pickle_suite.py` refuses one: a scenario put aside is repaired or deleted.
 
 ## The passes, and the request that plays each
 
-Five requests, none with `-IncludeWip`. `<sha>` is the commit the tree is on: **a request carries no SHA and the tree is
+Four required requests and one optional, none with `-IncludeWip`. `<sha>` is the commit the tree is on: **a request carries no SHA and the tree is
 staged when the ticket plays**, so keep the tree of this repository unchanged until the `RUN_DONE` of each. Give a new
 `-EvidenceDir` every time, so an older report is never read as the result. The full command form, options and exit codes
 are in `Rimworld-Ticket-Dispatcher/docs/SUBMIT.md`.
@@ -93,15 +96,17 @@ powershell.exe -ExecutionPolicy Bypass -File C:\Users\nelim\Documents\rimworld\R
 
 | # | Pass | `-DepMap` | `-Language` | `-Filter` | Plays |
 |---|---|---|---|---|---|
-| 1 | `tools` (the bare set) | `wsl-deps.tools.map` | English | `'Funny Creatures Renew - Pickle tests,!@core-only'` | 01 to 05, 09, 12 to 17; **06, 07, 08 and 10 are skipped by requirement** |
+| 1 | `tools` (the bare set) | `wsl-deps.tools.map` | English | `'Funny Creatures Renew - Pickle tests,!@core-only,!@gallery'` | 01 to 05, 09, 12 to 17; **06, 07, 08 and 10 are skipped by requirement** |
 | 2 | `tools` | `wsl-deps.tools.map` | French | the same | the same, in French: the point is 05 |
-| 3 | `avec-facultatifs` | `wsl-deps.avec-facultatifs.map` | English | `'Funny Creatures Renew - Pickle tests,!@sans-facultatifs,!@core-only'` | 01 to 08 and 12 to 17; 09 excluded; 10 skipped by requirement |
+| 3 | `avec-facultatifs` | `wsl-deps.avec-facultatifs.map` | English | `'Funny Creatures Renew - Pickle tests,!@sans-facultatifs,!@core-only,!@gallery'` | 01 to 08 and 12 to 17; 09 excluded; 10 skipped by requirement |
 | 4 | `incompat-original` | `wsl-deps.incompat-original.map` | English | `'10-the-original-mod'` | 10 |
-| 5 | `core-only`, *proposed* | `wsl-deps.core-only.map` | English | `'11-core-only,12-load-is-clean'` | 11 and 12 |
+| 5 | `core-only`, optional (owner, 2026-10-25) | `wsl-deps.core-only.map` | English | `'11-core-only,12-load-is-clean'` | 11 and 12 |
 
 The report of every pass carries its name (`-pickle-set-name`), so the passes can be set side by side. **Pass 3 runs the
 whole suite on purpose**, not only 06 to 08: it is the pass that shows the mod stands in the game it will really be loaded in,
 and Better Crossbreeding and Nocturnal Animals change vanilla animals the earlier features spawn.
+
+**The gallery** is played apart, by small requests of one to two scenarios: `-DepMap gallery`, `-Filter '18-the-gallery::1-dawn-at-the-gate,18-the-gallery::4-two-new-faces'` (the title after `::`), a new `-EvidenceDir` each time. It is not a pass of the matrix and proves nothing about the mod; its captures are read against the shotlist in the feature header.
 
 A pass that leaves features skipped by requirement is not a pass of them. Feature 06, 07 and 08 have played only when
 pass 3 has, on a map that mounted their mods; the counts are read against the features discovered.
