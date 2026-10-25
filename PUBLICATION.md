@@ -101,6 +101,8 @@ opened and read before it goes in the folder.** In the repository the files are 
 
 ### Gallery story and subtitles (PLAN, reworked 2026-10-18; no capture exists yet)
 
+**Superseded 2026-10-25:** the shot plan below is replaced by the shotlist of `Tests/Pickle/Gallery/18-the-gallery.feature` (copied in `STATUS.md`, "Shotlist"). The subtitle table is rewritten from it once the captures are accepted.
+
 `Art/Gallery/` holds only `0-preview.png`. This is the shot plan the scenarios follow at `shootGallery`. Each line is rewritten after its image is opened and judged. A scene whose image is refused loses its line.
 
 **Story, one day at the Sanctuary: "The herd that was not on the map".** Nelim (Virginie) is the protagonist and the only colonist of the save. **No guest rancher** (decided 2026-10-18): a second body, outfit and face would cost seven more setups and say nothing the two animals do not. Two places only: `emerald-clearing` (herd, shots 2, 3, 5, 6) and `enclosure-south` (pen, shots 1, 4, 7). Time runs from 06:00 to dusk. The feature header states the hours.
