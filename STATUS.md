@@ -8,7 +8,7 @@ packageId:    nelim.funnycreatures
 repo:         Rimworld-Funny-Creatures-Renew
 visibility:   public
 detached:     yes
-workflow_stage: playTests[1.0.0]
+workflow_stage: shootGallery[1.0.0]
 audit_revision: 1f60dac
 licence:      silent
 licence_at:   "Four places searched for a refusal rather than a permission (ATTRIBUTION.md). The Workshop page was re-read on 2026-09-28: description unchanged, no repository or licence wording, 1.3 only, last updated 30 October 2021. Its comments load by script and could not be read. No permission is inferred."
@@ -39,7 +39,7 @@ remaining:
 social_preview_sha256: cea77506187882ce5ffa9a96d3c09cbe6b3acd5cf6e663d51232b4de56c00827
 code_review_sha: 281289d86a12cf53517afcd45092ccea5c75c10c
 session:      local_15177fcc-4975-4f84-abde-09c0335fcf1a
-updated: "2026-10-11: reaudit on the 2026-10-09 vocabulary. Dogs mate patched, French review validated by Virginie, stage playTests[1.0.0]. Journal folded into docs/runs/status-journal-2026-09-to-10.md. _tools and .build cleaned"
+updated: "2026-10-25: playTests closed (passes 1 to 4 green, features 13 to 17 played, ticket 5334 FR read, Python tests and code review 8.m done, Preview validated by Virginie). Stage shootGallery[1.0.0]. Pass 5 core-only optional"
 protocols_read_sha: 65f1477c389ca6e741af05b7745aa30f6b26b595
 ---
 # Funny Creatures Renew (unofficial): status
@@ -52,7 +52,7 @@ French in `Mod/Languages/French/DefInjected` (20 owned fields, no Keyed, no plur
 
 ## Reaudit 2026-10-11
 
-- **Stage: `playTests[1.0.0]`** since Virginie validated French review (2026-10-11). Old `done` mapped to `playTests` by indicative table, but gates 3.a and 4.f failed until Dogs mate (one of four animal integrations, ANIMALS.md) treated same day. Target version `1.0.0`: `CHANGELOG.md` keeps `[1.0.0] unreleased` above `[0.1.0]` (prepublication, item 3811290892, private). `stage` field removed.
+- **Stage: `playTests[1.0.0]` until 2026-10-25, then `shootGallery[1.0.0]`** since Virginie validated French review (2026-10-11). Old `done` mapped to `playTests` by indicative table, but gates 3.a and 4.f failed until Dogs mate (one of four animal integrations, ANIMALS.md) treated same day. Target version `1.0.0`: `CHANGELOG.md` keeps `[1.0.0] unreleased` above `[0.1.0]` (prepublication, item 3811290892, private). `stage` field removed.
 - **Gates re-read on disk.** 1: repository public, remote set, README, ATTRIBUTION, CHANGELOG, licence `silent` with unofficial wording. 2: `Art/ModIcon-source.png`, `Mod/About/ModIcon.png` 128 x 128 (12 KB, below 20 to 30 KB window: owner's own resize, kept), `Art/Preview-source.png`, Preview 896 x 504. Not rechecked today: palette and 268 px tests of 2.e (`scripts/Measure-Palette.sh`). 3: no build, no C#. 5: `settings_audit: not_applicable` holds (no page, no shortcut, no C#).
 - **Dependencies and integrations (4.g), 2026-10-11.** No hard dependency (`modDependencies` empty, `loadAfter` Ludeon packages only, `loadBefore` ADS 2, `incompatibleWith` original and Storytime pack). No DLC used. Four animal mods, each guarded optional patch in `Mod/Patches/`: A Dog Said... Animal Prosthetics 2, [XND] Nocturnal Animals (Continued), Better Crossbreeding, **Dogs mate (Continued)** (new: meffalo joins its group Bison with muffalo, boomsloth joins its group Boomalope; mod has no megasloth group, so no megasloth pairing there).
 - **Python tests replayed 2026-10-12** under WSL (36 run, 32 passed, 3 skipped, 1 failed: missing original archive, see remaining). Dogs mate test green.
