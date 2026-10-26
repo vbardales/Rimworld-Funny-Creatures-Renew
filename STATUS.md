@@ -36,6 +36,7 @@ remaining:
   - unverified: "(playTests) AUDIT.md 7.a names TEST_SCENARIOS.md; this mod keeps its scenarios A to U in TESTING.md, as the sibling mods do (AUDIT.md 'Les passes se declarent dans le TESTING.md'). Wording to confirm with the Audit session, no rename done"
   - unverified: "(test hardening, 8.m review 2026-10-15, none blocks) done 2026-10-18: Dogs mate checked against the installed mod, name check covers Dogs mate (25 tests pass with lxml + Workshop path). Left as designed: test_mod.py Dessicated skips N/S/E (Pickle 17 covers it); FunnyCreaturesSteps.cs negative crossbreeding steps pass on an absent list (intended without the optional mod)"
   - unverified: "(playTests) Tests/test_mod.py and Tests/test_pickle_suite.py are listed in scripts/LOCAL_SCRIPTS.md with a justification; Virginie validates the table at the end"
+  - unverified: "(shootGallery) social preview re-upload awaits Virginie: Mod/About/Preview.png was regenerated and validated 2026-10-25 (7793a71), so social_preview_sha256 is stale (Check-Status WARN); upload through Chrome only on her word, then record the new sha256. Pass 5 core-only is optional (owner, 2026-10-25). The one open owner item besides the gallery"
 social_preview_sha256: cea77506187882ce5ffa9a96d3c09cbe6b3acd5cf6e663d51232b4de56c00827
 code_review_sha: 281289d86a12cf53517afcd45092ccea5c75c10c
 session:      local_15177fcc-4975-4f84-abde-09c0335fcf1a
