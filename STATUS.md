@@ -41,7 +41,7 @@ social_preview_sha256: 500e5b43ad1a96181744407ce9fd048b5177134c3c713f7ab7674f91f
 code_review_sha: 281289d86a12cf53517afcd45092ccea5c75c10c
 session:      local_15177fcc-4975-4f84-abde-09c0335fcf1a
 updated: "2026-10-25: playTests closed (passes 1 to 4 green, features 13 to 17 played, ticket 5334 FR read, Python tests and code review 8.m done, Preview validated by Virginie). Stage shootGallery[1.0.0]. Pass 5 core-only optional"
-protocols_read_sha: 65f1477c389ca6e741af05b7745aa30f6b26b595
+protocols_read_sha: 7fb78fd9e3344d46a904df6458038a34c7f8ff3d
 ---
 # Funny Creatures Renew (unofficial): status
 
