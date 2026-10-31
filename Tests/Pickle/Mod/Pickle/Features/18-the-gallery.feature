@@ -95,11 +95,11 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (86, 64, 48)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Corset" dyed rgb (222, 208, 178)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (204, 142, 48)
-    And Nelim's Pickle Tools: "Nelim" stands at (154, 214) facing East
+    And Nelim's Pickle Tools: "Nelim" stands at (152, 214) facing East
     And Nelim's Pickle Tools: I frame the rectangle from (138, 204) to (168, 223)
     And Nelim's Pickle Tools: "Nelim" is forced to walk to (158, 209)
     When Nelim's Pickle Tools: I let 40 ticks pass
-    And Nelim's Pickle Tools: time is paused for the capture
+    And game speed is paused
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: I let 5 frames pass
     Then I take a screenshot "1 dawn at the gate"
@@ -127,7 +127,7 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: the animal "Boomy" stands at (194, 156) facing South
     And Nelim's Pickle Tools: "Boomy" is forced to walk to (194, 150)
     When Nelim's Pickle Tools: I let 35 ticks pass
-    And Nelim's Pickle Tools: time is paused for the capture
+    And game speed is paused
     And Nelim's Pickle Tools: "Moss" faces South
     And Nelim's Pickle Tools: I let 5 frames pass
     Then I take a screenshot "4 two new faces"
