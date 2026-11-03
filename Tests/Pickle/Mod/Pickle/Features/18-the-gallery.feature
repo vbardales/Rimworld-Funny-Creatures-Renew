@@ -18,24 +18,31 @@
 # the capture; decor removed after. Mid-play instants: forced walk, `I let N ticks pass`, then the game paused for the capture.
 #
 # SHOTS (name, place, hour, subject and line, composition, living things, decor, instant and how, risk, estimate)
-# 1 1-dawn-at-the-gate. enclosure-south, 07, wide on the pen and its south gate, zoom about 11, Nelim off-centre left.
-#   "Nelim walks out at dawn. Something big is already waiting." Nelim forced to walk to the cell inside the gate, smirk;
-#   an adult meffalo standing at the gate, head toward her. Daylily fully grown along the fence, laying boxes kept.
-#   Instant: just before they meet; the walk is frozen mid-stride. Risk: bamboo beyond the gate, so both stay inside the
-#   pen; walk-and-pause not played on an animal yet. 4.
+# 1 1-dawn-at-the-gate. enclosure-south, 07, opening shot, frame rectangle 14 x 8 cells centred on the south gate, zoom about
+#   6 (was 11: the run of 2026-11-03 showed Nelim a few pixels wide), Nelim off-centre left, the meffalo off-centre right, both
+#   within 4 cells of the gate (Nelim about 2 of 14 cells wide, about 38 px at 268 px).
+#   "Nelim walks out at dawn. Something big is already waiting." Nelim forced to walk to (152, 214), smirk (MouthSmile
+#   set after her face); an adult meffalo standing at the gate, head toward her. `Plant_Daylily` fully grown along the fence,
+#   laying boxes kept. Instant: just before they meet; forced walk, `I let 20 ticks pass`, paused, the walk frozen mid-stride.
+#   Risk: the meffalo coat reads black at dawn (lead from the run, not checked: ask NPT if it persists). 4.5.
 # 2 2-the-calves-follow. enclosure-south, 08, medium, zoom 7 to 8 on one corner of the pen, adult meffalo large at the edge.
 #   "Two calves follow their mother. One of them is a fuse." A meffalo calf and a boomsloth calf (life stage step) trail the
 #   adult; Nelim small at the fence, smiling (MouthSmile, LidCheerful). Short straw, YellowTallGrass kept low. Instant: the
 #   calves mid-trot behind the adult, forced walks, frozen. Risk: calves unreadable at 268 px, so the zoom stays close. 4.
 # 3 3-heavy-fur-by-the-water. water-garden, 09, tight on the brown west bank (x 143-158, z 168-176), zoom about 5.
 #   "The meffalo's dark coat, next to the water." The meffalo walks along the bank, ducks behind it; no pawn. Instant:
-#   mid-stride along the bank, forced walk, frozen; keep clear of the steam geyser and the burrow at (149-150, 173).
-#   Risk: the geyser steam in frame; the coat reads against pale bank. 4.
+#   it has just left the water and starts along the bank, a duck startled behind it; forced walk, `I let 15 ticks pass`,
+#   paused; keep clear of the steam geyser and the burrow at (149-150, 173).
+#   Risk: the geyser steam in frame; the coat reads against pale bank. 4.5.
 # 4 4-two-new-faces. bare-clearing, 11, medium, zoom 5, the boomsloth in the foreground, the meffalo behind and to the left.
-#   "A meffalo and a boomsloth, face to face at last." The boomsloth walks toward the camera (faces South, forced walk),
-#   mid-stride, the meffalo behind it facing South, head up. No pawn. Floor bared, vanometric cell hidden. The only shot
-#   with an animal full-face. Instant: they have just seen the camera, frozen. Risk: facing held on a paused capture, not
-#   played yet. 4.
+#   "A meffalo and a boomsloth, face to face at last." Frame rectangle 12 x 7 cells centred on the pair (the run of
+#   2026-11-03 left half the frame empty and the meffalo cut at the edge); the two animals at most 4 cells apart, the
+#   boomsloth in front right, the meffalo behind it to the left, both inside the frame. The boomsloth walks toward the
+#   camera (faces South, forced walk), mid-stride; the meffalo facing South, head up. No pawn. Floor bared, vanometric cell
+#   hidden. Decor, removed after: `Plant_Daylily` fully grown at two cells left of the meffalo and at two cells right of the
+#   boomsloth (a flower strip stood at the left of the 2026-11-03 frame, origin not checked: the new frame keeps off it). The only shot with an animal
+#   full-face. Instant: they have just seen the camera; forced walk, `faces`, `I let 20 ticks pass`, paused.
+#   Risk: facing held on a paused capture (held on 2026-11-03). 4.5.
 # 5 5-do-not-startle-it. bare-clearing, 15, same frame as 4 but wider, zoom 6.
 #   "Nelim keeps her distance. The boomsloth knows why." The adult boomsloth in the middle, facing her; Nelim seven cells away,
 #   BrowRaised after her own face, set to face it. Instant: she has walked back and just turned, the boomsloth looks at
@@ -59,8 +66,10 @@
 # hide the vanometric cell, keep animals out, own face, frame rectangle and animal, StageDecor and `is lit`, hour and weather.
 # To settle on the first run: the cells of Nelim, the gate and the animals; the tick after the kill; ochre and trouser colours.
 #
-# WRITTEN SO FAR (2026-10-25): scenarios 1 and 4, filed as one small ticket to settle the cells, the facing held on a paused
-# game, the forced walks and the outfit colours. NOT PLAYED. The others follow the verdict. Outfit colours chosen here:
+# WRITTEN SO FAR: scenarios 1 and 4 played 2026-11-03 (ticket c569, 2 of 2 passed, cells and pause phrase settled). Director
+# verdict on the captures: both refused (1 too wide, no gate, meffalo a black silhouette; 4 pair too far apart, meffalo cut,
+# empty half). Shots 1 and 4 recomposed above, to refile. Scenarios 2, 3, 5, 6, 7 follow. Shots 2, 5, 6 keep the reworked
+# lines of the STATUS.md shotlist (2026-10-25 rework), to copy here when their scenarios are written. Outfit colours chosen here:
 # trousers earth brown (86, 64, 48), corset cream (222, 208, 178), jacket ochre (204, 142, 48).
 @gallery @review @timeout:900 @requires:nelim.pickletools.clickdiagnostics @requires:nelim.pickletools.colonistrace @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.stagedecor
 Feature: the gallery of Funny Creatures Renew
