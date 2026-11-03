@@ -62,7 +62,7 @@
 # WRITTEN SO FAR (2026-10-25): scenarios 1 and 4, filed as one small ticket to settle the cells, the facing held on a paused
 # game, the forced walks and the outfit colours. NOT PLAYED. The others follow the verdict. Outfit colours chosen here:
 # trousers earth brown (86, 64, 48), corset cream (222, 208, 178), jacket ochre (204, 142, 48).
-@gallery @review @timeout:900
+@gallery @review @timeout:900 @requires:nelim.pickletools.clickdiagnostics @requires:nelim.pickletools.colonistrace @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.stagedecor
 Feature: the gallery of Funny Creatures Renew
 
   Background:
