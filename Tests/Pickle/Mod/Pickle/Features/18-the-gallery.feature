@@ -18,11 +18,11 @@
 # the capture; decor removed after. Mid-play instants: forced walk, `I let N ticks pass`, then the game paused for the capture.
 #
 # SHOTS (name, place, hour, subject and line, composition, living things, decor, instant and how, risk, estimate)
-# 1 1-dawn-at-the-gate. enclosure-south, 07, opening shot, frame rectangle 14 x 8 cells centred on the south gate, zoom about
+# 1 1-dawn-at-the-gate. enclosure-south, 07, opening shot, frame rectangle 14 x 8 cells centred on the gate (159, 207), x 152-166 z 203-211 (SANCTUAIRE-LIEUX.md: the portal; the 2026-11-03 frame was centred on (149, 214), mid-pen, which is why no gate showed), zoom about
 #   6 (was 11: the run of 2026-11-03 showed Nelim a few pixels wide), Nelim off-centre left, the meffalo off-centre right, both
 #   within 4 cells of the gate (Nelim about 2 of 14 cells wide, about 38 px at 268 px).
-#   "Nelim walks out at dawn. Something big is already waiting." Nelim forced to walk to (152, 214), smirk (MouthSmile
-#   set after her face); an adult meffalo standing at the gate, head toward her. `Plant_Daylily` fully grown along the fence,
+#   "Nelim walks out at dawn. Something big is already waiting." Nelim forced to walk to (156, 209), smirk (MouthSmile
+#   set after her face); an adult meffalo standing at (160, 209) by the gate, head toward her (both cells to settle on the run). `Plant_Daylily` fully grown along the fence,
 #   laying boxes kept. Instant: just before they meet; forced walk, `I let 20 ticks pass`, paused, the walk frozen mid-stride.
 #   Risk: the meffalo coat reads black at dawn (lead from the run, not checked: ask NPT if it persists). 4.5.
 # 2 2-the-calves-follow. enclosure-south, 08, medium, zoom 7 to 8 on one corner of the pen, adult meffalo large at the edge.
