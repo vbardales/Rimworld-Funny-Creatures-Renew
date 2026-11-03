@@ -19,7 +19,7 @@
       "Two animals, brought forward to 1.6. One of them explodes."
     ]
   },
-  "echo": { "file": "echo-preview.png", "color": "var(--accent)" },
+  "echo": { "file": "echo-preview.png" },
   "backgroundFile": "Preview-source.png",
   "palette": {
     "veil": "#4A4035",
