@@ -66,6 +66,7 @@
 # hide the vanometric cell, keep animals out, own face, frame rectangle and animal, StageDecor and `is lit`, hour and weather.
 # To settle on the first run: the cells of Nelim, the gate and the animals; the tick after the kill; ochre and trouser colours.
 #
+# 2026-11-03 (later): scenarios 1 and 4 rewritten to the new frames and 3 written, to refile as one ticket (1, 3, 4).
 # WRITTEN SO FAR: scenarios 1 and 4 played 2026-11-03 (ticket c569, 2 of 2 passed, cells and pause phrase settled). Director
 # verdict on the captures: both refused (1 too wide, no gate, meffalo a black silhouette; 4 pair too far apart, meffalo cut,
 # empty half). Shots 1 and 4 recomposed above, to refile. Scenarios 2, 3, 5, 6, 7 follow. Shots 2, 5, 6 keep the reworked
@@ -96,18 +97,18 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: the selection brackets are hidden
     And Nelim's Pickle Tools: the item and name labels are hidden
     And Nelim's Pickle Tools: I move the mouse to (10, 10)
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (148, 205) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (150, 205) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (152, 205) fully grown
-    And Nelim's Pickle Tools: an adult animal of kind "Meffalo" named "Moss" is spawned at (162, 210)
-    And Nelim's Pickle Tools: the animal "Moss" stands at (162, 210) facing West
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (154, 206) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (156, 206) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (164, 206) fully grown
+    And Nelim's Pickle Tools: an adult animal of kind "Meffalo" named "Moss" is spawned at (160, 209)
+    And Nelim's Pickle Tools: the animal "Moss" stands at (160, 209) facing West
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (86, 64, 48)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Corset" dyed rgb (222, 208, 178)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (204, 142, 48)
-    And Nelim's Pickle Tools: "Nelim" stands at (152, 214) facing East
-    And Nelim's Pickle Tools: I frame the rectangle from (138, 204) to (168, 223)
-    And Nelim's Pickle Tools: "Nelim" is forced to walk to (158, 209)
-    When Nelim's Pickle Tools: I let 40 ticks pass
+    And Nelim's Pickle Tools: "Nelim" stands at (152, 212) facing East
+    And Nelim's Pickle Tools: I frame the rectangle from (152, 203) to (166, 211)
+    And Nelim's Pickle Tools: "Nelim" is forced to walk to (156, 209)
+    When Nelim's Pickle Tools: I let 20 ticks pass
     And game speed is paused
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: I let 5 frames pass
@@ -129,14 +130,40 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: the selection brackets are hidden
     And Nelim's Pickle Tools: the item and name labels are hidden
     And Nelim's Pickle Tools: I move the mouse to (10, 10)
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (187, 153) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (195, 155) fully grown
+    And Nelim's Pickle Tools: I frame the rectangle from (186, 148) to (198, 155)
     And Nelim's Pickle Tools: "Nelim" stands at (180, 121) facing South
-    And Nelim's Pickle Tools: an adult animal of kind "Meffalo" named "Moss" is spawned at (189, 155)
-    And Nelim's Pickle Tools: the animal "Moss" stands at (189, 155) facing South
-    And Nelim's Pickle Tools: an adult animal of kind "Boomsloth" named "Boomy" is spawned at (194, 156)
-    And Nelim's Pickle Tools: the animal "Boomy" stands at (194, 156) facing South
-    And Nelim's Pickle Tools: "Boomy" is forced to walk to (194, 150)
-    When Nelim's Pickle Tools: I let 35 ticks pass
+    And Nelim's Pickle Tools: an adult animal of kind "Meffalo" named "Moss" is spawned at (189, 153)
+    And Nelim's Pickle Tools: the animal "Moss" stands at (189, 153) facing South
+    And Nelim's Pickle Tools: an adult animal of kind "Boomsloth" named "Boomy" is spawned at (193, 155)
+    And Nelim's Pickle Tools: the animal "Boomy" stands at (193, 155) facing South
+    And Nelim's Pickle Tools: "Boomy" is forced to walk to (193, 152)
+    When Nelim's Pickle Tools: I let 20 ticks pass
     And game speed is paused
     And Nelim's Pickle Tools: "Moss" faces South
     And Nelim's Pickle Tools: I let 5 frames pass
     Then I take a screenshot "4 two new faces"
+    And Nelim's Pickle Tools: the decor is removed
+
+  Scenario: 3-heavy-fur-by-the-water
+    Given I set the hour to 9
+    And Nelim's Sanctuary: I am at the sanctuary "water-garden"
+    And Nelim's Pickle Tools: studio presentation mode is enabled
+    And Nelim's Pickle Tools: the colonist bar is hidden
+    And Nelim's Pickle Tools: the learning helper is hidden
+    And Nelim's Pickle Tools: the tooltips are hidden
+    And Nelim's Pickle Tools: the resource readout is hidden
+    And Nelim's Pickle Tools: the alerts are hidden
+    And Nelim's Pickle Tools: the selection brackets are hidden
+    And Nelim's Pickle Tools: the item and name labels are hidden
+    And Nelim's Pickle Tools: I move the mouse to (10, 10)
+    And Nelim's Pickle Tools: "Nelim" stands at (180, 121) facing South
+    And Nelim's Pickle Tools: an adult animal of kind "Meffalo" named "Moss" is spawned at (146, 172)
+    And Nelim's Pickle Tools: the animal "Moss" stands at (146, 172) facing East
+    And Nelim's Pickle Tools: "Moss" is forced to walk to (154, 172)
+    When Nelim's Pickle Tools: I let 15 ticks pass
+    And game speed is paused
+    And Nelim's Pickle Tools: I frame the rectangle from (144, 168) to (156, 176)
+    And Nelim's Pickle Tools: I let 5 frames pass
+    Then I take a screenshot "3 heavy fur by the water"
