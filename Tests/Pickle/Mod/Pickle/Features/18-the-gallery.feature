@@ -54,7 +54,7 @@
 #   missing the widest flame; the daylilies are outside the blast radius and removed after. 4.
 # 7 7-dusk-roll-call. enclosure-south, 19, frame rectangle (152, 203) to (166, 211) as in 1, dusk light dimmed to at most 0.35.
 #   "At dusk the pen is quiet. The little fuse is asleep." The adult meffalo lying at (162, 209), the boomsloth calf lying at (163, 209) beside it, both facing West;
-#   Nelim has just stopped at (157, 208), smile, facing East, same outfit; a lit `DR_StickLantern` at (158, 205), daylilies at (154, 206), (156, 206), (160, 206), (162, 206), (164, 206), the pen laying boxes kept.
+#   Nelim has just stopped at (156, 209), smile, facing East, same outfit; a lit `DR_StickLantern` at (158, 205), daylilies at (154, 206), (156, 206), (160, 206), (162, 206), (164, 206), the pen laying boxes kept.
 #   Instant: forced walk, `I let 15 ticks pass`, paused. Risk: the lying pose on a paused game and the dim step are not played yet (small ticket for shot 7 first). 4.5.
 # 8 (optional, interface window) 8-boomsloth-card. window-backdrop-for-height, cropped, no subtitle: the information card of
 #   the boomsloth on its Stats tab (wildness 97 percent listed). Steps: select the thing, open the info card (not played on an
@@ -338,7 +338,7 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (204, 142, 48)
     And Nelim's Pickle Tools: "Nelim" stands at (153, 209) facing East
     And Nelim's Pickle Tools: I frame the rectangle from (152, 203) to (166, 211)
-    And Nelim's Pickle Tools: "Nelim" is forced to walk to (157, 208)
+    And Nelim's Pickle Tools: "Nelim" is forced to walk to (156, 209)
     When Nelim's Pickle Tools: I let 15 ticks pass
     And game speed is paused
     And Nelim's Sanctuary: Nelim has her own face

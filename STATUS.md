@@ -44,7 +44,7 @@ social_preview_sha256: 500e5b43ad1a96181744407ce9fd048b5177134c3c713f7ab7674f91f
 code_review_sha: 281289d86a12cf53517afcd45092ccea5c75c10c
 session:      local_83fc0db0-2211-460b-b677-85a81a6ea0d6
 updated: "2026-10-31 replay-audit: stage unchanged, first open 9.a (no accepted capture, ticket c569 queued for shots 1 and 4). 2026-10-25: playTests closed (passes 1 to 4 green, features 13 to 17 played, ticket 5334 FR read, Python tests and code review 8.m done, Preview validated by Virginie). Stage shootGallery[1.0.0]. Pass 5 core-only optional"
-protocols_read_sha: ae6bc8a0f43a31e22df7e41cc17c26a1a5300dac
+protocols_read_sha: 1b089279ae73b32a5ea8d56b3a598885d03cc393
 ---
 # Funny Creatures Renew (unofficial): status
 
@@ -144,3 +144,5 @@ Scenario 7 written 2026-11-09 after NPT's answer: lantern defName is `DR_StickLa
 Plan rated 2026-11-09 (`score-gallery`, plan only, no capture): decor of 2 (three daylilies added), 5 and 6 (four daylilies added, eight in all, 8 cells or more from the boomsloth) and 7 (two daylilies added) was `weak` (ground too bare, rule 2026-11-07); fixed in the feature header and scenarios, cells to settle on the run. Plan 5 on 1 to 7 by the rule (every criterion a to g and j written, k ok: one day, wide 1, mediums 2 4 5 6, tight 3, quiet closing 7). Headers of 2, 5, 6, 7 aligned on the scenarios. `Check-Steps.ps1`: 54 blocks, every step line resolves. Next: small ticket for shot 7 alone.
 
 Ticket 20261109-115708-046-d08e filed 2026-11-09 (shot 7 only, tree b8e5ecf, map wsl-deps.gallery.map, evidence Tests/Pickle/Inbox/gallery-7-b8e5ecf): lying pose and dim step (expected log `[light] N reads of the glow are patched`, N = 0 fails). Mod/ and Tests/Pickle frozen until RUN_DONE. Then the other six scenarios as one ticket.
+
+Ticket d08e read 2026-11-10 (tree b8e5ecf, exit 1, 0 of 1): dim step works (`[light] 5 reads of the glow are patched`), both `lies at` steps passed; failed at `Nelim is forced to walk to (157, 208)` (cell under a bamboo clump, not standable). Failure frame deleted. Walk target moved to (156, 209), the cell that passed in shot 1; refiled as a small ticket for shot 7 alone (id in the line below). Frame still shows the two braziers of enclosure-south: judge on the next capture.
