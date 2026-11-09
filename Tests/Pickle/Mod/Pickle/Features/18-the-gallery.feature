@@ -1,6 +1,5 @@
-# Gallery shotlist of Funny Creatures Renew (written 2026-10-25, shootGallery[1.0.0]). No scenario exists yet.
-# This file holds the plan only. It moves to Mod/Pickle/Features/ with its first scenario, and gets its own pass map
-# (the Sanctuary map as base, no optional animal mod: the nocturnal mod would put the boomsloth to sleep in daytime shots).
+# Gallery shotlist of Funny Creatures Renew (written 2026-10-25, revised 2026-11-09, shootGallery[1.0.0]). Scenarios 1 to 7 exist below.
+# Pass map: wsl-deps.gallery.map (the Sanctuary map as base, no optional animal mod: the nocturnal mod would put the boomsloth to sleep in daytime shots).
 #
 # STORY, "The herd that was not on the map". One day at the Sanctuary of Nelim (Virginie, the protagonist and only
 # colonist; no other colonist is used). She works in the same outfit all day: fixture trousers and corset, `Apparel_Jacket`
@@ -27,10 +26,11 @@
 #   source, lived-in), the bamboo stays but no clump stands between the meffalo and the camera. `Plant_Daylily` fully grown along the fence, laying boxes kept.
 #   Instant: just before they meet; forced walk, `I let 20 ticks pass`, paused, the walk frozen mid-stride.
 #   Risk: the meffalo cell must be on the pale grass and clear of bamboo (settle on the run); the clear radius of the animals. 4.5.
-# 2 2-the-calves-follow. enclosure-south, 08, medium, zoom 7 to 8 on one corner of the pen, adult meffalo large at the edge.
-#   "Two calves follow their mother. One of them is a fuse." A meffalo calf and a boomsloth calf (life stage step) trail the
-#   adult; Nelim small at the fence, smiling (MouthSmile, LidCheerful). Short straw, YellowTallGrass kept low. Instant: the
-#   calves mid-trot behind the adult, forced walks, frozen. Risk: calves unreadable at 268 px, so the zoom stays close. 4.
+# 2 2-the-calves-follow. enclosure-south, 08, medium-tight, frame rectangle (143, 210) to (154, 216), 11 x 6 cells, zoom about 3, calves in front, the adult cut at the right edge. No pawn.
+#   "Two calves follow their mother. One of them is a fuse." A meffalo calf and a boomsloth calf (life stage 0) trail the
+#   adult meffalo. `Plant_YellowTallGrass` fully grown at (153, 212), (155, 215), (154, 217), `Plant_Daylily` fully grown at (144, 211), (152, 210), (150, 216) (ground not bare), the pen laying boxes kept.
+#   Instant: the herd moves out at first sun, calves just started to follow; adult forced walk, `I let 15 ticks pass`, calves forced walk, `I let 30 ticks pass`, paused.
+#   Risk: calves about 24 px at 268 px, so the frame stays tight. 4.5.
 # 3 3-heavy-fur-by-the-water. water-garden, 09, clear, tight on the brown west bank (x 143-158, z 168-176), frame centred (151, 172), zoom about 5, burrow (149, 173) kept out of the frame.
 #   "The meffalo's dark coat, next to the water." The meffalo walks along the bank, ducks behind it; no pawn. Pale dry grass of the bank and the lily pads around it, willows (171, 162), (165, 162)
 #   and reeds (168, 163) of the place (validated decor, nothing added in the water). Two `Duck` at the water edge within 3 cells, one startled and turning away. Other animals (panda, cat, prairie dog,
@@ -44,18 +44,18 @@
 #   the pair (two left of the meffalo, two right of the boomsloth, two in front), so the ground is not bare. The only shot with an animal full-face. Instant: they have just seen the camera; forced walk,
 #   `faces`, `I let 20 ticks pass`, paused. Cells to settle on the run (the cream square is 9 x 9 usable).
 #   Risk: the beige boomsloth is pale on cream (its dark markings and the daylily ring carry it); facing held on a paused capture (held on 2026-11-03). 4.5.
-# 5 5-do-not-startle-it. bare-clearing, 15, same frame as 4 but wider, zoom 6.
-#   "Nelim keeps her distance. The boomsloth knows why." The adult boomsloth in the middle, facing her; Nelim seven cells away,
-#   BrowRaised after her own face, set to face it. Instant: she has walked back and just turned, the boomsloth looks at
-#   her; forced walk then `faces`. Risk: Nelim facing the wrong way; nothing of ours within 5 cells of her. 4.
-# 6 6-boom. bare-clearing, 15 (same minute), exactly the frame of 5.
-#   "Boom." The boomsloth is killed (Funny Creatures Renew: "<name>" is killed); Nelim stays seven cells away, unhurt.
-#   Instant: the flame at its widest, 2, 6 or 12 ticks after the kill, settled by the first run (or the film). Risk:
-#   missing the widest flame; grass at the clearing edge may catch fire. 4.
-# 7 7-dusk-roll-call. enclosure-south, 19, same frame as 1, dusk light.
-#   "At dusk the pen is quiet. The little fuse is asleep." The adult meffalo lying down (`lies at ... facing`), the boomsloth
-#   calf asleep against it; Nelim at the gate, smile; a lit DR_StickLantern at the gate, daylilies. Instant: Nelim has just
-#   stopped at the gate; forced walk, frozen. Risk: the lying pose on a paused game not played yet. 4.
+# 5 5-do-not-startle-it. bare-clearing, 15, wider frame rectangle (186, 147) to (204, 157), zoom about 6, centre (195, 152).
+#   "Nelim keeps her distance. The boomsloth knows why." The adult boomsloth at (195, 150) facing West toward her; Nelim at (188, 150), 7 cells away, same outfit,
+#   smile and BrowRaised set after her own face, facing East. `Plant_Daylily` fully grown at (186, 155), (186, 147), (204, 155), (204, 147), (186, 151), (204, 151), (190, 157), (200, 157), all 8 cells or more from the boomsloth (ground not bare).
+#   Instant: she has just turned back, the boomsloth looks at her; forced walk, `I let 20 ticks pass`, `faces`, paused. Risk: Nelim facing the wrong way; nothing of ours within 5 cells of her. 4.5.
+# 6 6-boom. bare-clearing, 15 (same minute), exactly the frame and the four daylilies of 5.
+#   "Boom." The boomsloth is killed (Funny Creatures Renew: "<name>" is killed); Nelim stays 7 cells away, unhurt, brows raised, `LidSquinting` set after her own face (expression last).
+#   Instant: the flame ring at its widest, `I let 6 ticks pass` after the kill, paused (tick settled by the film scenario `6x-boom-film`, not a gallery image). Risk:
+#   missing the widest flame; the daylilies are outside the blast radius and removed after. 4.
+# 7 7-dusk-roll-call. enclosure-south, 19, frame rectangle (152, 203) to (166, 211) as in 1, dusk light dimmed to at most 0.35.
+#   "At dusk the pen is quiet. The little fuse is asleep." The adult meffalo lying at (162, 209), the boomsloth calf lying at (163, 209) beside it, both facing West;
+#   Nelim has just stopped at (157, 208), smile, facing East, same outfit; a lit `DR_StickLantern` at (158, 205), daylilies at (154, 206), (156, 206), (160, 206), (162, 206), (164, 206), the pen laying boxes kept.
+#   Instant: forced walk, `I let 15 ticks pass`, paused. Risk: the lying pose on a paused game and the dim step are not played yet (small ticket for shot 7 first). 4.5.
 # 8 (optional, interface window) 8-boomsloth-card. window-backdrop-for-height, cropped, no subtitle: the information card of
 #   the boomsloth on its Stats tab (wildness 97 percent listed). Steps: select the thing, open the info card (not played on an
 #   animal). Not scored.
@@ -67,12 +67,8 @@
 # hide the vanometric cell, keep animals out, own face, frame rectangle and animal, StageDecor and `is lit`, hour and weather.
 # To settle on the first run: the cells of Nelim, the gate and the animals; the tick after the kill; ochre and trouser colours.
 #
-# 2026-11-03 (later): scenarios 1 and 4 rewritten to the new frames and 3 written, to refile as one ticket (1, 3, 4).
-# WRITTEN SO FAR: scenarios 1 and 4 played 2026-11-03 (ticket c569, 2 of 2 passed, cells and pause phrase settled). Director
-# verdict on the captures: both refused (1 too wide, no gate, meffalo a black silhouette; 4 pair too far apart, meffalo cut,
-# empty half). Shots 1 and 4 recomposed above, to refile. Scenarios 2, 3, 5, 6, 7 follow. Shots 2, 5, 6 keep the reworked
-# lines of the STATUS.md shotlist (2026-10-25 rework), to copy here when their scenarios are written. Outfit colours chosen here:
-# trousers earth brown (86, 64, 48), corset cream (222, 208, 178), jacket ochre (204, 142, 48).
+# 2026-11-09: ticket 95d6 (1, 3, 4) read, all REDO; shots 1, 3, 4 recomposed above, scenarios 1 to 7 written. Next ticket: shot 7 alone
+# (lying pose, dim step), then the other six. Outfit colours: trousers earth brown (86, 64, 48), corset cream (222, 208, 178), jacket ochre (204, 142, 48).
 @gallery @review @timeout:900 @requires:nelim.pickletools.clickdiagnostics @requires:nelim.pickletools.colonistrace @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.stagedecor
 Feature: the gallery of Funny Creatures Renew
 
@@ -203,6 +199,9 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (153, 212) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (155, 215) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (154, 217) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (144, 211) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (152, 210) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (150, 216) fully grown
     And Nelim's Pickle Tools: "Nelim" stands at (180, 121) facing South
     And Nelim's Pickle Tools: an adult animal of kind "Meffalo" named "Moss" is spawned at (149, 213)
     And Nelim's Pickle Tools: the animal "Moss" stands at (149, 213) facing East
@@ -240,6 +239,10 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (186, 147) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (204, 155) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (204, 147) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (186, 151) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (204, 151) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (190, 157) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (200, 157) fully grown
     And Nelim's Pickle Tools: an adult animal of kind "Boomsloth" named "Boomy" is spawned at (195, 150)
     And Nelim's Pickle Tools: the animal "Boomy" stands at (195, 150) facing West
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (86, 64, 48)
@@ -278,6 +281,10 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (186, 147) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (204, 155) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (204, 147) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (186, 151) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (204, 151) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (190, 157) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (200, 157) fully grown
     And Nelim's Pickle Tools: an adult animal of kind "Boomsloth" named "Boomy" is spawned at (195, 150)
     And Nelim's Pickle Tools: the animal "Boomy" stands at (195, 150) facing West
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (86, 64, 48)
@@ -318,6 +325,8 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (154, 206) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (156, 206) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (164, 206) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (160, 206) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (162, 206) fully grown
     And Nelim's Pickle Tools: I place the decor "DR_StickLantern" exactly at (158, 205)
     And Nelim's Pickle Tools: the decor "DR_StickLantern" at (158, 205) is lit
     And Nelim's Pickle Tools: an adult animal of kind "Meffalo" named "Moss" is spawned at (162, 209)
