@@ -160,3 +160,5 @@ Ticket 20261114-210829-187-38ab filed 2026-11-14 (scenarios 2 to 7 together, tre
 RUN_DONE 38ab 2026-11-14 (tree 3c32cd8): 5 of 6 passed (2, 4, 5, 6, 7), 3 failed at `"Dot" is forced to walk to (162, 176)` (NullReference in the step, Duck; Moss walks fine elsewhere). Fix: ducks now `stands at ... facing East`, no walk (Check-Steps passes). Shot 7 capture opened: dusk visible, braziers hidden (defName `Brazier`, hide step works), lantern and pale grass shown, but Boomsloth calf is hidden behind the meffalo, bamboo still fills the frame, Nelim is small, side-on, no smile visible: REDO. Captures of 2, 4, 5, 6 not yet rated. Evidence parked in Tests/Pickle/Parked/gallery-2-7-3c32cd8. DLC-name rule 2026-11-14 checked: no DLC name in French texts.
 
 Shot 7 recomposed after run 38ab: meffalo moved to (159, 209) so the calf at (161, 209) shows, frame (154, 205)-(166, 212), bamboo hidden within 8 cells of (160, 209) and 4 of (156, 209). Ticket for 3 and 7 filed next.
+
+Ticket 20261114-223927-302-8e12 filed 2026-11-14 (scenarios 3 and 7, tree 7839a2f, evidence Tests/Pickle/Inbox/gallery-3-7-7839a2f). Mod/ and Tests/Pickle frozen until RUN_DONE.
