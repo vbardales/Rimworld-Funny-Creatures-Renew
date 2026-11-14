@@ -52,10 +52,12 @@
 #   "Boom." The boomsloth is killed (Funny Creatures Renew: "<name>" is killed); Nelim stays 7 cells away, unhurt, brows raised, `LidSquinting` set after her own face (expression last).
 #   Instant: the flame ring at its widest, `I let 6 ticks pass` after the kill, paused (tick settled by the film scenario `6x-boom-film`, not a gallery image). Risk:
 #   missing the widest flame; the daylilies are outside the blast radius and removed after. 4.
-# 7 7-dusk-roll-call. enclosure-south, 19, frame rectangle (152, 203) to (166, 211) as in 1, dusk light dimmed to at most 0.35.
-#   "At dusk the pen is quiet. The little fuse is asleep." The adult meffalo lying at (162, 209), the boomsloth calf lying at (163, 209) beside it, both facing West;
-#   Nelim has just stopped at (156, 209), smile, facing East, same outfit; a lit `DR_StickLantern` at (158, 205), daylilies at (154, 206), (156, 206), (160, 206), (162, 206), (164, 206), the pen laying boxes kept.
-#   Instant: forced walk, `I let 15 ticks pass`, paused. Risk: the lying pose on a paused game and the dim step are not played yet (small ticket for shot 7 first). 4.5.
+# 7 7-dusk-roll-call. enclosure-south, 19, frame rectangle (152, 203) to (166, 211) as in 1, dusk light dimmed to at most 0.35 (value to settle with NPT, see Rework 2026-11-14).
+#   "At dusk the pen is quiet. The little fuse is asleep." The adult meffalo lying at (160, 209), the boomsloth calf lying at (161, 209) beside it, both facing West, on the same 3 x 3 patch of pale
+#   `Plant_YellowTallGrass` as shot 1 (run 12dc: the pair lay on dark brown ground and read as a black blob); `Plant_Bamboo` hidden within 4 cells of the pair and within 2 cells of Nelim (a clump stood behind her and the calf);
+#   the two fire bowls at about (154, 209) and (164, 209) hidden (defName from NPT) so the frame holds no glaring orange sprite; Nelim has just stopped at (156, 209), 4 cells from the meffalo, smile, facing East,
+#   same outfit; a lit `DR_StickLantern` at (163, 210) beside the pair (it stood in the bamboo at (158, 205) in run 12dc, a dark post); `Plant_Daylily` fully grown at (158, 210), (162, 208), (163, 209), the pen laying boxes kept.
+#   Instant: forced walk, `I let 15 ticks pass`, paused. Run 12dc: lying pose, dim step and walk passed (45 s); image 2.5, REDO. Risk: dusk not visible in the image (dim step), cells to settle on the run. 4.5.
 # 8 (optional, interface window) 8-boomsloth-card. window-backdrop-for-height, cropped, no subtitle: the information card of
 #   the boomsloth on its Stats tab (wildness 97 percent listed). Steps: select the thing, open the info card (not played on an
 #   animal). Not scored.
@@ -322,17 +324,26 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: the selection brackets are hidden
     And Nelim's Pickle Tools: the item and name labels are hidden
     And Nelim's Pickle Tools: I move the mouse to (10, 10)
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (154, 206) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (156, 206) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (164, 206) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (160, 206) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (162, 206) fully grown
-    And Nelim's Pickle Tools: I place the decor "DR_StickLantern" exactly at (158, 205)
-    And Nelim's Pickle Tools: the decor "DR_StickLantern" at (158, 205) is lit
-    And Nelim's Pickle Tools: an adult animal of kind "Meffalo" named "Moss" is spawned at (162, 209)
-    And Nelim's Pickle Tools: an animal of kind "Boomsloth" named "Fuse" is spawned at (163, 209) at life stage 0
-    And Nelim's Pickle Tools: the animal "Moss" lies at (162, 209) facing West
-    And Nelim's Pickle Tools: the animal "Fuse" lies at (163, 209) facing West
+    And Nelim's Pickle Tools: the things "Plant_Bamboo" within 4 cells of (160, 209) are hidden when present
+    And Nelim's Pickle Tools: the things "Plant_Bamboo" within 2 cells of (156, 209) are hidden when present
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (159, 208) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (159, 209) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (159, 210) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (160, 208) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (160, 209) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (160, 210) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (161, 208) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (161, 209) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (161, 210) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (158, 210) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (162, 208) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (163, 209) fully grown
+    And Nelim's Pickle Tools: I place the decor "DR_StickLantern" exactly at (163, 210)
+    And Nelim's Pickle Tools: the decor "DR_StickLantern" at (163, 210) is lit
+    And Nelim's Pickle Tools: an adult animal of kind "Meffalo" named "Moss" is spawned at (160, 209)
+    And Nelim's Pickle Tools: an animal of kind "Boomsloth" named "Fuse" is spawned at (161, 209) at life stage 0
+    And Nelim's Pickle Tools: the animal "Moss" lies at (160, 209) facing West
+    And Nelim's Pickle Tools: the animal "Fuse" lies at (161, 209) facing West
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (86, 64, 48)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Corset" dyed rgb (222, 208, 178)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (204, 142, 48)
