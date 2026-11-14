@@ -4,7 +4,7 @@ UNOFFICIAL. This mod is published without the original author's explicit consent
 
 The meffalo and the boomsloth, brought forward to RimWorld 1.6.
 
-**I am not the author of this mod.** Both animals are PredatorKing's; this update ports them to 1.6 and adds predator protection. Credit goes to them, mistakes in the update are mine.
+**I am not the author of this mod.** Both animals are PredatorKing's creations; this update ports them to 1.6 and adds predator protection. Credit goes to them, mistakes in the update are mine.
 
 Original mod: https://steamcommunity.com/sharedfiles/filedetails/?id=2640466629 — last supporting
 1.3, last updated in October 2021. Abandoned, not withdrawn.

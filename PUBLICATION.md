@@ -23,7 +23,7 @@ UNOFFICIAL. This mod is published without the original author's explicit consent
 
 The meffalo and the boomsloth, brought forward to the latest RimWorld version. Two animals that turn fodder into contraband.
 
-I am not the author of this mod. Both animals are PredatorKing's; this update ports them to the latest RimWorld version and adds the predator protection described below. Credit goes to them, mistakes in the update are mine. If they come back to it, or ask me to take this down, it comes down.
+I am not the author of this mod. Both animals are PredatorKing's creations; this update ports them to the latest RimWorld version and adds the predator protection described below. Credit goes to them, mistakes in the update are mine. If they come back to it, or ask me to take this down, it comes down.
 
 Original mod: [Funny Creatures](https://steamcommunity.com/sharedfiles/filedetails/?id=2640466629), last supporting 1.3, last updated in October 2021. Abandoned, not withdrawn.
 
@@ -117,7 +117,7 @@ opened and read before it goes in the folder.** In the repository the files are 
 | 1 | `1-dawn-at-the-gate.jpg` | 06, Clear | `enclosure-south`, `I frame the rectangle` around the south gate (159, 207), Nelim and the animal both in frame | one adult meffalo just outside the gate, nose to the bars | inside the pen at the gate, work outfit, relaxed smirk (her own face untouched) | Nelim opens the gate at dawn. Something big is waiting. |
 | 2 | `2-two-new-faces.jpg` | 08, Clear | `emerald-clearing`, floor bared, vanometric cell hidden, zoom about 5 | an adult meffalo and an adult boomsloth, three cells apart, **both facing the camera** | not in frame | A meffalo and a boomsloth, face to face at last. |
 | 3 | `3-heavy-fur.jpg` | 09, Clear | same clearing, `I frame the animal` on the meffalo at zoom about 3 | the meffalo alone in frame, its dark coat lit from the side | not in frame | The meffalo's dark coat, up close. |
-| 4 | `4-calves-play.jpg` | 11, Clear | `enclosure-south`, frame on the middle of the pen | a meffalo calf and a boomsloth calf (life stage step), one adult behind them | not in frame | The calves are safe from the wolves now. |
+| 4 | `4-calves-play.jpg` | 11, Clear | `enclosure-south`, frame on the middle of the pen | a meffalo calf and a boomsloth calf (life stage step), one adult behind them | not in frame | The boomsloth calf is safe from wolves now. |
 | 5 | `5-do-not-startle-it.jpg` | 15, Clear | `emerald-clearing`, same frame as 2, wider | the adult boomsloth in the middle | seven cells from it, hat on, brows raised | Nelim keeps her distance. The boomsloth knows why. |
 | 6 | `6-boom.jpg` | 15, Clear | exactly the frame of 5 | the boomsloth is killed (`Funny Creatures Renew: "<name>" is killed`) | still seven cells away, unhurt | Boom. |
 | 7 | `7-dusk-roll-call.jpg` | 19, Clear | `enclosure-south`, same frame as 1 | the adult meffalo and the calf of 4, resting; **no boomsloth** | at the gate, hat off, small smile | At dusk, the pen is quieter. |

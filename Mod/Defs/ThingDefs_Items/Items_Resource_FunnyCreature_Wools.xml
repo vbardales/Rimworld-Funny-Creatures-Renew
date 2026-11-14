@@ -3,7 +3,7 @@
  <ThingDef ParentName="WoolBase">
     <defName>WoolMeffalo</defName>
     <label>meffalo wool</label>
-    <description>Very Soft, medium weight and provides incredibly good insulation. Meffalo wool clothes rarely fail to keep the wearer warm.</description>
+    <description>Very soft, medium-weight, and providing incredibly good insulation. Meffalo wool clothes rarely fail to keep the wearer warm.</description>
     <statBases>
       <MarketValue>4.5</MarketValue>
       <Mass>0.04</Mass>

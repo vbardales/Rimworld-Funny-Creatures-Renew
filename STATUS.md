@@ -44,7 +44,7 @@ social_preview_sha256: 500e5b43ad1a96181744407ce9fd048b5177134c3c713f7ab7674f91f
 code_review_sha: 281289d86a12cf53517afcd45092ccea5c75c10c
 session:      local_83fc0db0-2211-460b-b677-85a81a6ea0d6
 updated: "2026-10-31 replay-audit: stage unchanged, first open 9.a (no accepted capture, ticket c569 queued for shots 1 and 4). 2026-10-25: playTests closed (passes 1 to 4 green, features 13 to 17 played, ticket 5334 FR read, Python tests and code review 8.m done, Preview validated by Virginie). Stage shootGallery[1.0.0]. Pass 5 core-only optional"
-protocols_read_sha: 1b089279ae73b32a5ea8d56b3a598885d03cc393
+protocols_read_sha: e3b147bf0eeae8ecb5961d0b758f9537ccc9e451
 ---
 # Funny Creatures Renew (unofficial): status
 
