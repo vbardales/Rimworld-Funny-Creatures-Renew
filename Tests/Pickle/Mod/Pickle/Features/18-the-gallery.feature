@@ -52,10 +52,10 @@
 #   "Boom." The boomsloth is killed (Funny Creatures Renew: "<name>" is killed); Nelim stays 7 cells away, unhurt, brows raised, `LidSquinting` set after her own face (expression last).
 #   Instant: the flame ring at its widest, `I let 6 ticks pass` after the kill, paused (tick settled by the film scenario `6x-boom-film`, not a gallery image). Risk:
 #   missing the widest flame; the daylilies are outside the blast radius and removed after. 4.
-# 7 7-dusk-roll-call. enclosure-south, 19, frame rectangle (152, 203) to (166, 211) as in 1, dusk light dimmed to at most 0.35 (value to settle with NPT, see Rework 2026-11-14).
+# 7 7-dusk-roll-call. enclosure-south, 19, frame rectangle (152, 203) to (166, 211) as in 1, dusk light dimmed to at most 0.35 (ground and lamps) and the sun glow held at 0.4 (NPT 2026-11-14: the dim step alone does not touch the sky, so run 12dc read as daylight; sun glow step compiled, not played: try 0.3 or 0.5 if the capture is wrong).
 #   "At dusk the pen is quiet. The little fuse is asleep." The adult meffalo lying at (160, 209), the boomsloth calf lying at (161, 209) beside it, both facing West, on the same 3 x 3 patch of pale
 #   `Plant_YellowTallGrass` as shot 1 (run 12dc: the pair lay on dark brown ground and read as a black blob); `Plant_Bamboo` hidden within 4 cells of the pair and within 2 cells of Nelim (a clump stood behind her and the calf);
-#   the two fire bowls at about (154, 209) and (164, 209) hidden (defName from NPT) so the frame holds no glaring orange sprite; Nelim has just stopped at (156, 209), 4 cells from the meffalo, smile, facing East,
+#   the two fire bowls at about (154, 209) and (164, 209) hidden after the pause (defName not known: `Brazier,Yuran_Brazier_two` tried with the "when present" step, and the things within 2 cells of each cell are listed so the log names the real defName; hides come after the ticks, NPT) so the frame holds no glaring orange sprite; Nelim has just stopped at (156, 209), 4 cells from the meffalo, smile, facing East,
 #   same outfit; a lit `DR_StickLantern` at (163, 210) beside the pair (it stood in the bamboo at (158, 205) in run 12dc, a dark post); `Plant_Daylily` fully grown at (158, 210), (162, 208), (163, 209), the pen laying boxes kept.
 #   Instant: forced walk, `I let 15 ticks pass`, paused. Run 12dc: lying pose, dim step and walk passed (45 s); image 2.5, REDO. Risk: dusk not visible in the image (dim step), cells to settle on the run. 4.5.
 # 8 (optional, interface window) 8-boomsloth-card. window-backdrop-for-height, cropped, no subtitle: the information card of
@@ -313,6 +313,7 @@ Feature: the gallery of Funny Creatures Renew
   Scenario: 7-dusk-roll-call
     Given I set the hour to 19
     And Nelim's Pickle Tools: the light of the map is dimmed to at most 0.35
+    And Nelim's Pickle Tools: the sun glow of the map is held at 0.4
     And Nelim's Sanctuary: I am at the sanctuary "enclosure-south"
     And Nelim's Sanctuary: the animals are removed from the sanctuary "enclosure-south"
     And Nelim's Pickle Tools: studio presentation mode is enabled
@@ -324,8 +325,6 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: the selection brackets are hidden
     And Nelim's Pickle Tools: the item and name labels are hidden
     And Nelim's Pickle Tools: I move the mouse to (10, 10)
-    And Nelim's Pickle Tools: the things "Plant_Bamboo" within 4 cells of (160, 209) are hidden when present
-    And Nelim's Pickle Tools: the things "Plant_Bamboo" within 2 cells of (156, 209) are hidden when present
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (159, 208) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (159, 209) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (159, 210) fully grown
@@ -352,6 +351,12 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: "Nelim" is forced to walk to (156, 209)
     When Nelim's Pickle Tools: I let 15 ticks pass
     And game speed is paused
+    And Nelim's Pickle Tools: the things within 2 cells of (154, 209) are listed
+    And Nelim's Pickle Tools: the things within 2 cells of (164, 209) are listed
+    And Nelim's Pickle Tools: the things "Brazier,Yuran_Brazier_two" within 2 cells of (154, 209) are hidden when present
+    And Nelim's Pickle Tools: the things "Brazier,Yuran_Brazier_two" within 2 cells of (164, 209) are hidden when present
+    And Nelim's Pickle Tools: the things "Plant_Bamboo" within 4 cells of (160, 209) are hidden when present
+    And Nelim's Pickle Tools: the things "Plant_Bamboo" within 2 cells of (156, 209) are hidden when present
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" faces East
