@@ -50,6 +50,10 @@ protocols_read_sha: e3b147bf0eeae8ecb5961d0b758f9537ccc9e451
 
 Current state only. Run lines: `docs/runs/README.md`. Older dated sections: `docs/runs/status-journal-2026-09-to-10.md`.
 
+## Ecosystem
+
+PiI, 2026-11-14 (`docs/inventory/ecosystem-steam/FunnyCreaturesRenew.md`, protocols 90bb313): original Funny Creatures 2640466629 (1.3, October 2021, not on disk, packageId unknown). Meffalo and boomsloth exist nowhere else on Steam: no fork, no port, no mod shares our 8 defNames. Only neighbours, different mods: generic explode-on-death mods 2920429368 and 3199977918, Milkable Muffalo 2019852283. Nothing subscribed. The 5 old rows for this mod in `ecosystem.tsv` (TF2 Sandvich etc.) are noise.
+
 ## Translation audit
 
 French in `Mod/Languages/French/DefInjected` (20 owned fields, no Keyed, no plurals, no gender agreement: texts do not follow pawn). Virginie reviewed 2026-10-11, revision `7ef4deb`, `FRENCH_REVIEW.md` generated from `8794640`: validated, corrections applied before (mégathérium for megasloth, wool sentence). Re-read and validated by Virginie 2026-10-18, `FRENCH_REVIEW.md` from `c3cade8` (ChatGPT review applied: Meffalo.description wording, English def typos). `translation_fr` `complete`. In-game rendering (raw keys, clipping) stays `unverified` until `playTests`.
