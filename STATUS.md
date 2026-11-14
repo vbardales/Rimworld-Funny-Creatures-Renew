@@ -98,7 +98,9 @@ Rules of the owner (2026-11-05, 2026-11-06, 2026-11-07) applied: everything in N
 
 Changed in NSB since 2026-10-25: places `enclosure` and `enclosure-south` validated 2026-11-08 (logo Nelim in flowers on growing zones 3 to 15, nothing on its flowers, owner rule 2026-11-07), `water-garden` revalidated 2026-11-07, `bare-clearing` unchanged (pile at (205, 152) removed). NPT steps added: light dimmed to at most N and refreshed (dusk shot 7, compiled not played), put out, lies asleep in the bed, growing zones cleaned and filled, cells kept free of decor, things that are not plants removed from zones. Updated here: hair of Nelim in the shotlist (high ponytail, not a bun). Left alone: scenarios (no cosmetic change shown in the images). To check when scenarios 2, 5, 6, 7 are written: shot 2 grass cells (153, 212), (155, 215), (154, 217) must not sit on the logo flowers; shot 7 may use the dimmed light step.
 
-Places read: 2026-11-09 Tribe read: 2026-11-09 Steps read: 2026-11-09
+Sync 2026-11-14: NSB changed once since 2026-11-09, commit 18abf53 (2026-11-12) renamed `docs/` to `Docs/`, 0 lines changed in any file: nothing to update, names and paths in this mod do not point at NSB files. NPT added 9 steps and catalogue entries since 2026-11-09 (filth removed from the map or around a colonist, StageDecor floor and decor burns, ScreenshotStudio step that hides the main tab bar, speed controls and mouse-over readout while the inspect pane stays, culture and building-work steps, Flooring Floors catalogue); none replaces a step a scenario calls, `Check-Steps.ps1` still resolves all 474 step lines (54 blocks). Candidate for shots 1 to 7 once ticket 12dc is read: the HUD-hiding step (the failure frames still showed the HUD) and the filth step; not added, `Tests/Pickle` frozen until RUN_DONE of 12dc. Included animals (meffalo, boomsloth, adult and calf) all have shots: no MISSING.
+
+Places read: 2026-11-14 Tribe read: 2026-11-14 Steps read: 2026-11-14
 
 | Place | Shots | Changes made for the gallery | Last read |
 |---|---|---|---|
