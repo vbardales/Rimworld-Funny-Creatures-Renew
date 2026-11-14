@@ -177,8 +177,6 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: the animal "Moss" stands at (146, 172) facing East
     And Nelim's Pickle Tools: an adult animal of kind "Duck" named "Dot" is spawned at (156, 175)
     And Nelim's Pickle Tools: an adult animal of kind "Duck" named "Dash" is spawned at (157, 173)
-    And Nelim's Pickle Tools: the animal "Dot" stands at (156, 175) facing East
-    And Nelim's Pickle Tools: the animal "Dash" stands at (157, 173) facing East
     And Nelim's Pickle Tools: "Moss" is forced to walk to (154, 172)
     When Nelim's Pickle Tools: I let 15 ticks pass
     And game speed is paused
@@ -356,8 +354,9 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: the things within 2 cells of (164, 209) are listed
     And Nelim's Pickle Tools: the things "Brazier,Yuran_Brazier_two" within 2 cells of (154, 209) are hidden when present
     And Nelim's Pickle Tools: the things "Brazier,Yuran_Brazier_two" within 2 cells of (164, 209) are hidden when present
-    And Nelim's Pickle Tools: the things "Plant_Bamboo" within 8 cells of (160, 209) are hidden when present
-    And Nelim's Pickle Tools: the things "Plant_Bamboo" within 4 cells of (156, 209) are hidden when present
+    And Nelim's Pickle Tools: the things "Brazier,Yuran_Brazier_two" within 3 cells of (160, 213) are hidden when present
+    And Nelim's Pickle Tools: the things "Plant_TreeBamboo" within 8 cells of (160, 209) are hidden when present
+    And Nelim's Pickle Tools: the things "Plant_TreeBamboo" within 4 cells of (156, 209) are hidden when present
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" faces East
