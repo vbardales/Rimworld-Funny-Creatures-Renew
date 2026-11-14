@@ -177,7 +177,8 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: the animal "Moss" stands at (146, 172) facing East
     And Nelim's Pickle Tools: an adult animal of kind "Duck" named "Dot" is spawned at (156, 175)
     And Nelim's Pickle Tools: an adult animal of kind "Duck" named "Dash" is spawned at (157, 173)
-    And Nelim's Pickle Tools: "Dot" is forced to walk to (162, 176)
+    And Nelim's Pickle Tools: the animal "Dot" stands at (156, 175) facing East
+    And Nelim's Pickle Tools: the animal "Dash" stands at (157, 173) facing East
     And Nelim's Pickle Tools: "Moss" is forced to walk to (154, 172)
     When Nelim's Pickle Tools: I let 15 ticks pass
     And game speed is paused
