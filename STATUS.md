@@ -164,3 +164,5 @@ Shot 7 recomposed after run 38ab: meffalo moved to (159, 209) so the calf at (16
 Ticket 20261114-223927-302-8e12 filed 2026-11-14 (scenarios 3 and 7, tree 7839a2f, evidence Tests/Pickle/Inbox/gallery-3-7-7839a2f). Mod/ and Tests/Pickle frozen until RUN_DONE.
 
 RUN_DONE 8e12 2026-11-14 (tree 7839a2f): 7 passed, 3 failed at `Dot stands at (156, 175)`: cell not standable (spawn already places the ducks, stand lines removed). Shot 7 capture opened: calf now visible, but every bamboo still drawn because the defName is `Plant_TreeBamboo` (log), not `Plant_Bamboo`; a third bowl shows at the top edge near (160, 213); Nelim small, no smile visible: REDO again. Fixed in scenario: `Plant_TreeBamboo` hidden within 8 of (160, 209) and 4 of (156, 209), Brazier hidden within 3 of (160, 213). Run folder deleted (read).
+
+Ticket 20261114-232658-000-c755 filed 2026-11-14 (scenarios 3 and 7, tree ff86104, evidence Tests/Pickle/Inbox/gallery-3-7-ff86104). Mod/ and Tests/Pickle frozen until RUN_DONE.
