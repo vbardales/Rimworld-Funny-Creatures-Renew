@@ -19,7 +19,7 @@ WHAT IT ADDS
 
 Two animals, both trainable to Advanced, and both milkable in a way no vanilla animal is.
 
-The meffalo is a muffalo in everything but its udder: body size 3.5, fifty-five years of life, wildness 0.6, and it is milked for flake rather than milk. It is shorn for meffalo wool; butchering yields dark fur leather.
+The meffalo is a muffalo in everything but its udder: body size 3.5, a lifespan of fifty-five years, wildness 0.6, and it is milked for flake rather than milk. It is shorn for meffalo wool; butchering yields dark fur leather.
 
 The boomsloth is a megasloth that goes off. Body size 4.0, wildness 0.97, fifteen years, and it explodes when it dies - a big explosion, the vanilla worker, so a dead boomsloth takes the room with it. It yields megasloth wool when shorn and is milked for chemfuel.
 
@@ -29,7 +29,7 @@ WHAT CHANGED IN THIS UPDATE
 
 Two compatibility repairs restore the original behavior:
 
-Wildness stopped being a field of RaceProperties in the latest RimWorld version and became a StatDef declared under statBases. The old form is not an error, it is simply never read, and the stat defaults to -1, outside the range the game uses - so both animals tamed for almost nothing instead of sitting at 0.6 and 0.97.
+Wildness stopped being a field of RaceProperties in the latest RimWorld version and became a StatDef declared under statBases. The old form is not an error, it is simply never read, and the stat defaults to -1, outside the range the game uses - so both animals could be tamed for almost nothing instead of sitting at 0.6 and 0.97.
 
 And the boomsloth's death action moved. A flat deathActionWorkerClass inside race became a deathAction block holding a workerClass. The flat form is no longer read at all, which means the explosion had stopped happening: the one thing the animal is named for.
 
@@ -43,7 +43,7 @@ A Dog Said... Animal Prosthetics 2: both animals get its medieval, simple prosth
 
 [XND] Nocturnal Animals (Continued): the boomsloth is nocturnal, like the megasloth it comes from. The meffalo stays diurnal, like the muffalo.
 
-Better Crossbreeding: The meffalo and the muffalo can interbreed. The boomsloth can interbreed with either the megasloth or the boomalope; offspring may be either parent's species. Pairings between two vanilla animals are left to Animal Naturally, so this patch does not enable breeding between megasloths and boomalopes.
+Better Crossbreeding: the meffalo and the muffalo can interbreed. The boomsloth can interbreed with either the megasloth or the boomalope; offspring may be either parent's species. Pairings between two vanilla animals are left to Animal Naturally, so this patch does not enable breeding between megasloths and boomalopes.
 Dogs mate (Continued): the meffalo can mate with the muffalo, and the boomsloth with the boomalope.
 
 INCOMPATIBLE: the original mod, and Storytime Rides Again: a New Chapter, which carries its own copy of both animals under the same names.

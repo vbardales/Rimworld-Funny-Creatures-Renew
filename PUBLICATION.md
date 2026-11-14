@@ -31,13 +31,13 @@ Original mod: [Funny Creatures](https://steamcommunity.com/sharedfiles/filedetai
 
 Two animals, both trainable to Advanced, and both milkable in a way no vanilla animal is.
 
-The meffalo is a muffalo in everything but its udder: body size 3.5, fifty-five years of life, wildness 0.6, and it is milked for flake rather than milk. It is shorn for meffalo wool; butchering yields dark fur leather.
+The meffalo is a muffalo in everything but its udder: body size 3.5, a lifespan of fifty-five years, wildness 0.6, and it is milked for flake rather than milk. It is shorn for meffalo wool; butchering yields dark fur leather.
 
 The boomsloth is a megasloth that goes off. Body size 4.0, wildness 0.97, fifteen years, and it explodes when it dies, with the vanilla big explosion, so a dead boomsloth takes the room with it. It yields megasloth wool when shorn and is milked for chemfuel.
 
 **WHAT CHANGED IN THIS UPDATE**
 
-Two compatibility repairs restore the original behaviour. Wildness stopped being a field of RaceProperties in the latest RimWorld version and became a stat declared under statBases: the old form is not an error, it is simply never read, and the stat defaults to -1, outside the range the game uses, so both animals tamed for almost nothing instead of sitting at 0.6 and 0.97. And the boomsloth's death action moved: a flat deathActionWorkerClass inside race became a deathAction block holding a workerClass, and the flat form is no longer read at all, which means the explosion had stopped happening, on the animal named for it.
+Two compatibility repairs restore the original behaviour. Wildness stopped being a field of RaceProperties in the latest RimWorld version and became a stat declared under statBases: the old form is not an error, it is simply never read, and the stat defaults to -1, outside the range the game uses, so both animals could be tamed for almost nothing instead of sitting at 0.6 and 0.97. And the boomsloth's death action moved: a flat deathActionWorkerClass inside race became a deathAction block holding a workerClass, and the flat form is no longer read at all, which means the explosion had stopped happening, on the animal named for it.
 
 Production quantities and other numeric balance values are unchanged. One behaviour is added: wild predators no longer hunt boomsloths, calves included, since a predator that kills one sets off the explosion. Colonists can still hunt them.
 
@@ -47,7 +47,7 @@ Nothing is required. Four patches apply only when the other mod is loaded, and c
 
 - [A Dog Said... Animal Prosthetics 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3238353862): both animals get its medieval, simple prosthetic and bionic surgeries.
 - [Nocturnal Animals (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2269731409): the boomsloth is nocturnal, like the megasloth it comes from. The meffalo stays diurnal, like the muffalo.
-- [Better Crossbreeding](https://steamcommunity.com/sharedfiles/filedetails/?id=3520675842): The meffalo and the muffalo can interbreed. The boomsloth can interbreed with either the megasloth or the boomalope; offspring may be either parent's species. This patch does not enable breeding between megasloths and boomalopes.
+- [Better Crossbreeding](https://steamcommunity.com/sharedfiles/filedetails/?id=3520675842): the meffalo and the muffalo can interbreed. The boomsloth can interbreed with either the megasloth or the boomalope; offspring may be either parent's species. This patch does not enable breeding between megasloths and boomalopes.
 - [Dogs mate (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2441132298): the meffalo can mate with the muffalo, and the boomsloth with the boomalope.
 
 The original Funny Creatures defines the same defs and is declared incompatible.
@@ -81,7 +81,7 @@ previous tag.
 ```
 ### 1.0.0
 [b]1.0.0[/b]
-First release of the update of Funny Creatures, by PredatorKing.
+First release of this Funny Creatures update, by PredatorKing.
 [list]
 [*] The boomsloth explodes again: its death action moved in the latest RimWorld version and the old form was silently ignored.
 [*] Wildness is read again on both animals, so they are as hard to tame as they were meant to be.
