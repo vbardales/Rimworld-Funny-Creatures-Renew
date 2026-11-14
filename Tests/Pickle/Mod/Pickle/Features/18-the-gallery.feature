@@ -53,7 +53,7 @@
 #   Instant: the flame ring at its widest, `I let 6 ticks pass` after the kill, paused (tick settled by the film scenario `6x-boom-film`, not a gallery image). Risk:
 #   missing the widest flame; the daylilies are outside the blast radius and removed after. 4.
 # 7 7-dusk-roll-call. enclosure-south, 19, frame rectangle (152, 203) to (166, 211) as in 1, dusk light dimmed to at most 0.35 (ground and lamps) and the sun glow held at 0.4 (NPT 2026-11-14: the dim step alone does not touch the sky, so run 12dc read as daylight; sun glow step compiled, not played: try 0.3 or 0.5 if the capture is wrong).
-#   "At dusk the pen is quiet. The little fuse is asleep." The adult meffalo lying at (160, 209), the boomsloth calf lying at (161, 209) beside it, both facing West, on the same 3 x 3 patch of pale
+#   "At dusk the pen is quiet. The little fuse is asleep." The adult meffalo lying at (159, 209), the boomsloth calf lying at (161, 209) beside it, both facing West, on the same 3 x 3 patch of pale
 #   `Plant_YellowTallGrass` as shot 1 (run 12dc: the pair lay on dark brown ground and read as a black blob); `Plant_Bamboo` hidden within 4 cells of the pair and within 2 cells of Nelim (a clump stood behind her and the calf);
 #   the two fire bowls at about (154, 209) and (164, 209) hidden after the pause (defName not known: `Brazier,Yuran_Brazier_two` tried with the "when present" step, and the things within 2 cells of each cell are listed so the log names the real defName; hides come after the ticks, NPT) so the frame holds no glaring orange sprite; Nelim has just stopped at (156, 209), 4 cells from the meffalo, smile, facing East,
 #   same outfit; a lit `DR_StickLantern` at (163, 210) beside the pair (it stood in the bamboo at (158, 205) in run 12dc, a dark post); `Plant_Daylily` fully grown at (158, 210), (162, 208), (163, 209), the pen laying boxes kept.
@@ -340,15 +340,15 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (163, 209) fully grown
     And Nelim's Pickle Tools: I place the decor "DR_StickLantern" exactly at (163, 210)
     And Nelim's Pickle Tools: the decor "DR_StickLantern" at (163, 210) is lit
-    And Nelim's Pickle Tools: an adult animal of kind "Meffalo" named "Moss" is spawned at (160, 209)
+    And Nelim's Pickle Tools: an adult animal of kind "Meffalo" named "Moss" is spawned at (159, 209)
     And Nelim's Pickle Tools: an animal of kind "Boomsloth" named "Fuse" is spawned at (161, 209) at life stage 0
-    And Nelim's Pickle Tools: the animal "Moss" lies at (160, 209) facing West
+    And Nelim's Pickle Tools: the animal "Moss" lies at (159, 209) facing West
     And Nelim's Pickle Tools: the animal "Fuse" lies at (161, 209) facing West
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (86, 64, 48)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Corset" dyed rgb (222, 208, 178)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (204, 142, 48)
     And Nelim's Pickle Tools: "Nelim" stands at (153, 209) facing East
-    And Nelim's Pickle Tools: I frame the rectangle from (152, 203) to (166, 211)
+    And Nelim's Pickle Tools: I frame the rectangle from (154, 205) to (166, 212)
     And Nelim's Pickle Tools: "Nelim" is forced to walk to (156, 209)
     When Nelim's Pickle Tools: I let 15 ticks pass
     And game speed is paused
@@ -356,8 +356,8 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: the things within 2 cells of (164, 209) are listed
     And Nelim's Pickle Tools: the things "Brazier,Yuran_Brazier_two" within 2 cells of (154, 209) are hidden when present
     And Nelim's Pickle Tools: the things "Brazier,Yuran_Brazier_two" within 2 cells of (164, 209) are hidden when present
-    And Nelim's Pickle Tools: the things "Plant_Bamboo" within 4 cells of (160, 209) are hidden when present
-    And Nelim's Pickle Tools: the things "Plant_Bamboo" within 2 cells of (156, 209) are hidden when present
+    And Nelim's Pickle Tools: the things "Plant_Bamboo" within 8 cells of (160, 209) are hidden when present
+    And Nelim's Pickle Tools: the things "Plant_Bamboo" within 4 cells of (156, 209) are hidden when present
     And Nelim's Sanctuary: Nelim has her own face
     And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" faces East
