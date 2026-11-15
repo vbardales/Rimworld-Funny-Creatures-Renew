@@ -186,3 +186,5 @@ Shotlist rewrite 2026-11-15 (write-shotlist, sync-nsb-npt: no NSB or NPT change 
 Ticket 20261115-150408-533-9496 filed 2026-11-15 (scenarios 3 to 7, tree 32027f3, replaces 0c68). Mod/ and Tests/Pickle frozen until RUN_DONE.
 
 RUN_DONE 9496 2026-11-15 (tree 32027f3): 5 of 5 green. Captures opened. 3 candidate (meffalo on pale grass beside the water, burrow still in the top-left corner, fog), 4 candidate (meffalo face-on, boomsloth turning toward it, daylily ring on cream), 7 candidate (pair on pale grass with lantern, dusk darker, Nelim medium, smile unreadable). REDO: 5 (ground still bare brown around the pair: decoration 3.5) and 6 (haze and the animal tumbling, no readable flame ring: understanding 3.5, decoration 3.5). Their captures deleted; 3, 4, 7 kept in Tests/Pickle/Parked/gallery-3-7-32027f3, 2 in Parked/gallery-2-7-3c32cd8. Scenarios 5 and 6 gain 9 plants each, 6 waits 3 ticks after the kill (guess). Shot 1 has no capture of the current scenario: replayed with 5 and 6.
+
+Ticket 20261115-161131-898-c56d filed 2026-11-15 (scenarios 1, 5, 6, tree 10e85d1). Mod/ and Tests/Pickle frozen until RUN_DONE.
