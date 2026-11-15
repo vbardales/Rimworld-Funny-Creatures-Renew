@@ -172,3 +172,5 @@ RUN_DONE c755 2026-11-15 (tree ff86104): 7 passed, 3 failed: game error JobGiver
 Ticket 20261115-115122-788-4938 filed 2026-11-15 (scenarios 3 and 7, tree e554e86). Mod/ and Tests/Pickle frozen until RUN_DONE.
 
 RUN_DONE 4938 2026-11-15 (tree e554e86): 3 passed (WanderInPen error gone without ducks), 7 failed: `the cell (157, 207) already holds Fence` (fence row at z 207, x 155-164). Moved z 207 decor to z 208 (daylilies 157 and 164, grass 158). Shot 3 capture opened: meffalo reads, grass and lilies, but the burrow sits in frame centre (plan said out) and the meffalo hugs the left edge, fog heavy: score-gallery to decide, likely REDO. Run folder parked (Tests/Pickle/Parked/gallery-3-7-e554e86).
+
+Ticket 20261115-124154-786-5c60 filed 2026-11-15 (scenario 7 only, tree d93709a). Mod/ and Tests/Pickle frozen until RUN_DONE.
