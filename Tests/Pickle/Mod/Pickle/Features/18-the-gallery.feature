@@ -1,6 +1,8 @@
 # Gallery shotlist of Funny Creatures Renew (written 2026-10-25, revised 2026-11-15, shootGallery[1.0.0]). Scenarios 1 to 7 exist below.
 # Pass map: wsl-deps.gallery.map (the Sanctuary map as base, no optional animal mod: the nocturnal mod would put the boomsloth to sleep in daytime shots).
 #
+# NELIM (owner, 2026-11-16, shots 1, 5, 6, 7 refused): she follows her own sheet (NSB NELIM-PROFIL.md): `MouthLipsSmirk`, `BrowNormal`, `LidCheerful`, `Roo_HD_Hair_Highpony` set explicitly, trousers drawn. The trousers were bare legs because the AB seed was missing for the set `gallery` (Tests/Pickle/config/gallery/ now holds the four seeds of NSB). Shots 5 and 6 keep `BrowRaised`, 6 `LidSquinting`, written in the line.
+#
 # STORY, "The herd that was not on the map". One day at the Sanctuary of Nelim (Virginie, the protagonist and only
 # colonist; no other colonist is used). She works in the same outfit all day: fixture trousers and corset, `Apparel_Jacket`
 # dyed ochre, her high ponytail (`Roo_HD_Hair_Highpony`, from the save; never a bun, NSB-ROSTER), no hat. Rhythm: one hour per image, clear weather, 07, 08, 09, 11, 15, 15, 19, with 60 setup ticks.
@@ -19,7 +21,7 @@
 # SHOTS (name, place, hour, subject and line, composition, living things, decor, instant and how, risk, estimate)
 # 1 1-dawn-at-the-gate. enclosure-south, 07, clear, 60 ticks plus the walk, opening shot, frame rectangle 14 x 8 cells centred on the gate (159, 207), x 152-166 z 203-211, zoom about 6,
 #   Nelim off-centre left, the meffalo off-centre right, both within 4 cells of the gate (Nelim about 38 px at 268 px).
-#   "Nelim walks out at dawn. Something big is already waiting." Nelim forced to walk east to (156, 209), turned toward the meffalo (`faces`), smile (MouthSmile set after
+#   "Nelim walks out at dawn. Something big is already waiting." Nelim forced to walk east to (156, 209), turned toward the meffalo (`faces`), her own canonical smirk (`MouthLipsSmirk`, no override) after
 #   her face), three-quarter view, not from behind (run 95d6: she stood 6 cells from the gate, seen from behind, no smile). An adult meffalo standing at (160, 209) by the gate, head toward her,
 #   on a patch of pale `Plant_YellowTallGrass` fully grown, 3 x 3 around its cell, so the black coat stands out (the coat is black in the texture, Meffalo_east.png: not a lighting fault; on the dark
 #   brown pen ground of run 95d6 it read as a silhouette). Other animals cleared from the frame and 10 cells around it, checked on the capture. The two lit braziers of the pen stay in the frame (light
@@ -108,13 +110,13 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (86, 64, 48)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Corset" dyed rgb (222, 208, 178)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (204, 142, 48)
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And Nelim's Pickle Tools: "Nelim" stands at (152, 212) facing East
     And Nelim's Pickle Tools: I frame the rectangle from (152, 203) to (166, 211)
     And Nelim's Pickle Tools: "Nelim" is forced to walk to (156, 209)
     When Nelim's Pickle Tools: I let 20 ticks pass
     And game speed is paused
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" lids are "LidCheerful"
     And Nelim's Pickle Tools: "Nelim" faces East
     And Nelim's Pickle Tools: I let 5 frames pass
@@ -265,13 +267,13 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (86, 64, 48)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Corset" dyed rgb (222, 208, 178)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (204, 142, 48)
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And Nelim's Pickle Tools: "Nelim" stands at (192, 150) facing West
     And Nelim's Pickle Tools: I frame the rectangle from (186, 146) to (200, 154)
     And Nelim's Pickle Tools: "Nelim" is forced to walk to (190, 150)
     When Nelim's Pickle Tools: I let 20 ticks pass
     And game speed is paused
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" brows are "BrowRaised"
     And Nelim's Pickle Tools: "Nelim" faces East
     And Nelim's Pickle Tools: "Boomy" faces West
@@ -320,13 +322,13 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (86, 64, 48)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Corset" dyed rgb (222, 208, 178)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (204, 142, 48)
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And Nelim's Pickle Tools: "Nelim" stands at (192, 150) facing West
     And Nelim's Pickle Tools: I frame the rectangle from (186, 146) to (200, 154)
     And Nelim's Pickle Tools: "Nelim" is forced to walk to (190, 150)
     When Nelim's Pickle Tools: I let 20 ticks pass
     And game speed is paused
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" brows are "BrowRaised"
     And Nelim's Pickle Tools: "Nelim" lids are "LidSquinting"
     And Nelim's Pickle Tools: "Nelim" faces East
@@ -382,6 +384,7 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (86, 64, 48)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Corset" dyed rgb (222, 208, 178)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (204, 142, 48)
+    And Nelim's Pickle Tools: "Nelim" hairstyle is "Roo_HD_Hair_Highpony"
     And Nelim's Pickle Tools: "Nelim" stands at (153, 210) facing East
     And Nelim's Pickle Tools: I frame the rectangle from (152, 205) to (164, 212)
     And Nelim's Pickle Tools: "Nelim" is forced to walk to (156, 210)
@@ -395,7 +398,6 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: the things "Plant_TreeBamboo" within 8 cells of (160, 209) are hidden when present
     And Nelim's Pickle Tools: the things "Plant_TreeBamboo" within 4 cells of (156, 209) are hidden when present
     And Nelim's Sanctuary: Nelim has her own face
-    And Nelim's Pickle Tools: "Nelim" mouth is "MouthSmile"
     And Nelim's Pickle Tools: "Nelim" faces East
     And Nelim's Pickle Tools: the light of the map is refreshed
     And Nelim's Pickle Tools: I let 5 frames pass
