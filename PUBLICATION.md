@@ -99,6 +99,21 @@ the images to upload numbered `00-`, `01-`, `02-`, `03-` in page order and nothi
 `@review`, which makes them reproducible; a green scenario proves the path ran, not that the image shows anything, so **every image is
 opened and read before it goes in the folder.** In the repository the files are `0-`, `1-`, `2-` (contiguous, `0-` the Preview copy).
 
+### Gallery subtitles (written 2026-11-15, burned into `Art/Gallery/`, originals in `Art/Gallery-clean/`)
+
+All seven scenes of the shotlist are candidates (run 9496 and c56d, opened and rated). Waiting for the owner's accept or refuse, then reindex without a new burn.
+
+| index | file | line |
+|---|---|---|
+| 0 | `0-preview.png` | none (the Preview, byte copy) |
+| 1 | `1-dawn-at-the-gate.jpg` | Nelim walks out at dawn. Something big is already waiting. |
+| 2 | `2-the-calves-follow.jpg` | Two calves follow their mother. One of them is a fuse. |
+| 3 | `3-heavy-fur-by-the-water.jpg` | The meffalo's dark coat, next to the water. |
+| 4 | `4-two-new-faces.jpg` | A meffalo and a boomsloth, face to face at last. |
+| 5 | `5-do-not-startle-it.jpg` | Nelim keeps her distance. The boomsloth knows why. |
+| 6 | `6-boom.jpg` | Boom. |
+| 7 | `7-dusk-roll-call.jpg` | At dusk the pen is quiet. The little fuse is asleep. |
+
 ### Gallery story and subtitles (PLAN, reworked 2026-10-18; no capture exists yet)
 
 **Superseded 2026-10-25:** the shot plan below is replaced by the shotlist of `Tests/Pickle/Gallery/18-the-gallery.feature` (copied in `STATUS.md`, "Shotlist"). The subtitle table is rewritten from it once the captures are accepted.
