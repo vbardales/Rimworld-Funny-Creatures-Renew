@@ -41,11 +41,11 @@
 #   Instant: the boomsloth has just spotted it; forced walk, `I let 20 ticks pass`, paused. Risk: beige boomsloth pale on cream (its dark markings and the daylilies carry it); facing held on a paused capture. 4.5.
 # 5 5-do-not-startle-it. bare-clearing, 15, tighter frame rectangle (186, 146) to (200, 154), 14 x 8 cells, zoom about 6 (run 4938: Nelim was 20 px at the left edge of a wider frame).
 #   "Nelim keeps her distance. The boomsloth knows why." The adult boomsloth at (196, 150) facing West toward her; Nelim at (192, 150) walks back west to (190, 150) (director pass: she backs off, she does not walk toward it), 6 cells away, same outfit,
-#   smile and BrowRaised set after her own face, facing East (set after the walk). Decor, removed after: `Plant_Daylily` fully grown at (187, 148), (187, 152), (190, 147), (190, 153), (200, 147), (200, 153) and `Plant_YellowTallGrass` at (188, 148), (188, 152), (191, 148), (191, 152), (199, 146), (199, 154), all 5 cells or more from the boomsloth (ground not bare).
+#   smile and BrowRaised set after her own face, facing East (set after the walk). Decor, removed after: `Plant_Daylily` fully grown at (187, 148), (187, 152), (190, 147), (190, 153), (200, 147), (200, 153) and `Plant_YellowTallGrass` at (188, 148), (188, 152), (191, 148), (191, 152), (199, 146), (199, 154), and from run 9496 more of both near the boomsloth: `Plant_YellowTallGrass` at (195, 147), (197, 147), (195, 153), (197, 153), (199, 150), `Plant_Daylily` at (193, 146), (193, 154), (198, 148), (198, 152) (they burn in 6, which is fine).
 #   Instant: she has just turned back, the boomsloth looks at her; forced walk, `I let 20 ticks pass`, `faces`, paused. Risk: Nelim facing the wrong way; nothing of ours within 5 cells of her. 4.5.
 # 6 6-boom. bare-clearing, 15 (same minute), exactly the frame and the decor of 5.
 #   "Boom." The boomsloth is killed (Funny Creatures Renew: "<name>" is killed); Nelim stays 6 cells away, unhurt, brows raised, `LidSquinting` set after her own face (expression last).
-#   Instant: the flame ring at its widest, `I let 6 ticks pass` after the kill, paused (tick settled by the film scenario `6x-boom-film`, not a gallery image). Risk:
+#   Instant: the flame ring at its widest, `I let 3 ticks pass` after the kill, paused (run 9496 at 6 ticks: haze and the animal tumbling, no readable flame ring; 3 is a guess, no film scenario exists). Risk:
 #   missing the widest flame; the decor is outside the blast radius and removed after. 4.
 # 7 7-dusk-roll-call. enclosure-south, 19, frame rectangle (152, 205) to (164, 212), 12 x 7 cells, dusk light dimmed to at most 0.3 (ground and lamps) and the sun glow held at 0.3 (NPT 2026-11-14: the dim step alone does not touch the sky; run 5c60 at 0.4 read as mild dusk).
 #   "At dusk the pen is quiet. The little fuse is asleep." The adult meffalo lying at (159, 209), the boomsloth calf lying at (161, 209) beside it, both facing West, on a 3 x 3 patch of pale
@@ -239,6 +239,15 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: the selection brackets are hidden
     And Nelim's Pickle Tools: the item and name labels are hidden
     And Nelim's Pickle Tools: I move the mouse to (10, 10)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (195, 147) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (197, 147) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (195, 153) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (197, 153) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (199, 150) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (193, 146) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (193, 154) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (198, 148) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (198, 152) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (187, 148) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (187, 152) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (190, 147) fully grown
@@ -285,6 +294,15 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: the selection brackets are hidden
     And Nelim's Pickle Tools: the item and name labels are hidden
     And Nelim's Pickle Tools: I move the mouse to (10, 10)
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (195, 147) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (197, 147) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (195, 153) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (197, 153) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (199, 150) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (193, 146) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (193, 154) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (198, 148) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (198, 152) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (187, 148) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (187, 152) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (190, 147) fully grown
@@ -314,7 +332,7 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: "Nelim" faces East
     And Nelim's Pickle Tools: "Boomy" faces West
     And Funny Creatures Renew: "Boomy" is killed
-    And Nelim's Pickle Tools: I let 6 ticks pass
+    And Nelim's Pickle Tools: I let 3 ticks pass
     And game speed is paused
     And Nelim's Pickle Tools: I let 5 frames pass
     Then I take a screenshot "6 boom"
