@@ -334,14 +334,14 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (158, 210) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (162, 208) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (163, 209) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (157, 207) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (157, 208) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (158, 211) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (162, 211) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (164, 207) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (164, 208) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (165, 210) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (157, 209) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (164, 211) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (158, 207) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (158, 208) fully grown
     And Nelim's Pickle Tools: I place the decor "DR_StickLantern" exactly at (163, 210)
     And Nelim's Pickle Tools: the decor "DR_StickLantern" at (163, 210) is lit
     And Nelim's Pickle Tools: an adult animal of kind "Meffalo" named "Moss" is spawned at (159, 209)
