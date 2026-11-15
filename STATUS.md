@@ -168,3 +168,5 @@ RUN_DONE 8e12 2026-11-14 (tree 7839a2f): 7 passed, 3 failed at `Dot stands at (1
 Ticket 20261114-232658-000-c755 filed 2026-11-14 (scenarios 3 and 7, tree ff86104, evidence Tests/Pickle/Inbox/gallery-3-7-ff86104). Mod/ and Tests/Pickle frozen until RUN_DONE.
 
 RUN_DONE c755 2026-11-15 (tree ff86104): 7 passed, 3 failed: game error JobGiver_WanderInPen.GetWanderRoot NullReference with the two ducks spawned (cause unknown, lead only). Ducks removed from shot 3 (header updated). Shot 7 capture opened: pair on pale grass, lantern, daylilies, braziers and bamboo gone, but ground bare around and Nelim small at the left edge, smile unreadable: REDO. Added 5 daylilies, 3 grass clumps, Nelim walks to (157, 210). Run folder deleted (read).
+
+Ticket 20261115-115122-788-4938 filed 2026-11-15 (scenarios 3 and 7, tree e554e86). Mod/ and Tests/Pickle frozen until RUN_DONE.
