@@ -145,16 +145,21 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (204, 187) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (200, 184) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (202, 184) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (199, 186) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (200, 191) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (196, 185) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (204, 190) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (195, 190) fully grown
     And Nelim's Pickle Tools: "Nelim" stands at (180, 121) facing South
     And Nelim's Pickle Tools: an adult animal of kind "Meffalo" named "Moss" is spawned at (198, 189)
-    And Nelim's Pickle Tools: the animal "Moss" stands at (198, 189) facing South
-    And Nelim's Pickle Tools: an adult animal of kind "Boomsloth" named "Boomy" is spawned at (201, 188)
-    And Nelim's Pickle Tools: the animal "Boomy" stands at (201, 188) facing South
-    And Nelim's Pickle Tools: I frame the rectangle from (194, 183) to (206, 190)
-    And Nelim's Pickle Tools: "Boomy" is forced to walk to (201, 186)
+    And Nelim's Pickle Tools: the animal "Moss" stands at (198, 189) facing East
+    And Nelim's Pickle Tools: an adult animal of kind "Boomsloth" named "Boomy" is spawned at (203, 188)
+    And Nelim's Pickle Tools: the animal "Boomy" stands at (203, 188) facing West
+    And Nelim's Pickle Tools: I frame the rectangle from (195, 185) to (205, 191)
+    And Nelim's Pickle Tools: "Boomy" is forced to walk to (201, 188)
     When Nelim's Pickle Tools: I let 20 ticks pass
     And game speed is paused
-    And Nelim's Pickle Tools: "Moss" faces South
+    And Nelim's Pickle Tools: "Moss" faces East
     And Nelim's Pickle Tools: I let 5 frames pass
     Then I take a screenshot "4 two new faces"
     And Nelim's Pickle Tools: the decor is removed
@@ -173,12 +178,12 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: the item and name labels are hidden
     And Nelim's Pickle Tools: I move the mouse to (10, 10)
     And Nelim's Pickle Tools: "Nelim" stands at (180, 121) facing South
-    And Nelim's Pickle Tools: an adult animal of kind "Meffalo" named "Moss" is spawned at (146, 172)
-    And Nelim's Pickle Tools: the animal "Moss" stands at (146, 172) facing East
-    And Nelim's Pickle Tools: "Moss" is forced to walk to (154, 172)
+    And Nelim's Pickle Tools: an adult animal of kind "Meffalo" named "Moss" is spawned at (152, 171)
+    And Nelim's Pickle Tools: the animal "Moss" stands at (152, 171) facing East
+    And Nelim's Pickle Tools: "Moss" is forced to walk to (155, 171)
     When Nelim's Pickle Tools: I let 15 ticks pass
     And game speed is paused
-    And Nelim's Pickle Tools: I frame the rectangle from (145, 168) to (157, 176)
+    And Nelim's Pickle Tools: I frame the rectangle from (150, 167) to (160, 173)
     And Nelim's Pickle Tools: I let 5 frames pass
     Then I take a screenshot "3 heavy fur by the water"
 
@@ -234,22 +239,26 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: the selection brackets are hidden
     And Nelim's Pickle Tools: the item and name labels are hidden
     And Nelim's Pickle Tools: I move the mouse to (10, 10)
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (186, 155) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (186, 147) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (204, 155) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (204, 147) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (186, 151) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (204, 151) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (190, 157) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (200, 157) fully grown
-    And Nelim's Pickle Tools: an adult animal of kind "Boomsloth" named "Boomy" is spawned at (195, 150)
-    And Nelim's Pickle Tools: the animal "Boomy" stands at (195, 150) facing West
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (187, 148) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (187, 152) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (190, 147) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (190, 153) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (200, 147) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (200, 153) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (188, 148) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (188, 152) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (191, 148) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (191, 152) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (199, 146) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (199, 154) fully grown
+    And Nelim's Pickle Tools: an adult animal of kind "Boomsloth" named "Boomy" is spawned at (196, 150)
+    And Nelim's Pickle Tools: the animal "Boomy" stands at (196, 150) facing West
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (86, 64, 48)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Corset" dyed rgb (222, 208, 178)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (204, 142, 48)
-    And Nelim's Pickle Tools: "Nelim" stands at (185, 150) facing East
-    And Nelim's Pickle Tools: I frame the rectangle from (186, 147) to (204, 157)
-    And Nelim's Pickle Tools: "Nelim" is forced to walk to (188, 150)
+    And Nelim's Pickle Tools: "Nelim" stands at (188, 150) facing East
+    And Nelim's Pickle Tools: I frame the rectangle from (186, 146) to (200, 154)
+    And Nelim's Pickle Tools: "Nelim" is forced to walk to (190, 150)
     When Nelim's Pickle Tools: I let 20 ticks pass
     And game speed is paused
     And Nelim's Sanctuary: Nelim has her own face
@@ -276,22 +285,26 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: the selection brackets are hidden
     And Nelim's Pickle Tools: the item and name labels are hidden
     And Nelim's Pickle Tools: I move the mouse to (10, 10)
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (186, 155) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (186, 147) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (204, 155) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (204, 147) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (186, 151) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (204, 151) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (190, 157) fully grown
-    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (200, 157) fully grown
-    And Nelim's Pickle Tools: an adult animal of kind "Boomsloth" named "Boomy" is spawned at (195, 150)
-    And Nelim's Pickle Tools: the animal "Boomy" stands at (195, 150) facing West
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (187, 148) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (187, 152) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (190, 147) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (190, 153) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (200, 147) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (200, 153) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (188, 148) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (188, 152) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (191, 148) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (191, 152) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (199, 146) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (199, 154) fully grown
+    And Nelim's Pickle Tools: an adult animal of kind "Boomsloth" named "Boomy" is spawned at (196, 150)
+    And Nelim's Pickle Tools: the animal "Boomy" stands at (196, 150) facing West
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (86, 64, 48)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Corset" dyed rgb (222, 208, 178)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (204, 142, 48)
-    And Nelim's Pickle Tools: "Nelim" stands at (185, 150) facing East
-    And Nelim's Pickle Tools: I frame the rectangle from (186, 147) to (204, 157)
-    And Nelim's Pickle Tools: "Nelim" is forced to walk to (188, 150)
+    And Nelim's Pickle Tools: "Nelim" stands at (188, 150) facing East
+    And Nelim's Pickle Tools: I frame the rectangle from (186, 146) to (200, 154)
+    And Nelim's Pickle Tools: "Nelim" is forced to walk to (190, 150)
     When Nelim's Pickle Tools: I let 20 ticks pass
     And game speed is paused
     And Nelim's Sanctuary: Nelim has her own face
@@ -309,8 +322,8 @@ Feature: the gallery of Funny Creatures Renew
 
   Scenario: 7-dusk-roll-call
     Given I set the hour to 19
-    And Nelim's Pickle Tools: the light of the map is dimmed to at most 0.35
-    And Nelim's Pickle Tools: the sun glow of the map is held at 0.4
+    And Nelim's Pickle Tools: the light of the map is dimmed to at most 0.3
+    And Nelim's Pickle Tools: the sun glow of the map is held at 0.3
     And Nelim's Sanctuary: I am at the sanctuary "enclosure-south"
     And Nelim's Sanctuary: the animals are removed from the sanctuary "enclosure-south"
     And Nelim's Pickle Tools: studio presentation mode is enabled
@@ -351,9 +364,9 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (86, 64, 48)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Corset" dyed rgb (222, 208, 178)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (204, 142, 48)
-    And Nelim's Pickle Tools: "Nelim" stands at (153, 209) facing East
-    And Nelim's Pickle Tools: I frame the rectangle from (154, 205) to (166, 212)
-    And Nelim's Pickle Tools: "Nelim" is forced to walk to (157, 210)
+    And Nelim's Pickle Tools: "Nelim" stands at (153, 210) facing East
+    And Nelim's Pickle Tools: I frame the rectangle from (152, 205) to (164, 212)
+    And Nelim's Pickle Tools: "Nelim" is forced to walk to (156, 210)
     When Nelim's Pickle Tools: I let 15 ticks pass
     And game speed is paused
     And Nelim's Pickle Tools: the things within 2 cells of (154, 209) are listed
