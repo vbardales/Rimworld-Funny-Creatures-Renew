@@ -33,7 +33,7 @@
 #   Risk: calves about 24 px at 268 px, so the frame stays tight. 4.5.
 # 3 3-heavy-fur-by-the-water. water-garden, 09, clear, tight on the brown west bank (x 143-158, z 168-176), frame centred (151, 172), zoom about 5, burrow (149, 173) kept out of the frame.
 #   "The meffalo's dark coat, next to the water." The meffalo walks along the bank, ducks behind it; no pawn. Pale dry grass of the bank and the lily pads around it, willows (171, 162), (165, 162)
-#   and reeds (168, 163) of the place (validated decor, nothing added in the water). Two `Duck` at the water edge within 3 cells, one startled and turning away. Other animals (panda, cat, prairie dog,
+#   and reeds (168, 163) of the place (validated decor, nothing added in the water). No duck (run c755: the game threw JobGiver_WanderInPen.GetWanderRoot with the ducks spawned, a duck can return when the cause is known). Other animals (panda, cat, prairie dog,
 #   swan stood in the frame in run 95d6) cleared from the frame and 12 cells around it, checked on the capture: if one stays, the `the animal {string} is despawned` step takes it off by its short name.
 #   Instant: it has just left the water and starts along the bank, a duck startled behind it; forced walk, `I let 15 ticks pass`, paused; keep clear of the steam geyser and the burrow.
 #   Risk: strays in the frame; grey fog over the water (the place's own tint, accepted if the bank stays readable). 4.5.
@@ -175,8 +175,6 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: "Nelim" stands at (180, 121) facing South
     And Nelim's Pickle Tools: an adult animal of kind "Meffalo" named "Moss" is spawned at (146, 172)
     And Nelim's Pickle Tools: the animal "Moss" stands at (146, 172) facing East
-    And Nelim's Pickle Tools: an adult animal of kind "Duck" named "Dot" is spawned at (156, 175)
-    And Nelim's Pickle Tools: an adult animal of kind "Duck" named "Dash" is spawned at (157, 173)
     And Nelim's Pickle Tools: "Moss" is forced to walk to (154, 172)
     When Nelim's Pickle Tools: I let 15 ticks pass
     And game speed is paused
@@ -336,6 +334,14 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (158, 210) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (162, 208) fully grown
     And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (163, 209) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (157, 207) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (158, 211) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (162, 211) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (164, 207) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_Daylily" at (165, 210) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (157, 209) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (164, 211) fully grown
+    And Nelim's Pickle Tools: I place the decor "Plant_YellowTallGrass" at (158, 207) fully grown
     And Nelim's Pickle Tools: I place the decor "DR_StickLantern" exactly at (163, 210)
     And Nelim's Pickle Tools: the decor "DR_StickLantern" at (163, 210) is lit
     And Nelim's Pickle Tools: an adult animal of kind "Meffalo" named "Moss" is spawned at (159, 209)
@@ -347,7 +353,7 @@ Feature: the gallery of Funny Creatures Renew
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Jacket" dyed rgb (204, 142, 48)
     And Nelim's Pickle Tools: "Nelim" stands at (153, 209) facing East
     And Nelim's Pickle Tools: I frame the rectangle from (154, 205) to (166, 212)
-    And Nelim's Pickle Tools: "Nelim" is forced to walk to (156, 209)
+    And Nelim's Pickle Tools: "Nelim" is forced to walk to (157, 210)
     When Nelim's Pickle Tools: I let 15 ticks pass
     And game speed is paused
     And Nelim's Pickle Tools: the things within 2 cells of (154, 209) are listed
