@@ -54,6 +54,8 @@ Current state only. Run lines: `docs/runs/README.md`. Older dated sections: `doc
 
 PiI, 2026-11-14 (`docs/inventory/ecosystem-steam/FunnyCreaturesRenew.md`, protocols 90bb313): original Funny Creatures 2640466629 (1.3, October 2021, not on disk, packageId unknown). Meffalo and boomsloth exist nowhere else on Steam: no fork, no port, no mod shares our 8 defNames. Only neighbours, different mods: generic explode-on-death mods 2920429368 and 3199977918, Milkable Muffalo 2019852283. Nothing subscribed. The 5 old rows for this mod in `ecosystem.tsv` (TF2 Sandvich etc.) are noise.
 
+PiI refresh 2026-11-19 (delta since 2026-11-14, same file, links block added): original 2640466629 unchanged (1.3, 2021-10-30); `meffalo` and `boomsloth` still return only the original; no fork, port, patch or duplicate of ours. New-looking names unrelated (Creatures of the Vael 3568419088, ISEKAI CREATURES ADD-ON 3757560461); other muffalo mods seen, no shared def checked. Verdict unchanged: our Renew is the only Funny Creatures for 1.6. Links: parent 2640466629, linked 2019852283, 1885527800, 2920429368, 3199977918.
+
 ## Translation audit
 
 French in `Mod/Languages/French/DefInjected` (20 owned fields, no Keyed, no plurals, no gender agreement: texts do not follow pawn). Virginie reviewed 2026-10-11, revision `7ef4deb`, `FRENCH_REVIEW.md` generated from `8794640`: validated, corrections applied before (mégathérium for megasloth, wool sentence). Re-read and validated by Virginie 2026-10-18, `FRENCH_REVIEW.md` from `c3cade8` (ChatGPT review applied: Meffalo.description wording, English def typos). `translation_fr` `complete`. In-game rendering (raw keys, clipping) stays `unverified` until `playTests`.
