@@ -392,7 +392,7 @@ Static results are not kept (2026-10-19): the checks above run in seconds and ar
 
 # Plan: passes, automation and gates
 
-Written 2026-09-28 after re-reading `AUDIT.md`, extended 2026-10-13. **Pickle suite written** (`Tests/Pickle/`, seventeen features, step assembly in two files, four pass maps), checked offline by `Tests/test_pickle_suite.py`, showing every feature line matches exactly one known step. Features 01 to 12 have played (lines in `docs/runs/README.md`); features 13 to 17 (scenarios D to K, M, O) filed as small ticket, not played. `Tests/Pickle/README.md` has layout, request playing each pass, what two limits of Pickle built-in steps forced.
+Written 2026-09-28 after re-reading `AUDIT.md`, extended 2026-10-13. **Pickle suite written** (`Tests/Pickle/`, seventeen features, step assembly in two files, four pass maps), checked offline by `Tests/test_pickle_suite.py`, showing every feature line matches exactly one known step. Features 01 to 12 have played (lines in `Docs/runs/pickle.md`); features 13 to 17 (scenarios D to K, M, O) filed as small ticket, not played. `Tests/Pickle/README.md` has layout, request playing each pass, what two limits of Pickle built-in steps forced.
 
 ## The passes
 

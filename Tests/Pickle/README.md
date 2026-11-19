@@ -1,7 +1,7 @@
 # Pickle suite: Funny Creatures Renew
 
 In-game functional tests, written 2026-09-28, run by [Pickle](https://github.com/RimWorks/Rimworld-Pickle) in the headless
-WSL install. Features 01 to 12 have played (`../../docs/runs/README.md`); 13 to 17 are filed and not yet played. A run is filed by request, never launched by hand; see "Running it".
+WSL install. Features 01 to 12 have played (`../../Docs/runs/pickle.md`); 13 to 17 are filed and not yet played. A run is filed by request, never launched by hand; see "Running it".
 
 What belongs in Gherkin, and what does not, is decided in [`../../TESTING.md`](../../TESTING.md) ("Plan: passes,
 automation and gates"). In one line: the XML contract, the def values and the French coverage are proved offline by
@@ -149,6 +149,6 @@ animals are spawned at a fixed age. The explosion applies its damage over the ti
 ## Evidence
 
 Reports go to `Tests/Pickle/Evidence/<run>/` (git-ignored), and the history is **one line per run** in
-[`../../docs/runs/README.md`](../../docs/runs/README.md). What to keep and what to delete is in `TESTING.md`, "Evidence to
+[`../../Docs/runs/pickle.md`](../../Docs/runs/pickle.md). What to keep and what to delete is in `TESTING.md`, "Evidence to
 keep": `summary.json`, `junit.xml`, the `Player.log` of the last run of each pass, the `@review` captures that were opened
 (reduced), and the explosion film. Never `report.html`, `messages.ndjson` or a whole `screenshots/` folder.
